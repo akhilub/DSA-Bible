@@ -78,6 +78,39 @@
   font-size: inherit;
 }
 
+/* custom admonition */
+/* answer */
+
+:root {
+  --md-admonition-icon--answer: url("../assets/icons/answer.svg");
+}
+.md-typeset .admonition.answer,
+.md-typeset details.answer {
+  border-color: var(--md-primary-fg-color);
+
+  overflow: hidden;
+  font-size: inherit;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.answer,
+[data-md-color-scheme="slate"] .md-typeset details.answer {
+  border-color: var(--md-primary-fg-color);
+  overflow: hidden;
+  font-size: inherit;
+}
+
+.md-typeset .answer > .admonition-title,
+.md-typeset .answer > summary {
+  background-color: rgb(12, 236, 176, 0.1);
+}
+
+.md-typeset .answer > .admonition-title::before,
+.md-typeset .answer > summary::before {
+  background-color: rgb(12, 236, 176);
+  -webkit-mask-image: var(--md-admonition-icon--answer);
+  mask-image: var(--md-admonition-icon--answer);
+}
+
 /* custom-icons */
 
 .md-checkmark {
