@@ -87,7 +87,7 @@
 .md-typeset .admonition.answer,
 .md-typeset details.answer {
   border-color: var(--md-primary-fg-color);
-
+  padding: 0;
   overflow: hidden;
   font-size: inherit;
 }
@@ -107,8 +107,17 @@
 .md-typeset .answer > .admonition-title::before,
 .md-typeset .answer > summary::before {
   background-color: rgb(12, 236, 176);
+  left: 1.2rem;
   -webkit-mask-image: var(--md-admonition-icon--answer);
   mask-image: var(--md-admonition-icon--answer);
+}
+
+[dir="ltr"] .md-typeset summary:after {
+  right: 1.2rem;
+}
+
+.md-typeset summary:not(.focus-visible) {
+  padding-left: 2.8rem;
 }
 
 /* custom-icons */
