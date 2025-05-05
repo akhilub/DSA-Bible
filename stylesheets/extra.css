@@ -7,13 +7,13 @@ body {
 }
 
 /* Allow copying in code blocks */
-/* pre,
+pre,
 code {
   user-select: text;
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
-} */
+}
 
 /* Responsive compiler container */
 .compiler-container {
