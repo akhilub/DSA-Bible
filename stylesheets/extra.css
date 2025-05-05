@@ -1,3 +1,20 @@
+/* Prevent copying on the whole visible page */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Allow copying in code blocks */
+/* pre,
+code {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+} */
+
 /* Responsive compiler container */
 .compiler-container {
   position: relative;
@@ -41,6 +58,10 @@
 .md-typeset .admonition.note,
 .md-typeset details.note {
   border-color: rgb(32, 148, 243);
+  /* user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; */
 }
 
 [data-md-color-scheme="slate"] .md-typeset .admonition.note,

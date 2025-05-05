@@ -669,6 +669,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../703/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    703. Kth Largest Element in a Stream
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../746/" class="md-nav__link">
         
   
@@ -1062,17 +1085,17 @@
 <!-- solution:start -->
 
 <h3 id="approach-1-applied-binary-search">Approach 1: Applied Binary Search</h3>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(n•log M)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(n \times \log M)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">Notes</p>
-<p>We notice that if each child can receive v candies, then for any v' &lt; v, each child can also receive v' candies.
-Therefore, we can use binary search to find the maximum v such that each child can receive v candies.
-We define the left boundary of the binary search as l = 0 and the right boundary as r = max(candies), where max(candies) represents the maximum value in the array candies.
-During the binary search, we take the middle value mid = (l+r+1)//2 = ⌊(l+r+1)/2⌋ each time, and then calculate the total number of candies each child can receive.</p>
-<p>If the total is greater than or equal to k, it means each child can receive v candies, so we update the left boundary l = mid.
-Otherwise, we update the right boundary r = mid - 1. Finally, when l = r, we have found the maximum v.
-The time complexity is O(nxlog M), where n is the length of the array candies, and M is the maximum value in the array candies. The space complexity is O (1).</p>
+<p>We notice that if each child can receive <code>v</code> candies, then for any <code>v' &lt; v</code>, each child can also receive <code>v'</code> candies.
+Therefore, we can use binary search to find the maximum <code>v</code> such that each child can receive <code>v</code> candies.
+We define the left boundary of the binary search as <span class="arithmatex">\(l = 0\)</span> and the right boundary as <span class="arithmatex">\(r = max(candies)\)</span>, where <code>max(candies)</code> represents the maximum value in the array candies.
+During the binary search, we take the middle value <span class="arithmatex">\(mid = (l+r+1)//2 = ⌊(l+r+1)/2⌋\)</span> each time, and then calculate the total number of candies each child can receive.</p>
+<p>If the total is greater than or equal to <code>k</code>, it means each child can receive v candies, so we update the left boundary <span class="arithmatex">\(l = mid\)</span>.
+Otherwise, we update the right boundary <span class="arithmatex">\(r = mid - 1\)</span>. Finally, when <span class="arithmatex">\(l = r\)</span>, we have found the maximum <code>v</code>.
+The time complexity is <span class="arithmatex">\(O(n \times log M)\)</span>, where <code>n</code> is the length of the array candies, and <code>M</code> is the maximum value in the array candies. The space complexity is <span class="arithmatex">\(O(1)\)</span>.</p>
 </div>
 <!-- tabs:start -->
 

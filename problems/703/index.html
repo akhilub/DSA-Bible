@@ -12,13 +12,13 @@
         <meta name="author" content="A.S.Chauhan">
       
       
-        <link rel="canonical" href="https://dsa.akhilsin.com/problems/2503/">
+        <link rel="canonical" href="https://dsa.akhilsin.com/problems/703/">
       
       
-        <link rel="prev" href="../2226/">
+        <link rel="prev" href="../407/">
       
       
-        <link rel="next" href="../../optimization/1/">
+        <link rel="next" href="../746/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>2503. --- - DSA-Bible</title>
+        <title>703. Kth Largest Element in a Stream - DSA-Bible</title>
       
     
     
@@ -68,10 +68,10 @@
 <meta property="og:type" content="website" />
 <meta
   property="og:title"
-  content="2503. --- - DSA-Bible"
+  content="703. Kth Largest Element in a Stream - DSA-Bible"
 />
 <meta property="og:description" content="Solutions of LeetCode problems" />
-<meta property="og:url" content="https://dsa.akhilsin.com/problems/2503/" />
+<meta property="og:url" content="https://dsa.akhilsin.com/problems/703/" />
 <meta
   property="og:image"
   content="https://dsa.akhilsin.com/assets/images/og-image.png"
@@ -86,7 +86,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta
   name="twitter:title"
-  content="2503. --- - DSA-Bible"
+  content="703. Kth Largest Element in a Stream - DSA-Bible"
 />
 <meta name="twitter:description" content="Solutions of LeetCode problems" />
 <meta
@@ -111,6 +111,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#703-kth-largest-element-in-a-stream" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -142,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2503. ---
+              703. Kth Largest Element in a Stream
             
           </span>
         </div>
@@ -661,10 +666,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../703/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    703. Kth Largest Element in a Stream
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -675,6 +702,74 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approach-priority-queue-min-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach: Priority Queue (Min Heap)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach: Priority Queue (Min Heap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#way-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Way 1:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -753,17 +848,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2503/" class="md-nav__link">
         
   
   
@@ -774,7 +862,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -948,7 +1035,114 @@
   
 
 
-  <h1>2503. ---</h1>
+<p><span class="md-tag">Heap (Priority Queue)</span><span class="md-tag">Tree</span><span class="md-tag">Design</span><span class="md-tag">Binary Search Tree</span><span class="md-tag">Binary Tree</span><span class="md-tag">Data Stream</span></p>
+<!-- problem:start -->
+
+<h1 id="703-kth-largest-element-in-a-stream"><a href="https://leetcode.com/problems/kth-largest-element-in-a-stream/" title="Click me to Open Playground">703. Kth Largest Element in a Stream</a></h1>
+<p><span class="md-tag md-tag--easy">Easy</span></p>
+<h2 id="description"><strong>Description</strong></h2>
+<!-- description:start -->
+
+<p>You are part of a university admissions office and need to keep track of the kth highest test score from applicants in real-time. This helps to determine cut-off marks for interviews and admissions dynamically as new applicants submit their scores.</p>
+<p>You are tasked to implement a class which, for a given integer k, maintains a stream of test scores and continuously returns the kth highest test score after a new score has been submitted. More specifically, we are looking for the kth highest score in the sorted list of all scores.</p>
+<p>Implement the <code>KthLargest</code> class:</p>
+<p><code>KthLargest(int k, int[] nums)</code> Initializes the object with the integer k and the stream of test scores <code>nums</code>.
+<code>int add(int val)</code> Adds a new test score val to the stream and returns the element representing the <span class="arithmatex">\(k^{th}\)</span> largest element in the pool of test scores so far.</p>
+<p><strong>Example 1:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Input:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[&quot;KthLargest&quot;, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Output: [null, 4, 5, 5, 8, 8]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Explanation:
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]);
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>kthLargest.add(3); // return 4
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>kthLargest.add(5); // return 5
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>kthLargest.add(10); // return 5
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>kthLargest.add(9); // return 8
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>kthLargest.add(4); // return 8
+</span></code></pre></div>
+<p><strong>Example 2:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Input:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>[&quot;KthLargest&quot;, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;]
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[[4, [7, 7, 7, 7, 8, 3]], [2], [10], [9], [9]]
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Output: [null, 7, 7, 7, 8]
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Explanation:
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>KthLargest kthLargest = new KthLargest(4, [7, 7, 7, 7, 8, 3]);
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>kthLargest.add(2); // return 7
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>kthLargest.add(10); // return 7
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>kthLargest.add(9); // return 7
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>kthLargest.add(9); // return 8
+</span></code></pre></div>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 104</code></li>
+<li><code>1 &lt;= k &lt;= nums.length + 1</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>-104 &lt;= val &lt;= 104</code></li>
+<li><code>At most 104 calls will be made to add.</code></li>
+</ul>
+<!-- description:end -->
+
+<!-- interpreter start -->
+
+<!-- interpreter end -->
+
+<h2 id="solutions"><strong>Solutions</strong></h2>
+<!-- vide solution:start -->
+
+<!-- vide solution: end -->
+
+<!-- solution:start -->
+
+<h3 id="approach-priority-queue-min-heap">Approach: Priority Queue (Min Heap)</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(n \times \log k)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(k)\)</span></p>
+<!-- tabs:start -->
+
+<h4 id="way-1">Way 1:</h4>
+<div class="admonition note">
+<p class="admonition-title">Algorithmic</p>
+<p>We maintain a priority queue <span class="arithmatex">\(\textit{pq}\)</span> (min heap).</p>
+<p>Initially, we add the elements of the array <span class="arithmatex">\(\textit{nums}\)</span> to <span class="arithmatex">\(\textit{pq}\)</span> one by one, ensuring that the size of <span class="arithmatex">\(\textit{pq}\)</span> does not exceed <span class="arithmatex">\(k\)</span>. The time complexity is <span class="arithmatex">\(O(n \times \log k)\)</span>.</p>
+<p>Each time a new element is added, if the size of <span class="arithmatex">\(\textit{pq}\)</span> exceeds <span class="arithmatex">\(k\)</span>, we pop the top element of the heap to ensure that the size of <span class="arithmatex">\(\textit{pq}\)</span> is <span class="arithmatex">\(k\)</span>. The time complexity is <span class="arithmatex">\(O(\log k)\)</span>.</p>
+<p>In this way, the elements in <span class="arithmatex">\(\textit{pq}\)</span> are the largest <span class="arithmatex">\(k\)</span> elements in the array <span class="arithmatex">\(\textit{nums}\)</span>, and the top element of the heap is the <span class="arithmatex">\(k^{th}\)</span> largest element.</p>
+<p>The space complexity is <span class="arithmatex">\(O(k)\)</span>.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">KthLargest</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pq</span> <span class="o">=</span> <span class="p">[]</span>    <span class="c1"># min heap</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">heappush</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">pq</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pq</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span><span class="p">:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="n">heappop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pq</span><span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># Your KthLargest object will be instantiated and called as such:</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># obj = KthLargest(k, nums)</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># param_1 = obj.add(val)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<!-- tabs:end -->
+
+<!-- solution:end -->
+
+<!-- problem:end -->
 
 
 
@@ -956,7 +1150,8 @@
 
 
 
-
+  
+  
 
 
 
@@ -982,7 +1177,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../2226/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2226. Maximum Candies Allocated to K Children">
+          <a href="../407/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 407. Trapping Rain Water II">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -992,20 +1187,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                2226. Maximum Candies Allocated to K Children
+                407. Trapping Rain Water II
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../optimization/1/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. Mixed Integer Programming">
+          <a href="../746/" class="md-footer__link md-footer__link--next" aria-label="Next: 746. Min Cost Climbing Stairs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                1. Mixed Integer Programming
+                746. Min Cost Climbing Stairs
               </div>
             </div>
             <div class="md-footer__button md-icon">
