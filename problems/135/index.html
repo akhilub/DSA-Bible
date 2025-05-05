@@ -636,7 +636,9 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -645,7 +647,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1047,9 +1049,9 @@
 <p><span class="md-tag">Array</span><span class="md-tag">Greedy</span></p>
 <!-- problem:start -->
 
-<h1 id="135-candy"><a href="https://leetcode.com/problems/candy/" title="Click me to Open Playground">135. Candy</a></h1>
+<h1 id="135-candy"><a href="https://leetcode.com/problems/candy/" title="Click me to Open Playground">135. Candy</a><a class="headerlink" href="#135-candy" title="Permanent link">&para;</a></h1>
 <p><span class="md-tag md-tag--hard">Hard</span></p>
-<h2 id="description"><strong>Description</strong></h2>
+<h2 id="description"><strong>Description</strong><a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <!-- description:start -->
 
 <p>There are n children standing in a line. Each child is assigned a rating value given in the integer array ratings.</p>
@@ -1077,7 +1079,7 @@
 </ul>
 <!-- description:end -->
 
-<h2 id="solutions"><strong>Solutions</strong></h2>
+<h2 id="solutions"><strong>Solutions</strong><a class="headerlink" href="#solutions" title="Permanent link">&para;</a></h2>
 <!-- vide solution:start -->
 
 <div class="video-container">
@@ -1088,12 +1090,12 @@
 
 <!-- solution:start -->
 
-<h3 id="approach-greedy">Approach: Greedy</h3>
+<h3 id="approach-greedy">Approach: Greedy<a class="headerlink" href="#approach-greedy" title="Permanent link">&para;</a></h3>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <!-- tabs:start -->
 
-<h4 id="way-1">Way 1:</h4>
+<h4 id="way-1">Way 1:<a class="headerlink" href="#way-1" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Algorithmic Way</p>
 <p>We initialize a <code>candies</code> array with 1 candy for each child.</p>
@@ -1122,7 +1124,7 @@
 </div>
 </div>
 </div>
-<h4 id="way-2">Way 2:</h4>
+<h4 id="way-2">Way 2:<a class="headerlink" href="#way-2" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Notes</p>
 <p>We initialize two arrays <code>L</code> and <code>R</code>, where <code>L[i]</code> represents the minimum number of candies the current child should get when the current child's score is higher than the left child's score, and <code>R[i]</code> represents the minimum number of candies the current child should get when the current child's score is higher than the right child's score. Initially, <code>L[i]</code> = 1, <code>R[i]</code> = 1.</p>
@@ -1325,6 +1327,8 @@ Finally, we traverse the array of scores once, and the minimum number of candies
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-graphviz.js"></script>
       
     
   </body>
