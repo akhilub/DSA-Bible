@@ -800,9 +800,7 @@
       
         
 
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -811,7 +809,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1193,9 +1191,9 @@
 
 <!-- problem:start -->
 
-<h1 id="746-min-cost-climbing-stairs"><a href="https://leetcode.com/problems/min-cost-climbing-stairs/" title="Click me to Open Playground">746. Min Cost Climbing Stairs</a><a class="headerlink" href="#746-min-cost-climbing-stairs" title="Permanent link">&para;</a></h1>
+<h1 id="746-min-cost-climbing-stairs"><a href="https://leetcode.com/problems/min-cost-climbing-stairs/" title="Click me to Open Playground">746. Min Cost Climbing Stairs</a></h1>
 <p><span class="md-tag md-tag--easy">Easy</span></p>
-<h2 id="description"><strong>Description</strong><a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
 
 <p>You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.</p>
@@ -1227,7 +1225,7 @@
 </ul>
 <!-- description:end -->
 
-<h2 id="solutions"><strong>Solutions</strong><a class="headerlink" href="#solutions" title="Permanent link">&para;</a></h2>
+<h2 id="solutions"><strong>Solutions</strong></h2>
 <!-- vide solution:start -->
 
 <div class="video-container">
@@ -1238,10 +1236,10 @@
 
 <!-- solution:start -->
 
-<h3 id="approach-functional-relationship">Approach: Functional Relationship<a class="headerlink" href="#approach-functional-relationship" title="Permanent link">&para;</a></h3>
+<h3 id="approach-functional-relationship">Approach: Functional Relationship</h3>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
-<h4 id="way-1">Way 1:<a class="headerlink" href="#way-1" title="Permanent link">&para;</a></h4>
+<h4 id="way-1">Way 1:</h4>
 <div class="admonition note">
 <p class="admonition-title">Top Down DP via inbuilt library</p>
 <p>We define <code>f(i)</code> as the minimum cost required to reach the <code>i-th</code> step,</p>
@@ -1298,7 +1296,7 @@ Therefore, we have the state transition equation:   <code>f(i) = min(f(i - 1) + 
 </div>
 </div>
 </details>
-<h4 id="way-2">Way 2:<a class="headerlink" href="#way-2" title="Permanent link">&para;</a></h4>
+<h4 id="way-2">Way 2:</h4>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <em>O(n)</em></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <em>O(1)</em></p>
 <div class="admonition tip">
