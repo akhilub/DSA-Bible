@@ -161,3 +161,9 @@ code {
 .md-tag--medium {
   color: rgb(255 184 0);
 }
+
+.title-center {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+}
