@@ -162,6 +162,12 @@ code {
   color: rgb(255 184 0);
 }
 
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .title-center {
   display: block;
   text-align: center;
