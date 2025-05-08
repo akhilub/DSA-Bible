@@ -1,10 +1,10 @@
 /* Prevent copying on the whole visible page */
-body {
+/* body {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
+} */
 
 /* Allow copying in code blocks */
 pre,
@@ -165,7 +165,8 @@ code {
 .tag-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  row-gap: 0%;
+  column-gap: 1%;
 }
 
 .title-center {
