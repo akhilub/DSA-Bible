@@ -12,7 +12,7 @@
         <meta name="author" content="A.S.Chauhan">
       
       
-        <link rel="canonical" href="https://dsa.akhilsin.com/problems/50/">
+        <link rel="canonical" href="https://dsa.akhilsin.com/problems/52/">
       
       
         <link rel="prev" href="../45/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>50. --- - DSA-Bible</title>
+        <title>52. N-Queens II - DSA-Bible</title>
       
     
     
@@ -78,10 +78,10 @@
 <meta property="og:type" content="website" />
 <meta
   property="og:title"
-  content="50. --- - DSA-Bible"
+  content="52. N-Queens II - DSA-Bible"
 />
 <meta property="og:description" content="Solutions of LeetCode problems" />
-<meta property="og:url" content="https://dsa.akhilsin.com/problems/50/" />
+<meta property="og:url" content="https://dsa.akhilsin.com/problems/52/" />
 <meta
   property="og:image"
   content="https://dsa.akhilsin.com/assets/images/og-image.png"
@@ -96,7 +96,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta
   name="twitter:title"
-  content="50. --- - DSA-Bible"
+  content="52. N-Queens II - DSA-Bible"
 />
 <meta name="twitter:description" content="Solutions of LeetCode problems" />
 <meta
@@ -114,13 +114,18 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="teal" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#52-n-queens-ii" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -130,9 +135,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="DSA-Bible" class="md-header__button md-logo" aria-label="DSA-Bible" data-md-component="logo">
       
@@ -154,7 +157,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              50. ---
+              52. N-Queens II
             
           </span>
         </div>
@@ -167,9 +170,19 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="teal" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 19a5 5 0 0 1-5-5 5 5 0 0 1 5-5c1-2.35 3.3-4 6-4 3.43 0 6.24 2.66 6.5 6.03L19 11a4 4 0 0 1 4 4 4 4 0 0 1-4 4zm13-6h-2v-1a5 5 0 0 0-5-5c-2.5 0-4.55 1.82-4.94 4.19C6.73 11.07 6.37 11 6 11a3 3 0 0 0-3 3 3 3 0 0 0 3 3h13a2 2 0 0 0 2-2 2 2 0 0 0-2-2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
       </label>
     
@@ -177,9 +190,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
     
-      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
       </label>
     
@@ -254,8 +267,14 @@
     
   </nav>
   
+</header>
     
+    <div class="md-container" data-md-component="container">
       
+      
+        
+          
+            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -347,19 +366,15 @@
     </ul>
   </div>
 </nav>
-    
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
+          
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -473,6 +488,8 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
@@ -675,18 +692,96 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    52. N-Queens II
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    50. ---
+    52. N-Queens II
     
   </span>
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approach-backtracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach : Backtracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#way-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Way 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -912,15 +1007,19 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+  
+  
+  
+    <a href="../../optimization/1/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -929,133 +1028,12 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Optimization
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../optimization/1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    1. Mixed Integer Programming
-    
-  </span>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../optimization/2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2. Mermaid Examples
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../optimization/3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    3. Composing flight crews
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../optimization/4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    4. ---
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../optimization/5/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    5. GraphViz Examples
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1096,17 +1074,118 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../../topics/#tag:backtracking" class="md-tag">Backtracking</a>
+      
+    
+  </nav>
 
 
   
   
 
 
-  <h1>50. ---</h1>
+<!-- problem:start -->
 
+<h1 id="52-n-queens-ii"><a href="https://leetcode.com/problems/n-queens-ii/" title="Click me to Open Playground">52. N-Queens II</a></h1>
+<p><span class="md-tag md-tag--hard">Hard</span></p>
+<h2 id="description"><strong>Description</strong></h2>
+<!-- description:start -->
 
+<p>The <strong>n-queens</strong> puzzle is the problem of placing <span class="arithmatex">\(n\)</span> queens on an <span class="arithmatex">\(n \times n\)</span> chessboard such that no two queens attack each other.</p>
+<p>Given an integer <span class="arithmatex">\(n\)</span>, return the number of distinct solutions to the <strong>n-queens puzzle</strong>.</p>
+<p><strong>Example 1:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Input: n = 4
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Output: 2
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Explanation: There are two distinct solutions to the 4-queens puzzle as shown below
+</span></code></pre></div>
+<p><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2020/11/13/queens.jpg" /></p>
+<p><strong>Example 2:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Input: n = 1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Output: 1
+</span></code></pre></div>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 9</code></li>
+</ul>
+<!-- description:end -->
 
+<!-- interpreter start -->
 
+<!-- interpreter end -->
+
+<h2 id="solutions"><strong>Solutions</strong></h2>
+<!-- vide solution:start -->
+
+<!-- vide solution: end -->
+
+<!-- solution:start -->
+
+<h3 id="approach-backtracking">Approach : Backtracking</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(n!)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<!-- tabs:start -->
+
+<h3 id="way-1">Way 1</h3>
+<div class="admonition note">
+<p class="admonition-title">Algorithmic</p>
+<p>The problem requires us to find all distinct ways to place n queens on an <span class="arithmatex">\(n \times n\)</span> chessboard so that no two queens threaten each other.</p>
+<p>We use a backtracking depth-first search (DFS) approach to explore all possible placements of queens row by row.</p>
+<p>To efficiently check if a queen can be placed at position <span class="arithmatex">\((i, j)\)</span>, we keep track of columns, diagonals, and anti-diagonals that are already occupied by queens using three boolean arrays.</p>
+<p>For each column <span class="arithmatex">\(j\)</span> in row <span class="arithmatex">\(i\)</span>, we calculate the diagonal index <code>(d_idx)</code> and anti-diagonal index <code>(ad_idx)</code>. If any of these positions are already marked as True in their respective arrays, we skip placing a queen there.</p>
+<p>If a queen can be placed, we mark the column, diagonal, and anti-diagonal as <code>True</code> and recursively attempt to place queens in the next row.</p>
+<p>After exploring all possibilities for the current row, we backtrack by marking the column, diagonal, and anti-diagonal as <code>False</code>, allowing other potential placements to be explored.</p>
+<p>The base case for our DFS function is when <code>i equals n</code>, which means we have successfully placed <span class="arithmatex">\(n\)</span> queens without conflicts, and we increment the answer counter.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">totalNQueens</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            <span class="k">nonlocal</span> <span class="n">ans</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                <span class="k">return</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>                <span class="n">d_idx</span><span class="p">,</span> <span class="n">ad_idx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>                <span class="k">if</span> <span class="n">cols</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">or</span> <span class="n">diag</span><span class="p">[</span><span class="n">d_idx</span><span class="p">]</span> <span class="ow">or</span> <span class="n">a_diag</span><span class="p">[</span><span class="n">ad_idx</span><span class="p">]:</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>                    <span class="k">continue</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                <span class="n">cols</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">diag</span><span class="p">[</span><span class="n">d_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">a_diag</span><span class="p">[</span><span class="n">ad_idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>                <span class="n">dfs</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>                <span class="n">cols</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">diag</span><span class="p">[</span><span class="n">d_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">a_diag</span><span class="p">[</span><span class="n">ad_idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="c1">#initialization</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        <span class="n">diag</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="n">a_diag</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        <span class="n">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#dfs start</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="k">return</span> <span class="n">ans</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Detailed Complexity Discussion</p>
+<p>The <strong>time complexity</strong> of this solution is <span class="arithmatex">\(O(n!)\)</span> in the worst case. This is because we attempt to place a queen in each column of each row, and once a queen is placed, we reduce the problem size by one row. In the best case, where conflicts occur early, it can be less than <span class="arithmatex">\(O(n!)\)</span>. However, on average, the algorithm explores a significant portion of the n! possible permutations of queen placements.</p>
+<p>The <strong>space complexity</strong> is <span class="arithmatex">\(O(n)\)</span> due to the storage required for the three boolean arrays (cols, diag, a_diag) that track the columns, diagonals, and anti-diagonals respectively. These arrays have sizes <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(2n-1\)</span>, and <span class="arithmatex">\(2n-1\)</span>, all of which are proportional to <span class="arithmatex">\(n\)</span>. Additionally, the recursion stack can go up to a depth of <span class="arithmatex">\(n\)</span>, contributing to the space complexity.</p>
+</div>
+<!-- tabs:end -->
+
+<!-- solution:end -->
+
+<!-- problem:end -->
 
 
 
@@ -1115,7 +1194,14 @@
 
 
   
+  
 
+
+
+  
+
+
+  
 
 
 
@@ -1140,6 +1226,8 @@
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
@@ -1268,7 +1356,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
