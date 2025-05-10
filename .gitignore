@@ -1,0 +1,6 @@
+myenv
+site
+mkdocs.yml
+scripts
+__pycache__
+macros.py
