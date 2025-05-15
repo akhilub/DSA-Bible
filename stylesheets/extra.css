@@ -1,0 +1,198 @@
+/* Prevent copying on the whole visible page */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Allow copying in code blocks */
+pre,
+code {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Responsive compiler container */
+.compiler-container {
+  position: relative;
+  padding-bottom: 62.5%; /* 16:10 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.compiler-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Responsive video container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-message {
+  font-weight: inherit;
+  color: var(--md-primary-fg-color);
+}
+
+/* admonitions */
+/* note */
+/* .md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--md-primary-fg-color);
+} */
+
+/* [data-md-color-scheme="slate"] .md-typeset .admonition.note,
+[data-md-color-scheme="slate"] .md-typeset details.note {
+  border-color: var(--md-primary-fg-color);
+} */
+
+/* tip */
+/* .md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.tip,
+[data-md-color-scheme="slate"] .md-typeset details.tip {
+  border-color: var(--md-primary-fg-color);
+} */
+
+/* abstract */
+/* .md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  border-color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.abstract,
+[data-md-color-scheme="slate"] .md-typeset details.abstract {
+  border-color: var(--md-primary-fg-color);
+} */
+
+/* example */
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  /* border-color: var(--md-primary-fg-color); */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: inherit;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.example,
+[data-md-color-scheme="slate"] .md-typeset details.example {
+  /* border-color: var(--md-primary-fg-color); */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: inherit;
+}
+
+/* custom admonition */
+/* answer */
+
+:root {
+  --md-admonition-icon--answer: url("../assets/icons/answer.svg");
+}
+.md-typeset .admonition.answer,
+.md-typeset details.answer {
+  border-color: var(--md-primary-fg-color);
+  /* padding: 0; */
+  overflow: hidden;
+  font-size: inherit;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.answer,
+[data-md-color-scheme="slate"] .md-typeset details.answer {
+  border-color: var(--md-primary-fg-color);
+  overflow: hidden;
+  font-size: inherit;
+}
+
+.md-typeset .answer > .admonition-title,
+.md-typeset .answer > summary {
+  background-color: rgb(12, 236, 176, 0.1);
+}
+
+.md-typeset .answer > .admonition-title::before,
+.md-typeset .answer > summary::before {
+  background-color: rgb(12, 236, 176);
+  /* left: 1.2rem; */
+  -webkit-mask-image: var(--md-admonition-icon--answer);
+  mask-image: var(--md-admonition-icon--answer);
+}
+
+/* [dir="ltr"] .md-typeset summary:after {
+  right: 1.2rem;
+}
+
+.md-typeset summary:not(.focus-visible) {
+  padding-left: 2.8rem;
+} */
+
+/* custom-icons */
+
+.md-checkmark {
+  color: var(--md-primary-fg-color);
+}
+
+/* tag ardous */
+.md-tag--ardous {
+  color: rgb(242, 140, 46);
+}
+
+/*tag hard*/
+.md-tag--hard {
+  color: rgb(251, 66, 4);
+}
+
+/*tag easy*/
+.md-tag--easy {
+  color: rgb(28 184 184);
+}
+
+/*tag medium*/
+.md-tag--medium {
+  color: rgb(255 184 0);
+}
+
+/* home page tag container */
+.tag-container {
+  margin: 0;
+  overflow: hidden; /* Clearfix */
+}
+
+.tag-container .md-tag {
+  float: left;
+  margin: 1% 0.5%;
+}
+
+/* Table title center */
+.title-center {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+}
