@@ -3,7 +3,7 @@ let auth0 = null
 const config = {
   domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
   client_id: "zTiHaknYvc17Kj3lz370AbHqtT58KnbF",
-  audience: "https://zTiHaknYvc17Kj3lz370AbHqtT58KnbF/userinfo",
+  audience: "https://dev-wzadtpoj5nnk5uj1.us.auth0.com/api/v2/",
   redirect_uri: window.location.origin,
 }
 
