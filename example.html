@@ -12,33 +12,83 @@
         <meta name="author" content="A.S.Chauhan">
       
       
-        <link rel="canonical" href="https://dsa.akhilsin.com/style_guide/">
       
       
-        <link rel="prev" href="..">
       
-      
-        <link rel="next" href="../pricing/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="./assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Style Guide - DSA-Bible</title>
+        <title>DSA-Bible</title>
       
     
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+     
+      <link rel="stylesheet" href="./assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="./assets/stylesheets/palette.06af60db.min.css">
       
       
 
 
     
+<style>
+  .pricing-container {
+    margin: 2rem 0;
+  }
+
+  .pricing-table {
+    margin-bottom: 2rem;
+  }
+
+  .pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  }
+
+  .pricing-table th {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+  }
+
+  .pricing-table tr:hover {
+    background-color: var(--md-default-fg-color--lightest);
+  }
+
+  .pricing-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .pricing-buttons .md-button {
+    margin: 0.5rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Responsive adjustments */
+  @media screen and (max-width: 76.1875em) {
+    .pricing-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-buttons .md-button {
+      width: 80%;
+    }
+  }
+</style>
+
+
     
       
     
@@ -52,9 +102,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="./stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -71,17 +121,17 @@
     
     
      
-<link rel="manifest" href="../manifest.webmanifest" />
+<link rel="manifest" href="./manifest.webmanifest" />
 <meta name="theme-color" content="" />
 
 <!-- Open Graph meta tags for social media sharing -->
 <meta property="og:type" content="website" />
 <meta
   property="og:title"
-  content="Style Guide - DSA-Bible"
+  content="DSA-Bible"
 />
 <meta property="og:description" content="Solutions of LeetCode problems" />
-<meta property="og:url" content="https://dsa.akhilsin.com/style_guide/" />
+<meta property="og:url" content="" />
 <meta
   property="og:image"
   content="https://dsa.akhilsin.com/assets/images/og-image.png"
@@ -96,7 +146,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta
   name="twitter:title"
-  content="Style Guide - DSA-Bible"
+  content="DSA-Bible"
 />
 <meta name="twitter:description" content="Solutions of LeetCode problems" />
 <meta
@@ -122,11 +172,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#naming-conventions" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -138,7 +183,7 @@
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a
-      href=".."
+      href="./."
       title="DSA-Bible"
       class="md-header__button md-logo"
       aria-label="DSA-Bible"
@@ -159,7 +204,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             Style Guide 
+              
           </span>
         </div>
       </div>
@@ -265,13 +310,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href=".." class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="./." class="md-tabs__link">
           
   
   
@@ -291,7 +334,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../pricing/" class="md-tabs__link">
+      <a href="./pricing/" class="md-tabs__link">
         
   
   
@@ -312,7 +355,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../problems/1/" class="md-tabs__link">
+        <a href="./problems/1/" class="md-tabs__link">
           
   
   
@@ -334,7 +377,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../optimization/1/" class="md-tabs__link">
+        <a href="./optimization/1/" class="md-tabs__link">
           
   
   
@@ -354,7 +397,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../topics/" class="md-tabs__link">
+      <a href="./topics/" class="md-tabs__link">
         
   
   
@@ -373,7 +416,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../definations/" class="md-tabs__link">
+      <a href="./definations/" class="md-tabs__link">
         
   
   
@@ -410,7 +453,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="DSA-Bible" class="md-nav__button md-logo" aria-label="DSA-Bible" data-md-component="logo">
+    <a href="./." title="DSA-Bible" class="md-nav__button md-logo" aria-label="DSA-Bible" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -425,8 +468,6 @@
       
   
   
-    
-  
   
   
     
@@ -442,26 +483,24 @@
     
     
       
-        
-        
-      
       
         
       
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href=".." class="md-nav__link ">
-              
+  
+  
+  
+    <a href="./." class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -470,100 +509,12 @@
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            Home
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Style Guide
-    
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Style Guide
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -576,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pricing/" class="md-nav__link">
+      <a href="./pricing/" class="md-nav__link">
         
   
   
@@ -668,7 +619,7 @@
   
   
   
-    <a href="../problems/1/" class="md-nav__link">
+    <a href="./problems/1/" class="md-nav__link">
       
   
   
@@ -730,7 +681,7 @@
   
   
   
-    <a href="../optimization/1/" class="md-nav__link">
+    <a href="./optimization/1/" class="md-nav__link">
       
   
   
@@ -758,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../topics/" class="md-nav__link">
+      <a href="./topics/" class="md-nav__link">
         
   
   
@@ -780,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../definations/" class="md-nav__link">
+      <a href="./definations/" class="md-nav__link">
         
   
   
@@ -807,106 +758,63 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
-
-
-
-<h1 id="naming-conventions">Naming Conventions</h1>
-<ul>
-<li><strong>Class:</strong> UpperCamelCase</li>
-<li><strong>Function:</strong> lowerCamelCase</li>
-<li><strong>Variable:</strong> lower_snake_case</li>
-<li><strong>Constant:</strong> Upper_SNAKE_Case</li>
-</ul>
-<h3 id="examples">Examples</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Class</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">YourClass</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="k">pass</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Function</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">yourFunction</span><span class="p">(</span><span class="n">param</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="k">pass</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Variable</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">your_variable</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Constant</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">K_MOD</span> <span class="o">=</span> <span class="mi">1_000_000_009</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
-        Was this page helpful?
-      </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
-              
-              
-                
-              
-              
-              
-                
-                
-              
-              Thanks for your feedback!
-            </div>
-          
-            <div data-md-value="0" hidden>
-              
-              
-                
-              
-              
-              
-                
-                
-              
-              Thanks for your feedback! Help us improve this page by writing your issue in our <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+Style%20Guide+-+/style_guide/" target="_blank" rel="noopener">issue page</a>.
-            </div>
-          
-        </div>
+<div class="md-content">
+  <div class="md-content__inner md-typeset">
+    <h1>Choose a Plan</h1>
+    <div class="pricing-container">
+      <div class="pricing-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Price</th>
+              <th>Features</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly</td>
+              <td>$5/month</td>
+              <td>Access to full site</td>
+            </tr>
+            <tr>
+              <td>Yearly</td>
+              <td>$50/year</td>
+              <td>Save 20%</td>
+            </tr>
+            <tr>
+              <td>Lifetime</td>
+              <td>$120 one-time</td>
+              <td>Lifetime access</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </fieldset>
-  </form>
 
+      <div class="pricing-buttons">
+        <button
+          class="md-button md-button--primary"
+          onclick="window.location.href='https://buy.stripe.com/test_XYZ123'"
+        >
+          Subscribe Monthly
+        </button>
+        <button
+          class="md-button md-button--primary"
+          onclick="window.location.href='https://buy.stripe.com/test_ABC456'"
+        >
+          Subscribe Yearly
+        </button>
+        <button
+          class="md-button md-button--primary"
+          onclick="window.location.href='https://buy.stripe.com/test_LMN789'"
+        >
+          Buy Lifetime
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
-                
               </article>
             </div>
           
@@ -926,44 +834,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Home
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../pricing/" class="md-footer__link md-footer__link--next" aria-label="Next: Pricing">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Pricing
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1119,16 +989,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "./assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="./assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
       
-        <script src="../javascripts/auth.js"></script>
+        <script src="./javascripts/auth.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="./javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
