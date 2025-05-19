@@ -237,15 +237,27 @@
   </div>
 </div>   
     <div class="md-header__source md-header__title">
-      <button class="md-header__button" id="login-btn">Log In</button>
-      <button class="md-header__button" id="logout-btn" style="display: none">
+      <button class="md-header__button underline" id="login-btn">Log In</button>
+      <button
+        class="md-header__button underline"
+        id="logout-btn"
+        style="display: none"
+      >
         Logout
       </button>
-      <button class="md-header__button" id="signup-btn">Sign Up</button>
+      <button class="md-header__button underline" id="signup-btn">
+        Sign Up
+      </button>
     </div>
   </nav>
   
 </header>
+
+<style>
+  .underline:hover {
+    text-decoration: underline;
+  }
+</style>
     
     <div class="md-container" data-md-component="container">
       
@@ -816,15 +828,15 @@ _The time complexity is $O(n)$ as the left and right pointers both move towards 
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
-    <div class="md-copyright__highlight">
-      Ownership, Copyright, &copy; 2025 A.S.Chauhan
-    </div>
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
+  <div class="md-copyright__highlight">Ownership, Copyright, &copy; 2025 A.S.Chauhan</div>
+    Made by customizing
+  <a
+    href="https://squidfunk.github.io/mkdocs-material/"
+    target="_blank"
+    rel="noopener"
+  >
+    MkDocs Material Framework
+  </a>
   
 </div>
       
