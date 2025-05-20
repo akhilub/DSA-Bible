@@ -160,7 +160,6 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-
               Pricing
             
           </span>
@@ -170,7 +169,6 @@
 
     <!-- Color palette toggle -->
     
-
       
         <form class="md-header__option" data-md-component="palette">
   
@@ -205,16 +203,12 @@
     
   
 </form>
-
       
-
     
 
     <!-- User preference: color palette -->
     
-
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-
     
 
     <!-- Site language selector -->
@@ -222,16 +216,13 @@
 
     <!-- Button to open search modal -->
     
-
       
-
       <!-- Check if search is actually enabled - see https://t.ly/DT_0V -->
       
         <label class="md-header__button md-icon" for="__search">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-
         <!-- Search interface -->
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -272,16 +263,14 @@
     </div>
   </div>
 </div>
-
       
-
     
 
     <!-- Repository information -->
     
 
     <!-- Auth buttons - with responsive design -->
-    <div class="md-header__auth md-header__source md-header__title">
+    <div class="md-header__auth md-header__source">
       <div class="md-header__auth-buttons">
         <button class="md-header__button underline" id="login-btn">Log In</button>
         <button class="md-header__button underline"
@@ -305,30 +294,32 @@
   .md-header__auth {
     display: flex;
     align-items: center;
+    font-size: 0.9rem;
   }
   
   .md-header__auth-buttons {
     display: flex;
-    gap: 0.5rem;
+    gap: 0;
   }
   
   /* Make sure buttons are visible on all screen sizes */
   @media screen and (max-width: 76.1875em) {
     .md-header__auth {
       position: relative;
-      margin-right: 0.5rem;
+      margin: 0;
+      font-size: 0.9rem;
     }
   }
   
   /* Further adjustments for very small screens */
   @media screen and (max-width: 40em) {
     .md-header__auth-buttons {
-      gap: 0.2rem;
+      gap: 0;
     }
     
     .md-header__auth .md-header__button {
       padding: 0.2rem;
-      font-size: 0.7rem;
+      font-size: 0.9rem;
     }
   }
 </style>

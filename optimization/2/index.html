@@ -72,7 +72,6 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-
               2. Mermaid Examples
             
           </span>
@@ -136,7 +135,7 @@
 </div>
 <!-- Repository information -->
 <!-- Auth buttons - with responsive design -->
-<div class="md-header__auth md-header__source md-header__title">
+<div class="md-header__auth md-header__source">
 <div class="md-header__auth-buttons">
 <button class="md-header__button underline" id="login-btn">Log In</button>
 <button class="md-header__button underline" id="logout-btn" style="display: none">Logout</button>
@@ -155,30 +154,32 @@
   .md-header__auth {
     display: flex;
     align-items: center;
+    font-size: 0.9rem;
   }
   
   .md-header__auth-buttons {
     display: flex;
-    gap: 0.5rem;
+    gap: 0;
   }
   
   /* Make sure buttons are visible on all screen sizes */
   @media screen and (max-width: 76.1875em) {
     .md-header__auth {
       position: relative;
-      margin-right: 0.5rem;
+      margin: 0;
+      font-size: 0.9rem;
     }
   }
   
   /* Further adjustments for very small screens */
   @media screen and (max-width: 40em) {
     .md-header__auth-buttons {
-      gap: 0.2rem;
+      gap: 0;
     }
     
     .md-header__auth .md-header__button {
       padding: 0.2rem;
-      font-size: 0.7rem;
+      font-size: 0.9rem;
     }
   }
 </style>
