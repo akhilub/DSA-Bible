@@ -472,7 +472,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -804,30 +804,32 @@
 
 
 
-<h1>Choose a Plan</h1>
-
-<div class="tabs">
-  <button class="tab-button active" onclick="showPlan('monthly')">Monthly</button>
-  <button class="tab-button" onclick="showPlan('yearly')">Yearly</button>
-  <button class="tab-button" onclick="showPlan('lifetime')">One-time</button>
+<div>
+  <h1 class ="pricing-heading">Choose a Plan</h1>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showPlan('monthly')">Monthly</button>
+    <button class="tab-button" onclick="showPlan('yearly')">Yearly</button>
+    <button class="tab-button" onclick="showPlan('lifetime')">One-time</button>
+  </div>
 </div>
 
-<div id="monthly" class="pricing-card">
-  <h2>Pro Plan</h2>
-  <p>Gain access to all content!</p>
-  <div class="price">$6 <span style="font-size: 0.5em;">per month</span></div>
-  <button onclick="window.location.href='https://buy.stripe.com/test_XYZ123'">Subscribe</button>
-  <ul>
-    <li>Unlock over 100 solutions across 15 problem sets</li>
-    <li>Early access to content</li>
-    <li>Priority support</li>
-  </ul>
+<div class="pricing-container">
+  <div id="monthly" class="pricing-card">
+    <h2>Pro Plan</h2>
+    <p>Gain access to all content!</p>
+    <div class="price">$6 <span class="price-period">per month</span></div>
+    <button onclick="window.location.href='https://buy.stripe.com/test_XYZ123'">Subscribe</button>
+    <ul>
+      <li>Unlock over 100 solutions across 15 problem sets</li>
+      <li>Early access to content</li>
+      <li>Priority support</li>
+    </ul>
 </div>
 
-<div id="yearly" class="pricing-card" style="display:none">
+<div id="yearly" class="pricing-card">
   <h2>Pro Plan</h2>
   <p>Gain access to all content!</p>
-  <div class="price">$51 <span style="font-size: 0.5em;">per year</span></div>
+  <div class="price">$51 <span class="price-period">per year</span></div>
   <button onclick="window.location.href='https://buy.stripe.com/test_ABC456'">Subscribe</button>
   <ul>
     <li>Unlock over 100 solutions across 15 problem sets</li>
@@ -836,16 +838,17 @@
   </ul>
 </div>
 
-<div id="lifetime" class="pricing-card" style="display:none">
+<div id="lifetime" class="pricing-card">
   <h2>Pro Plan</h2>
   <p>Gain access to all content!</p>
-  <div class="price">$121 <span style="font-size: 0.5em;">lifetime</span></div>
-  <button onclick="window.location.href='https://buy.stripe.com/test_LMN789'">Buy Now</button>
-  <ul>
-    <li>Unlock over 100 solutions across 15 problem sets</li>
-    <li>Early access to content</li>
-    <li>Priority support</li>
-  </ul>
+  <div class="price">$251 <span class="price-period">lifetime</span></div>
+    <button onclick="window.location.href='https://buy.stripe.com/test_LMN789'">Buy Now</button>
+    <ul>
+      <li>Unlock over 100 solutions across 15 problem sets</li>
+      <li>Early access to content</li>
+      <li>Priority support</li>
+    </ul>
+  </div>
 </div>
 
 <script>
@@ -858,33 +861,53 @@ function showPlan(id) {
 </script>
 
 <style>
+
+.pricing-heading{
+  text-align: center;
+  font-weight: bold !important;
+}
+
 .tabs {
   display: flex;
   justify-content: center;
   margin-bottom: 1em;
   gap: 1em;
+  padding: 1em;
 }
 .tab-button {
-  border: 1px solid #e1e1e1;
-  background: #f8f8f8;
+  border: 1px solid var(--md-primary-fg-color--light);
+  background: var(--md-default-bg-color);
   padding: 0.5em 1.2em;
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
+  /* color: var(--md-primary-bg-color); */
+  transition: all 0.3s ease;
+}
+.tab-button:hover {
+  background: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
 }
 .tab-button.active {
-  background-color: #f09fc4;
-  color: white;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2em;
 }
 .pricing-card {
   text-align: center;
+  width: 100%;
   max-width: 360px;
-  margin: 0 auto;
   padding: 2em;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--md-primary-fg-color--light);
   border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: var(--md-default-bg-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 .pricing-card h2 {
   font-size: 1.4em;
@@ -897,13 +920,18 @@ function showPlan(id) {
 }
 .pricing-card button {
   margin-top: 1.2em;
-  background: #f09fc4;
+  background: var(--md-primary-fg-color);
   border: none;
   padding: 0.8em 1.5em;
   font-size: 1em;
   border-radius: 10px;
-  color: white;
+  color: var(--md-primary-bg-color);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pricing-card button:hover {
+  background: var(--md-primary-fg-color--light);
+  transform: translateY(-2px);
 }
 .pricing-card ul {
   text-align: left;
@@ -911,8 +939,14 @@ function showPlan(id) {
 }
 .pricing-card li::before {
   content: "✓";
-  color: #4caf50;
+  color: var(--md-primary-fg-color);
   margin-right: 0.5em;
+}
+.price-period {
+  font-size: 0.5em;
+}
+#yearly, #lifetime {
+  display: none;
 }
 </style>
 
