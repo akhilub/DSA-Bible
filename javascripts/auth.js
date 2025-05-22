@@ -38,10 +38,24 @@ document$.subscribe(() => {
         const protectedTemplate = document.getElementById(
           "protected-content-template"
         )
+
         if (protectedTemplate) {
           // Clone the template content and append it to the solution section
           const protectedContent = protectedTemplate.content.cloneNode(true)
           solutionSection.appendChild(protectedContent)
+
+          // Reprocess MathJax
+          if (typeof MathJax !== "undefined") {
+            MathJax.typesetPromise([solutionSection]).catch((err) => {
+              console.error("Error typesetting math:", err)
+            })
+          }
+
+          // Reinitialize Material for MkDocs components
+          if (typeof document$.subscribe === "function") {
+            // This will trigger the document$ observable which should reinitialize components
+            document$.next(document)
+          }
         }
       } else {
         // User is not authenticated - show login prompt
