@@ -1546,6 +1546,12 @@
 <!-- description:end -->
 
 <h2 id="solutions"><strong>Solutions</strong></h2>
+<section id="solution-section">
+    <!-- This section will be populated by JavaScript based on authentication -->
+</section>
+
+<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
+<p><template id="protected-content-template"></p>
 <!-- vide solution:start -->
 
 <div class="video-container">
@@ -1683,8 +1689,40 @@ var isValid = function(s) {
 <!-- tabs:end -->
 
 <!-- solution:end -->
-
+<p></template></p>
 <!-- problem:end -->
+
+<!-- Login Prompt Template -->
+
+<!-- Login prompt template -->
+<p><template id="login-prompt-template">
+<br />
+<div class="login-message">
+    <h3>👋 Please log in to view the solution</h3>
+    <p>
+      Access to detailed solutions requires a login. Already have an account?
+    </p>
+    <button id="login-btn-inline" class="md-button md-button--primary">
+      Log In
+    </button>
+    <p>Don't have an account yet?</p>
+    <button id="signup-btn-inline" class="md-button">Sign Up</button>
+  </div></p>
+<p></template></p>
+<style>
+  .login-message {
+    background-color: var(--md-default-bg-color);
+    border: 1px solid var(--md-primary-fg-color--light);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .login-message h3 {
+    margin-top: 0;
+  }
+</style>
 
 
 
