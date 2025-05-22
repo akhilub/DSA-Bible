@@ -114,7 +114,7 @@ document$.subscribe(() => {
     }
 
     // Render the appropriate content based on authentication
-    renderContent(isAuthenticated)
+    await renderContent(isAuthenticated)
   }
 
   window.onload = async () => {
