@@ -26,7 +26,7 @@ document$.subscribe(() => {
   }
 
   // Function to render the appropriate content based on authentication
-  const renderContent = (isAuthenticated) => {
+  const renderContent = async (isAuthenticated) => {
     const solutionSection = document.getElementById("solution-section")
 
     // Clear any existing content
@@ -51,11 +51,11 @@ document$.subscribe(() => {
             })
           }
 
-          // Reinitialize Material for MkDocs components
-          if (typeof document$.subscribe === "function") {
-            // This will trigger the document$ observable which should reinitialize components
-            document$.next(document)
-          }
+          // // Reinitialize Material for MkDocs components
+          // if (typeof document$.subscribe === "function") {
+          //   // This will trigger the document$ observable which should reinitialize components
+          //   document$.next(document)
+          // }
         }
       } else {
         // User is not authenticated - show login prompt
@@ -129,7 +129,7 @@ document$.subscribe(() => {
         window.history.replaceState({}, document.title, "/")
       }
 
-      checkAuth()
+      await checkAuth()
 
       // Add event listeners to main navigation buttons
       const loginBtn = document.getElementById("login-btn")
@@ -143,7 +143,7 @@ document$.subscribe(() => {
       console.error("Error initializing Auth0:", error)
 
       // If Auth0 fails to initialize, show a fallback login prompt
-      renderContent(false)
+      await renderContent(false)
     }
   }
 })
