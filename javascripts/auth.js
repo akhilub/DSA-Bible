@@ -44,17 +44,17 @@ document$.subscribe(() => {
           const protectedContent = protectedTemplate.content.cloneNode(true)
           solutionSection.appendChild(protectedContent)
 
-          // // Reprocess MathJax
-          // if (typeof MathJax !== "undefined") {
-          //   MathJax.typesetPromise([solutionSection]).catch((err) => {
-          //     console.error("Error typesetting math:", err)
-          //   })
-          // }
+          // Reprocess MathJax
+          if (typeof MathJax !== "undefined") {
+            MathJax.typesetPromise([solutionSection]).catch((err) => {
+              console.error("Error typesetting math:", err)
+            })
+          }
 
-          // // Reinitialize Material for MkDocs components
-          // if (typeof document$.subscribe === "function") {
-          //   // This will trigger the document$ observable which should reinitialize components
-          //   document$.next(document)
+          // Reinitialize Material for MkDocs components
+          if (typeof document$.subscribe === "function") {
+            // This will trigger the document$ observable which should reinitialize components
+            document$.next(document)
           }
         }
       } else {
