@@ -25,21 +25,64 @@ document$.subscribe(() => {
     })
   }
 
+  // Function to render the appropriate content based on authentication
+  const renderContent = (isAuthenticated) => {
+    const solutionSection = document.getElementById("solution-section")
+
+    // Clear any existing content
+    if (solutionSection) {
+      solutionSection.innerHTML = ""
+
+      if (isAuthenticated) {
+        // User is authenticated - show protected content
+        const protectedTemplate = document.getElementById(
+          "protected-content-template"
+        )
+        if (protectedTemplate) {
+          // Clone the template content and append it to the solution section
+          const protectedContent = protectedTemplate.content.cloneNode(true)
+          solutionSection.appendChild(protectedContent)
+        }
+      } else {
+        // User is not authenticated - show login prompt
+        const loginTemplate = document.getElementById("login-prompt-template")
+        if (loginTemplate) {
+          // Clone the login prompt and append it to the solution section
+          const loginPrompt = loginTemplate.content.cloneNode(true)
+          solutionSection.appendChild(loginPrompt)
+
+          // Add event listeners to the login/signup buttons
+          const loginBtn = solutionSection.querySelector("#login-btn-inline")
+          const signupBtn = solutionSection.querySelector("#signup-btn-inline")
+
+          if (loginBtn) loginBtn.addEventListener("click", login)
+          if (signupBtn) signupBtn.addEventListener("click", signup)
+        }
+      }
+    }
+  }
+
   const checkAuth = async () => {
     const isAuthenticated = await auth0.isAuthenticated()
+    console.log("isAuthenticated", isAuthenticated)
+
+    // Get navigation UI elements
     const loginBtn = document.getElementById("login-btn")
     const signupBtn = document.getElementById("signup-btn")
     const logoutBtn = document.getElementById("logout-btn")
-    const protectedElements = document.querySelectorAll(".protected")
     const adminElements = document.querySelectorAll(".admin-only")
 
     if (isAuthenticated) {
+      // User is logged in
       const user = await auth0.getUser()
-      loginBtn.style.display = "none"
-      signupBtn.style.display = "none"
-      logoutBtn.style.display = "inline-block"
-      protectedElements.forEach((el) => (el.style.display = "block"))
+      console.log("user", user)
 
+      // Update navigation UI for logged-in state
+      if (loginBtn) loginBtn.style.display = "none"
+      if (signupBtn) signupBtn.style.display = "none"
+      if (logoutBtn) logoutBtn.style.display = "inline-block"
+
+      // Check for admin role
       const tokenClaims = await auth0.getIdTokenClaims()
       const roles = tokenClaims["https://dsabible.com/roles"] || []
 
@@ -47,29 +90,46 @@ document$.subscribe(() => {
         adminElements.forEach((el) => (el.style.display = "block"))
       }
     } else {
-      loginBtn.style.display = "inline-block"
-      signupBtn.style.display = "inline-block"
-      logoutBtn.style.display = "none"
-      protectedElements.forEach((el) => (el.style.display = "none"))
+      // User is not logged in
+      if (loginBtn) loginBtn.style.display = "inline-block"
+      if (signupBtn) signupBtn.style.display = "inline-block"
+      if (logoutBtn) logoutBtn.style.display = "none"
+
+      // Hide admin content
       adminElements.forEach((el) => (el.style.display = "none"))
     }
+
+    // Render the appropriate content based on authentication
+    renderContent(isAuthenticated)
   }
 
   window.onload = async () => {
-    auth0 = await createAuth0Client(config)
+    try {
+      auth0 = await createAuth0Client(config)
 
-    if (
-      window.location.search.includes("code=") &&
-      window.location.search.includes("state=")
-    ) {
-      await auth0.handleRedirectCallback()
-      window.history.replaceState({}, document.title, "/")
+      if (
+        window.location.search.includes("code=") &&
+        window.location.search.includes("state=")
+      ) {
+        await auth0.handleRedirectCallback()
+        window.history.replaceState({}, document.title, "/")
+      }
+
+      checkAuth()
+
+      // Add event listeners to main navigation buttons
+      const loginBtn = document.getElementById("login-btn")
+      const signupBtn = document.getElementById("signup-btn")
+      const logoutBtn = document.getElementById("logout-btn")
+
+      if (loginBtn) loginBtn.addEventListener("click", login)
+      if (signupBtn) signupBtn.addEventListener("click", signup)
+      if (logoutBtn) logoutBtn.addEventListener("click", logout)
+    } catch (error) {
+      console.error("Error initializing Auth0:", error)
+
+      // If Auth0 fails to initialize, show a fallback login prompt
+      renderContent(false)
     }
-
-    checkAuth()
-
-    document.getElementById("login-btn").addEventListener("click", login)
-    document.getElementById("signup-btn").addEventListener("click", signup)
-    document.getElementById("logout-btn").addEventListener("click", logout)
   }
 })
