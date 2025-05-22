@@ -52,10 +52,10 @@ document$.subscribe(() => {
           }
 
           // // Reinitialize Material for MkDocs components
-          // if (typeof document$.subscribe === "function") {
-          //   // This will trigger the document$ observable which should reinitialize components
-          //   document$.next(document)
-          // }
+          if (typeof document$.subscribe === "function") {
+            // This will trigger the document$ observable which should reinitialize components
+            document$.next(document)
+          }
         }
       } else {
         // User is not authenticated - show login prompt
@@ -143,7 +143,7 @@ document$.subscribe(() => {
       console.error("Error initializing Auth0:", error)
 
       // If Auth0 fails to initialize, show a fallback login prompt
-      await renderContent(false)
+      // await renderContent(false)
     }
   }
 })
