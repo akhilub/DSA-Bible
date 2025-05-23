@@ -26,7 +26,7 @@ document$.subscribe(() => {
   }
 
   // Function to render the appropriate content based on authentication
-  const renderContent = async (isAuthenticated) => {
+  const renderContent = (isAuthenticated) => {
     const solutionSection = document.getElementById("solution-section")
 
     // Clear any existing content
@@ -114,36 +114,29 @@ document$.subscribe(() => {
     }
 
     // Render the appropriate content based on authentication
-    await renderContent(isAuthenticated)
+    renderContent(isAuthenticated)
   }
 
   window.onload = async () => {
-    try {
-      auth0 = await createAuth0Client(config)
+    auth0 = await createAuth0Client(config)
 
-      if (
-        window.location.search.includes("code=") &&
-        window.location.search.includes("state=")
-      ) {
-        await auth0.handleRedirectCallback()
-        window.history.replaceState({}, document.title, "/")
-      }
-
-      await checkAuth()
-
-      // Add event listeners to main navigation buttons
-      const loginBtn = document.getElementById("login-btn")
-      const signupBtn = document.getElementById("signup-btn")
-      const logoutBtn = document.getElementById("logout-btn")
-
-      if (loginBtn) loginBtn.addEventListener("click", login)
-      if (signupBtn) signupBtn.addEventListener("click", signup)
-      if (logoutBtn) logoutBtn.addEventListener("click", logout)
-    } catch (error) {
-      console.error("Error initializing Auth0:", error)
-
-      // If Auth0 fails to initialize, show a fallback login prompt
-      // await renderContent(false)
+    if (
+      window.location.search.includes("code=") &&
+      window.location.search.includes("state=")
+    ) {
+      await auth0.handleRedirectCallback()
+      window.history.replaceState({}, document.title, "/")
     }
+
+    checkAuth()
+
+    // Add event listeners to main navigation buttons
+    const loginBtn = document.getElementById("login-btn")
+    const signupBtn = document.getElementById("signup-btn")
+    const logoutBtn = document.getElementById("logout-btn")
+
+    if (loginBtn) loginBtn.addEventListener("click", login)
+    if (signupBtn) signupBtn.addEventListener("click", signup)
+    if (logoutBtn) logoutBtn.addEventListener("click", logout)
   }
 })
