@@ -127,7 +127,7 @@ document$.subscribe(() => {
       window.location.search.includes("code=") &&
       window.location.search.includes("state=")
     ) {
-      await auth0.handleRedirectCallback()
+      //await auth0.handleRedirectCallback()
       window.history.replaceState({}, document.title, window.location.pathname)
     }
   }
@@ -182,8 +182,8 @@ document$.subscribe(() => {
   })
 
   // Additional event for Material for MkDocs content changes
-  document.addEventListener("content-update", () => {
-    console.log("content-update event fired")
-    initAuth()
-  })
+  // document.addEventListener("content-update", () => {
+  //   console.log("content-update event fired")
+  //   initAuth()
+  // })
 })
