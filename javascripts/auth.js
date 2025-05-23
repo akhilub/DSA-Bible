@@ -51,7 +51,7 @@ document$.subscribe(() => {
             })
           }
 
-          // // Reinitialize Material for MkDocs components
+          // Reinitialize Material for MkDocs components
           if (typeof document$.subscribe === "function") {
             // This will trigger the document$ observable which should reinitialize components
             document$.next(document)
@@ -127,7 +127,7 @@ document$.subscribe(() => {
       window.location.search.includes("code=") &&
       window.location.search.includes("state=")
     ) {
-      // await auth0.handleRedirectCallback()
+      await auth0.handleRedirectCallback()
       window.history.replaceState({}, document.title, window.location.pathname)
     }
   }
@@ -140,7 +140,7 @@ document$.subscribe(() => {
       }
 
       // Handle redirect callback if needed
-      await handleAuthCallback()
+      // await handleAuthCallback()
 
       // Check authentication state and update UI
       await checkAuth()
@@ -182,8 +182,8 @@ document$.subscribe(() => {
   })
 
   // Additional event for Material for MkDocs content changes
-  document.addEventListener("content-update", () => {
-    console.log("content-update event fired")
-    initAuth()
-  })
+  // document.addEventListener("content-update", () => {
+  //   console.log("content-update event fired")
+  //   initAuth()
+  // })
 })
