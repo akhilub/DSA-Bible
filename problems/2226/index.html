@@ -1506,6 +1506,12 @@
 <!-- description:end -->
 
 <h2 id="solutions"><strong>Solutions</strong></h2>
+<section id="solution-section">
+  <!-- This section will be populated by JavaScript based on authentication -->
+</section>
+
+<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
+<p><template id="protected-content-template"></p>
 <!-- vide solution:start -->
 
 <div class="video-container">
@@ -1594,7 +1600,60 @@ The time complexity is <span class="arithmatex">\(O(n \times log M)\)</span>, wh
 
 <!-- problem:end -->
 
-<p>{'akhil': {'name': 'Akhil Singh Chauhan', 'description': 'Creator', 'avatar': 'https://avatars.githubusercontent.com/u/60491139', 'url': 'https://github.com/akhilub'}}</p>
+<p></template></p>
+<!-- Login Prompt Template -->
+
+<!-- Login prompt template -->
+<p><template id="login-prompt-template">
+<br />
+<div class="login-message">
+    <h3>👋 Please log in to view the solution</h3>
+    <p>Access to detailed solutions requires a login. Already have an account?</p>
+    <button id="login-btn-inline" class="md-button md-button--primary">Log In</button>
+    <p>Don't have an account yet?</p>
+    <button id="signup-btn-inline" class="md-button">Sign Up</button>
+  </div></p>
+<p></template></p>
+<style>
+  .login-message {
+    background-color: var(--md-default-bg-color);
+    border: 1px solid var(--md-primary-fg-color--light);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .login-message h3 {
+    margin-top: 0;
+  }
+</style>
+
+<!--Author html-->
+
+<!-- Post authors from meta-->
+<section>
+
+        <div class="md-post__authors md-typeset">
+
+                <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                        <img src="https://avatars.githubusercontent.com/u/60491139" alt="Akhil Singh Chauhan" />
+                    </span>
+                    <span class="md-profile__description">
+                        <strong>
+
+                                <a href="https://github.com/akhilub">Akhil Singh Chauhan</a>
+
+                        </strong>
+                        <br />
+                        Author
+                    </span>
+                </div>
+
+        </div>
+
+</section>
 
 
 

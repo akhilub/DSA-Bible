@@ -1,0 +1,25 @@
+<!-- Post authors from meta-->
+<section>
+    {% if page.meta.authors %}
+        <div class="md-post__authors md-typeset">
+            {% for author_id, author in page.meta.authors.items() %}
+                <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                        <img src="{{ author.avatar }}" alt="{{ author.name }}" />
+                    </span>
+                    <span class="md-profile__description">
+                        <strong>
+                            {% if author.url %}
+                                <a href="{{ author.url }}">{{ author.name }}</a>
+                            {% else %}
+                                {{ author.name }}
+                            {% endif %}
+                        </strong>
+                        <br />
+                        {{ author.description }}
+                    </span>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>
