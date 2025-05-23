@@ -1,5 +1,6 @@
 document$.subscribe(() => {
   let auth0 = null
+  let isCheckingAuth = false // Flag to prevent concurrent auth checks
 
   const config = {
     domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
@@ -52,10 +53,12 @@ document$.subscribe(() => {
           }
 
           // Reinitialize Material for MkDocs components
+          /* Comment out this section which might be causing issues
           if (typeof document$.subscribe === "function") {
             // This will trigger the document$ observable which should reinitialize components
             document$.next(document)
           }
+          */
         }
       } else {
         // User is not authenticated - show login prompt
@@ -77,49 +80,58 @@ document$.subscribe(() => {
   }
 
   const checkAuth = async () => {
-    if (!auth0) {
-      console.log("Auth0 not initialized yet, initializing...")
-      auth0 = await createAuth0Client(config)
-    }
+    // Prevent concurrent auth checks
+    if (isCheckingAuth) return
 
-    const isAuthenticated = await auth0.isAuthenticated()
-    console.log("isAuthenticated", isAuthenticated)
+    try {
+      isCheckingAuth = true
 
-    // Get navigation UI elements
-    const loginBtn = document.getElementById("login-btn")
-    const signupBtn = document.getElementById("signup-btn")
-    const logoutBtn = document.getElementById("logout-btn")
-    const adminElements = document.querySelectorAll(".admin-only")
-
-    if (isAuthenticated) {
-      // User is logged in
-      const user = await auth0.getUser()
-      console.log("user", user)
-
-      // Update navigation UI for logged-in state
-      if (loginBtn) loginBtn.style.display = "none"
-      if (signupBtn) signupBtn.style.display = "none"
-      if (logoutBtn) logoutBtn.style.display = "inline-block"
-
-      // Check for admin role
-      const tokenClaims = await auth0.getIdTokenClaims()
-      const roles = tokenClaims["https://dsabible.com/roles"] || []
-
-      if (roles.includes("admin")) {
-        adminElements.forEach((el) => (el.style.display = "block"))
+      if (!auth0) {
+        console.log("Auth0 not initialized yet, initializing...")
+        auth0 = await createAuth0Client(config)
       }
-    } else {
-      // User is not logged in
-      if (loginBtn) loginBtn.style.display = "inline-block"
-      if (signupBtn) signupBtn.style.display = "inline-block"
-      if (logoutBtn) logoutBtn.style.display = "none"
 
-      // Hide admin content
-      adminElements.forEach((el) => (el.style.display = "none"))
+      const isAuthenticated = await auth0.isAuthenticated()
+      console.log("isAuthenticated", isAuthenticated)
+
+      // Get navigation UI elements
+      const loginBtn = document.getElementById("login-btn")
+      const signupBtn = document.getElementById("signup-btn")
+      const logoutBtn = document.getElementById("logout-btn")
+      const adminElements = document.querySelectorAll(".admin-only")
+
+      if (isAuthenticated) {
+        // User is logged in
+        const user = await auth0.getUser()
+        console.log("user", user)
+
+        // Update navigation UI for logged-in state
+        if (loginBtn) loginBtn.style.display = "none"
+        if (signupBtn) signupBtn.style.display = "none"
+        if (logoutBtn) logoutBtn.style.display = "inline-block"
+
+        // Check for admin role
+        const tokenClaims = await auth0.getIdTokenClaims()
+        const roles = tokenClaims["https://dsabible.com/roles"] || []
+
+        if (roles.includes("admin")) {
+          adminElements.forEach((el) => (el.style.display = "block"))
+        }
+      } else {
+        // User is not logged in
+        if (loginBtn) loginBtn.style.display = "inline-block"
+        if (signupBtn) signupBtn.style.display = "inline-block"
+        if (logoutBtn) logoutBtn.style.display = "none"
+
+        // Hide admin content
+        adminElements.forEach((el) => (el.style.display = "none"))
+      }
+
+      // Render the appropriate content based on authentication
+      renderContent(isAuthenticated)
+    } finally {
+      isCheckingAuth = false
     }
-
-    // Render the appropriate content based on authentication
-    renderContent(isAuthenticated)
   }
 
   const handleAuthCallback = async () => {
