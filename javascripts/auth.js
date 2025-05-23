@@ -140,7 +140,7 @@ document$.subscribe(() => {
       }
 
       // Handle redirect callback if needed
-      // await handleAuthCallback()
+      await handleAuthCallback()
 
       // Check authentication state and update UI
       await checkAuth()
