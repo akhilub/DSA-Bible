@@ -169,10 +169,10 @@ document$.subscribe(() => {
   })
 
   // For Material for MkDocs instant loading feature
-  document.addEventListener("mdx-component-ready", () => {
-    console.log("mdx-component-ready event fired")
-    initAuth()
-  })
+  // document.addEventListener("mdx-component-ready", () => {
+  //   console.log("mdx-component-ready event fired")
+  //   initAuth()
+  // })
 
   // Listen for Material for MkDocs navigation events
   // This is a custom event that Material for MkDocs fires when navigation occurs
