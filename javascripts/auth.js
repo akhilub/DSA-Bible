@@ -77,6 +77,11 @@ document$.subscribe(() => {
   }
 
   const checkAuth = async () => {
+    if (!auth0) {
+      console.log("Auth0 not initialized yet, initializing...")
+      auth0 = await createAuth0Client(config)
+    }
+
     const isAuthenticated = await auth0.isAuthenticated()
     console.log("isAuthenticated", isAuthenticated)
 
@@ -117,26 +122,68 @@ document$.subscribe(() => {
     renderContent(isAuthenticated)
   }
 
-  window.onload = async () => {
-    auth0 = await createAuth0Client(config)
-
+  const handleAuthCallback = async () => {
     if (
       window.location.search.includes("code=") &&
       window.location.search.includes("state=")
     ) {
       await auth0.handleRedirectCallback()
-      window.history.replaceState({}, document.title, "/")
+      window.history.replaceState({}, document.title, window.location.pathname)
     }
-
-    checkAuth()
-
-    // Add event listeners to main navigation buttons
-    const loginBtn = document.getElementById("login-btn")
-    const signupBtn = document.getElementById("signup-btn")
-    const logoutBtn = document.getElementById("logout-btn")
-
-    if (loginBtn) loginBtn.addEventListener("click", login)
-    if (signupBtn) signupBtn.addEventListener("click", signup)
-    if (logoutBtn) logoutBtn.addEventListener("click", logout)
   }
+
+  const initAuth = async () => {
+    try {
+      // Initialize Auth0 if not already initialized
+      if (!auth0) {
+        auth0 = await createAuth0Client(config)
+      }
+
+      // Handle redirect callback if needed
+      await handleAuthCallback()
+
+      // Check authentication state and update UI
+      await checkAuth()
+
+      // Add event listeners to main navigation buttons
+      const loginBtn = document.getElementById("login-btn")
+      const signupBtn = document.getElementById("signup-btn")
+      const logoutBtn = document.getElementById("logout-btn")
+
+      if (loginBtn) loginBtn.addEventListener("click", login)
+      if (signupBtn) signupBtn.addEventListener("click", signup)
+      if (logoutBtn) logoutBtn.addEventListener("click", logout)
+    } catch (error) {
+      console.error("Error initializing Auth0:", error)
+    }
+  }
+
+  // Initialize on first load
+  initAuth()
+
+  // Material for MkDocs navigation event
+  // This is the key event that fires when navigation occurs in Material for MkDocs
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOMContentLoaded event fired")
+    initAuth()
+  })
+
+  // For Material for MkDocs instant loading feature
+  document.addEventListener("mdx-component-ready", () => {
+    console.log("mdx-component-ready event fired")
+    initAuth()
+  })
+
+  // Listen for Material for MkDocs navigation events
+  // This is a custom event that Material for MkDocs fires when navigation occurs
+  document.addEventListener("navigation", () => {
+    console.log("navigation event fired")
+    initAuth()
+  })
+
+  // Additional event for Material for MkDocs content changes
+  document.addEventListener("content-update", () => {
+    console.log("content-update event fired")
+    initAuth()
+  })
 })
