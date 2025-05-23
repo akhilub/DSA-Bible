@@ -1,7 +1,7 @@
 document$.subscribe(() => {
   let auth0 = null
   let isCheckingAuth = false // Flag to prevent concurrent auth checks
-  isLoggedIn = false
+  let isLoggedIn = false
   const config = {
     domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
     client_id: "zTiHaknYvc17Kj3lz370AbHqtT58KnbF",
@@ -144,7 +144,9 @@ document$.subscribe(() => {
     }
   }
 
+  let count = 0
   const initAuth = async () => {
+    console.log("Init Called", ++count)
     try {
       // Initialize Auth0 if not already initialized
       if (!auth0) {
