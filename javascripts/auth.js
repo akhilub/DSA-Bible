@@ -147,25 +147,33 @@ const handleAuthCallback = async () => {
   ) {
     const result = await auth0.handleRedirectCallback()
     const returnTo = result.appState?.returnTo || "/"
-    window.history.pushState({}, "", returnTo)
-    document.dispatchEvent(new Event("navigation"))
+    window.history.replaceState({}, document.title, returnTo)
+    setTimeout(() => {
+      document.dispatchEvent(new Event("navigation"))
+    }, 100)
   }
 }
 
 const initAuth = async () => {
   try {
-    // Initialize Auth0 if not already initialized
-    if (!auth0) {
-      auth0 = await createAuth0Client(config)
+    auth0 = await createAuth0Client(config)
+
+    // First handle callback if present
+    if (
+      window.location.search.includes("code=") &&
+      window.location.search.includes("state=")
+    ) {
+      await handleAuthCallback()
     }
 
-    // Handle redirect callback if needed
-    await handleAuthCallback()
+    // Wait for the browser to finish processing session cookies
+    const isAuthenticated = await auth0.isAuthenticated()
+    setAutheticUserState(isAuthenticated)
 
-    // Check authentication state and update UI
+    // Now render UI accordingly
     await checkAuth()
 
-    // Add event listeners to main navigation buttons
+    // Set up UI event listeners
     const loginBtn = document.getElementById("login-btn")
     const signupBtn = document.getElementById("signup-btn")
     const logoutBtn = document.getElementById("logout-btn")
