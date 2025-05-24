@@ -6,6 +6,8 @@ const config = {
   client_id: "zTiHaknYvc17Kj3lz370AbHqtT58KnbF",
   audience: "https://dev-wzadtpoj5nnk5uj1.us.auth0.com/api/v2/",
   redirect_uri: window.location.origin,
+  cacheLocation: "localstorage", // Persist session after reload
+  useRefreshTokens: true, // Use refresh tokens for session renewal
 }
 
 // Login function - direct Auth0 login
@@ -83,6 +85,7 @@ const renderContent = (isAuthenticated) => {
   }
 }
 
+// Check authentication and render UI
 const checkAuth = async () => {
   // Prevent concurrent auth checks
   if (isCheckingAuth) return
@@ -95,9 +98,20 @@ const checkAuth = async () => {
       auth0 = await createAuth0Client(config)
     }
 
-    const isAuthenticated = await auth0.isAuthenticated()
-    console.log("isAuthenticated", isAuthenticated)
+    let isAuthenticated = await auth0.isAuthenticated()
 
+    // Try to silently refresh session if not authenticated
+    if (!isAuthenticated) {
+      try {
+        await auth0.getTokenSilently()
+        isAuthenticated = await auth0.isAuthenticated()
+        console.log("Silent authentication successful")
+      } catch (e) {
+        console.warn("Silent authentication failed:", e)
+      }
+    }
+
+    console.log("Final isAuthenticated status:", isAuthenticated)
     setAutheticUserState(isAuthenticated)
 
     // Get navigation UI elements
@@ -140,6 +154,7 @@ const checkAuth = async () => {
   }
 }
 
+// Handle Auth0 callback
 const handleAuthCallback = async () => {
   if (
     window.location.search.includes("code=") &&
@@ -154,6 +169,7 @@ const handleAuthCallback = async () => {
   }
 }
 
+// Initialize Auth
 const initAuth = async () => {
   try {
     auth0 = await createAuth0Client(config)
@@ -189,6 +205,7 @@ const initAuth = async () => {
 // Initialize on first load
 initAuth()
 
+// Auth state helpers
 const getAutheticUserState = () => {
   return isLoggedIn
 }
