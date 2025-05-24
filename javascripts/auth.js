@@ -162,10 +162,7 @@ const handleAuthCallback = async () => {
   ) {
     const result = await auth0.handleRedirectCallback()
     const returnTo = result.appState?.returnTo || "/"
-    window.history.replaceState({}, document.title, returnTo)
-    setTimeout(() => {
-      document.dispatchEvent(new Event("navigation"))
-    }, 100)
+    window.location.assign(returnTo) // Force navigation to the desired path
   }
 }
 
