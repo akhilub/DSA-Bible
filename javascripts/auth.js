@@ -10,7 +10,14 @@ const config = {
 
 // Login function - direct Auth0 login
 const login = async () => {
-  await auth0.loginWithRedirect()
+  await auth0.loginWithRedirect({
+    appState: {
+      returnTo:
+        window.location.pathname +
+        window.location.search +
+        window.location.hash,
+    },
+  })
 }
 
 // Signup function - redirect to pricing page
@@ -51,9 +58,9 @@ const renderContent = (isAuthenticated) => {
           })
         }
 
-        // // Reinitialize Material for MkDocs components
+        // Reinitialize Material for MkDocs components
         // if (typeof document$.subscribe === "function") {
-        //   // This will trigger the document$ observable which should reinitialize components
+        // This will trigger the document$ observable which should reinitialize components
         //   document$.next(document)
         // }
       }
@@ -138,14 +145,13 @@ const handleAuthCallback = async () => {
     window.location.search.includes("code=") &&
     window.location.search.includes("state=")
   ) {
-    await auth0.handleRedirectCallback()
-    window.history.replaceState({}, document.title, window.location.pathname)
+    const result = await auth0.handleRedirectCallback()
+    const returnTo = result.appState?.returnTo || "/"
+    window.history.replaceState({}, document.title, returnTo)
   }
 }
 
-let count = 0
 const initAuth = async () => {
-  console.log("Init Called", ++count)
   try {
     // Initialize Auth0 if not already initialized
     if (!auth0) {
@@ -186,14 +192,12 @@ const setAutheticUserState = (value) => {
 // This is the key event that fires when navigation occurs in Material for MkDocs
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded event fired")
-  // initAuth()
   renderContent(getAutheticUserState())
 })
 
 // For Material for MkDocs instant loading feature
 document.addEventListener("mdx-component-ready", () => {
   console.log("mdx-component-ready event fired")
-  //initAuth()
   renderContent(getAutheticUserState())
 })
 
@@ -201,14 +205,12 @@ document.addEventListener("mdx-component-ready", () => {
 // This is a custom event that Material for MkDocs fires when navigation occurs
 document.addEventListener("navigation", () => {
   console.log("navigation event fired")
-  //initAuth()
   renderContent(getAutheticUserState())
 })
 
 // Additional event for Material for MkDocs content changes
 document.addEventListener("content-update", () => {
   console.log("content-update event fired")
-  //initAuth()
   renderContent(getAutheticUserState())
 })
 
