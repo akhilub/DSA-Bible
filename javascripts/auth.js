@@ -1,7 +1,6 @@
 let auth0 = null
 let isCheckingAuth = false // Flag to prevent concurrent auth checks
 let isLoggedIn = false
-
 const config = {
   domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
   client_id: "zTiHaknYvc17Kj3lz370AbHqtT58KnbF",
@@ -52,11 +51,11 @@ const renderContent = (isAuthenticated) => {
           })
         }
 
-        // Reinitialize Material for MkDocs components
-        if (typeof document$.subscribe === "function") {
-          // This will trigger the document$ observable which should reinitialize components
-          document$.next(document)
-        }
+        // // Reinitialize Material for MkDocs components
+        // if (typeof document$.subscribe === "function") {
+        //   // This will trigger the document$ observable which should reinitialize components
+        //   document$.next(document)
+        // }
       }
     } else {
       // User is not authenticated - show login prompt
@@ -144,7 +143,9 @@ const handleAuthCallback = async () => {
   }
 }
 
+let count = 0
 const initAuth = async () => {
+  console.log("Init Called", ++count)
   try {
     // Initialize Auth0 if not already initialized
     if (!auth0) {
