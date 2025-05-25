@@ -10,6 +10,11 @@ const config = {
   useRefreshTokens: true, // Use refresh tokens for session renewal
 }
 
+// Auth state helpers
+const getAuthenticatedUserState = () => isLoggedIn
+const setAuthenticatedUserState = (value) => (isLoggedIn = value)
+
+// === Auth0 Actions ===
 // Login function - direct Auth0 login
 const login = async () => {
   await auth0.loginWithRedirect({
@@ -29,11 +34,10 @@ const signup = () => {
 
 // Logout function
 const logout = () => {
-  auth0.logout({
-    returnTo: window.location.origin,
-  })
+  auth0.logout({ returnTo: window.location.origin })
 }
 
+// === Content Renderer ===
 // Function to render the appropriate content based on authentication
 const renderContent = (isAuthenticated) => {
   const solutionSection = document.getElementById("solution-section")
@@ -60,11 +64,10 @@ const renderContent = (isAuthenticated) => {
           })
         }
 
-        // Reinitialize Material for MkDocs components
-        // if (typeof document$.subscribe === "function") {
-        // This will trigger the document$ observable which should reinitialize components
-        //   document$.next(document)
-        // }
+        // ✅ Reinitialize MkDocs Material components
+        if (window.mdk?.bootstrap) {
+          window.mdk.bootstrap()
+        }
       }
     } else {
       // User is not authenticated - show login prompt
@@ -85,6 +88,13 @@ const renderContent = (isAuthenticated) => {
   }
 }
 
+// === Unified Refresh Function ===
+const refreshContent = () => {
+  console.log("Refreshing content...")
+  renderContent(getAuthenticatedUserState())
+}
+
+// === Auth Check ===
 // Check authentication and render UI
 const checkAuth = async () => {
   // Prevent concurrent auth checks
@@ -112,7 +122,7 @@ const checkAuth = async () => {
     }
 
     console.log("Final isAuthenticated status:", isAuthenticated)
-    setAutheticUserState(isAuthenticated)
+    setAuthenticatedUserState(isAuthenticated)
 
     // Get navigation UI elements
     const loginBtn = document.getElementById("login-btn")
@@ -148,12 +158,13 @@ const checkAuth = async () => {
     }
 
     // Render the appropriate content based on authentication
-    renderContent(isAuthenticated)
+    refreshContent()
   } finally {
     isCheckingAuth = false
   }
 }
 
+// === Auth Callback Handler ===
 // Handle Auth0 callback
 const handleAuthCallback = async () => {
   if (
@@ -166,6 +177,7 @@ const handleAuthCallback = async () => {
   }
 }
 
+// === Auth Initialization ===
 // Initialize Auth
 const initAuth = async () => {
   try {
@@ -181,7 +193,7 @@ const initAuth = async () => {
 
     // Wait for the browser to finish processing session cookies
     const isAuthenticated = await auth0.isAuthenticated()
-    setAutheticUserState(isAuthenticated)
+    setAuthenticatedUserState(isAuthenticated)
 
     // Now render UI accordingly
     await checkAuth()
@@ -199,45 +211,25 @@ const initAuth = async () => {
   }
 }
 
-// Initialize on first load
+// === Initialize on first Page Load ===
 initAuth()
 
-// Auth state helpers
-const getAutheticUserState = () => {
-  return isLoggedIn
-}
-
-const setAutheticUserState = (value) => {
-  isLoggedIn = value
-}
+// === Hook into MkDocs Material Events ===
 
 // Material for MkDocs navigation event
 // This is the key event that fires when navigation occurs in Material for MkDocs
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded event fired")
-  renderContent(getAutheticUserState())
-})
-
-// For Material for MkDocs instant loading feature
-document.addEventListener("mdx-component-ready", () => {
-  console.log("mdx-component-ready event fired")
-  renderContent(getAutheticUserState())
-})
-
+document.addEventListener("DOMContentLoaded", refreshContent) /
+  // For Material for MkDocs instant loading feature
+  document.addEventListener("mdx-component-ready", refreshContent)
 // Listen for Material for MkDocs navigation events
 // This is a custom event that Material for MkDocs fires when navigation occurs
-document.addEventListener("navigation", () => {
-  console.log("navigation event fired")
-  renderContent(getAutheticUserState())
-})
-
+document.addEventListener("navigation", refreshContent)
 // Additional event for Material for MkDocs content changes
-document.addEventListener("content-update", () => {
-  console.log("content-update event fired")
-  renderContent(getAutheticUserState())
-})
+document.addEventListener("content-update", refreshContent)
 
-document$.subscribe(() => {
-  console.log("I am being called")
-  renderContent(getAutheticUserState())
-})
+if (
+  typeof document$ !== "undefined" &&
+  typeof document$.subscribe === "function"
+) {
+  document$.subscribe(refreshContent)
+}
