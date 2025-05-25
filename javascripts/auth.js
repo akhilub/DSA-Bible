@@ -240,5 +240,4 @@ document.addEventListener("content-update", () => {
 document$.subscribe(() => {
   console.log("I am being called")
   renderContent(getAutheticUserState())
-  document$.next(document)
 })
