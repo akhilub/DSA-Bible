@@ -80,8 +80,6 @@ const renderContent = (isAuthenticated) => {
     // 🧠 Reinitialize MkDocs Material components
     if (window.mdk?.bootstrap) {
       window.mdk.bootstrap()
-    } else if (typeof document$.subscribe === "function") {
-      document$.next(document)
     }
   }
 }
