@@ -61,14 +61,8 @@ if (
             solutionSection.appendChild(protectedContent)
 
             // ✅ Reinitialize MkDocs Material components
-            // if (window.mdk?.bootstrap) {
-            //   window.mdk.bootstrap()
-            // }
-
-            // Reinitialize Material for MkDocs components
-            if (typeof document$.subscribe === "function") {
-              // This will trigger the document$ observable which should reinitialize components
-              document$.next(document)
+            if (window.mdk?.bootstrap) {
+              window.mdk.bootstrap()
             }
 
             // Reprocess MathJax
