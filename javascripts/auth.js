@@ -1,17 +1,17 @@
 let auth0 = null
-let isCheckingAuth = false // Flag to prevent concurrent auth checks
+let isCheckingAuth = false
 let isLoggedIn = false
+
 const config = {
   domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
   client_id: "zTiHaknYvc17Kj3lz370AbHqtT58KnbF",
   audience: "https://dev-wzadtpoj5nnk5uj1.us.auth0.com/api/v2/",
   redirect_uri: window.location.origin,
-  cacheLocation: "localstorage", // Persist session after reload
-  useRefreshTokens: true, // Use refresh tokens for session renewal
+  cacheLocation: "localstorage",
+  useRefreshTokens: true,
 }
 
-// === Auth0 Actions ===
-// Login function - direct Auth0 login
+// Auth functions
 const login = async () => {
   await auth0.loginWithRedirect({
     appState: {
@@ -23,141 +23,97 @@ const login = async () => {
   })
 }
 
-// Signup function - redirect to pricing page
 const signup = () => {
   window.location.href = "/pricing/"
 }
 
-// Logout function
 const logout = () => {
-  auth0.logout({
-    returnTo: window.location.origin,
-  })
+  auth0.logout({ returnTo: window.location.origin })
 }
 
-// === Content Renderer ===
-// Function to render the appropriate content based on authentication
+// Simple content renderer
 const renderContent = (isAuthenticated) => {
   const solutionSection = document.getElementById("solution-section")
+  if (!solutionSection) return
 
-  // Clear any existing content
-  if (solutionSection) {
-    solutionSection.innerHTML = ""
+  solutionSection.innerHTML = ""
 
-    if (isAuthenticated) {
-      // User is authenticated - show protected content
-      const protectedTemplate = document.getElementById(
-        "protected-content-template"
-      )
+  if (isAuthenticated) {
+    const protectedTemplate = document.getElementById(
+      "protected-content-template"
+    )
+    if (protectedTemplate) {
+      const protectedContent = protectedTemplate.content.cloneNode(true)
+      solutionSection.appendChild(protectedContent)
 
-      if (protectedTemplate) {
-        // Clone the template content and append it to the solution section
-        const protectedContent = protectedTemplate.content.cloneNode(true)
-        solutionSection.appendChild(protectedContent)
-
-        // ✅ Reinitialize MkDocs Material components
-        if (window.mdk?.bootstrap) {
-          window.mdk.bootstrap()
+      // Simple reinitialization - just trigger the document$ observable
+      setTimeout(() => {
+        if (typeof document$ !== "undefined" && document$.next) {
+          document$.next(document)
         }
+      }, 50)
+    }
+  } else {
+    const loginTemplate = document.getElementById("login-prompt-template")
+    if (loginTemplate) {
+      const loginPrompt = loginTemplate.content.cloneNode(true)
+      solutionSection.appendChild(loginPrompt)
 
-        // Reprocess MathJax
-        if (typeof MathJax !== "undefined") {
-          MathJax.typesetPromise([solutionSection]).catch((err) => {
-            console.error("Error typesetting math:", err)
-          })
-        }
-      }
-    } else {
-      // User is not authenticated - show login prompt
-      const loginTemplate = document.getElementById("login-prompt-template")
-      if (loginTemplate) {
-        // Clone the login prompt and append it to the solution section
-        const loginPrompt = loginTemplate.content.cloneNode(true)
-        solutionSection.appendChild(loginPrompt)
+      const loginBtn = solutionSection.querySelector("#login-btn-inline")
+      const signupBtn = solutionSection.querySelector("#signup-btn-inline")
 
-        // Add event listeners to the login/signup buttons
-        const loginBtn = solutionSection.querySelector("#login-btn-inline")
-        const signupBtn = solutionSection.querySelector("#signup-btn-inline")
-
-        if (loginBtn) loginBtn.addEventListener("click", login)
-        if (signupBtn) signupBtn.addEventListener("click", signup)
-      }
+      if (loginBtn) loginBtn.addEventListener("click", login)
+      if (signupBtn) signupBtn.addEventListener("click", signup)
     }
   }
 }
 
-// Check authentication and render UI
-// === Auth Check ===
+// Auth check
 const checkAuth = async () => {
-  // Prevent concurrent auth checks
   if (isCheckingAuth) return
 
   try {
     isCheckingAuth = true
 
     if (!auth0) {
-      console.log("Auth0 not initialized yet, initializing...")
       auth0 = await createAuth0Client(config)
     }
 
     let isAuthenticated = await auth0.isAuthenticated()
 
-    // Try to silently refresh session if not authenticated
     if (!isAuthenticated) {
       try {
         await auth0.getTokenSilently()
         isAuthenticated = await auth0.isAuthenticated()
-        console.log("Silent authentication successful")
       } catch (e) {
         console.warn("Silent authentication failed:", e)
       }
     }
 
-    console.log("Final isAuthenticated status:", isAuthenticated)
     setAuthenticatedUserState(isAuthenticated)
 
-    // Get navigation UI elements
+    // Update navigation UI
     const loginBtn = document.getElementById("login-btn")
     const signupBtn = document.getElementById("signup-btn")
     const logoutBtn = document.getElementById("logout-btn")
-    const adminElements = document.querySelectorAll(".admin-only")
 
     if (isAuthenticated) {
-      // User is logged in
-      const user = await auth0.getUser()
-      console.log("user", user)
-
-      // Update navigation UI for logged-in state
       if (loginBtn) loginBtn.style.display = "none"
       if (signupBtn) signupBtn.style.display = "none"
       if (logoutBtn) logoutBtn.style.display = "inline-block"
-
-      // Check for admin role
-      const tokenClaims = await auth0.getIdTokenClaims()
-      const roles = tokenClaims["https://dsabible.com/roles"] || []
-
-      if (roles.includes("admin")) {
-        adminElements.forEach((el) => (el.style.display = "block"))
-      }
     } else {
-      // User is not logged in
       if (loginBtn) loginBtn.style.display = "inline-block"
       if (signupBtn) signupBtn.style.display = "inline-block"
       if (logoutBtn) logoutBtn.style.display = "none"
-
-      // Hide admin content
-      adminElements.forEach((el) => (el.style.display = "none"))
     }
 
-    // Render the appropriate content based on authentication
     renderContent(isAuthenticated)
   } finally {
     isCheckingAuth = false
   }
 }
 
-// === Auth Callback Handler ===
-// Handle Auth0 callback
+// Auth callback handler
 const handleAuthCallback = async () => {
   if (
     window.location.search.includes("code=") &&
@@ -165,12 +121,11 @@ const handleAuthCallback = async () => {
   ) {
     const result = await auth0.handleRedirectCallback()
     const returnTo = result.appState?.returnTo || "/"
-    window.location.assign(returnTo) // Force navigation to the desired path
+    window.location.assign(returnTo)
   }
 }
 
-// === Auth Initialization ===
-// Initialize Auth
+// Initialize auth
 const initAuth = async () => {
   try {
     auth0 = await createAuth0Client(config)
@@ -182,14 +137,12 @@ const initAuth = async () => {
       await handleAuthCallback()
     }
 
-    // Wait for the browser to finish processing session cookies
     const isAuthenticated = await auth0.isAuthenticated()
     setAuthenticatedUserState(isAuthenticated)
 
-    // Now render UI accordingly
     await checkAuth()
 
-    // Set up UI event listeners
+    // Set up event listeners
     const loginBtn = document.getElementById("login-btn")
     const signupBtn = document.getElementById("signup-btn")
     const logoutBtn = document.getElementById("logout-btn")
@@ -198,49 +151,25 @@ const initAuth = async () => {
     if (signupBtn) signupBtn.addEventListener("click", signup)
     if (logoutBtn) logoutBtn.addEventListener("click", logout)
   } catch (error) {
-    console.error("Auth0 init error:", error)
+    console.error("Auth0 error:", error)
   }
 }
 
-// === Initialize on first Load on Page ===
-initAuth()
-
-// Auth state helpers
+// State helpers
 const getAuthenticatedUserState = () => isLoggedIn
 const setAuthenticatedUserState = (value) => (isLoggedIn = value)
 
-// === Hook into MkDocs Material Events ===
-// Material for MkDocs navigation event
-// This is the key event that fires when navigation occurs in Material for MkDocs
+// Initialize
+initAuth()
+
+// Event listeners
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded event fired")
   renderContent(getAuthenticatedUserState())
 })
 
-// For Material for MkDocs instant loading feature
-document.addEventListener("mdx-component-ready", () => {
-  console.log("mdx-component-ready event fired")
-  renderContent(getAuthenticatedUserState())
-})
-
-// Listen for Material for MkDocs navigation events
-// This is a custom event that Material for MkDocs fires when navigation occurs
-document.addEventListener("navigation", () => {
-  console.log("navigation event fired")
-  renderContent(getAuthenticatedUserState())
-})
-
-// Additional event for Material for MkDocs content changes
-document.addEventListener("content-update", () => {
-  console.log("content-update event fired")
-  renderContent(getAuthenticatedUserState())
-})
-
-if (
-  typeof document$ !== "undefined" &&
-  typeof document$.subscribe === "function"
-) {
-  document$.subscribe(function () {
+// Subscribe to Material for MkDocs document$ observable
+if (typeof document$ !== "undefined") {
+  document$.subscribe(() => {
     renderContent(getAuthenticatedUserState())
   })
 }
