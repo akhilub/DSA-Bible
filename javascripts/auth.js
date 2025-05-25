@@ -61,7 +61,11 @@ const renderContent = (isAuthenticated) => {
         }
 
         // Reinitialize Material for MkDocs components
-        if (typeof document$.subscribe === "function") {
+        if (
+          typeof document$ !== "undefined" &&
+          (typeof document$.next === "function" ||
+            typeof document$.subscribe === "function")
+        ) {
           // This will trigger the document$ observable which should reinitialize components
           document$.next(document)
         }
