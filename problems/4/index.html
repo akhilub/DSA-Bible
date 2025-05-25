@@ -26,7 +26,7 @@
     
     
       
-        <title>4. --- - DSA-Bible</title>
+        <title>4. Median of Two Sorted Arrays - DSA-Bible</title>
       
     
     
@@ -78,7 +78,7 @@
 <meta property="og:type" content="website" />
 <meta
   property="og:title"
-  content="4. --- - DSA-Bible"
+  content="4. Median of Two Sorted Arrays - DSA-Bible"
 />
 <meta property="og:description" content="Solutions of LeetCode problems" />
 <meta property="og:url" content="https://dsabible.com/problems/4/" />
@@ -96,7 +96,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta
   name="twitter:title"
-  content="4. --- - DSA-Bible"
+  content="4. Median of Two Sorted Arrays - DSA-Bible"
 />
 <meta name="twitter:description" content="Solutions of LeetCode problems" />
 <meta
@@ -123,7 +123,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coming-soon" class="md-skip">
+        <a href="#4-median-of-two-sorted-arrays" class="md-skip">
           Skip to content
         </a>
       
@@ -165,7 +165,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4. ---
+              4. Median of Two Sorted Arrays
             
           </span>
         </div>
@@ -764,17 +764,154 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    4. Median of Two Sorted Arrays
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    4. ---
+    4. Median of Two Sorted Arrays
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solutions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#divide-conquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Divide &amp; Conquer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-divide-conquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach: Divide &amp; Conquer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach: Divide &amp; Conquer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#way-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Way 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach: Merge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach: Merge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#way-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Way 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approach-intution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach: Intution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach: Intution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#way-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Way 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1370,15 +1507,257 @@
   
 
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../../topics/#tag:array" class="md-tag">Array</a>
+      
+    
+      
+      
+      
+        <a href="../../topics/#tag:binary-search" class="md-tag">Binary Search</a>
+      
+    
+      
+      
+      
+        <a href="../../topics/#tag:divide-and-conquer" class="md-tag">Divide and Conquer</a>
+      
+    
+  </nav>
 
 
-<h1 id="coming-soon">Coming Soon</h1>
+
+<!-- problem:start -->
+
+<h1 id="4-median-of-two-sorted-arrays"><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" title="Click me to Open Playground">4. Median of Two Sorted Arrays</a></h1>
+<p><span class="md-tag md-tag--hard">Hard</span></p>
+<h2 id="description"><strong>Description</strong></h2>
+<!-- description:start -->
+
+<p>Given two sorted arrays nums1 and nums2 of size m and n respectively, return the <strong>median</strong> of the two sorted arrays.</p>
+<p>The overall run time complexity should be <code>O(log (m+n))</code>.</p>
+<p><strong>Example 1:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Input: nums1 = [1,3], nums2 = [2]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Output: 2.00000
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Explanation: merged array = [1,2,3] and median is 2.
+</span></code></pre></div>
+<p><strong>Example 2:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Input: nums1 = [1,2], nums2 = [3,4]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Output: 2.50000
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+</span></code></pre></div>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>nums1.length == m</code></li>
+<li><code>nums2.length == n</code></li>
+<li><code>0 &lt;= m &lt;= 1000</code></li>
+<li><code>0 &lt;= n &lt;= 1000</code></li>
+<li><code>1 &lt;= m + n &lt;= 2000</code></li>
+<li><code>-106 &lt;= nums1[i], nums2[i] &lt;= 106</code></li>
+</ul>
+<!-- description:end -->
+
+<!-- <div class="compiler-container">
+  <iframe
+    src="https://compiler.akhilsin.com/pages/ide/python"
+    title="Interpreter"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+</div> -->
+
+<h2 id="solutions"><strong>Solutions</strong></h2>
 <section id="solution-section">
   <!-- This section will be populated by JavaScript based on authentication -->
 </section>
 
 <!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
 <p><template id="protected-content-template"></p>
+<!-- vide solution:start -->
+
+<div class="video-message">
+  <p>Video Solution Coming Soon</p>
+</div>
+
+<!-- vide solution: end -->
+
+<!-- solution:start -->
+
+<details class="abstract">
+<summary>Algorithm Implementation</summary>
+<h3 id="divide-conquer">Divide &amp; Conquer</h3>
+<p>A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem.</p>
+<p><strong>Procedure</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DAC(P):
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    if small(P):
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        S(P)                        // Directly solve the problem, there must exist a solution for smaller problem
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    else:
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        divide P into P₁,P₂,P₃,....Pₖ
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        Apply DAC(P₁),DAC(P₂).....DAC(Pₖ)
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        Combine (DAC(P₁),DAC(P₂).....DAC(Pₖ))
+</span></code></pre></div>
+</details>
+<h3 id="approach-divide-conquer">Approach: Divide &amp; Conquer</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(log(m+n))\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(log(m+n))\)</span></p>
+<h4 id="way-1">Way 1</h4>
+<div class="admonition note">
+<p class="admonition-title">Algorithm 1</p>
+<p>The problem requires the time complexity of the algorithm to be <span class="arithmatex">\(O(log(m+n))\)</span>,
+so we cannot directly traverse the two arrays, but need to use the binary search method.</p>
+<p>If <span class="arithmatex">\(m+n\)</span> is odd, then the median is the <code>(m + n + 1)//2</code> -th number
+If <span class="arithmatex">\(m+n\)</span> is even,then the median is the average of the <code>(m + n + 1)//2</code>-th number and the <code>(m + n + 2)//2</code>-th number</p>
+<p>In fact, we can unify it as the average of the <code>(m + n + 1)//2</code>-th and <code>(m + n + 2)//2</code>-th numbers</p>
+<p>Therefore, we can design a function
+<code>f(i, j, k)</code>, which represents the k-th smallest number in the interval [i,m) of array <code>nums1</code>
+and the interval [j,n) of array <code>nums2</code>.</p>
+<p>The median is the average of <code>f(0,0,(m+n+1)//2)</code> and <code>f(0,0,(m+n+2)//2)</code></p>
+<p>The implementation idea of the function <code>f(i, j, k)</code> is as follows:</p>
+<ul>
+<li>If i≥m, it means that the interval [i,m) of array <code>nums1</code> is empty, so directly return <code>nums2[j + k -1]</code>;</li>
+<li>If j≥n, it means that the interval [j,n) of array nums2 is empty, so directly return <code>nums1[i+k-1]</code>;</li>
+<li>If k==1, it means to find the first number, so just return the minimum of <code>nums1[i]</code> and <code>nums2[j]</code>;</li>
+<li>
+<p>Otherwise, we find the <code>(k//2)</code>-th number in the two arrays, denoted as <code>midVal1</code> and <code>midVal2</code>.</p>
+</li>
+<li>
+<p>(<strong>Note</strong>, if a certain array does not have the <code>(k//2)</code>-th number, then we regard the <code>(k//2)</code>-th number as +∞.)</p>
+</li>
+</ul>
+<p>Compare the size of <span class="arithmatex">\(midVal1\)</span> and <span class="arithmatex">\(midVal2\)</span>:</p>
+<ul>
+<li>
+<p>If <code>midVal1</code> ≤ <code>midVal2</code>, it means that the <code>(k//2)</code>-th number of array <code>nums1</code> cannot be the k-th smallest number, so we can exclude the interval
+[i,i+(k//2)) of array nums1, and recursively call <code>f(i+(k//2), 0, k-(k//2))</code></p>
+</li>
+<li>
+<p>If <code>midVal1</code> &gt; <code>midVal2</code>, it means that the <code>(k//2)</code>-th number of array <code>nums2</code> cannot be the k-th smallest number, so we can exclude the interval
+[j,j+(k//2)) of array nums2, and recursively call <code>f(i, j+(k//2), k-(k//2))</code></p>
+</li>
+</ul>
+<p>The time complexity is <span class="arithmatex">\(O(log(m+n))\)</span>, and the space complexity is <span class="arithmatex">\(O(log(m+n))\)</span>. Here, <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the length of arrays <code>nums1</code> and <code>nums2</code> respectively.</p>
+</div>
+<!-- tabs:start -->
+
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="k">def</span><span class="w"> </span><span class="nf">findMedianSortedArrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      <span class="k">def</span><span class="w"> </span><span class="nf">findKth</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">j</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">k</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>          <span class="k">if</span> <span class="n">i</span><span class="o">&gt;=</span><span class="n">m</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>              <span class="k">return</span> <span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>          <span class="k">if</span> <span class="n">j</span><span class="o">&gt;=</span><span class="n">n</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>              <span class="k">return</span> <span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>          <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>              <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>          <span class="n">mid</span> <span class="o">=</span> <span class="n">k</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>          <span class="n">midVal1</span> <span class="o">=</span> <span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">m</span> <span class="k">else</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>          <span class="n">midVal2</span> <span class="o">=</span> <span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">j</span><span class="o">+</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">n</span> <span class="k">else</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>          <span class="k">return</span> <span class="n">findKth</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">mid</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="n">mid</span><span class="p">)</span> <span class="k">if</span> <span class="n">midVal1</span><span class="o">&lt;=</span><span class="n">midVal2</span> <span class="k">else</span> <span class="n">findKth</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">mid</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="n">mid</span><span class="p">)</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>      <span class="n">m</span> <span class="p">,</span> <span class="n">n</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>      <span class="c1"># Division a // b :  floordiv(a, b)</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>      <span class="n">N1</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>         <span class="c1">#N1 - (m+n+1)/2 -th number</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>      <span class="n">N2</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>         <span class="c1">#N2 - (m+n+2)/2 -th number</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>      <span class="n">K1</span> <span class="o">=</span> <span class="n">findKth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">N1</span><span class="p">)</span>    <span class="c1">#K1 - kth smallest number in the interval [0,N1)</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>      <span class="n">K2</span> <span class="o">=</span> <span class="n">findKth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">N2</span><span class="p">)</span>    <span class="c1">#K2 - kth smallest number in the interval [0,N2)</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>      <span class="k">return</span> <span class="p">(</span><span class="n">K1</span><span class="o">+</span><span class="n">K2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>        <span class="c1">#median</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="approach-merge">Approach: Merge</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\((O(m+n))\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\((O(m+n))\)</span></p>
+<h4 id="way-2">Way 2</h4>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm 2</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">findMedianSortedArrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="n">m_arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mergeTwoSortedArray</span><span class="p">(</span><span class="n">nums1</span><span class="p">,</span><span class="n">nums2</span><span class="p">)</span>  <span class="c1"># m_arr --&gt; mergedSortedArray</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="n">l</span> <span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="k">if</span> <span class="n">n</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>            <span class="n">med</span> <span class="o">=</span> <span class="n">m_arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            <span class="n">med</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">+</span><span class="n">m_arr</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="k">return</span> <span class="n">med</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">mergeTwoSortedArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="p">,</span> <span class="n">la</span><span class="p">,</span> <span class="n">lb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">la</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span><span class="n">lb</span><span class="p">:</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>                <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">la</span><span class="p">:</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>            <span class="n">res</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="k">if</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">lb</span><span class="p">:</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>            <span class="n">res</span><span class="o">+=</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">:]</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        <span class="k">return</span> <span class="n">res</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="approach-intution">Approach: Intution</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O((m+n)log(m+n))\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\((O(m+n))\)</span></p>
+<h4 id="way-3">Way 3</h4>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm 3</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">findMedianSortedArrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="n">nums1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">m_arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m_arr</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="k">if</span> <span class="n">n</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">:</span> <span class="c1">#n is odd</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="n">med</span> <span class="o">=</span> <span class="n">m_arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            <span class="n">med</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_arr</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">+</span><span class="n">m_arr</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="k">return</span> <span class="n">med</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<!-- tabs:end -->
+
+<!-- solution:end -->
+
+<!-- problem:end -->
+
 <p></template></p>
 <!-- Login Prompt Template -->
 
@@ -1493,7 +1872,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+4.%20---+-+/problems/4/" target="_blank" rel="noopener">issue page</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+4.%20Median%20of%20Two%20Sorted%20Arrays+-+/problems/4/" target="_blank" rel="noopener">issue page</a>.
             </div>
           
         </div>

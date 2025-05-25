@@ -12,7 +12,7 @@
         <meta name="author" content="A.S.Chauhan">
       
       
-        <link rel="canonical" href="https://dsabible.com/_algorithms/sliding_window/">
+        <link rel="canonical" href="https://dsabible.com/_algorithms/implementation/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Sliding window - DSA-Bible</title>
+        <title>Implementation - DSA-Bible</title>
       
     
     
@@ -74,10 +74,10 @@
 <meta property="og:type" content="website" />
 <meta
   property="og:title"
-  content="Sliding window - DSA-Bible"
+  content="Implementation - DSA-Bible"
 />
 <meta property="og:description" content="Solutions of LeetCode problems" />
-<meta property="og:url" content="https://dsabible.com/_algorithms/sliding_window/" />
+<meta property="og:url" content="https://dsabible.com/_algorithms/implementation/" />
 <meta
   property="og:image"
   content="https://dsabible.com/assets/images/og-image.png"
@@ -92,7 +92,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta
   name="twitter:title"
-  content="Sliding window - DSA-Bible"
+  content="Implementation - DSA-Bible"
 />
 <meta name="twitter:description" content="Solutions of LeetCode problems" />
 <meta
@@ -161,7 +161,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sliding window
+              Implementation
             
           </span>
         </div>
@@ -791,19 +791,25 @@
 
 
 
-  <h1>Sliding window</h1>
+  <h1>Implementation</h1>
 
 <h3 id="sliding-window">Sliding Window</h3>
-<div class="language-text highlight"><pre><span></span><code>1.We can keep tracking a current window, and use two pointer to apply the sliding window algorithms.
-
-2.We can expand the window to the right greedily as long as the character is not existent in the current window.
-
-3.Otherwise, we need to move the left pointer and erase the corresponding characters at left pointer out of the window until the current character at the right pointer is no longer in the window.
-
-4.If we don’t move the left pointer (shrink the window), the substring is not valid no matter how we move the right pointer.
-
-_The time complexity is $O(n)$ as the left and right pointers both move towards the right and the space complexity is $O(n)$ as we need a hash-set or dictionary to store the elements in the current window._
-</code></pre></div>
+<p>1.We can keep tracking a current window, and use two pointer to apply the sliding window algorithms.</p>
+<p>2.We can expand the window to the right greedily as long as the character is not existent in the current window.</p>
+<p>3.Otherwise, we need to move the left pointer and erase the corresponding characters at left pointer out of the window until the current character at the right pointer is no longer in the window.</p>
+<p>4.If we don’t move the left pointer (shrink the window), the substring is not valid no matter how we move the right pointer.</p>
+<p><em>The time complexity is <span class="arithmatex">\(O(n)\)</span> as the left and right pointers both move towards the right and the space complexity is <span class="arithmatex">\(O(n)\)</span> as we need a hash-set or dictionary to store the elements in the current window.</em></p>
+<h3 id="divide-conquer">Divide &amp; Conquer</h3>
+<p>A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem.</p>
+<p><strong>Procedure</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>DAC(P):
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    if small(P):
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        S(P)                        // Directly solve the problem, there must exist a solution for smaller problem
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    else:
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        divide P into P₁,P₂,P₃,....Pₖ
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        Apply DAC(P₁),DAC(P₂).....DAC(Pₖ)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        Combine (DAC(P₁),DAC(P₂).....DAC(Pₖ))
+</span></code></pre></div>
 
 
 
@@ -862,7 +868,7 @@ _The time complexity is $O(n)$ as the left and right pointers both move towards 
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+Sliding%20window+-+/_algorithms/sliding_window/" target="_blank" rel="noopener">issue page</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+Implementation+-+/_algorithms/implementation/" target="_blank" rel="noopener">issue page</a>.
             </div>
           
         </div>
