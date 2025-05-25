@@ -61,10 +61,10 @@ const renderContent = (isAuthenticated) => {
         }
 
         // Reinitialize Material for MkDocs components
-        // if (typeof document$.subscribe === "function") {
-        // This will trigger the document$ observable which should reinitialize components
-        //   document$.next(document)
-        // }
+        if (typeof document$.subscribe === "function") {
+          // This will trigger the document$ observable which should reinitialize components
+          document$.next(document)
+        }
       }
     } else {
       // User is not authenticated - show login prompt
@@ -240,5 +240,4 @@ document.addEventListener("content-update", () => {
 document$.subscribe(() => {
   console.log("I am being called")
   renderContent(getAutheticUserState())
-  document$.next(document)
 })
