@@ -56,8 +56,14 @@ const renderContent = (isAuthenticated) => {
         solutionSection.appendChild(protectedContent)
 
         // ✅ Reinitialize MkDocs Material components
-        if (window.mdk?.bootstrap) {
-          window.mdk.bootstrap()
+        // if (window.mdk?.bootstrap) {
+        //   window.mdk.bootstrap()
+        // }
+
+        // Reinitialize Material for MkDocs components
+        if (typeof document$.subscribe === "function") {
+          // This will trigger the document$ observable which should reinitialize components
+          document$.next(document)
         }
 
         // Reprocess MathJax
