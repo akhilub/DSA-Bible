@@ -59,6 +59,11 @@ const renderContent = (isAuthenticated) => {
             console.error("Error typesetting math:", err)
           })
         }
+
+        // 🧠 Reinitialize MkDocs Material components
+        if (window.mdk?.bootstrap) {
+          window.mdk.bootstrap()
+        }
       }
     } else {
       // User is not authenticated - show login prompt
@@ -75,11 +80,6 @@ const renderContent = (isAuthenticated) => {
         if (loginBtn) loginBtn.addEventListener("click", login)
         if (signupBtn) signupBtn.addEventListener("click", signup)
       }
-    }
-
-    // 🧠 Reinitialize MkDocs Material components
-    if (window.mdk?.bootstrap) {
-      window.mdk.bootstrap()
     }
   }
 }
