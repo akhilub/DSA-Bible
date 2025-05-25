@@ -53,18 +53,12 @@ const renderContent = (isAuthenticated) => {
         const protectedContent = protectedTemplate.content.cloneNode(true)
         solutionSection.appendChild(protectedContent)
 
-        // Reprocess MathJax
+        // Reprocess MathJax if present
         if (typeof MathJax !== "undefined") {
           MathJax.typesetPromise([solutionSection]).catch((err) => {
             console.error("Error typesetting math:", err)
           })
         }
-
-        // // Reinitialize Material for MkDocs components
-        // if (typeof document$.subscribe === "function") {
-        //   // This will trigger the document$ observable which should reinitialize components
-        //   document$.next(document)
-        // }
       }
     } else {
       // User is not authenticated - show login prompt
@@ -81,6 +75,13 @@ const renderContent = (isAuthenticated) => {
         if (loginBtn) loginBtn.addEventListener("click", login)
         if (signupBtn) signupBtn.addEventListener("click", signup)
       }
+    }
+
+    // 🧠 Reinitialize MkDocs Material components
+    if (window.mdk?.bootstrap) {
+      window.mdk.bootstrap()
+    } else if (typeof document$.subscribe === "function") {
+      document$.next(document)
     }
   }
 }
