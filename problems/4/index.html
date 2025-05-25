@@ -1614,14 +1614,14 @@ so we cannot directly traverse the two arrays, but need to use the binary search
 If <span class="arithmatex">\(m+n\)</span> is even,then the median is the average of the <code>(m + n + 1)//2</code>-th number and the <code>(m + n + 2)//2</code>-th number</p>
 <p>In fact, we can unify it as the average of the <code>(m + n + 1)//2</code>-th and <code>(m + n + 2)//2</code>-th numbers</p>
 <p>Therefore, we can design a function
-<code>f(i, j, k)</code>, which represents the k-th smallest number in the interval [i,m) of array <code>nums1</code>
-and the interval [j,n) of array <code>nums2</code>.</p>
-<p>The median is the average of <code>f(0,0,(m+n+1)//2)</code> and <code>f(0,0,(m+n+2)//2)</code></p>
+<code>f(i, j, k)</code>, which represents the k-th smallest number in the interval <span class="arithmatex">\([i,m)\)</span> of array <code>nums1</code>
+and the interval <span class="arithmatex">\([j,n)\)</span> of array <code>nums2</code>.</p>
+<p>The median is the average of <code>f(0, 0, (m+n+1)//2)</code> and <code>f(0, 0, (m+n+2)//2)</code></p>
 <p>The implementation idea of the function <code>f(i, j, k)</code> is as follows:</p>
 <ul>
-<li>If i≥m, it means that the interval [i,m) of array <code>nums1</code> is empty, so directly return <code>nums2[j + k -1]</code>;</li>
-<li>If j≥n, it means that the interval [j,n) of array nums2 is empty, so directly return <code>nums1[i+k-1]</code>;</li>
-<li>If k==1, it means to find the first number, so just return the minimum of <code>nums1[i]</code> and <code>nums2[j]</code>;</li>
+<li>If i ≥ m, it means that the interval <span class="arithmatex">\([i,m)\)</span> of array <code>nums1</code> is empty, so directly return <code>nums2[j + k -1]</code>;</li>
+<li>If j ≥ n, it means that the interval <span class="arithmatex">\([j,n)\)</span> of array nums2 is empty, so directly return <code>nums1[i+k-1]</code>;</li>
+<li>If k == 1, it means to find the first number, so just return the <span class="arithmatex">\(minimum\)</span> of <code>nums1[i]</code> and <code>nums2[j]</code>;</li>
 <li>
 <p>Otherwise, we find the <code>(k//2)</code>-th number in the two arrays, denoted as <code>midVal1</code> and <code>midVal2</code>.</p>
 </li>
@@ -1633,11 +1633,11 @@ and the interval [j,n) of array <code>nums2</code>.</p>
 <ul>
 <li>
 <p>If <code>midVal1</code> ≤ <code>midVal2</code>, it means that the <code>(k//2)</code>-th number of array <code>nums1</code> cannot be the k-th smallest number, so we can exclude the interval
-[i,i+(k//2)) of array nums1, and recursively call <code>f(i+(k//2), 0, k-(k//2))</code></p>
+<span class="arithmatex">\([i, i+(k//2))\)</span> of array nums1, and recursively call <code>f(i+(k//2), 0, k-(k//2))</code></p>
 </li>
 <li>
 <p>If <code>midVal1</code> &gt; <code>midVal2</code>, it means that the <code>(k//2)</code>-th number of array <code>nums2</code> cannot be the k-th smallest number, so we can exclude the interval
-[j,j+(k//2)) of array nums2, and recursively call <code>f(i, j+(k//2), k-(k//2))</code></p>
+<span class="arithmatex">\([j, j+(k//2))\)</span> of array nums2, and recursively call <code>f(i, j+(k//2), k-(k//2))</code></p>
 </li>
 </ul>
 <p>The time complexity is <span class="arithmatex">\(O(log(m+n))\)</span>, and the space complexity is <span class="arithmatex">\(O(log(m+n))\)</span>. Here, <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the length of arrays <code>nums1</code> and <code>nums2</code> respectively.</p>
@@ -1704,16 +1704,16 @@ and the interval [j,n) of array <code>nums2</code>.</p>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">mergeTwoSortedArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="p">,</span> <span class="n">la</span><span class="p">,</span> <span class="n">lb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">la</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span><span class="n">lb</span><span class="p">:</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">la</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">lb</span><span class="p">:</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>                <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
 </span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>            <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">la</span><span class="p">:</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">la</span><span class="p">:</span>
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>            <span class="n">res</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="k">if</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">lb</span><span class="p">:</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">lb</span><span class="p">:</span>
 </span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>            <span class="n">res</span><span class="o">+=</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">:]</span>
 </span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
 </span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        <span class="k">return</span> <span class="n">res</span>
