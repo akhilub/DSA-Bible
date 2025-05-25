@@ -240,7 +240,7 @@ if (
   typeof document$ !== "undefined" &&
   typeof document$.subscribe === "function"
 ) {
-  document$.subscribe(() => {
+  document$.subscribe(function () {
     renderContent(getAuthenticatedUserState())
   })
 }
