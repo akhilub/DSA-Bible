@@ -444,14 +444,36 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../definations/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../definations/" class="md-tabs__link">
+          
   
   
     
   
   Definations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
 
       </a>
     </li>
@@ -504,8 +526,6 @@
       
         
           
-        
-      
         
       
     
@@ -759,13 +779,69 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../definations/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../definations/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
     Definations
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Releases
     
   </span>
   
@@ -794,10 +870,20 @@
   <h1>Implementation</h1>
 
 <h3 id="sliding-window">Sliding Window</h3>
-<p>1.We can keep tracking a current window, and use two pointer to apply the sliding window algorithms.</p>
-<p>2.We can expand the window to the right greedily as long as the character is not existent in the current window.</p>
-<p>3.Otherwise, we need to move the left pointer and erase the corresponding characters at left pointer out of the window until the current character at the right pointer is no longer in the window.</p>
-<p>4.If we don’t move the left pointer (shrink the window), the substring is not valid no matter how we move the right pointer.</p>
+<ol>
+<li>
+<p>We can keep tracking a current window, and use two pointer to apply the sliding window algorithms.</p>
+</li>
+<li>
+<p>We can expand the window to the right greedily as long as the character is not existent in the current window.</p>
+</li>
+<li>
+<p>Otherwise, we need to move the left pointer and erase the corresponding characters at left pointer out of the window until the current character at the right pointer is no longer in the window.</p>
+</li>
+<li>
+<p>If we don’t move the left pointer (shrink the window), the substring is not valid no matter how we move the right pointer.</p>
+</li>
+</ol>
 <p><em>The time complexity is <span class="arithmatex">\(O(n)\)</span> as the left and right pointers both move towards the right and the space complexity is <span class="arithmatex">\(O(n)\)</span> as we need a hash-set or dictionary to store the elements in the current window.</em></p>
 <h3 id="divide-conquer">Divide &amp; Conquer</h3>
 <p>A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem.</p>
