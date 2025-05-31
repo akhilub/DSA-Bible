@@ -1,13 +1,14 @@
 let auth0 = null
 let isCheckingAuth = false // Flag to prevent concurrent auth checks
-let isLoggedIn = false
+let isLoggedIn = false // to declare global user state
 const config = {
   domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
   client_id: "zTiHaknYvc17Kj3lz370AbHqtT58KnbF",
-  audience: "https://dev-wzadtpoj5nnk5uj1.us.auth0.com/api/v2/",
+  //No audience should be passed for ID token custom claims
   redirect_uri: window.location.origin,
   cacheLocation: "localstorage", // Persist session after reload
   useRefreshTokens: true, // Use refresh tokens for session renewal
+  scope: "openid profile email",
 }
 
 // === Auth0 Actions ===
@@ -23,9 +24,15 @@ const login = async () => {
   })
 }
 
-// Signup function - redirect to pricing page
-const signup = () => {
-  window.location.href = "/pricing/"
+// Signup function - direct to Auth0 signup screen
+const signup = async () => {
+  await auth0.loginWithRedirect({
+    screen_hint: "signup",
+    prompt: "login",
+    appState: {
+      returnTo: "/pricing/",
+    },
+  })
 }
 
 // Logout function
@@ -35,37 +42,86 @@ const logout = () => {
   })
 }
 
+//Function to check subscription status
+const checkSubscriptionStatus = async (user) => {
+  try {
+    // First check Auth0 app_metadata (primary method)
+    const tokenClaims = await auth0.getIdTokenClaims({ ignoreCache: true })
+    const appMetadata = tokenClaims["https://dsabible.com/app_metadata"] || {}
+
+    if (appMetadata.is_paid && appMetadata.payment_status === "active") {
+      return true
+    }
+
+    // Fallback: Check directly with Stripe
+    const stripeCustomerId =
+      tokenClaims["https://dsabible.com/stripe_customer_id"]
+    if (stripeCustomerId) {
+      const baseUrl =
+        window.location.hostname === "127.0.0.1" ||
+        window.location.hostname === "localhost"
+          ? "http://localhost:8787"
+          : "https://service-workers.akhilsin.workers.dev"
+
+      const response = await fetch(`${baseUrl}/subscription-status`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          customerId: stripeCustomerId,
+        }),
+      })
+
+      const data = await response.json()
+      return data.hasAccess || false
+    }
+
+    return false
+  } catch (error) {
+    console.error("Error checking subscription status:", error)
+    return false
+  }
+}
+
 // === Content Renderer ===
 // Function to render the appropriate content based on authentication
-const renderContent = (isAuthenticated) => {
+// Update renderContent function
+const renderContent = async (isAuthenticated) => {
   const solutionSection = document.getElementById("solution-section")
 
-  // Clear any existing content
   if (solutionSection) {
     solutionSection.innerHTML = ""
 
     if (isAuthenticated) {
-      // User is authenticated - show protected content
-      const protectedTemplate = document.getElementById(
-        "protected-content-template"
-      )
+      // Check if user has paid subscription
+      const hasSubscription = await checkSubscriptionStatus()
 
-      if (protectedTemplate) {
-        // Clone the template content and append it to the solution section
-        const protectedContent = protectedTemplate.content.cloneNode(true)
-        solutionSection.appendChild(protectedContent)
+      if (hasSubscription) {
+        // User is authenticated AND has active subscription - show protected content
+        const protectedTemplate = document.getElementById(
+          "protected-content-template"
+        )
+        if (protectedTemplate) {
+          // Clone the template content and append it to the solution section
+          const protectedContent = protectedTemplate.content.cloneNode(true)
+          solutionSection.appendChild(protectedContent)
 
-        // ✅ Reinitialize MkDocs Material components
-        if (window.mdk?.bootstrap) {
-          window.mdk.bootstrap()
+          // ✅ Reinitialize MkDocs Material components
+          // if (window.mdk?.bootstrap) {
+          //   window.mdk.bootstrap()
+          // }
+
+          // Reprocess MathJax
+          if (typeof MathJax !== "undefined") {
+            MathJax.typesetPromise([solutionSection]).catch((err) => {
+              console.error("Error typesetting math:", err)
+            })
+          }
         }
-
-        // Reprocess MathJax
-        if (typeof MathJax !== "undefined") {
-          MathJax.typesetPromise([solutionSection]).catch((err) => {
-            console.error("Error typesetting math:", err)
-          })
-        }
+      } else {
+        // User is authenticated but no active subscription
+        showSubscriptionPrompt(solutionSection)
       }
     } else {
       // User is not authenticated - show login prompt
@@ -83,6 +139,16 @@ const renderContent = (isAuthenticated) => {
         if (signupBtn) signupBtn.addEventListener("click", signup)
       }
     }
+  }
+}
+
+// Function to show subscription prompt
+const showSubscriptionPrompt = (container) => {
+  const subscriptionTemplate = document.getElementById(
+    "subscription-prompt-template"
+  )
+  if (subscriptionTemplate) {
+    container.innerHTML = subscriptionTemplate.innerHTML
   }
 }
 
@@ -150,7 +216,8 @@ const checkAuth = async () => {
     }
 
     // Render the appropriate content based on authentication
-    renderContent(isAuthenticated)
+    // renderContent call to be async
+    await renderContent(isAuthenticated)
   } finally {
     isCheckingAuth = false
   }

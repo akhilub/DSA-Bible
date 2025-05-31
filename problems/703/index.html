@@ -277,11 +277,11 @@
     <!-- Auth buttons - with responsive design -->
     <div class="md-header__auth md-header__source">
       <div class="md-header__auth-buttons">
-        <button class="md-header__button underline" id="login-btn">Log In</button>
-        <button class="md-header__button underline"
+        <button class="md-header__button underline header-btn" id="login-btn">Log In</button>
+        <button class="md-header__button underline header-btn"
                 id="logout-btn"
                 style="display: none">Logout</button>
-        <button class="md-header__button underline" id="signup-btn">Sign Up</button>
+        <button class="md-header__button underline header-btn" id="signup-btn">Sign Up</button>
       </div>
     </div>
   </nav>
@@ -295,6 +295,18 @@
     text-decoration: underline;
   }
   
+  .header-btn {
+    background: var(--md-primary-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+    border-radius: 6px !important;
+    padding: 0.4em 0.8em !important;
+  }
+  
+  .header-btn:hover {
+    background: var(--md-accent-fg-color) !important;
+    text-decoration: none !important;
+  }
+  
   /* Responsive styles for auth buttons */
   .md-header__auth {
     display: flex;
@@ -304,7 +316,7 @@
   
   .md-header__auth-buttons {
     display: flex;
-    gap: 0;
+    gap: 0.5em;
   }
   
   /* Make sure buttons are visible on all screen sizes */
@@ -319,12 +331,16 @@
   /* Further adjustments for very small screens */
   @media screen and (max-width: 40em) {
     .md-header__auth-buttons {
-      gap: 0;
+      gap: 0.3em;
     }
     
     .md-header__auth .md-header__button {
-      padding: 0.2rem;
-      font-size: 0.9rem;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.8rem;
+    }
+    
+    .header-btn {
+      padding: 0.3em 0.6em !important;
     }
   }
 </style>
@@ -1718,25 +1734,47 @@
 <p><template id="login-prompt-template">
 <br />
 <div class="login-message">
-    <h3>👋 Please log in to view the solution</h3>
-    <p>Access to detailed solutions requires a login. Already have an account?</p>
+    <h3>👋 Already have an account?</h3>
+    <p>Please log in to view the solution</p>
     <button id="login-btn-inline" class="md-button md-button--primary">Log In</button>
-    <p>Don't have an account yet?</p>
+    <h3>👋 Don't have an account yet?</h3>
+    <p>Access to detailed solutions requires an active subscription account. Get one now 🚀</p>
     <button id="signup-btn-inline" class="md-button">Sign Up</button>
   </div></p>
 <p></template></p>
+<!-- Subscription prompt template -->
+<p><template id="subscription-prompt-template">
+<br />
+<div class="subscription-message">
+    <h3>🔒 Premium Content</h3>
+    <p>This solution requires an active subscription to view.</p>
+    <button onclick="window.location.href='/pricing/'"
+            class="md-button md-button--primary">Upgrade to Pro</button>
+    <p>
+      <small>Already subscribed? Try refreshing the page.</small>
+    </p>
+  </div></p>
+<p></template></p>
 <style>
-  .login-message {
+  .login-message, .subscription-message {
     background-color: var(--md-default-bg-color);
     border: 1px solid var(--md-primary-fg-color--light);
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 20px 0px;
     margin: 20px 0;
     text-align: center;
   }
 
-  .login-message h3 {
+  .login-message h3, .subscription-message h3 {
     margin-top: 0;
+  }
+
+  .md-button {
+    margin-bottom: 20px;
+  }
+
+  .subscription-message {
+    border-color: var(--md-accent-fg-color);
   }
 </style>
 
@@ -2106,6 +2144,8 @@
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://js.stripe.com/v3/"></script>
       
         <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
       

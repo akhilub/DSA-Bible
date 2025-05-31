@@ -272,11 +272,11 @@
     <!-- Auth buttons - with responsive design -->
     <div class="md-header__auth md-header__source">
       <div class="md-header__auth-buttons">
-        <button class="md-header__button underline" id="login-btn">Log In</button>
-        <button class="md-header__button underline"
+        <button class="md-header__button underline header-btn" id="login-btn">Log In</button>
+        <button class="md-header__button underline header-btn"
                 id="logout-btn"
                 style="display: none">Logout</button>
-        <button class="md-header__button underline" id="signup-btn">Sign Up</button>
+        <button class="md-header__button underline header-btn" id="signup-btn">Sign Up</button>
       </div>
     </div>
   </nav>
@@ -290,6 +290,18 @@
     text-decoration: underline;
   }
   
+  .header-btn {
+    background: var(--md-primary-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+    border-radius: 6px !important;
+    padding: 0.4em 0.8em !important;
+  }
+  
+  .header-btn:hover {
+    background: var(--md-accent-fg-color) !important;
+    text-decoration: none !important;
+  }
+  
   /* Responsive styles for auth buttons */
   .md-header__auth {
     display: flex;
@@ -299,7 +311,7 @@
   
   .md-header__auth-buttons {
     display: flex;
-    gap: 0;
+    gap: 0.5em;
   }
   
   /* Make sure buttons are visible on all screen sizes */
@@ -314,12 +326,16 @@
   /* Further adjustments for very small screens */
   @media screen and (max-width: 40em) {
     .md-header__auth-buttons {
-      gap: 0;
+      gap: 0.3em;
     }
     
     .md-header__auth .md-header__button {
-      padding: 0.2rem;
-      font-size: 0.9rem;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.8rem;
+    }
+    
+    .header-btn {
+      padding: 0.3em 0.6em !important;
     }
   }
 </style>
@@ -896,33 +912,42 @@
     <h2>Pro Plan</h2>
     <p>Gain access to all content!</p>
     <div class="price">$6 <span class="price-period">per month</span></div>
-    <button class="pricing-heading" onclick="window.location.href='https://buy.stripe.com/test_XYZ123'">Subscribe</button>
+    <button class="pricing-button"
+            data-plan="monthly">
+      Subscribe
+    </button>
     <ul>
       <li>Unlock over 400 solutions across 28 problem categories</li>
       <li>Early access to new content</li>
       <li>Priority support</li>
     </ul>
-</div>
+  </div>
 
-<div id="yearly" class="pricing-card">
-  <h2>Pro Plan</h2>
-  <p>Gain access to all content!</p>
-  <div class="price">$51 <span class="price-period">per year</span></div>
-  <button class="pricing-heading" onclick="window.location.href='https://buy.stripe.com/test_ABC456'">Subscribe</button>
-  <ul>
-    <li>Unlock over 400 solutions across 28 problem categories</li>
-    <li>Early access to new content</li>
-    <li>Priority support</li>
-  </ul>
-</div>
-
-<div id="lifetime" class="pricing-card">
-  <h2>Pro Plan</h2>
-  <p>Gain access to all content!</p>
-  <div class="price">$251 <span class="price-period">lifetime</span></div>
-    <button class="pricing-heading" onclick="window.location.href='https://buy.stripe.com/test_LMN789'">Buy Now</button>
+  <div id="yearly" class="pricing-card">
+    <h2>Pro Plan</h2>
+    <p>Gain access to all content!</p>
+    <div class="price">$51 <span class="price-period">per year</span></div>
+    <button class="pricing-button" 
+            data-plan="yearly">
+      Subscribe
+    </button>
     <ul>
-       <li>Unlock over 400 solutions across 28 problem categories</li>
+      <li>Unlock over 400 solutions across 28 problem categories</li>
+      <li>Early access to new content</li>
+      <li>Priority support</li>
+    </ul>
+  </div>
+
+  <div id="lifetime" class="pricing-card">
+    <h2>Pro Plan</h2>
+    <p>Gain access to all content!</p>
+    <div class="price">$251 <span class="price-period">lifetime</span></div>
+    <button class="pricing-button"
+            data-plan="lifetime">
+      Buy Now
+    </button>
+    <ul>
+      <li>Unlock over 400 solutions across 28 problem categories</li>
       <li>Early access to new content</li>
       <li>Priority support</li>
     </ul>
@@ -936,6 +961,23 @@ function showPlan(id) {
   document.getElementById(id).style.display = 'block';
   event.target.classList.add('active');
 }
+
+// Handle pricing button clicks
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.pricing-button').forEach(button => {
+    button.addEventListener('click', function () {
+      const plan = this.getAttribute('data-plan');
+
+      if (!getAuthenticatedUserState()) {
+        alert("You are not authorized. Please SignUp first.");
+        return;
+      }
+
+      // Redirect to checkout page with plan parameter
+      window.location.href = `/checkout/?plan=${plan}`;
+    });
+  });
+});
 </script>
 
 <style>
@@ -952,6 +994,7 @@ function showPlan(id) {
   gap: 1em;
   padding: 1em;
 }
+
 .tab-button {
   border: 1px solid var(--md-primary-fg-color--light);
   background: var(--md-default-bg-color);
@@ -961,15 +1004,18 @@ function showPlan(id) {
   font-weight: bold;
   transition: all 0.3s ease;
 }
+
 .tab-button:hover {
   background-color: var(--md-accent-fg-color);
   border-color: var(--md-accent-fg-color);
   color: var(--md-accent-bg-color);
 }
+
 .tab-button.active {
   background: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
 }
+
 .pricing-container {
   display: flex;
   justify-content: center;
@@ -977,6 +1023,7 @@ function showPlan(id) {
   min-height: 60vh;
   padding: 2em;
 }
+
 .pricing-card {
   text-align: center;
   width: 100%;
@@ -987,16 +1034,19 @@ function showPlan(id) {
   background: var(--md-default-bg-color);
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
 .pricing-card h2 {
   font-size: 1.4em;
   margin-bottom: 0.2em;
 }
+
 .pricing-card .price {
   font-size: 2em;
   font-weight: bold;
   margin: 0.5em 0;
 }
-.pricing-card button {
+
+.pricing-button {
   margin-top: 1.2em;
   background: var(--md-primary-fg-color);
   border: none;
@@ -1007,22 +1057,28 @@ function showPlan(id) {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.pricing-card button:hover {
+
+.pricing-button:hover {
   background: var(--md-accent-fg-color);
   transform: translateY(-2px);
 }
+
 .pricing-card ul {
   text-align: left;
+  list-style: none;
   margin-top: 1.5em;
 }
+
 .pricing-card li::before {
-  content: "✓";
+  content: "✅";
   color: var(--md-primary-fg-color);
   margin-right: 0.5em;
 }
+
 .price-period {
   font-size: 0.5em;
 }
+
 #yearly, #lifetime {
   display: none;
 }
@@ -1315,6 +1371,8 @@ function showPlan(id) {
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://js.stripe.com/v3/"></script>
       
         <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
       

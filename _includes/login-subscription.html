@@ -1,0 +1,47 @@
+<!-- Login prompt template -->
+<template id="login-prompt-template">
+  <div class="login-message">
+    <h3>👋 Already have an account?</h3>
+    <p>Please log in to view the solution</p>
+    <button id="login-btn-inline" class="md-button md-button--primary">Log In</button>
+    <h3>👋 Don't have an account yet?</h3>
+    <p>Access to detailed solutions requires an active subscription account. Get one now 🚀</p>
+    <button id="signup-btn-inline" class="md-button">Sign Up</button>
+  </div>
+</template>
+
+<!-- Subscription prompt template -->
+<template id="subscription-prompt-template">
+  <div class="subscription-message">
+    <h3>🔒 Premium Content</h3>
+    <p>This solution requires an active subscription to view.</p>
+    <button onclick="window.location.href='/pricing/'"
+            class="md-button md-button--primary">Upgrade to Pro</button>
+    <p>
+      <small>Already subscribed? Try refreshing the page.</small>
+    </p>
+  </div>
+</template>
+
+<style>
+  .login-message, .subscription-message {
+    background-color: var(--md-default-bg-color);
+    border: 1px solid var(--md-primary-fg-color--light);
+    border-radius: 10px;
+    padding: 20px 20px 0px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .login-message h3, .subscription-message h3 {
+    margin-top: 0;
+  }
+
+  .md-button {
+    margin-bottom: 20px;
+  }
+
+  .subscription-message {
+    border-color: var(--md-accent-fg-color);
+  }
+</style>
