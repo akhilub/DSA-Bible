@@ -938,12 +938,11 @@ document.addEventListener('DOMContentLoaded', async function() {
           ? "http://localhost:8787"
           : "https://service-workers.akhilsin.workers.dev"
 
-      const response = await fetch(`${baseUrl}/verify-session`, {
-        method: 'POST',
+      const response = await fetch(`${baseUrl}/verify-session?session_id=${sessionId}`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ session_id: sessionId })
       });
 
       const result = await response.json();
@@ -954,6 +953,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         showErrorMessage();
       }
     } catch (error) {
+      console.error('Verification error:', error);
       showErrorMessage();
     }
   } else {
