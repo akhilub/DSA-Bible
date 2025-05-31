@@ -925,6 +925,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   try {
     // Get user claims
     const claims = await auth0.getIdTokenClaims({ ignoreCache: true });
+    console.log('Show me the claims', claims)
     const stripeCustomerId = claims["https://dsabible.com/stripe_customer_id"];
     if (!stripeCustomerId) {
       showError("Stripe customer ID not found. Please log in again.");

@@ -932,7 +932,13 @@ document.addEventListener('DOMContentLoaded', async function() {
   if (sessionId) {
     try {
       // Verify the session with your backend
-      const response = await fetch(`http://localhost:8787/verify-session`, {
+      const baseUrl =
+        window.location.hostname === "127.0.0.1" ||
+        window.location.hostname === "localhost"
+          ? "http://localhost:8787"
+          : "https://service-workers.akhilsin.workers.dev"
+
+      const response = await fetch(`${baseUrl}/verify-session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
