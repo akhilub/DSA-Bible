@@ -677,6 +677,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -962,8 +966,8 @@ function showPlan(id) {
   event.target.classList.add('active');
 }
 
-// Handle pricing button clicks
-document.addEventListener('DOMContentLoaded', function () {
+// Handle pricing button clicks - attach listeners immediately
+function attachPricingListeners() {
   document.querySelectorAll('.pricing-button').forEach(button => {
     button.addEventListener('click', function () {
       const plan = this.getAttribute('data-plan');
@@ -977,7 +981,10 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = `/checkout/?plan=${plan}`;
     });
   });
-});
+}
+
+// Call immediately since DOM is already loaded when this script runs
+attachPricingListeners();
 </script>
 
 <style>
