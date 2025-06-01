@@ -84,13 +84,29 @@ const checkSubscriptionStatus = async (user) => {
   }
 }
 
+// Add a flag to prevent multiple simultaneous renders
+let isRenderingContent = false
+
 // === Content Renderer ===
 // Function to render the appropriate content based on authentication
-// Update renderContent function
 const renderContent = async (isAuthenticated) => {
+  // Prevent concurrent rendering
+  if (isRenderingContent) {
+    console.log("Content rendering already in progress, skipping...")
+    return
+  }
+
   const solutionSection = document.getElementById("solution-section")
 
-  if (solutionSection) {
+  if (!solutionSection) {
+    console.log("Solution section not found, skipping render")
+    return
+  }
+
+  try {
+    isRenderingContent = true
+
+    // Always clear the container first
     solutionSection.innerHTML = ""
 
     if (isAuthenticated) {
@@ -108,9 +124,9 @@ const renderContent = async (isAuthenticated) => {
           solutionSection.appendChild(protectedContent)
 
           // ✅ Reinitialize MkDocs Material components
-          // if (window.mdk?.bootstrap) {
-          //   window.mdk.bootstrap()
-          // }
+          if (window.mdk?.bootstrap) {
+            window.mdk.bootstrap()
+          }
 
           // Reprocess MathJax
           if (typeof MathJax !== "undefined") {
@@ -139,6 +155,8 @@ const renderContent = async (isAuthenticated) => {
         if (signupBtn) signupBtn.addEventListener("click", signup)
       }
     }
+  } finally {
+    isRenderingContent = false
   }
 }
 
@@ -276,32 +294,41 @@ initAuth()
 const getAuthenticatedUserState = () => isLoggedIn
 const setAuthenticatedUserState = (value) => (isLoggedIn = value)
 
+// // Debounced version of renderContent to prevent rapid successive calls
+// let renderTimeout = null
+// const debouncedRenderContent = (isAuthenticated) => {
+//   clearTimeout(renderTimeout)
+//   renderTimeout = setTimeout(() => {
+//     renderContent(isAuthenticated)
+//   }, 100) // 100ms debounce
+// }
+
 // === Hook into MkDocs Material Events ===
 // Material for MkDocs navigation event
 // This is the key event that fires when navigation occurs in Material for MkDocs
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded event fired")
-  renderContent(getAuthenticatedUserState())
-})
+// document.addEventListener("DOMContentLoaded", () => {
+//   console.log("DOMContentLoaded event fired")
+//   renderContent(getAuthenticatedUserState())
+// })
 
 // For Material for MkDocs instant loading feature
-document.addEventListener("mdx-component-ready", () => {
-  console.log("mdx-component-ready event fired")
-  renderContent(getAuthenticatedUserState())
-})
+// document.addEventListener("mdx-component-ready", () => {
+//   console.log("mdx-component-ready event fired")
+//   renderContent(getAuthenticatedUserState())
+// })
 
 // Listen for Material for MkDocs navigation events
 // This is a custom event that Material for MkDocs fires when navigation occurs
-document.addEventListener("navigation", () => {
-  console.log("navigation event fired")
-  renderContent(getAuthenticatedUserState())
-})
+// document.addEventListener("navigation", () => {
+//   console.log("navigation event fired")
+//   renderContent(getAuthenticatedUserState())
+// })
 
 // Additional event for Material for MkDocs content changes
-document.addEventListener("content-update", () => {
-  console.log("content-update event fired")
-  renderContent(getAuthenticatedUserState())
-})
+// document.addEventListener("content-update", () => {
+//   console.log("content-update event fired")
+//   renderContent(getAuthenticatedUserState())
+// })
 
 if (
   typeof document$ !== "undefined" &&
