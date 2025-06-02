@@ -123,17 +123,8 @@ const renderContent = async (isAuthenticated) => {
           const protectedContent = protectedTemplate.content.cloneNode(true)
           solutionSection.appendChild(protectedContent)
 
-          // ✅ Reinitialize MkDocs Material components
-          if (window.mdk?.bootstrap) {
-            window.mdk.bootstrap()
-          }
-
-          // Reprocess MathJax
-          if (typeof MathJax !== "undefined") {
-            MathJax.typesetPromise([solutionSection]).catch((err) => {
-              console.error("Error typesetting math:", err)
-            })
-          }
+          // ✅ Properly reinitialize MkDocs Material components
+          await reinitializeMaterialComponents()
         }
       } else {
         // User is authenticated but no active subscription
@@ -157,6 +148,25 @@ const renderContent = async (isAuthenticated) => {
     }
   } finally {
     isRenderingContent = false
+  }
+}
+
+// ✅ New function to properly reinitialize MkDocs Material components
+const reinitializeMaterialComponents = async (container) => {
+  // Wait for DOM to settle
+  // await new Promise((resolve) => setTimeout(resolve, 50))
+
+  // ✅ This Reinitialize MkDocs Material components
+  if (typeof document$ !== "undefined" && document$.next) {
+    document$.next(document)
+    console.log("Triggered Material document stream")
+  }
+
+  // Reprocess MathJax
+  if (typeof MathJax !== "undefined") {
+    MathJax.typesetPromise([solutionSection]).catch((err) => {
+      console.error("Error typesetting math:", err)
+    })
   }
 }
 
