@@ -42,6 +42,18 @@ const logout = () => {
   })
 }
 
+// show/hide the lock icon
+const updateLock = () => {
+  const lockIcon = document.getElementById("lock-icon")
+  if (lockIcon) {
+    if (getAuthenticatedUserState()) {
+      lockIcon.style.display = "none"
+    } else {
+      lockIcon.style.display = "inline"
+    }
+  }
+}
+
 //Function to check subscription status
 const checkSubscriptionStatus = async (user) => {
   try {
@@ -124,7 +136,7 @@ const renderContent = async (isAuthenticated) => {
           solutionSection.appendChild(protectedContent)
 
           // ✅ Properly reinitialize MkDocs Material components
-          await reinitializeMaterialComponents()
+          await reinitializeMaterialComponents(solutionSection)
         }
       } else {
         // User is authenticated but no active subscription
@@ -156,15 +168,18 @@ const reinitializeMaterialComponents = async (container) => {
   // Wait for DOM to settle
   // await new Promise((resolve) => setTimeout(resolve, 50))
 
+  // Update lock-icon based on auth state
+  updateLock()
+
   // ✅ This Reinitialize MkDocs Material components
   if (typeof document$ !== "undefined" && document$.next) {
     document$.next(document)
     console.log("Triggered Material document stream")
   }
 
-  // Reprocess MathJax
+  // Reprocess MathJax - use the passed container or find solutionSection
   if (typeof MathJax !== "undefined") {
-    MathJax.typesetPromise([solutionSection]).catch((err) => {
+    MathJax.typesetPromise([container]).catch((err) => {
       console.error("Error typesetting math:", err)
     })
   }
