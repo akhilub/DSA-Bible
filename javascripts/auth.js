@@ -43,7 +43,7 @@ const logout = () => {
 }
 
 // show/hide the lock icon
-const updateLock = () => {
+const updateLock = async () => {
   const lockIcon = document.getElementById("lock-icon")
   if (lockIcon) {
     if (getAuthenticatedUserState()) {
@@ -169,7 +169,7 @@ const reinitializeMaterialComponents = async (container) => {
   // await new Promise((resolve) => setTimeout(resolve, 50))
 
   // Update lock-icon based on auth state
-  updateLock()
+  await updateLock()
 
   // ✅ This Reinitialize MkDocs Material components
   if (typeof document$ !== "undefined" && document$.next) {

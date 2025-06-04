@@ -445,17 +445,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../topics/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
   
   
     
   
-  Topics
+  Companies
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -1178,11 +1181,11 @@
         <li class="md-nav__item">
   <a href="#solutions" class="md-nav__link">
     <span class="md-ellipsis">
-      Solutions
+      Solutions 🔒
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Solutions">
+    <nav class="md-nav" aria-label="Solutions 🔒">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1470,6 +1473,8 @@
       
         
       
+        
+      
     
     
     
@@ -1517,18 +1522,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../topics/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
   
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    Topics
+    Companies
     
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1650,6 +1689,12 @@
       
       
       
+        <a href="../../topics/#tag:microsoft" class="md-tag">Microsoft</a>
+      
+    
+      
+      
+      
         <a href="../../topics/#tag:string" class="md-tag">String</a>
       
     
@@ -1699,7 +1744,7 @@
 
 <!-- interpreter end -->
 
-<h2 id="solutions"><strong>Solutions</strong></h2>
+<h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon">🔒</span></h2>
 <section id="solution-section">
   <!-- This section will be populated by JavaScript based on authentication -->
 </section>
@@ -1717,14 +1762,17 @@
 <!-- solution:start -->
 
 <h3 id="approach-trie">Approach : Trie</h3>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(TBA\)</span></p>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(TBA\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(m*n*4^L)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(T)\)</span></p>
 <!-- tabs:start -->
 
 <h3 id="way-1">Way 1</h3>
-<div class="admonition note">
-<p class="admonition-title">Algorithm 1</p>
-</div>
+<details class="note">
+<summary>Algorithm 1</summary>
+<p>The problem can be efficiently solved using a Trie data structure to store all the words. This allows for quick lookups and ensures that we only explore paths that could potentially form words.</p>
+<p>We perform a Depth-First Search (DFS) starting from each cell in the board. During the DFS, we mark cells as visited by changing their value to <code>#</code>, and restore them after exploring all possible paths from that cell to avoid using the same cell more than once in a single word.</p>
+<p>After finding a word, we set its corresponding node's <code>word</code> attribute to <code>None</code> to prevent adding it multiple times to the result list. Additionally, we prune the Trie by removing leaf nodes that no longer have children, which helps in reducing unnecessary computations in subsequent searches.</p>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1793,6 +1841,11 @@
 </span></code></pre></div>
 </div>
 </div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Detailed Complexity Discussion</p>
+<p><strong>Time:</strong> <span class="arithmatex">\(O(m*n*4^L)\)</span> where <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the dimensions of the board, and <span class="arithmatex">\(L\)</span> is the maximum length of the words in the dictionary. In practice, the pruning step significantly reduces the number of recursive calls, making the algorithm much faster for larger inputs.</p>
+<p><strong>Space:</strong> <span class="arithmatex">\(O(T)\)</span> where <span class="arithmatex">\(T\)</span> is the total number of characters in the dictionary of words. This accounts for the space used by the Trie structure. Additionally, the recursion stack during DFS adds to the space complexity, but it is bounded by the size of the board.</p>
 </div>
 <!-- tabs:end -->
 
