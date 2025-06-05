@@ -982,6 +982,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#depot-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depot Transactions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1586,16 +1601,76 @@ that needs to be included into the objective function and its capacity limit, al
 <summary>View Result</summary>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Total Minimum Cost = $18103
 </span></code></pre></div>
-</details>
-<!-- answer start -->
+<h3 id="depot-transactions">Depot Transactions</h3>
+<pre class="mermaid"><code>flowchart TD
+    D1["Depot 1"]
+    D2["Depot 2"]
+    D3["Depot 3"]
+    D4["Depot 4"]
+    D5["Depot 5"]
+    D6["Depot 6"]
+    D7["Depot 7"]
+    D8["Depot 8"]
+    D9["Depot 9"]
+    D10["Depot 10"]
+    D11["Depot 11"]
+    D12["Depot 12"]
+    C1["Customer 1"]
+    C2["Customer 2"]
+    C3["Customer 3"]
+    C4["Customer 4"]
+    C5["Customer 5"]
+    C6["Customer 6"]
+    C7["Customer 7"]
+    C8["Customer 8"]
+    C9["Customer 9"]
+    C10["Customer 10"]
+    C11["Customer 11"]
+    C12["Customer 12"]
 
+    D1 e1@==&gt;|5.0 tons| C2
+    e1@{ animate: true, animation: slow }
+    D1 e2@==&gt;|75.0 tons| C3
+    e2@{ animate: true, animation: slow }
+    D1 e3@==&gt;|100.0 tons| C4
+    e3@{ animate: true, animation: slow }
+    D1 e4@==&gt;|120.0 tons| C12
+    e4@{ animate: true, animation: slow }
+    D5 e5@==&gt;|120.0 tons| C1
+    e5@{ animate: true, animation: slow }
+    D5 e6@==&gt;|40.0 tons| C2
+    e6@{ animate: true, animation: slow }
+    D8 e7@==&gt;|35.0 tons| C2
+    e7@{ animate: true, animation: slow }
+    D8 e8@==&gt;|100.0 tons| C6
+    e8@{ animate: true, animation: slow }
+    D8 e9@==&gt;|85.0 tons| C10
+    e9@{ animate: true, animation: slow }
+    D9 e10@==&gt;|110.0 tons| C5
+    e10@{ animate: true, animation: slow }
+    D9 e11@==&gt;|65.0 tons| C10
+    e11@{ animate: true, animation: slow }
+    D9 e12@==&gt;|95.0 tons| C11
+    e12@{ animate: true, animation: slow }
+    D12 e13@==&gt;|90.0 tons| C7
+    e13@{ animate: true, animation: slow }
+    D12 e14@==&gt;|60.0 tons| C8
+    e14@{ animate: true, animation: slow }
+    D12 e15@==&gt;|30.0 tons| C9
+    e15@{ animate: true, animation: slow }</code></pre>
+</details>
 <h2 id="answer"><strong>Answer</strong> <span id="lock-icon">🔒</span></h2>
+<!-- PROTECTED CONTENT STARTS HERE -->
+
 <section id="solution-section">
   <!-- This section will be populated by JavaScript based on authentication -->
 </section>
 
 <!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
+
 <p><template id="protected-content-template"></p>
+<!-- answer start -->
+
 <p>The optimization algorithm calculates a minimum total cost of $18,103k. The five depots 1, 5, 8, 9, and
 12 are built. The following table details how the customers are delivered to from these depots. All depots
 built, except depot 5 are used to their maximum capacity.</p>
@@ -1724,7 +1799,7 @@ These are the two sums comprising the objective function (6.4).</p>
 <div class="arithmatex">\[\forall c \in CUST : \sum_{d \in DEPOTS} fflow_{dc} = 1 \tag{6.6}\]</div>
 <div class="arithmatex">\[\forall d \in DEPOTS: \sum_{c \in CUST} DEM_c \cdot fflow_{dc} \leq CAP_d \cdot build_d \tag{6.7}\]</div>
 <div class="arithmatex">\[\forall d \in DEPOTS, c \in CUST : fflow_{dc} \geq 0 \tag{6.8}\]</div>
-<div class="arithmatex">\[\forall d \in DEPOTS : build_d \in \mathbb{N} \tag{6.1}\]</div>
+<div class="arithmatex">\[\forall d \in DEPOTS : build_d \in \mathbb{N} \tag{6.9}\]</div>
 <!-- answer end -->
 
 <details class="abstract">
@@ -1783,51 +1858,65 @@ These are the two sums comprising the objective function (6.4).</p>
 </span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="n">m</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
 </span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
 </span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">GRB</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">OPTIMAL</span><span class="p">:</span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="n">m</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;depotLocation.lp&quot;</span><span class="p">)</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="c1">#m.write(&quot;depotLocation.lp&quot;)</span>
 </span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        <span class="c1">#os.system(&quot;imshow depotLocation.lp&quot;)</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="n">m</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;depotLocation.sol&quot;</span><span class="p">)</span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        <span class="c1">#os.system(&quot;imshow depotLocatio.sol&quot;)</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">TOTAL_COST</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>    <span class="k">elif</span> <span class="n">m</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">GRB</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">INFEASIBLE</span><span class="p">:</span>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="n">m</span><span class="o">.</span><span class="n">computeIIS</span><span class="p">()</span> <span class="c1"># IIS tells you which constraints, when removed, makes the m feasible</span>
-</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>        <span class="n">m</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;inf.ilp&#39;</span><span class="p">)</span>
-</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
-</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total Minimum Cost= $</span><span class="si">%g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="o">.</span><span class="n">objVal</span><span class="p">)</span>
-</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
-</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
-</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    <span class="n">DELIVERY_COST_D2C</span><span class="o">=</span><span class="p">[</span>
-</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>        <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">110</span><span class="p">],</span>
-</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>        <span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">130</span><span class="p">],</span>
-</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>        <span class="p">[</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">],</span>
-</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>        <span class="p">[</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
-</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>        <span class="p">[</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
-</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>        <span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>        <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>        <span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">130</span><span class="p">],</span>
-</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>        <span class="p">[</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">],</span>
-</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>        <span class="p">[</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
-</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>        <span class="p">[</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
-</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>        <span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
-</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>        <span class="p">]</span>
-</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>
-</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>    <span class="n">DEMAND</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">95</span><span class="p">,</span><span class="mi">120</span><span class="p">]</span>
-</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>    <span class="n">CAPACITY</span> <span class="o">=</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">275</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">180</span><span class="p">]</span>
-</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
-</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>    <span class="n">FIXED_COST</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3500</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">3500</span><span class="p">]</span>
-</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>
-</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>    <span class="n">solveTotalMinCostForDepot</span><span class="p">(</span><span class="n">DELIVERY_COST_D2C</span><span class="p">,</span> <span class="n">DEMAND</span><span class="p">,</span> <span class="n">CAPACITY</span><span class="p">,</span> <span class="n">FIXED_COST</span><span class="p">)</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="c1">#m.write(&quot;depotLocation.sol&quot;)</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        <span class="c1">#os.system(&quot;imshow depotLocation.sol&quot;)</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Optimal total cost: $</span><span class="si">{</span><span class="n">TOTAL_COST</span><span class="o">.</span><span class="n">X</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Delivery Plan Matrix (Depot -&gt; Customer in Tons):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>        <span class="c1"># Print header row with customer indices</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>        <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C</span><span class="si">{:02d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">)]</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;       &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>        <span class="c1"># Print each depot&#39;s deliveries to customers</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>            <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>                <span class="n">amount</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">X</span> <span class="o">*</span> <span class="n">DEMAND</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># actual tons delivered</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">amount</span><span class="p">))</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D</span><span class="si">{:02d}</span><span class="s2"> :&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    <span class="k">elif</span> <span class="n">m</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">GRB</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">INFEASIBLE</span><span class="p">:</span>
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>        <span class="n">m</span><span class="o">.</span><span class="n">computeIIS</span><span class="p">()</span> <span class="c1"># IIS tells you which constraints, when removed, makes the m feasible</span>
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>        <span class="c1">#m.write(&#39;inf.ilp&#39;)</span>
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total Minimum Cost= $</span><span class="si">%g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="o">.</span><span class="n">objVal</span><span class="p">)</span>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>    <span class="n">DELIVERY_COST_D2C</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>        <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">110</span><span class="p">],</span>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>        <span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">130</span><span class="p">],</span>
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>        <span class="p">[</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">],</span>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>        <span class="p">[</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>        <span class="p">[</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>        <span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>        <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>        <span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">130</span><span class="p">],</span>
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>        <span class="p">[</span><span class="mi">140</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">],</span>
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>        <span class="p">[</span><span class="mi">160</span><span class="p">,</span><span class="mi">125</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>        <span class="p">[</span><span class="mi">190</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span>
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>        <span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>        <span class="p">]</span>
+</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>
+</span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>    <span class="n">DEMAND</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">95</span><span class="p">,</span><span class="mi">120</span><span class="p">]</span>
+</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>    <span class="n">CAPACITY</span> <span class="o">=</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">275</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">180</span><span class="p">]</span>
+</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>
+</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>    <span class="n">FIXED_COST</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3500</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">3500</span><span class="p">]</span>
+</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>
+</span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>    <span class="n">solveTotalMinCostForDepot</span><span class="p">(</span><span class="n">DELIVERY_COST_D2C</span><span class="p">,</span> <span class="n">DEMAND</span><span class="p">,</span> <span class="n">CAPACITY</span><span class="p">,</span> <span class="n">FIXED_COST</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
 </div>
-<p></template></p>
 <!-- tabs:end -->
 
 <!-- solution:end -->
 
 <!-- problem:end -->
 
+<p></template></p>
 <!-- Login Prompt Template -->
 
 <!-- Login prompt template -->
@@ -1903,6 +1992,35 @@ These are the two sums comprising the objective function (6.4).</p>
         </div>
 
 </section>
+
+<!--
+        if m.status == GRB.status.OPTIMAL:
+            m.write("depotLocation.lp")
+            #os.system("imshow depotLocation.lp")
+            m.write("depotLocation.sol")
+            #os.system("imshow depotLocatio.sol")
+            print(TOTAL_COST.X)
+            print(f"\nOptimal total cost: ${TOTAL_COST.X:.2f}")
+            print("\n```mermaid")
+            print("graph LR")
+
+            # Define depot and customer nodes
+            for j in range(D):
+                print(f'    D{j+1}["Depot {j+1}"]')
+            for i in range(C):
+                print(f'    C{i+1}["Customer {i+1}"]')
+
+            # Add arrows with tonnage
+            edge = 0
+            for j in range(D):
+                for i in range(C):
+                    tons = y[j+1, i+1].X * DEMAND[i]
+                    if tons > 1e-2:  # Filter small values
+                        edge+=1
+                        print(f'    D{j+1} e{edge}@==>|{tons:.1f} tons| C{i+1}')
+                        print(f'    e{edge}'+"@{ animate: true, animation: slow }")
+            print("```")
+-->
 
 
 
