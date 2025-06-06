@@ -131,19 +131,9 @@ const renderContent = async (isAuthenticated) => {
           "protected-content-template"
         )
         if (protectedTemplate) {
-          console.log("Template found:", protectedTemplate)
-
-          // Step 1: Get the content from the template tag
-          // ✅ FIX: Get only the innerHTML (content inside the script tag)
-          const protectedContent = protectedTemplate.innerHTML
-
-          // Step 2: Inject it into the desired container
-          // ✅ FIX: Set innerHTML directly (no need for textContent)
-          solutionSection.innerHTML = protectedContent
-
           // Clone the template content and append it to the solution section
-          // const protectedContent = protectedTemplate.content.cloneNode(true)
-          // solutionSection.appendChild(protectedContent)
+          const protectedContent = protectedTemplate.content.cloneNode(true)
+          solutionSection.appendChild(protectedContent)
 
           // ✅ Properly reinitialize MkDocs Material components
           await reinitializeMaterialComponents(solutionSection)
