@@ -127,13 +127,22 @@ const renderContent = async (isAuthenticated) => {
 
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
+        // Step1: Get the content from the template tag
         const protectedTemplate = document.getElementById(
           "protected-content-template"
         )
         if (protectedTemplate) {
-          // Clone the template content and append it to the solution section
-          const protectedContent = protectedTemplate.content.cloneNode(true)
-          solutionSection.appendChild(protectedContent)
+          console.log("Template found:", protectedTemplate) // Debug
+
+          // Step 2: Inject it into the desired container
+          const protectedContent =
+            protectedTemplate.textContent || protectedTemplate.innerHTML
+
+          solutionSection.innerHTML = protectedContent
+
+          // // Clone the template content and a`ppend it to the solution section
+          // const protectedContent = protectedTemplate.content.cloneNode(true)
+          // solutionSection.appendChild(protectedContent)
 
           // ✅ Properly reinitialize MkDocs Material components
           await reinitializeMaterialComponents(solutionSection)
