@@ -127,15 +127,18 @@ const renderContent = async (isAuthenticated) => {
 
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
-        const protectedTemplate = document.getElementById(
-          "protected-content-template"
-        )
-        if (protectedTemplate) {
-          // Clone the template content and append it to the solution section
-          const protectedContent = protectedTemplate.content.cloneNode(true)
-          solutionSection.appendChild(protectedContent)
 
-          // ✅ Properly reinitialize MkDocs Material components
+        const script = document.getElementById("protected-content-template")
+        if (script && script.tagName === "SCRIPT") {
+          const markdown = script.innerHTML.trim()
+
+          // Parse the Markdown to HTML
+          const html = window.marked.parse(markdown)
+
+          // Inject into DOM
+          solutionSection.innerHTML = html
+
+          // Reinitialize MkDocs plugins (tabs, math, mermaid, panzoom, etc.)
           await reinitializeMaterialComponents(solutionSection)
         }
       } else {
