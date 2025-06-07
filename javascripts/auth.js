@@ -127,14 +127,24 @@ const renderContent = async (isAuthenticated) => {
 
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
+
+        const script = document.getElementById("protected-content-template")
+        if (script && script.tagName === "SCRIPT") {
+          /* Dynamically create a real <template> from <script> */
+          const template = document.createElement("template")
+          template.id = "protected-content-template"
+          template.innerHTML = script.innerHTML
+          script.replaceWith(template)
+        }
+
+        // Now it's a real template → render it
         const protectedTemplate = document.getElementById(
           "protected-content-template"
         )
-        if (protectedTemplate) {
+        if (protectedTemplate && protectedTemplate.content) {
           // Clone the template content and append it to the solution section
           const protectedContent = protectedTemplate.content.cloneNode(true)
           solutionSection.appendChild(protectedContent)
-
           // ✅ Properly reinitialize MkDocs Material components
           await reinitializeMaterialComponents(solutionSection)
         }
