@@ -54,37 +54,6 @@ const updateLock = async () => {
   }
 }
 
-const loadProtectedSolution = async (
-  containerSelector = "#solution-section"
-) => {
-  const solutionSection = document.querySelector(containerSelector)
-  if (!solutionSection) throw new Error("Solution section not found")
-
-  const problemId = solutionSection.dataset.problemId
-  const sectionType = solutionSection.dataset.sectionType
-
-  if (!problemId || !sectionType) {
-    throw new Error("Missing data-problem-id or data-section-type")
-  }
-
-  const solutionUrl = `${sectionType}-solutions/sol${problemId}.md`
-  console.log(`🔐 Loading: ${solutionUrl}`)
-
-  const response = await fetch(solutionUrl)
-  if (!response.ok) throw new Error("Solution fetch failed")
-
-  const rawHtml = await response.text()
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(rawHtml, "text/html")
-
-  const template = doc.querySelector("#protected-content-template")
-  if (!template)
-    throw new Error("No <template> with id='protected-content-template' found")
-
-  const protectedContent = template.content.cloneNode(true)
-  solutionSection.appendChild(protectedContent)
-}
-
 //Function to check subscription status
 const checkSubscriptionStatus = async (user) => {
   try {
@@ -158,11 +127,13 @@ const renderContent = async (isAuthenticated) => {
 
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
-        try {
-          await loadProtectedSolution("#solution-section")
-        } catch (err) {
-          console.error("Failed to load protected solution:", err)
-          solutionSection.innerHTML = `<p>${err.message}</p>`
+        const protectedTemplate = document.getElementById(
+          "protected-content-template"
+        )
+        if (protectedTemplate) {
+          // Clone the template content and append it to the solution section
+          const protectedContent = protectedTemplate.content.cloneNode(true)
+          solutionSection.appendChild(protectedContent)
 
           // ✅ Properly reinitialize MkDocs Material components
           await reinitializeMaterialComponents(solutionSection)
@@ -212,22 +183,6 @@ const reinitializeMaterialComponents = async (container) => {
       console.error("Error typesetting math:", err)
     })
   }
-
-  // if (typeof mermaid !== "undefined") {
-  //   try {
-  //     await mermaid.run()
-  //   } catch (err) {
-  //     console.error("Mermaid render error", err)
-  //   }
-  // }
-
-  // if (window?.panzoom?.init) {
-  //   try {
-  //     window.panzoom.init({ include: [".mermaid"] })
-  //   } catch (err) {
-  //     console.error("Panzoom init error:", err)
-  //   }
-  // }
 }
 
 // Function to show subscription prompt
