@@ -196,27 +196,3 @@ code {
   text-align: center;
   margin: 1em auto;
 }
-
-/* Hide protected content by default from all plugins */
-.protected-content {
-  display: none !important;
-  visibility: hidden !important;
-  position: absolute !important;
-  left: -9999px !important;
-}
-
-/* Show when authenticated and subscribed */
-.user-authenticated.user-subscribed .protected-content {
-  display: block !important;
-  visibility: visible !important;
-  position: static !important;
-  left: auto !important;
-}
-
-/* Ensure content stays hidden for authenticated users without subscription */
-.user-authenticated:not(.user-subscribed) .protected-content {
-  display: none !important;
-  visibility: hidden !important;
-  position: absolute !important;
-  left: -9999px !important;
-}

@@ -54,16 +54,6 @@ const updateLock = async () => {
   }
 }
 
-const updateBodyClasses = (isAuthenticated, hasSubscription = false) => {
-  document.body.className = document.body.className.replace(/user-\w+/g, "")
-  if (isAuthenticated) {
-    document.body.classList.add("user-authenticated")
-    if (hasSubscription) {
-      document.body.classList.add("user-subscribed")
-    }
-  }
-}
-
 //Function to check subscription status
 const checkSubscriptionStatus = async (user) => {
   try {
@@ -137,21 +127,23 @@ const renderContent = async (isAuthenticated) => {
 
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
-        // update body classes to show protected content
-        updateBodyClasses(isAuthenticated, hasSubscription)
-
-        // ✅ Properly reinitialize MkDocs Material components
-        await reinitializeMaterialComponents(
-          document.querySelector(".protected-content")
+        const protectedTemplate = document.getElementById(
+          "protected-content-template"
         )
+        if (protectedTemplate) {
+          // Clone the template content and append it to the solution section
+          const protectedContent = protectedTemplate.content.cloneNode(true)
+          solutionSection.appendChild(protectedContent)
+
+          // ✅ Properly reinitialize MkDocs Material components
+          await reinitializeMaterialComponents(solutionSection)
+        }
       } else {
         // User is authenticated but no active subscription
-        updateBodyClasses(isAuthenticated, false)
         showSubscriptionPrompt(solutionSection)
       }
     } else {
       // User is not authenticated - show login prompt
-      updateBodyClasses(false, false)
       const loginTemplate = document.getElementById("login-prompt-template")
       if (loginTemplate) {
         // Clone the login prompt and append it to the solution section
