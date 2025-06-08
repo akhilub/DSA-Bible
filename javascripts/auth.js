@@ -54,50 +54,6 @@ const updateLock = async () => {
   }
 }
 
-const loadProtectedSolution = async (
-  containerSelector = "#solution-section"
-) => {
-  const solutionSection = document.querySelector(containerSelector)
-  if (!solutionSection) throw new Error("Solution section not found")
-
-  const problemId = solutionSection.dataset.problemId
-  const sectionType = solutionSection.dataset.sectionType
-
-  if (!problemId || !sectionType) {
-    throw new Error("Missing data-problem-id or data-section-type")
-  }
-
-  const solutionUrl = `/${sectionType}-solutions/sol${problemId}/`
-  console.log(`🔐 Loading: ${solutionUrl}`)
-
-  const response = await fetch(solutionUrl)
-  console.log("Show me the response", response)
-  if (!response.ok) {
-    console.error(
-      `Fetch failed with status: ${response.status} ${response.statusText}`
-    )
-    throw new Error(`Solution fetch failed: ${response.status}`)
-  }
-
-  const rawHtml = await response.text()
-
-  // ✅ Extract <template id="protected-content-template"> manually using RegEx
-  const protectedTemplate = rawHtml.match(
-    /<template[^>]*id=["']protected-content-template["'][^>]*>([\s\S]*?)<\/template>/
-  )
-
-  if (protectedTemplate && protectedTemplate[1]) {
-    const wrapper = document.createElement("div")
-    wrapper.innerHTML = protectedTemplate[1]
-    solutionSection.appendChild(wrapper)
-  } else {
-    console.warn("Template not found via RegEx. Fallback to entire HTML body.")
-    const fallback = document.createElement("div")
-    fallback.innerHTML = rawHtml
-    solutionSection.appendChild(fallback)
-  }
-}
-
 //Function to check subscription status
 const checkSubscriptionStatus = async (user) => {
   try {
@@ -171,11 +127,13 @@ const renderContent = async (isAuthenticated) => {
 
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
-        try {
-          await loadProtectedSolution("#solution-section")
-        } catch (err) {
-          console.error("Failed to load protected solution:", err)
-          solutionSection.innerHTML = `<p>${err.message}</p>`
+        const protectedTemplate = document.getElementById(
+          "protected-content-template"
+        )
+        if (protectedTemplate) {
+          // Clone the template content and append it to the solution section
+          const protectedContent = protectedTemplate.content.cloneNode(true)
+          solutionSection.appendChild(protectedContent)
 
           // ✅ Properly reinitialize MkDocs Material components
           await reinitializeMaterialComponents(solutionSection)
@@ -225,22 +183,6 @@ const reinitializeMaterialComponents = async (container) => {
       console.error("Error typesetting math:", err)
     })
   }
-
-  // if (typeof mermaid !== "undefined") {
-  //   try {
-  //     await mermaid.run()
-  //   } catch (err) {
-  //     console.error("Mermaid render error", err)
-  //   }
-  // }
-
-  // if (window?.panzoom?.init) {
-  //   try {
-  //     window.panzoom.init({ include: [".mermaid"] })
-  //   } catch (err) {
-  //     console.error("Panzoom init error:", err)
-  //   }
-  // }
 }
 
 // Function to show subscription prompt
