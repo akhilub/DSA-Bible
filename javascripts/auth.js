@@ -96,6 +96,52 @@ const checkSubscriptionStatus = async (user) => {
   }
 }
 
+const loadProtectedSolution = async (
+  containerSelector = "#solution-section"
+) => {
+  const solutionSection = document.querySelector(containerSelector)
+  if (!solutionSection) throw new Error("Solution section not found")
+
+  const problemId = solutionSection.dataset.problemId
+  const sectionType = solutionSection.dataset.sectionType
+
+  if (!problemId || !sectionType) {
+    throw new Error("Missing data-problem-id or data-section-type")
+  }
+
+  const solutionUrl = `/${sectionType}-solutions/sol${problemId}/`
+  //console.log(`🔐 Loading: ${solutionUrl}`)
+
+  const response = await fetch(solutionUrl)
+  if (!response.ok) {
+    console.error(
+      `Fetch failed with status: ${response.status} ${response.statusText}`
+    )
+    throw new Error(`Solution fetch failed: ${response.status}`)
+  }
+
+  const rawHtml = await response.text()
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(rawHtml, "text/html")
+
+  // Extract the main content (everything between gated-content start/end)
+  const startMarker = "<!-- gated-content start -->"
+  const endMarker = "<!-- gated-content end -->"
+
+  const startIndex = rawHtml.indexOf(startMarker)
+  const endIndex = rawHtml.indexOf(endMarker)
+
+  if (startIndex !== -1 && endIndex !== -1) {
+    const content = rawHtml.substring(startIndex + startMarker.length, endIndex)
+    solutionSection.innerHTML = content
+
+    return
+  }
+
+  // If markers not found, throw error
+  throw new Error("No solution content found between gated-content markers")
+}
+
 // Add a flag to prevent multiple simultaneous renders
 let isRenderingContent = false
 
@@ -127,16 +173,14 @@ const renderContent = async (isAuthenticated) => {
 
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
-        const protectedTemplate = document.getElementById(
-          "protected-content-template"
-        )
-        if (protectedTemplate) {
-          // Clone the template content and append it to the solution section
-          const protectedContent = protectedTemplate.content.cloneNode(true)
-          solutionSection.appendChild(protectedContent)
+        try {
+          await loadProtectedSolution("#solution-section")
 
-          // ✅ Properly reinitialize MkDocs Material components
+          // ✅ Properly reinitialize MkDocs Material components after content is loaded
           await reinitializeMaterialComponents(solutionSection)
+        } catch (err) {
+          console.error("Failed to load protected solution:", err)
+          solutionSection.innerHTML = `<p>Error loading solution: ${err.message}</p>`
         }
       } else {
         // User is authenticated but no active subscription
@@ -158,12 +202,16 @@ const renderContent = async (isAuthenticated) => {
         if (signupBtn) signupBtn.addEventListener("click", signup)
       }
     }
+  } catch (error) {
+    console.error("Error rendering content:", error)
+    solutionSection.innerHTML =
+      "<p>Error loading content. Please refresh the page.</p>"
   } finally {
     isRenderingContent = false
   }
 }
 
-// ✅ New function to properly reinitialize MkDocs Material components
+// ✅ Enhanced function to properly reinitialize MkDocs Material components
 const reinitializeMaterialComponents = async (container) => {
   // Wait for DOM to settle
   // await new Promise((resolve) => setTimeout(resolve, 50))
@@ -182,6 +230,39 @@ const reinitializeMaterialComponents = async (container) => {
     MathJax.typesetPromise([container]).catch((err) => {
       console.error("Error typesetting math:", err)
     })
+  }
+
+  // ✅ Re-initialize Mermaid diagrams in the new content
+  if (typeof mermaid !== "undefined") {
+    try {
+      // Find all mermaid elements in the container
+      const mermaidElements = container.querySelectorAll(
+        ".mermaid, pre code.language-mermaid"
+      )
+      if (mermaidElements.length > 0) {
+        await mermaid.run({
+          nodes: mermaidElements,
+        })
+        console.log("Mermaid diagrams re-initialized")
+      }
+    } catch (err) {
+      console.error("Mermaid render error", err)
+    }
+  }
+
+  // ✅ Re-initialize panzoom for new mermaid diagrams
+  if (window?.panzoom?.init) {
+    try {
+      // Wait a bit more for mermaid to finish rendering
+      setTimeout(() => {
+        window.panzoom.init({
+          include: [".mermaid", "svg"],
+        })
+        console.log("Panzoom re-initialized for new content")
+      }, 200)
+    } catch (err) {
+      console.error("Panzoom init error:", err)
+    }
   }
 }
 
