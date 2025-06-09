@@ -373,22 +373,6 @@
 <!-- solution:start -->
 <details class="abstract">
 <summary>Algorithm Implementation</summary>
-<h3 id="sliding-window">Sliding Window</h3>
-<ol>
-<li>
-<p>We can keep tracking a current window, and use two pointer to apply the sliding window algorithms.</p>
-</li>
-<li>
-<p>We can expand the window to the right greedily as long as the character is not existent in the current window.</p>
-</li>
-<li>
-<p>Otherwise, we need to move the left pointer and erase the corresponding characters at left pointer out of the window until the current character at the right pointer is no longer in the window.</p>
-</li>
-<li>
-<p>If we don’t move the left pointer (shrink the window), the substring is not valid no matter how we move the right pointer.</p>
-</li>
-</ol>
-<p><em>The time complexity is <span class="arithmatex">\(O(n)\)</span> as the left and right pointers both move towards the right and the space complexity is <span class="arithmatex">\(O(n)\)</span> as we need a hash-set or dictionary to store the elements in the current window.</em></p>
 </details>
 <h3 id="approach-sliding-window-flexible-longest">Approach: Sliding Window flexible longest</h3>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
