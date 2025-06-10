@@ -40,7 +40,7 @@
 <meta content="Sol5 - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
-</meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+</meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -364,6 +364,189 @@
 <h1>Sol5</h1>
 <!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
 <!-- gated-content start -->
+<h3 id="approach-enumerate-palindrome-midpoint">Approach: Enumerate Palindrome MidPoint</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n^2)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Best Algorithm</p>
+<ul>
+<li>We can enumerate the midpoint of the palindrome, spread to both sides, and find the longest palindrome.
+The time complexity is <span class="arithmatex">\(O(n²)\)</span>, and the space complexity is <span class="arithmatex">\(O(1)\)</span>. Here, n is the length of the string s.</li>
+</ul>
+</div>
+<details class="tip">
+<summary>Tip</summary>
+<ul>
+<li>Write this <code>Best DP Algorithm</code> in interviews after telling intial brute force approach</li>
+</ul>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>        <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">l</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>                                        <span class="c1"># f - a function to return the length of palindromic substring</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>            <span class="k">while</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>                <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>            <span class="k">return</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">start</span><span class="p">,</span> <span class="n">mx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>            <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>            <span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>            <span class="n">t</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>            <span class="k">if</span> <span class="n">mx</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">:</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>                <span class="n">mx</span> <span class="o">=</span> <span class="n">t</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>                <span class="n">start</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="p">((</span><span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">start</span> <span class="o">+</span> <span class="n">mx</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></div>
+<h3 id="approach-naive-brute-force">Approach : Naive Brute Force</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n^3)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title"> NAIVE BRUTEFORCE ALGORITHM TO GET THE LONGEST PALINDROME SUBSTRING</p>
+<p>The first solution would be to bruteforce the substrings in <span class="arithmatex">\(O(n^2)\)</span> time. 
+And for each <abbr title="🙋‍♂️ A substring is a contiguous non-empty sequence of characters within a string.">substring</abbr>, we check if it is a palindrome which takes <span class="arithmatex">\(O(n)\)</span> time. 
+Thus the overall time complexity is <span class="arithmatex">\(O(n^3)\)</span>.</p>
+<p>Please note that the array/string slicing in Python also takes <span class="arithmatex">\(O(n)\)</span> time. Here, we store the left and right index of the longest palindrome <abbr title="🙋‍♂️ A substring is a contiguous non-empty sequence of characters within a string.">substring</abbr>.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="n">L</span> <span class="o">=</span> <span class="n">R</span> <span class="o">=</span> <span class="mi">0</span>                           <span class="c1">#left and right index of longest palindrome</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                  <span class="c1">#i is the left pointer</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>            <span class="c1">#j is the right pointer</span>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>                <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>                <span class="c1"># current substring</span>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>                <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>            <span class="c1"># string palindrome check</span>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>                    <span class="k">if</span> <span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="o">&gt;</span><span class="n">R</span><span class="o">-</span><span class="n">L</span><span class="p">:</span>
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>                        <span class="n">L</span> <span class="o">=</span> <span class="n">i</span>
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>                        <span class="n">R</span> <span class="o">=</span> <span class="n">j</span>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">L</span><span class="p">:</span><span class="n">R</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></div>
+<h3 id="approach-optimised-brute-force">Approach : Optimised Brute Force</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n^3)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title"> OPTIMISED BRUTEFORCE ALGORITHM TO GET THE LONGEST PALINDROME SUBSTRING</p>
+<p>We can slightly improve the bruteforce, by reverse the inner check, and break once we have found a palindrome. 
+No need to continue as the rest of the inner loop gives a shorter <abbr title="🙋‍♂️ A substring is a contiguous non-empty sequence of characters within a string.">substring</abbr>.
+Time complexity is still <span class="arithmatex">\(O(n^3)\)</span>.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>        <span class="n">L</span> <span class="o">=</span> <span class="n">R</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                        <span class="c1">#i is the left pointer</span>
+</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>         <span class="c1">#j is the right pointer</span>
+</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>                <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># current substring</span>
+</span><span id="__span-2-8"><a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>                <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>                  <span class="c1"># string palindrome check</span>
+</span><span id="__span-2-9"><a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>                    <span class="k">if</span> <span class="n">j</span><span class="o">-</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">R</span><span class="o">-</span><span class="n">L</span><span class="p">:</span>
+</span><span id="__span-2-10"><a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>                        <span class="n">L</span> <span class="o">=</span> <span class="n">i</span>
+</span><span id="__span-2-11"><a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>                        <span class="n">R</span> <span class="o">=</span> <span class="n">j</span>
+</span><span id="__span-2-12"><a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a>                    <span class="k">break</span>
+</span><span id="__span-2-13"><a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">L</span><span class="p">:</span><span class="n">R</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></div>
+<h3 id="approach-functional-relationship">Approach: Functional Relationship</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n^2)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">DYNAMIC PROGRAMMING ALGORITHM TO CHECK IF A SUBSTRING IS A PALINDROME</p>
+<p>Checking palindrome <abbr title="🙋‍♂️ A substring is a contiguous non-empty sequence of characters within a string.">substring</abbr> is expensive but we can pre-compute this in <span class="arithmatex">\(O(n^2)\)</span> using Dynamic Programming – which we can do it Top Down or Bottom Up.</p>
+<p>The Top Down is via Recursion and Memoization. It is based on the following observations. </p>
+<p>Given <span class="arithmatex">\(f( i , j )\)</span> represent <abbr title="🙋‍♂️ A substring is a contiguous non-empty sequence of characters within a string.">substring</abbr> <code>s[i:j+1]</code> from index i to index j inclusive is a palindrome</p>
+<div class="arithmatex">\[
+f(i,j) = \begin{cases}
+1, &amp; \text{if } i = j \text{ (single character is a palindrome)} \\
+s[i] = s[j], &amp; \text{if } i+1 = j \text{ (two characters)} \\
+s[i] = s[j] \land f(i+1, j-1), &amp; \text{otherwise}
+\end{cases}
+\]</div>
+<p>Recursion and memoziation implementation via the @cache keyword to remember the values that we have calculated. 
+Total <span class="arithmatex">\(N^2\)</span> states where <span class="arithmatex">\(N\)</span> is the length of the string.</p>
+</div>
+<details class="example">
+<summary>Top Down DP(Recursion+Memoization)</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>        <span class="nd">@cache</span>                                             <span class="c1">#this cause MLE</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>                <span class="k">return</span> <span class="kc">True</span>
+</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>                <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span><span id="__span-3-13"><a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>        <span class="n">L</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-3-14"><a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>        <span class="n">R</span> <span class="o">=</span> <span class="mi">0</span>                                               <span class="c1">#left and right index of longest palindrome</span>
+</span><span id="__span-3-15"><a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                                  <span class="c1">#i is the left pointer </span>
+</span><span id="__span-3-16"><a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>               <span class="c1">#j is the right pointer </span>
+</span><span id="__span-3-17"><a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>                <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>                                 <span class="c1">#current string palindromic check function</span>
+</span><span id="__span-3-18"><a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>                    <span class="k">if</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">R</span> <span class="o">-</span> <span class="n">L</span><span class="p">:</span>                       <span class="c1">#current length is greater than the longest length update the pointers for longest substring </span>
+</span><span id="__span-3-19"><a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>                        <span class="n">L</span> <span class="o">=</span> <span class="n">i</span>
+</span><span id="__span-3-20"><a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>                        <span class="n">R</span> <span class="o">=</span> <span class="n">j</span>
+</span><span id="__span-3-21"><a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>                    <span class="k">break</span>
+</span><span id="__span-3-22"><a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">L</span><span class="p">:</span><span class="n">R</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Quick Analysis</p>
+<p>The <code>f</code> function (Top Down DP) can replace the <span class="arithmatex">\(O(n)\)</span> palindrome check direclty however it is still not fast enough as there is Recursion function call overhead. 
+And we can improve this by Bottom Up Dynamic Programming which stores the <code>F</code> values in a two dimensional array. Hence The time/space complexity is <span class="arithmatex">\(O(n^2)\)</span> quadratic.</p>
+</div>
+<details class="example">
+<summary>Bottom Up DP- Tabulation</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="n">F</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">True</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>                          <span class="c1">#filling the 2D array from bottom up</span>
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>                          <span class="c1">#moving index r from l+1 to n i.e traversing cols from left to right.Make grid 2d diagram and you will see.</span>
+</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>                <span class="n">F</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="ow">and</span> <span class="n">F</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-4-8"><a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>        <span class="n">L</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-4-10"><a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>        <span class="n">R</span> <span class="o">=</span> <span class="mi">0</span>                                               <span class="c1">#left and right index of longest palindrome</span>
+</span><span id="__span-4-11"><a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                                  <span class="c1">#i is the left pointer </span>
+</span><span id="__span-4-12"><a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>               <span class="c1">#j is the right pointer </span>
+</span><span id="__span-4-13"><a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>                <span class="k">if</span> <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>                                 <span class="c1">#current string palindromic check function</span>
+</span><span id="__span-4-14"><a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a>                    <span class="k">if</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">R</span> <span class="o">-</span> <span class="n">L</span><span class="p">:</span>                       <span class="c1">#current length is greater than the longest length update the longest substring pointers</span>
+</span><span id="__span-4-15"><a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a>                        <span class="n">L</span> <span class="o">=</span> <span class="n">i</span>
+</span><span id="__span-4-16"><a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a>                        <span class="n">R</span> <span class="o">=</span> <span class="n">j</span>
+</span><span id="__span-4-17"><a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a>                    <span class="k">break</span>
+</span><span id="__span-4-18"><a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">L</span><span class="p">:</span><span class="n">R</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></div>
+</details>
 <!-- gated-content end -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
