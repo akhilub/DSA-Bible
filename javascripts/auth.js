@@ -121,8 +121,8 @@ const loadProtectedSolution = async (
   }
 
   const rawHtml = await response.text()
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(rawHtml, "text/html")
+  // const parser = new DOMParser()
+  // const doc = parser.parseFromString(rawHtml, "text/html")
 
   // Extract the main content (everything between gated-content start/end)
   const startMarker = "<!-- gated-content start -->"

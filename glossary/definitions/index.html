@@ -638,9 +638,7 @@
 <h2 id="tree"><strong>Tree</strong></h2>
 <h3 id="binary-tree">Binary Tree</h3>
 <ul>
-<li>Tree where each node has atmost two children
-  OR</li>
-<li>Tree where each node must have two children</li>
+<li>Tree where each node has atmost two children</li>
 </ul>
 <h3 id="binary-search-tree-bst">Binary Search Tree (BST)</h3>
 <ul>
@@ -672,11 +670,22 @@
 </ul>
 <h3 id="serialization-deserialization">Serialization/ Deserialization</h3>
 <ul>
-<li>Converting a tree to/from a string representation</li>
+<li>
+<p>Converting a tree to/from a string representation</p>
+</li>
+<li>
+<p><strong>Serialization:</strong> Converting a tree to a string.</p>
+</li>
+<li>
+<p><strong>Deserialization:</strong> Converting a string back into a tree</p>
+</li>
+<li>
+<p><em>Example: "1, 2, 4, null, null, 5, null, null, 3, null, null", where null indicates a null node.</em></p>
+</li>
 </ul>
 <h3 id="diameter">Diameter</h3>
 <ul>
-<li>Longest path between any two nodes in a tree</li>
+<li>Longest path between any two nodes in a tree, not necessarily through the root.</li>
 </ul>
 <h3 id="level-order">Level Order</h3>
 <p>Processing tree nodes level by level</p>
@@ -684,13 +693,23 @@
 <ul>
 <li>Data structure for range queries</li>
 </ul>
-<h3 id="bfs-breadth-first-search">BFS (Breadth First Search)</h3>
+<h3 id="bfs-breadth-first-search-aka-level-order-traversal">BFS (Breadth First Search) aka Level Order Traversal</h3>
 <ul>
-<li>Traversing the tree level by level</li>
+<li>Traversing the tree nodes level by level, often using a queue.</li>
 </ul>
 <h3 id="dfs-depth-first-search">DFS (Depth First Search)</h3>
 <ul>
-<li>Traversing the tree in a depth-first manner</li>
+<li>
+<p>Traversing the tree in a depth-first manner</p>
+</li>
+<li>
+<p>Visits nodes by exploring depth-first. Comes in three orders:</p>
+</li>
+<li>
+<p><strong>Preorder:</strong> node → left → right (NLR)</p>
+</li>
+<li><strong>Inorder:</strong> left → node → right (LNR)</li>
+<li><strong>Postorder:</strong> left → right → node (LRN)</li>
 </ul>
 <h2 id="graphs"><strong>Graphs</strong></h2>
 <h3 id="directed-undirected">Directed / Undirected</h3>
@@ -881,7 +900,8 @@
 
   
     Made by customizing
-    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">MkDocs Framework &amp; Material Theme</a>
+    <a href="https://www.mkdocs.org/" rel="noopener" target="_blank">MkDocs Framework</a>
+<a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">&amp; Material Theme</a>
 </div>
 <div class="md-social">
 <a class="md-social__link" href="https://leetcode.com/u/akhilsin/" rel="noopener" target="_blank" title="leetcode.com">
