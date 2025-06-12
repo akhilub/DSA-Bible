@@ -142,6 +142,62 @@ const loadProtectedSolution = async (
   throw new Error("No solution content found between gated-content markers")
 }
 
+const gateCompaniesPage = async (isAuthenticated) => {
+  // Check if this is the companies page
+  const isCompaniesPage = window.location.pathname.includes("/companies/")
+
+  if (isCompaniesPage) {
+    // Ensure companies content is stored and hidden
+    if (typeof window.storeCompaniesContent === "function") {
+      window.storeCompaniesContent()
+    }
+
+    // Handle companies page specifically
+    const solutionSection = document.getElementById("solution-section")
+    if (!solutionSection) return
+
+    solutionSection.innerHTML = ""
+
+    if (isAuthenticated) {
+      const hasSubscription = await checkSubscriptionStatus()
+
+      if (hasSubscription) {
+        // Show companies content by restoring to DOM
+        if (typeof window.showCompaniesContent === "function") {
+          window.showCompaniesContent()
+        }
+        await reinitializeMaterialComponents(solutionSection)
+      } else {
+        // Hide companies content and show subscription prompt
+        if (typeof window.hideCompaniesContent === "function") {
+          window.hideCompaniesContent()
+        }
+        showSubscriptionPrompt(solutionSection)
+      }
+    } else {
+      // Hide companies content and show login prompt
+      if (typeof window.hideCompaniesContent === "function") {
+        window.hideCompaniesContent()
+      }
+
+      const loginTemplate = document.getElementById("login-prompt-template")
+      if (loginTemplate) {
+        const loginPrompt = loginTemplate.content.cloneNode(true)
+        solutionSection.appendChild(loginPrompt)
+
+        const loginBtn = solutionSection.querySelector("#login-btn-inline")
+        const signupBtn = solutionSection.querySelector("#signup-btn-inline")
+
+        if (loginBtn) loginBtn.addEventListener("click", login)
+        if (signupBtn) signupBtn.addEventListener("click", signup)
+      }
+    }
+
+    await updateLock()
+    return
+  }
+}
+
 // Add a flag to prevent multiple simultaneous renders
 let isRenderingContent = false
 
@@ -164,6 +220,16 @@ const renderContent = async (isAuthenticated) => {
   try {
     isRenderingContent = true
 
+    // Check if this is the companies page first
+    const isCompaniesPage = window.location.pathname.includes("/companies/")
+
+    if (isCompaniesPage) {
+      // Handle companies page - call gateCompaniesPage and return early
+      await gateCompaniesPage(isAuthenticated)
+      return
+    }
+
+    // Handle regular problem pages (existing logic)
     // Always clear the container first
     solutionSection.innerHTML = ""
 

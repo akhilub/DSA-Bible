@@ -251,13 +251,13 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../">
+<a class="md-tabs__link" href="../../companies/">
           
   
   
     
   
-  Companies
+  Folksonomy
 
         </a>
 </li>
@@ -465,7 +465,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#solutions">
 <span class="md-ellipsis">
-      Solutions
+      Solutions 🔒
     </span>
 </a>
 </li>
@@ -597,9 +597,9 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../companies/">
 <span class="md-ellipsis">
-    Companies
+    Folksonomy
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -633,7 +633,6 @@
 <a class="md-tag" href="../../topics/#tag:grind-169">Grind 169</a>
 <a class="md-tag" href="../../topics/#tag:interview-master-100">Interview Master 100</a>
 <a class="md-tag" href="../../topics/#tag:math">Math</a>
-<a class="md-tag" href="../../topics/#tag:meta">Meta</a>
 <a class="md-tag" href="../../topics/#tag:recursion">Recursion</a>
 </nav>
 <!-- problem:start -->
@@ -665,93 +664,58 @@
 <!-- description:end -->
 <!-- interpreter start -->
 <!-- interpreter end -->
-<h2 id="solutions"><strong>Solutions</strong></h2>
-<!-- solution:start -->
-<h3 id="approach-functional-relationship">Approach: Functional Relationship</h3>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(\log n)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
-<div class="admonition note">
-<p class="admonition-title">Logarithmic algorithm</p>
-<p>Terminology: x is base and n is exponent</p>
-<p>Because we have the following properties:</p>
-<div class="arithmatex">\[
-x^n = \begin{cases}
-1 &amp; \text{if } n = 0 \text{ and } x \neq 0 \\
-0 &amp; \text{if } x = 0 \text{ and } n \neq 0 \\
-\left(\frac{1}{x}\right)^{-n} &amp; \text{if } n &lt; 0 \\
-x \cdot x^{n-1} &amp; \text{if } n \text{ is odd and } x \neq 0 \\
-(x \cdot x)^{n/2} \text{ or } (x^{n/2})^2 &amp; \text{if } n \text{ is even}
-\end{cases}
-\]</div>
-<p>Our function translates to:</p>
-<div class="arithmatex">\[
-f(x,n) = \begin{cases}
-1 &amp; \text{if } n = 0 \\
-\frac{1}{f(x, -n)} &amp; \text{if } n &lt; 0 \\
-x \cdot f(x, n-1) &amp; \text{if } n \text{ is odd} \\
-f(x \cdot x, n \div 2) \text{ or } f(x, n \div 2) \cdot f(x, n \div 2) &amp; \text{if } n \text{ is even}
-\end{cases}
-\]</div>
-</div>
-<h3 id="way-1-recursive-implementation-of-logarithmic-algorithm">Way 1: Recursive implementation of logarithmic algorithm</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                       <span class="c1"># n is 0</span>
-</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>            <span class="k">return</span> <span class="mi">1</span>
-</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>                        <span class="c1"># n is -ve</span>
-</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>            <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
-</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1">#or n%2 ==1           # n is odd</span>
-</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>            <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>      <span class="c1">#n is even</span>
-</span></code></pre></div>
-</div>
-</div>
-</input></div>
-<!-- equivalency admonition start -->
-<details class="example">
-<summary>equivalency</summary>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="l l-Scalar l-Scalar-Plain">return self.pow(x*x,n//2)</span><span class="w">           </span><span class="c1">#n is even</span>
-</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">        </span><span class="p p-Indicator">|</span><span class="err">|</span>
-</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="no">equivalent</span>
-</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="no">||</span>
-</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="l l-Scalar l-Scalar-Plain">y = self.pow(x,n//2)</span><span class="w">                </span><span class="c1">#n is even</span>
-</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="l l-Scalar l-Scalar-Plain">return y*y</span>
-</span></code></pre></div>
-</details>
-<!-- equivalency admonition end -->
-<h3 id="way-2-iterative-implementation-of-logarithmic-algorithm">Way 2: Iterative implementation of logarithmic algorithm</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">        </span><span class="sd">"""</span>
-</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="sd">        :type x: float</span>
-</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="sd">        :type n: int</span>
-</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="sd">        :rtype: float</span>
-</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="sd">        """</span>
-</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>        <span class="c1"># Default values</span>
-</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
-</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
-</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>            <span class="n">x</span> <span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">x</span> <span class="p">,</span> <span class="o">-</span><span class="n">n</span>
-</span><span id="__span-5-12"><a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a>        <span class="c1">#iteratively</span>
-</span><span id="__span-5-14"><a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-5-15"><a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a>        <span class="k">while</span> <span class="n">n</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">:</span>
-</span><span id="__span-5-16"><a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a>            <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>   <span class="c1"># n is odd</span>
-</span><span id="__span-5-17"><a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a>                <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">*</span><span class="n">x</span>
-</span><span id="__span-5-18"><a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a>            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
-</span><span id="__span-5-19"><a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a>            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>    <span class="c1"># or n&gt;&gt;=1</span>
-</span><span id="__span-5-20"><a href="#__codelineno-5-20" id="__codelineno-5-20" name="__codelineno-5-20"></a>        <span class="k">return</span> <span class="n">ans</span>
-</span></code></pre></div>
-</div>
-</div>
-</input></div>
-<!-- solution:end -->
+<h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon">🔒</span></h2>
+<section data-problem-id="50" data-section-type="problems" id="solution-section">
+<!-- This section will be populated by JavaScript based on authentication -->
+</section>
 <!-- problem:end -->
+<!-- Login Prompt Template -->
+<!-- Login prompt template -->
+<p><template id="login-prompt-template">
+<br/>
+<div class="login-message">
+<h3>👋 Already have an account?</h3>
+<p>Please log in to view the solution</p>
+<button class="md-button md-button--primary" id="login-btn-inline">Log In</button>
+<h3>👋 Don't have an account yet?</h3>
+<p>Access to detailed solutions requires an active subscription account. Get one now 🚀</p>
+<button class="md-button" id="signup-btn-inline">Sign Up</button>
+</div></template></p>
+<p></p>
+<!-- Subscription prompt template -->
+<p><template id="subscription-prompt-template">
+<br/>
+<div class="subscription-message">
+<h3>🔒 Premium Content</h3>
+<p>This solution requires an active subscription to view.</p>
+<button class="md-button md-button--primary" onclick="window.location.href='/pricing/'">Upgrade to Pro</button>
+<p>
+<small>Already subscribed? Try refreshing the page.</small>
+</p>
+</div></template></p>
+<p></p>
+<style>
+  .login-message, .subscription-message {
+    background-color: var(--md-default-bg-color);
+    border: 1px solid var(--md-primary-fg-color--light);
+    border-radius: 10px;
+    padding: 20px 20px 0px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .login-message h3, .subscription-message h3 {
+    margin-top: 0;
+  }
+
+  .md-button {
+    margin-bottom: 20px;
+  }
+
+  .subscription-message {
+    border-color: var(--md-accent-fg-color);
+  }
+</style>
 <!--Author html-->
 <!-- Post authors from meta-->
 <section>
