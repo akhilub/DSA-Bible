@@ -58,6 +58,15 @@ code {
   color: var(--md-primary-fg-color);
 }
 
+/* custom theme accent */
+:root {
+  --md-accent-fg-color: #00e1ff;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #ab47bd;
+}
+
 /* admonitions */
 /* note */
 /* .md-typeset .admonition.note,
