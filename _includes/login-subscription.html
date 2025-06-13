@@ -3,10 +3,22 @@
   <div class="login-message">
     <h3>👋 Already have an account?</h3>
     <p>Please log in to view the solution</p>
-    <button id="login-btn-inline" class="md-button md-button--primary">Log In</button>
+    <button id="login-btn-inline" class="md-button md-button--primary">
+      <span class="twemoji">
+        {% set icon = "material/login" %}
+        {% include "_includes/icons/" ~ icon ~ ".svg" %}
+      </span>
+      Log In
+    </button>
     <h3>👋 Don't have an account yet?</h3>
     <p>Access to detailed solutions requires an active subscription account. Get one now 🚀</p>
-    <button id="signup-btn-inline" class="md-button">Sign Up</button>
+    <button id="signup-btn-inline" class="md-button">
+      <span class="twemoji">
+        {% set icon = "material/account-plus" %}
+        {% include "_includes/icons/" ~ icon ~ ".svg" %}
+      </span>
+      Sign Up
+    </button>
   </div>
 </template>
 
@@ -16,7 +28,13 @@
     <h3>🔒 Premium Content</h3>
     <p>This solution requires an active subscription to view.</p>
     <button onclick="window.location.href='/pricing/'"
-            class="md-button md-button--primary">Upgrade to Pro</button>
+            class="md-button md-button--primary">
+      <span class="twemoji">
+        {% set icon = "material/star" %}
+        {% include "_includes/icons/" ~ icon ~ ".svg" %}
+      </span>
+      Upgrade to Pro
+    </button>
     <p>
       <small>Already subscribed? Try refreshing the page.</small>
     </p>
@@ -39,9 +57,57 @@
 
   .md-button {
     margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .subscription-message {
     border-color: var(--md-accent-fg-color);
   }
+
+  /* Icon styling for buttons */
+  .md-button .twemoji {
+    display: inline-flex;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .md-button .twemoji svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  /* Responsive design 
+  @media screen and (max-width: 76.1875em) {
+    .md-button {
+      gap: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 48em) {
+    .md-button {
+      gap: 0.4rem;
+    }
+    
+    .md-button .twemoji {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+  }
+
+  @media screen and (max-width: 30em) {
+    .md-button {
+      gap: 0.3rem;
+      font-size: 0.9rem;
+    }
+    
+    .md-button .twemoji {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+  }
+  */
 </style>

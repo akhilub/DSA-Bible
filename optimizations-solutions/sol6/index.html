@@ -136,67 +136,177 @@
 </div>
 <!-- Repository information -->
 <!-- Auth buttons - with responsive design -->
-<div class="md-header__auth md-header__source">
+<div class="md-header__source">
 <div class="md-header__auth-buttons">
-<button class="md-header__button underline header-btn" id="login-btn">Log In</button>
-<button class="md-header__button underline header-btn" id="logout-btn" style="display: none">Logout</button>
-<button class="md-header__button underline header-btn" id="signup-btn">Sign Up</button>
+<!-- Login button with responsive text/icon -->
+<button class="md-header__button md-icon" id="login-btn" title="Log In">
+<span class="md-header__auth-content">
+<span class="md-header__auth-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8z"></path></svg>
+</span>
+<span class="md-header__auth-text">Log In</span>
+</span>
+</button>
+<!-- Logout button with responsive text/icon -->
+<button class="md-header__button md-icon" id="logout-btn" style="display: none" title="Logout">
+<span class="md-header__auth-content">
+<span class="md-header__auth-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
+</span>
+<span class="md-header__auth-text">Logout</span>
+</span>
+</button>
+<!-- Sign up button with responsive text/icon -->
+<button class="md-header__button md-icon" id="signup-btn" title="Sign Up">
+<span class="md-header__auth-content">
+<span class="md-header__auth-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4"></path></svg>
+</span>
+<span class="md-header__auth-text">Sign Up</span>
+</span>
+</button>
 </div>
 </div>
 </nav>
 <!-- Navigation tabs (sticky) -->
 </header>
 <style>
-  .underline:hover {
-    text-decoration: underline;
+  /* Auth buttons container */
+  .md-header__auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
   
-  .header-btn {
-    background: var(--md-primary-fg-color) !important;
-    color: var(--md-primary-bg-color) !important;
-    border-radius: 6px !important;
-    padding: 0.4em 0.8em !important;
+  /* Ensure auth buttons container is always visible */
+  .md-header__source:has(.md-header__auth-buttons) {
+    display: flex !important;
+    align-items: center;
   }
   
-  .header-btn:hover {
-    background: var(--md-accent-fg-color) !important;
-    text-decoration: none !important;
+  /* Auth button styling using Material Design patterns */
+  .md-header__auth-buttons .md-header__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.1rem;
+    background: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+    min-height: 1.8rem;
+    white-space: nowrap;
   }
   
-  /* Responsive styles for auth buttons */
-  .md-header__auth {
+  .md-header__auth-buttons .md-header__button:hover {
+    background: var(--md-accent-fg-color);
+  }
+  
+  .md-header__auth-buttons .md-header__button:focus {
+    outline: 0.1rem solid var(--md-accent-fg-color);
+    outline-offset: 0.1rem;
+  }
+  
+  /* Auth content wrapper */
+  .md-header__auth-content {
     display: flex;
     align-items: center;
     font-size: 0.9rem;
+    gap: 0.3rem;
   }
   
-  .md-header__auth-buttons {
-    display: flex;
-    gap: 0.5em;
+  /* Icon styling - visible on all screens */
+  .md-header__auth-icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
   }
   
-  /* Make sure buttons are visible on all screen sizes */
+  .md-header__auth-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+  
+  /* Text styling - visible on larger screens */
+  .md-header__auth-text {
+    display: inline;
+    line-height: 1;
+  }
+  
+  /* Medium screens - reduce spacing */
   @media screen and (max-width: 76.1875em) {
-    .md-header__auth {
-      position: relative;
-      margin: 0;
+    .md-header__auth-buttons {
+      gap: 0.2rem;
+    }
+    
+    .md-header__auth-buttons .md-header__button {
+      padding: 0.3rem 0.6rem;
       font-size: 0.9rem;
     }
+    
+    .md-header__auth-content {
+      gap: 0.2rem;
+    }
   }
   
-  /* Further adjustments for very small screens */
-  @media screen and (max-width: 40em) {
+  /* Small screens - hide text, show only icons */
+  @media screen and (max-width: 48em) {
+    /* Force visibility on small screens */
+    .md-header__source:has(.md-header__auth-buttons) {
+      display: flex !important;
+      order: 10; /* Push to the end */
+      margin-left: auto;
+    }
+    
+    .md-header__auth-text {
+      display: none;
+    }
+    
+    .md-header__auth-buttons .md-header__button {
+      padding: 0.4rem;
+      min-width: 2rem;
+    }
+    
+    .md-header__auth-content {
+      gap: 0;
+    }
+    
+    /* Ensure buttons are compact and visible */
     .md-header__auth-buttons {
-      gap: 0.3em;
+      gap: 0.1rem;
+    }
+  }
+  
+  /* Extra small screens - further optimize */
+  @media screen and (max-width: 30em) {
+    .md-header__auth-buttons {
+      gap: 0.05rem;
     }
     
-    .md-header__auth .md-header__button {
-      padding: 0.2rem 0.4rem;
-      font-size: 0.8rem;
+    .md-header__auth-buttons .md-header__button {
+      padding: 0.3rem;
+      min-width: 1.8rem;
+      min-height: 1.6rem;
     }
     
-    .header-btn {
-      padding: 0.3em 0.6em !important;
+    .md-header__auth-icon {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+  }
+  
+  /* Fallback for browsers that don't support :has() */
+  @supports not selector(:has(*)) {
+    @media screen and (max-width: 48em) {
+      .md-header__source {
+        display: flex !important;
+      }
     }
   }
 </style>
