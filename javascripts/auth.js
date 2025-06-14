@@ -135,6 +135,7 @@ const loadProtectedSolution = async (
     const content = rawHtml.substring(startIndex + startMarker.length, endIndex)
     solutionSection.innerHTML = content
 
+    await reinitializeMaterialComponents(solutionSection)
     return
   }
 
@@ -465,42 +466,6 @@ initAuth()
 // Auth state helpers
 const getAuthenticatedUserState = () => isLoggedIn
 const setAuthenticatedUserState = (value) => (isLoggedIn = value)
-
-// // Debounced version of renderContent to prevent rapid successive calls
-// let renderTimeout = null
-// const debouncedRenderContent = (isAuthenticated) => {
-//   clearTimeout(renderTimeout)
-//   renderTimeout = setTimeout(() => {
-//     renderContent(isAuthenticated)
-//   }, 100) // 100ms debounce
-// }
-
-// === Hook into MkDocs Material Events ===
-// Material for MkDocs navigation event
-// This is the key event that fires when navigation occurs in Material for MkDocs
-// document.addEventListener("DOMContentLoaded", () => {
-//   console.log("DOMContentLoaded event fired")
-//   renderContent(getAuthenticatedUserState())
-// })
-
-// For Material for MkDocs instant loading feature
-// document.addEventListener("mdx-component-ready", () => {
-//   console.log("mdx-component-ready event fired")
-//   renderContent(getAuthenticatedUserState())
-// })
-
-// Listen for Material for MkDocs navigation events
-// This is a custom event that Material for MkDocs fires when navigation occurs
-// document.addEventListener("navigation", () => {
-//   console.log("navigation event fired")
-//   renderContent(getAuthenticatedUserState())
-// })
-
-// Additional event for Material for MkDocs content changes
-// document.addEventListener("content-update", () => {
-//   console.log("content-update event fired")
-//   renderContent(getAuthenticatedUserState())
-// })
 
 if (
   typeof document$ !== "undefined" &&
