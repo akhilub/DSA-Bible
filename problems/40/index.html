@@ -51,7 +51,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -948,35 +948,32 @@
   Back to top
 </button>
 </main>
+<!-- Footer -->
 <footer class="md-footer">
+<!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
+<!-- Link to previous page -->
 <a aria-label="Previous: 29. Divide Two Integers" class="md-footer__link md-footer__link--prev" href="../29/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                Previous
-              </span>
-<div class="md-ellipsis">
-                29. Divide Two Integers
-              </div>
+<span class="md-footer__direction">Previous</span>
+<div class="md-ellipsis">29. Divide Two Integers</div>
 </div>
 </a>
+<!-- Link to next page -->
 <a aria-label="Next: 42. Trapping Rain Water" class="md-footer__link md-footer__link--next" href="../42/">
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                Next
-              </span>
-<div class="md-ellipsis">
-                42. Trapping Rain Water
-              </div>
+<span class="md-footer__direction">Next</span>
+<div class="md-ellipsis">42. Trapping Rain Water</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
 </div>
 </a>
 </nav>
+<!-- Further information -->
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -987,6 +984,30 @@
     <a href="https://www.mkdocs.org/" rel="noopener" target="_blank">MkDocs Framework</a>
 <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">&amp; Material Theme</a>
 </div>
+<!--Legal page links-->
+<div class="footer-legal">
+<a href="/legal/terms-of-service/">Terms of Service</a>
+<a href="/legal/privacy-policy/">Privacy Policy</a>
+<a href="/legal/subscription-agreement/">Subscription Agreement</a>
+</div>
+<style>
+.footer-legal{
+    color: var(--md-footer-fg-color--lighter);
+    font-size: .64rem;
+    margin: auto .6rem;
+    padding: .4rem 0;
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus {
+  color: var(--md-footer-fg-color);
+  text-decoration: underline;
+  background-color: var(--md-footer-bg-color--dark);
+}
+</style>
+<!-- Social links -->
 <div class="md-social">
 <a class="md-social__link" href="https://leetcode.com/u/akhilsin/" rel="noopener" target="_blank" title="leetcode.com">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.483 0a1.37 1.37 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.3 5.3 0 0 0-1.209 2.104 5 5 0 0 0-.125.513 5.5 5.5 0 0 0 .062 2.362 6 6 0 0 0 .349 1.017 5.9 5.9 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.38 1.38 0 0 0-1.951-.003l-2.396 2.392a3.02 3.02 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.7 2.7 0 0 1 .066-.523 2.55 2.55 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0m-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"></path></svg>
