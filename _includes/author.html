@@ -5,7 +5,9 @@
             {% for author_id, author in page.meta.authors.items() %}
                 <div class="md-profile md-post__profile">
                     <span class="md-author md-author--long">
-                        <img src="{{ author.avatar }}" alt="{{ author.name }}" />
+                        <img class="skip-lightbox"
+                             src="{{ author.avatar }}"
+                             alt="{{ author.name }}" />
                     </span>
                     <span class="md-profile__description">
                         <strong>
