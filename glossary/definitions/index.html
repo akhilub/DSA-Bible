@@ -684,9 +684,9 @@
 <li><span class="arithmatex">\({C^n_2}\)</span> - because substring contains more than one character</li>
 <li><span class="arithmatex">\({C^n_1}\)</span> - because one character in itself is a substring</li>
 </ul>
-<h3 id="palindromic">Palindromic</h3>
+<h3 id="palindrome">Palindrome</h3>
 <ul>
-<li>A string is palindromic if it reads the same forward and backward.</li>
+<li>A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</li>
 </ul>
 <h3 id="monotonic">Monotonic</h3>
 <ul>
@@ -736,6 +736,73 @@
 <ul>
 <li>Dictionary Ordering of Strings</li>
 </ul>
+<details class="abstract">
+<summary>Array Illustration</summary>
+<ul>
+<li>
+<p>Consider an array: {1,2,3,4}</p>
+</li>
+<li>
+<p>Subarray: contiguous non-empty sequence of an elements within an array i.e. {1,2},{1,2,3}</p>
+</li>
+<li>
+<p>Subsequence: Need not to be contiguous, but maintains order i.e. # {1,2,4}</p>
+</li>
+<li>
+<p>Subset: Same as subsequence except it has empty set i.e. # {1,3},{}</p>
+</li>
+<li>
+<p>Given an array/sequence of size n, possible
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>Subarray = n*(n+1)/2
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>Subseqeunce = (2^n) -1 (non-empty subsequences)
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>Subset = 2^n
+</span></code></pre></div></p>
+</li>
+</ul>
+</details>
+<h3 id="array-operations-time-complexity">Array Operations Time Complexity</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Operations</strong></th>
+<th><strong>Time Complexity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add or Remove Element at the end of Array</td>
+<td>O(1) Amortized</td>
+</tr>
+<tr>
+<td>Add or Remove Element NOT at the end of Arra</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Access Element at any Index</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Searching Array for an Element</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Searching Sorted Array for an Element</td>
+<td>O(log(n)) Binary Search</td>
+</tr>
+<tr>
+<td>Copying Array</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Sliding Window</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>All Pairs of Array Elements</td>
+<td>O(n<sup>2</sup>)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="heap-priority-queue"><a class="md-title" href="#"><strong>Heap &amp; Priority Queue</strong></a></h2>
 <h3 id="min-heap-max-heap">Min Heap / Max Heap</h3>
 <ul>
