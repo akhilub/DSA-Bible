@@ -1,6 +1,9 @@
+import {initializeAnnotationClickHandlers} from "./utils.mjs"
+
 let auth0 = null
 let isCheckingAuth = false // Flag to prevent concurrent auth checks
 let isLoggedIn = false // to declare global user state
+
 const config = {
   domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
   client_id: "zTiHaknYvc17Kj3lz370AbHqtT58KnbF",
@@ -135,7 +138,7 @@ const loadProtectedSolution = async (
     const content = rawHtml.substring(startIndex + startMarker.length, endIndex)
     solutionSection.innerHTML = content
 
-    await reinitializeMaterialComponents(solutionSection)
+    // await reinitializeMaterialComponents(solutionSection)
     return
   }
 
@@ -167,7 +170,7 @@ const gateCompaniesPage = async (isAuthenticated) => {
         if (typeof window.showCompaniesContent === "function") {
           window.showCompaniesContent()
         }
-        await reinitializeMaterialComponents(solutionSection)
+        // await reinitializeMaterialComponents(solutionSection)
       } else {
         // Hide companies content and show subscription prompt
         if (typeof window.hideCompaniesContent === "function") {
@@ -281,7 +284,7 @@ const renderContent = async (isAuthenticated) => {
 // ✅ Enhanced function to properly reinitialize MkDocs Material components
 const reinitializeMaterialComponents = async (container) => {
   // Wait for DOM to settle
-  // await new Promise((resolve) => setTimeout(resolve, 50))
+  await new Promise((resolve) => setTimeout(resolve, 50))
 
   // Update lock-icon based on auth state
   await updateLock()
@@ -291,6 +294,9 @@ const reinitializeMaterialComponents = async (container) => {
     document$.next(document)
     console.log("Triggered Material document stream")
   }
+   
+  // Manually initialize annotation click handlers for the ENTIRE PAGE
+  initializeAnnotationClickHandlers(document.body) // 'container' is whole 'document.body'
 
   // Reprocess MathJax - use the passed container or find solutionSection
   if (typeof MathJax !== "undefined") {
@@ -382,7 +388,7 @@ const checkAuth = async () => {
     if (isAuthenticated) {
       // User is logged in
       const user = await auth0.getUser()
-      console.log("user", user)
+      // console.log("user", user)
 
       // Update navigation UI for logged-in state
       if (loginBtn) loginBtn.style.display = "none"
@@ -473,5 +479,6 @@ if (
 ) {
   document$.subscribe(function () {
     renderContent(getAuthenticatedUserState())
+    // initializeAnnotationClickHandlers(document.body)
   })
 }

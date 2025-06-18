@@ -51,7 +51,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -821,7 +821,11 @@
 <!-- description:end -->
 <!-- interpreter start -->
 <!-- interpreter end -->
-<p class="annotate">Remember Array Operations (1)</p>
+<div class="annotate">
+<blockquote>
+<p><strong>Hint</strong> : Remember Array Operations (1)</p>
+</blockquote>
+</div>
 <ol>
 <li>
 <table>
@@ -834,35 +838,31 @@
 <tbody>
 <tr>
 <td>Add or Remove Element at the end of Array</td>
-<td>O(1) Amortized</td>
+<td><span class="arithmatex">\(O(1)\)</span> Amortized</td>
 </tr>
 <tr>
 <td>Add or Remove Element NOT at the end of Arra</td>
-<td>O(n)</td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
 <td>Access Element at any Index</td>
-<td>O(1)</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
 <td>Searching Array for an Element</td>
-<td>O(n)</td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
 <td>Searching Sorted Array for an Element</td>
-<td>O(log(n)) Binary Search</td>
+<td><span class="arithmatex">\(O(\log n)\)</span> Binary Search</td>
 </tr>
 <tr>
 <td>Copying Array</td>
-<td>O(n)</td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
 <td>Sliding Window</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>All Pairs of Array Elements</td>
-<td>O(n<sup>2</sup>)</td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1206,7 +1206,8 @@
 <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-<script src="../../javascripts/auth.js"></script>
+<script src="../../javascripts/auth.mjs" type="module"></script>
+<script src="../../javascripts/utils.mjs" type="module"></script>
 <script src="../../javascripts/mathjax.js"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-graphviz.js"></script>
