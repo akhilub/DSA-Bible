@@ -489,7 +489,7 @@ if (
   typeof document$.subscribe === "function"
 ) {
   document$.subscribe(function () {
-    // Store positions before rendering new content
+    // Store annotations positions before rendering new content
     setTimeout(() => {
       storeOriginalAnnotationPositions()
     }, 100)
