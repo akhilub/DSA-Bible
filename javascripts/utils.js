@@ -1,8 +1,11 @@
+// === Inline Scripts ===
+// All functions are globally available
+
 // Store original annotation positions
 let originalAnnotationPositions = new Map()
 
 // Function to store original annotation positions
-export const storeOriginalAnnotationPositions = () => {
+const storeOriginalAnnotationPositions = () => {
   const annotations = document.querySelectorAll(".md-annotation")
 
   annotations.forEach((annotation, index) => {
@@ -28,7 +31,7 @@ export const storeOriginalAnnotationPositions = () => {
 }
 
 // Function to restore original annotation positions
-export const restoreOriginalAnnotationPositions = () => {
+const restoreOriginalAnnotationPositions = () => {
   const annotations = document.querySelectorAll(".md-annotation")
 
   annotations.forEach((annotation, index) => {
@@ -50,7 +53,7 @@ export const restoreOriginalAnnotationPositions = () => {
 }
 
 // Manual annotation click handler that mimics Material's behavior
-export const initializeAnnotationClickHandlers = (container) => {
+const initializeAnnotationClickHandlers = (container) => {
   const annotations = container.querySelectorAll(".md-annotation")
 
   annotations.forEach((annotation) => {

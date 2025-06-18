@@ -1,8 +1,5 @@
-import {
-  initializeAnnotationClickHandlers,
-  storeOriginalAnnotationPositions,
-  restoreOriginalAnnotationPositions,
-} from "./utils.mjs"
+// === Inline Scripts ===
+// All functions are globally available
 
 let auth0 = null
 let isCheckingAuth = false // Flag to prevent concurrent auth checks
