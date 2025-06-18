@@ -1,4 +1,8 @@
-import {initializeAnnotationClickHandlers} from "./utils.mjs"
+import {
+  initializeAnnotationClickHandlers,
+  storeOriginalAnnotationPositions,
+  restoreOriginalAnnotationPositions,
+} from "./utils.mjs"
 
 let auth0 = null
 let isCheckingAuth = false // Flag to prevent concurrent auth checks
@@ -294,9 +298,13 @@ const reinitializeMaterialComponents = async (container) => {
     document$.next(document)
     console.log("Triggered Material document stream")
   }
-   
-  // Manually initialize annotation click handlers for the ENTIRE PAGE
-  initializeAnnotationClickHandlers(document.body) // 'container' is whole 'document.body'
+
+  // ✅ Wait for Material to process, then restore positions and initialize handlers
+  setTimeout(() => {
+    restoreOriginalAnnotationPositions()
+    // Manually initialize annotation click handlers for the ENTIRE PAGE
+    initializeAnnotationClickHandlers(document.body) // 'container' is whole 'document.body'
+  }, 100)
 
   // Reprocess MathJax - use the passed container or find solutionSection
   if (typeof MathJax !== "undefined") {
@@ -435,9 +443,15 @@ const handleAuthCallback = async () => {
 
 // === Auth Initialization ===
 // Initialize Auth
+// ✅ Store annotation positions when page first loads (before any auth changes)
 const initAuth = async () => {
   try {
     auth0 = await createAuth0Client(config)
+
+    // ✅ Store original annotation positions before any auth processing
+    setTimeout(() => {
+      storeOriginalAnnotationPositions()
+    }, 500) // Give Material time to set initial positions
 
     if (
       window.location.search.includes("code=") &&
@@ -478,6 +492,10 @@ if (
   typeof document$.subscribe === "function"
 ) {
   document$.subscribe(function () {
+    // Store positions before rendering new content
+    setTimeout(() => {
+      storeOriginalAnnotationPositions()
+    }, 100)
     renderContent(getAuthenticatedUserState())
     // initializeAnnotationClickHandlers(document.body)
   })
