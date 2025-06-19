@@ -483,6 +483,77 @@
 <h1>Sol7</h1>
 <!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
 <!-- gated-content start -->
+<!-- vide solution:start -->
+<div class="video-message">
+<p>Video Solution Coming Soon</p>
+</div>
+<!-- vide solution: end -->
+<!-- solution:start -->
+<h3 id="approach-math">Approach: Math</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(\log x)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
+<h4 id="way-1">Way 1:</h4>
+<div class="admonition note">
+<p class="admonition-title">Algorithm 1</p>
+<ol>
+<li>
+<p>We know the algorithm to reverse a positive integer quickly from high school.</p>
+</li>
+<li>
+<p>We will keep a variable sign to make -ve integer to +ve , pass the converted +ve integer to f(n) to retrieve its reverse and assign sign back based on original integer.</p>
+</li>
+<li>
+<p>Check for ans range to put in</p>
+</li>
+</ol>
+</div>
+<!-- tabs:start -->
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>        <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="n">x</span><span class="o">*=</span><span class="n">sign</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos_reverse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="k">return</span> <span class="n">sign</span><span class="o">*</span><span class="n">res</span> <span class="k">if</span> <span class="o">-</span><span class="mi">2</span><span class="o">**</span><span class="mi">31</span> <span class="o">&lt;=</span><span class="n">res</span><span class="o">&lt;=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">31</span><span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">pos_reverse</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="k">while</span> <span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>            <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">r</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">10</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="k">return</span> <span class="n">ans</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></div>
+<details class="tip">
+<summary>Python One liner</summary>
+<h3 id="use-this-one-liner-handy-function-to-quickly-reverse-a-positive-integer">Use this one liner handy function to quickly reverse a positive integer.</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>pos_reverse = lambda n:int(str(n)[::-1])
+</span></code></pre></div>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Python Corner</p>
+<ul>
+<li>
+<p>A lambda function is a small anonymous function.</p>
+</li>
+<li>
+<p>A lambda function can take any number of arguments, but can only have one expression.</p>
+</li>
+</ul>
+<h3 id="syntax-of-lambda-function">Syntax of lambda function</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">lambda arguments </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">expression</span>
+</span></code></pre></div>
+</div>
+<!-- tabs:end -->
+<!-- solution:end -->
 <!-- gated-content end -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
