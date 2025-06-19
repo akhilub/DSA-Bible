@@ -77,6 +77,14 @@ code {
 }
 
 /* admonitions */
+
+/*Old Look, Disable it to see the new look*/
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px;
+}
+
 /* note */
 /* .md-typeset .admonition.note,
 .md-typeset details.note {
