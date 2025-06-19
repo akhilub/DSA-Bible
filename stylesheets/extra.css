@@ -15,6 +15,15 @@ code {
   -ms-user-select: text;
 }
 
+/*Prevent Print*/
+
+@media print {
+  html,
+  body {
+    display: none; /* hide whole page */
+  }
+}
+
 /* Responsive compiler container */
 .compiler-container {
   position: relative;
