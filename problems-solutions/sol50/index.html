@@ -511,7 +511,7 @@ f(x,n) = \begin{cases}
 1 &amp; \text{if } n = 0 \\
 \frac{1}{f(x, -n)} &amp; \text{if } n &lt; 0 \\
 x \cdot f(x, n-1) &amp; \text{if } n \text{ is odd} \\
-f(x \cdot x, n \div 2) \text{ or } f(x, n \div 2) \cdot f(x, n \div 2) &amp; \text{if } n \text{ is even}
+f(x \cdot x, n // 2) \text{ or } f(x, n // 2) \cdot f(x, n // 2) &amp; \text{if } n \text{ is even}
 \end{cases}
 \]</div>
 </div>
@@ -527,7 +527,7 @@ f(x \cdot x, n \div 2) \text{ or } f(x, n \div 2) \cdot f(x, n \div 2) &amp; \te
 </span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>            <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
 </span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1">#or n%2 ==1           # n is odd</span>
 </span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>            <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>      <span class="c1">#n is even</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>        <span class="c1">#n is even</span>
 </span></code></pre></div>
 </div>
 </div>
