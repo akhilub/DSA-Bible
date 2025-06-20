@@ -13,6 +13,7 @@
 <title>Sol136 - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -495,9 +496,9 @@
 <!-- tabs:start -->
 <div class="admonition note">
 <p class="admonition-title">Algorithm 1</p>
-<p>To solve this problem, we can use the XOR operation. </p>
+<p>To solve this problem, we can use the XOR operation.</p>
 <ul>
-<li>When we XOR a number with itself, the result is 0. </li>
+<li>When we XOR a number with itself, the result is 0.</li>
 <li>When we XOR a number with 0, the result is the number itself.</li>
 </ul>
 <p>Since every number appears twice except for one number, if we XOR all numbers together, all the pairs will cancel out (become 0), and we'll be left with the single number.</p>
@@ -535,7 +536,7 @@
 <div class="admonition note">
 <p class="admonition-title">Algorithm 2</p>
 <p>The idea is to use a HashSet due to its constant search speed. Traverse each number in the array, and if the current number is already in the HashSet, remove the number from the HashSet; otherwise, add it to the HashSet.</p>
-<p>This is equivalent to off setting two by two. In the end, all the numbers that appear twice are removed from the HashSet, and the only number left is the single number.</p>
+<p>This is equivalent to offsetting two by two. In the end, all the numbers that appear twice are removed from the HashSet, and the only number left is the single number.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
 <div class="tabbed-content">
@@ -555,7 +556,7 @@
 </input></div>
 <details class="tip">
 <summary>Python Corner</summary>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:"/> In Python, elements can be removed from a set using several methods: </p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:"/> In Python, elements can be removed from a set using several methods:</p>
 <ul>
 <li>
 <p><code class="language-python highlight"><span class="n">remove</span><span class="p">()</span></code> method</p>
