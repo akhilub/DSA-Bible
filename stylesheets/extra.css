@@ -223,6 +223,10 @@ code {
   margin: 1em auto;
 }
 
+.title-color {
+  color: var(--md-primary-fg-color)
+}
+
 /*Global Mermaid Class*/
 .mermaid {
   text-align: center;

@@ -51,7 +51,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -770,46 +770,46 @@
 <li>Subset = 2<sup>n</sup></li>
 </ul>
 </details>
-<h3 id="array-operations-time-complexity">Array Operations Time Complexity</h3>
+<h3 class="title-color" id="array-operations-time-complexity">Array Operations Time Complexity</h3>
 <table>
 <thead>
 <tr>
-<th><strong>Operations</strong></th>
-<th><strong>Time Complexity</strong></th>
+<th style="text-align: center;"><strong>Operations</strong></th>
+<th style="text-align: center;"><strong>Time Complexity</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Add or Remove Element at the end of Array</td>
-<td><span class="arithmatex">\(O(1)\)</span> Amortized</td>
+<td style="text-align: center;">Add or Remove Element at the end of Array</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span> Amortized</td>
 </tr>
 <tr>
-<td>Add or Remove Element NOT at the end of Arra</td>
-<td><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;">Add or Remove Element NOT at the end of Arra</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
-<td>Access Element at any Index</td>
-<td><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;">Access Element at any Index</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
-<td>Searching Array for an Element</td>
-<td><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;">Searching Array for an Element</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
-<td>Searching Sorted Array for an Element</td>
-<td><span class="arithmatex">\(O(\log n)\)</span> Binary Search</td>
+<td style="text-align: center;">Searching Sorted Array for an Element</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span> Binary Search</td>
 </tr>
 <tr>
-<td>Copying Array</td>
-<td><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;">Copying Array</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
-<td>Sliding Window</td>
-<td><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;">Sliding Window</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
-<td>All Pairs of Array Elements</td>
-<td><span class="arithmatex">\(O(n^2)\)</span></td>
+<td style="text-align: center;">All Pairs of Array Elements</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -842,6 +842,33 @@
 <ul>
 <li>A technique used to find the median of a data stream using a max and a min heap</li>
 </ul>
+<h3 class="title-color" id="heap-operations-time-complexity">Heap Operations Time Complexity</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Operation</strong></th>
+<th style="text-align: center;"><strong>TC</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">top()</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">insert()</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">remove()</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">heapify()</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+</tbody>
+</table>
 <h2 id="backtracking_1"><a class="md-title" href="#backtracking_1"><strong>Backtracking</strong></a></h2>
 <h3 id="subsets">Subsets</h3>
 <ul>
@@ -975,6 +1002,10 @@
 <h3 id="diameter">Diameter</h3>
 <ul>
 <li>Longest path between any two nodes in a tree, not necessarily through the root.</li>
+</ul>
+<h3 id="depth">Depth</h3>
+<ul>
+<li>A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</li>
 </ul>
 <h3 id="level-order">Level Order</h3>
 <ul>
