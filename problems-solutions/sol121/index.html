@@ -50,7 +50,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -76,6 +76,7 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">DSA-Bible</span>
+<!-- Repository information -->
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
@@ -141,7 +142,6 @@
 </div>
 </div>
 </div>
-<!-- Repository information -->
 <!-- Auth buttons - with responsive design -->
 <div class="md-header__source">
 <div class="md-header__auth-buttons">
@@ -578,7 +578,7 @@ O(n). This is called <abbr title="🙋 Technique to find maximum subarray sum su
 <p><code>B[3] = A[3]-A[2]</code>
 <code>B[4] = A[4]-A[3]</code>
 <code>B[5] = A[5]-A[4]</code></p>
-<p>If the lowest point is at <code>A[2]</code>(a2), and the highest point after <code>A[2]</code>(a2) is at <code>A[2]</code>(a5), the max profit we can get is <code>A[5]-A[2]</code> which is same as <code>B[3]+B[4]+B[5]</code> i.e. we need to find the maximum sum of subarray – and we can use Kadane’s Algorithm.</p>
+<p>If the lowest point is at <code>A[2]</code>(a2), and the highest point after <code>A[2]</code>(a2) is at <code>A[2]</code>(a5), the max profit we can get is <code>A[5]-A[2]</code> which is same as <code>B[3]+B[4]+B[5]</code> i.e. we need to find the maximum sum of <abbr title="🙋 A contiguous portion of an array">subarray</abbr> – and we can use Kadane’s Algorithm.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
 <div class="tabbed-content">

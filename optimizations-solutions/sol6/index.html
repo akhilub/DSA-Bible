@@ -50,7 +50,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -79,6 +79,7 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">DSA-Bible</span>
+<!-- Repository information -->
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
@@ -144,7 +145,6 @@
 </div>
 </div>
 </div>
-<!-- Repository information -->
 <!-- Auth buttons - with responsive design -->
 <div class="md-header__source">
 <div class="md-header__auth-buttons">
@@ -604,7 +604,7 @@ therefore have the constraints (6.1).</p>
 <p>We now have to model the fact that the total amount leaving depot d must be no more than its capacity
 CAPd, but that the flow is zero if the depot is not built. The constraints (6.3) capture this.</p>
 <div class="arithmatex">\[\forall d \in DEPOTS: \sum_{c \in CUST} DEM_c \cdot fflow_{dc} \leq CAP_d \cdot build_d \tag{6.3}\]</div>
-<p>Let us now see why. Since <span class="arithmatex">\(fflow_{dc}\)</span> is the fraction of customer <span class="arithmatex">\(c’s\)</span> satisfied demand, <span class="arithmatex">\(fflow_{dc}\)</span> \cdot <span class="arithmatex">\(DEM_c\)</span> is the
+<p>Let us now see why. Since <span class="arithmatex">\(fflow_{dc}\)</span> is the fraction of customer <span class="arithmatex">\(c’s\)</span> satisfied demand, <span class="arithmatex">\(fflow_{dc} \cdot DEM_c\)</span> is the
 amount going from <span class="arithmatex">\(d\)</span> to <span class="arithmatex">\(c\)</span>.
 The total outflow from <span class="arithmatex">\(d\)</span> must be no more than <span class="arithmatex">\(CAP_d\)</span> if <span class="arithmatex">\(d\)</span> is built (<span class="arithmatex">\(build_d\)</span> = 1), and must be 0 if <span class="arithmatex">\(build_d\)</span> = 0.</p>
 <p>The total cost to be minimized consists of the costs for constructing the depots and the delivery costs.
