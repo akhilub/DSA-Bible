@@ -145,7 +145,7 @@ code {
 }
 .md-typeset .admonition.answer,
 .md-typeset details.answer {
-  border-color: var(--md-primary-fg-color);
+  border-color: rgb(12, 236, 176);
   /* padding: 0; */
   overflow: hidden;
   font-size: inherit;
@@ -153,7 +153,7 @@ code {
 
 [data-md-color-scheme="slate"] .md-typeset .admonition.answer,
 [data-md-color-scheme="slate"] .md-typeset details.answer {
-  border-color: var(--md-primary-fg-color);
+  border-color: rgb(12, 236, 176);
   overflow: hidden;
   font-size: inherit;
 }
