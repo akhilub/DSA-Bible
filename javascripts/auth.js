@@ -354,6 +354,16 @@ const showSubscriptionPrompt = (container) => {
   }
 }
 
+const injectAdsenseScript = () => {
+  const adsenseScript = document.createElement("script")
+  adsenseScript.id = "adsense-script"
+  adsenseScript.async = true
+  adsenseScript.src =
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9017821190135650"
+  adsenseScript.crossOrigin = "anonymous"
+  document.head.appendChild(adsenseScript)
+}
+
 // Check authentication and render UI
 // === Auth Check ===
 const checkAuth = async () => {
@@ -407,6 +417,14 @@ const checkAuth = async () => {
       if (roles.includes("admin")) {
         adminElements.forEach((el) => (el.style.display = "block"))
       }
+
+      const hasSubscription = await checkSubscriptionStatus()
+      console.log("hasSubscription status:", hasSubscription)
+
+      if (!hasSubscription) {
+        // Inject AdSense only for unpaid authenticated users
+        injectAdsenseScript()
+      }
     } else {
       // User is not logged in
       if (loginBtn) loginBtn.style.display = "inline-block"
@@ -415,6 +433,9 @@ const checkAuth = async () => {
 
       // Hide admin content
       adminElements.forEach((el) => (el.style.display = "none"))
+
+      // Not logged in? Inject AdSense for guests
+      injectAdsenseScript()
     }
 
     // Render the appropriate content based on authentication
