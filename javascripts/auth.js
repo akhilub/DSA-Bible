@@ -219,16 +219,11 @@ const renderContent = async (isAuthenticated) => {
 
   if (!solutionSection) {
     console.log("Solution section not found, skipping render")
-    // Still manage ads even if no solution section
-    await manageAdDisplay(isAuthenticated)
     return
   }
 
   try {
     isRenderingContent = true
-
-    // Manage ad display based on authentication and subscription status
-    await manageAdDisplay(isAuthenticated)
 
     // Check if this is the companies page first
     const isCompaniesPage = window.location.pathname.includes("/companies/")
