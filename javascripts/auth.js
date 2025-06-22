@@ -245,11 +245,6 @@ const renderContent = async (isAuthenticated) => {
       if (hasSubscription) {
         // User is authenticated AND has active subscription - show protected content
         try {
-          // Remove the entire AdSense slot cleanly
-          const adContainer = document.getElementById("ads-slot")
-          if (adContainer) {
-            adContainer.remove()
-          }
           await loadProtectedSolution("#solution-section")
 
           // ✅ Properly reinitialize MkDocs Material components after content is loaded
