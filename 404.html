@@ -72,35 +72,6 @@
     
     
       
-      <!-- Google AdSense Code - Will be controlled by JavaScript -->
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const loadAds = async () => {
-            await waitForAuth0();
-            const isAuthenticated = await auth0.isAuthenticated();
-            if (!isAuthenticated) {
-              const script = document.createElement('script');
-              script.id = "adsense-script";
-              script.async = true;
-              script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9017821190135650";
-              script.crossOrigin = "anonymous";
-              document.head.appendChild(script);
-            } else {
-              const hasSubscription = await checkSubscriptionStatus();
-              if (!hasSubscription) {
-                const script = document.createElement('script');
-                script.id = "adsense-script";
-                script.async = true;
-                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9017821190135650";
-                script.crossOrigin = "anonymous";
-                document.head.appendChild(script);
-              }
-            }
-          };
-          loadAds();
-        });
-      </script>
-      <!-- End Google AdSense Code -->
       <link rel="manifest" href="//manifest.webmanifest" />
       <meta name="theme-color" content="" />
 
@@ -1322,6 +1293,8 @@
         <script src="/javascripts/utils.js"></script>
       
         <script src="/javascripts/auth.js"></script>
+      
+        <script src="/javascripts/ads.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-graphviz.js"></script>
       
