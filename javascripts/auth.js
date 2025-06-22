@@ -484,6 +484,8 @@ initAuth()
 const getAuthenticatedUserState = () => isLoggedIn
 const setAuthenticatedUserState = (value) => (isLoggedIn = value)
 
+window.checkSubscriptionStatus = checkSubscriptionStatus
+
 if (
   typeof document$ !== "undefined" &&
   typeof document$.subscribe === "function"
