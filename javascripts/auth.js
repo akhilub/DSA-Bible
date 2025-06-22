@@ -58,17 +58,6 @@ const updateLock = async () => {
   }
 }
 
-// Make this utility function waitForAuth0 available globally
-window.waitForAuth0 = () => {
-  return new Promise((resolve) => {
-    const check = () => {
-      if (auth0) resolve()
-      else setTimeout(check, 100)
-    }
-    check()
-  })
-}
-
 //Function to check subscription status
 const checkSubscriptionStatus = async (user) => {
   try {
@@ -494,8 +483,6 @@ initAuth()
 // Auth state helpers
 const getAuthenticatedUserState = () => isLoggedIn
 const setAuthenticatedUserState = (value) => (isLoggedIn = value)
-
-window.checkSubscriptionStatus = checkSubscriptionStatus
 
 if (
   typeof document$ !== "undefined" &&
