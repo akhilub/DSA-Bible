@@ -58,6 +58,17 @@ const updateLock = async () => {
   }
 }
 
+// Add this utility function at the top of auth.js
+const waitForAuth0 = () => {
+  return new Promise((resolve) => {
+    const check = () => {
+      if (auth0) resolve()
+      else setTimeout(check, 100)
+    }
+    check()
+  })
+}
+
 //Function to check subscription status
 const checkSubscriptionStatus = async (user) => {
   try {
@@ -483,6 +494,8 @@ initAuth()
 // Auth state helpers
 const getAuthenticatedUserState = () => isLoggedIn
 const setAuthenticatedUserState = (value) => (isLoggedIn = value)
+
+window.checkSubscriptionStatus = checkSubscriptionStatus
 
 if (
   typeof document$ !== "undefined" &&
