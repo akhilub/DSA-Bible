@@ -49,7 +49,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -522,13 +522,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#applications-of-divide-conquer">
-<span class="md-ellipsis">
-      Applications of Divide &amp; Conquer
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#arrays-strings">
 <span class="md-ellipsis">
       Arrays &amp; Strings
@@ -690,27 +683,9 @@
       click F "javascript:void(0)" "Reuse stored result"
       click G "javascript:void(0)" "Problem solved efficiently!"</code></pre><div class="panzoom-info-box">Press "Alt" / "Option" to enable Pan &amp; Zoom</div></div>
 <h3 id="divide-conquer">Divide &amp; Conquer</h3>
-<h3 id="divide-conquer_1"><strong>Divide &amp; Conquer</strong></h3>
 <ul>
 <li>A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem.</li>
 </ul>
-<p><strong>Procedure</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>DAC(P):
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    if small(P):
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>        S(P)                        // Directly solve the problem, there must exist a solution for smaller problem
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    else:
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>        divide P into P₁,P₂,P₃,....Pₖ
-</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>        Apply DAC(P₁),DAC(P₂).....DAC(Pₖ)
-</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>        Combine (DAC(P₁),DAC(P₂).....DAC(Pₖ))
-</span></code></pre></div>
-<h2 id="applications-of-divide-conquer">Applications of Divide &amp; Conquer</h2>
-<ol>
-<li>Binary Search</li>
-<li>Finding Maximum &amp; Minimum</li>
-<li>MergeSort</li>
-<li>QuickSort</li>
-<li>Strassen's Matrix Multiplication</li>
-</ol>
 <h3 id="greedy-algorithms">Greedy Algorithms</h3>
 <ul>
 <li>Making locally optimal choices at each step with the hope of finding a global optimum.</li>
