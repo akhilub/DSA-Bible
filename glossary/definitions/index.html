@@ -788,6 +788,10 @@
 </ul>
 </details>
 <h3 class="title-color" id="array-operations-time-complexity">Array Operations Time Complexity</h3>
+<div class="title-center">
+<p>Arrays (dynamic array/list), Given n = arr.length</p>
+</div>
+<div class="title-center">
 <table>
 <thead>
 <tr>
@@ -797,24 +801,28 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Add or Remove Element at the end of Array</td>
+<td style="text-align: center;">Add or Remove element at the end</td>
 <td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span> Amortized</td>
 </tr>
 <tr>
-<td style="text-align: center;">Add or Remove Element NOT at the end of Arra</td>
-<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
-</tr>
-<tr>
-<td style="text-align: center;">Access Element at any Index</td>
+<td style="text-align: center;">Access or modify element at arbitrary index</td>
 <td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">Searching Array for an Element</td>
-<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+<td style="text-align: center;">Finding the sum of a subarray given a prefix sum</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">Searching Sorted Array for an Element</td>
 <td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span> Binary Search</td>
+</tr>
+<tr>
+<td style="text-align: center;">Add or Remove Element from arbitrary index</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Check if element exists/Searching Array for an Element</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">Copying Array</td>
@@ -825,11 +833,20 @@
 <td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 </tr>
 <tr>
+<td style="text-align: center;">Building a prefix sum:</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Two pointers:</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n⋅k)\)</span>, where <span class="arithmatex">\(k\)</span> is the work done at each iteration, includes sliding window</td>
+</tr>
+<tr>
 <td style="text-align: center;">All Pairs of Array Elements</td>
 <td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="heap-priority-queue"><a class="md-title" href="#heap-priority-queue"><strong>Heap &amp; Priority Queue</strong></a></h2>
 <h3 id="min-heap-max-heap">Min Heap / Max Heap</h3>
 <ul>
