@@ -122,7 +122,6 @@ code {
 .md-typeset .admonition.example,
 .md-typeset details.example {
   /* border-color: var(--md-primary-fg-color); */
-  margin: 0;
   padding: 0;
   overflow: hidden;
   font-size: inherit;
@@ -131,7 +130,6 @@ code {
 [data-md-color-scheme="slate"] .md-typeset .admonition.example,
 [data-md-color-scheme="slate"] .md-typeset details.example {
   /* border-color: var(--md-primary-fg-color); */
-  margin: 0;
   padding: 0;
   overflow: hidden;
   font-size: inherit;
