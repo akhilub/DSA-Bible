@@ -571,6 +571,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../39/">
+<span class="md-ellipsis">
+    39. Combination Sum
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../40/">
 <span class="md-ellipsis">
     40. Coming Soon
@@ -1049,8 +1057,8 @@
 <p class="admonition-title">Algorithm</p>
 <p>The problem can be efficiently solved using the sliding window technique.</p>
 <p>We maintain a window that contains the maximum number of repeating characters possible with at most k replacements.</p>
-<p>Counter() <code>count</code> is used to keep track of the frequency of characters within the current window.</p>
-<p><code>maxCount</code> keeps track of the highest frequency of any single character within the current window, which helps us determine how many replacements we can afford.</p>
+<p>Counter() <code>count</code> is used to keep track of the <abbr title="🙋🏼‍♀️ The frequency of an element x is the number of times it occurs in the array.">frequency</abbr> of characters within the current window.</p>
+<p><code>maxCount</code> keeps track of the highest <abbr title="🙋🏼‍♀️ The frequency of an element x is the number of times it occurs in the array.">frequency</abbr> of any single character within the current window, which helps us determine how many replacements we can afford.</p>
 <p>If the current window size minus <code>maxCount</code> exceeds <code>k</code>, it indicates that we need more than <code>k</code> replacements to make all characters in the window the same, thus we shrink the window from the left.</p>
 <p>We continuously update the answer with the maximum valid window size encountered during the process.</p>
 <p><em>The time complexity is <span class="arithmatex">\(O(n)\)</span>, where n is the length of the string s. This is because each character in the string is processed at most twice, once when expanding the window and once when shrinking it.</em></p>

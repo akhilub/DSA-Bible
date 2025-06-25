@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/problems/1/" rel="canonical"/>
-<link href="../../pricing/" rel="prev"/>
-<link href="../2/" rel="next"/>
+<link href="https://dsabible.com/problems/39/" rel="canonical"/>
+<link href="../33/" rel="prev"/>
+<link href="../40/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
-<title>1. Two Sum - DSA-Bible</title>
+<title>39. Combination Sum - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -27,9 +27,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="1. Two Sum - DSA-Bible" property="og:title">
+<meta content="39. Combination Sum - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/problems/1/" property="og:url">
+<meta content="https://dsabible.com/problems/39/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -37,7 +37,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="1. Two Sum - DSA-Bible" name="twitter:title"/>
+<meta content="39. Combination Sum - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -55,7 +55,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1-two-sum">
+<a class="md-skip" href="#39-combination-sum">
           Skip to content
         </a>
 </div>
@@ -102,7 +102,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              1. Two Sum
+              39. Combination Sum
             
           </span>
 </div>
@@ -365,7 +365,7 @@
       </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<a class="md-tabs__link" href="../1/">
           
   
   
@@ -466,49 +466,13 @@
             Problems
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    1. Two Sum
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1/">
 <span class="md-ellipsis">
     1. Two Sum
     
   </span>
 </a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-<span class="md-ellipsis">
-</span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#solutions">
-<span class="md-ellipsis">
-      Solutions 🔒
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../2/">
@@ -606,13 +570,43 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../39/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    39. Combination Sum
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     39. Combination Sum
     
   </span>
 </a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solutions">
+<span class="md-ellipsis">
+      Solutions 🔒
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../40/">
@@ -989,216 +983,205 @@
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
 <a class="md-tag" href="../../topics/#tag:array">Array</a>
-<a class="md-tag" href="../../topics/#tag:hash-table">Hash Table</a>
+<a class="md-tag" href="../../topics/#tag:backtracking">Backtracking</a>
 </nav>
 <!-- problem:start -->
-<h1 id="1-two-sum"><a href="https://leetcode.com/problems/two-sum/" title="Click me to Open Playground">1. Two Sum</a></h1>
-<p><span class="md-tag md-tag--easy">Easy</span></p>
+<h1 id="39-combination-sum"><a href="https://leetcode.com/problems/combination-sum/" title="Click me to Open Playground">39. Combination Sum</a></h1>
+<p><span class="md-tag md-tag--medium">Medium</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
-<p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to <code>target</code>.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p>You can return the answer in any order.</p>
+<p>Given an array of <strong>distinct</strong> integers <code>candidates</code> and a target integer <code>target</code>, return a list of all unique combinations of <code>candidates</code> where the chosen numbers sum to <code>target</code>. You may return the combinations in any order.</p>
+<p>The <strong>same</strong> number may be chosen from <code>candidates</code> an <strong>unlimited number of times</strong>. Two combinations are unique if the <abbr title="🙋🏼‍♀️ The frequency of an element x is the number of times it occurs in the array.">frequency</abbr> of at least one of the chosen numbers is different.</p>
+<p>The test cases are generated such that the number of unique combinations that sum up to <code>target</code> is less than <code>150</code> combinations for the given input.</p>
 <p><strong>Example 1:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nums = [2,7,11,15], target = 9</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Because nums[0] + nums[1] == 9, we return [0, 1].</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">candidates = [2,3,6,7], target = 7</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">3</span><span class="p p-Indicator">],[</span><span class="nv">7</span><span class="p p-Indicator">]]</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">7 is a candidate, and 7 = 7.</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="l l-Scalar l-Scalar-Plain">These are the only two combinations.</span>
 </span></code></pre></div>
 <p><strong>Example 2:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nums = [3,2,4], target = 6</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">candidates = [2,3,5], target = 8</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">],[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="nv">3</span><span class="p p-Indicator">],[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="nv">5</span><span class="p p-Indicator">]]</span>
 </span></code></pre></div>
 <p><strong>Example 3:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nums = [3,3], target = 6</span>
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">candidates = [2], target = 1</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 </span></code></pre></div>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li><code>2 &lt;= nums.length &lt;= 104</code></li>
-<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
-<li><code>-109 &lt;= target &lt;= 109</code></li>
-<li><code>Only one valid answer exists.</code></li>
+<li><code>1 &lt;= candidates.length &lt;= 30</code></li>
+<li><code>2 &lt;= candidates[i] &lt;= 40</code></li>
+<li><code>All elements of candidates are distinct.</code></li>
+<li><code>1 &lt;= target &lt;= 40</code></li>
 </ul>
-<p><strong>Follow-up:</strong> Can you come up with an algorithm that is less than <span class="arithmatex">\(O(n^2)\)</span> time complexity?</p>
-<h2 id="_1"><!-- description:end --></h2>
+<!-- description:end -->
+<!-- problem:end -->
+<hr/>
 <h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon">🔒</span></h2>
-<!-- solution:start -->
-<!-- video solution:start -->
+<!-- vide solution:start -->
 <div class="video-message">
 <p>Video Solution Coming Soon</p>
 </div>
-<!-- video solution:end -->
-<h3 id="approach-1-hash-table">Approach 1: Hash Table</h3>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
-<h4 id="way-1">Way 1</h4>
-<div class="admonition note">
-<p class="admonition-title">Algorithmic</p>
-<p>We can use the hash table <span class="arithmatex">\(seen\)</span> to store the array value and the corresponding index.</p>
-<p>Traverse the array <code>nums</code>, when you find <code>target - nums[i]</code> in the hash table, it means that the target value is found, and the index of <code>target - nums[i]</code> and <span class="arithmatex">\(i\)</span> are returned.</p>
-<p>The time complexity is <span class="arithmatex">\(O(n)\)</span> and the space complexity is <span class="arithmatex">\(O(n)\)</span>. Where <span class="arithmatex">\(n\)</span> is the length of the input array <code>nums</code>.</p>
+<!-- vide solution: end -->
+<!-- solution:start -->
+<h3 id="approach-1-recursive-backtracking-pick-skip">Approach 1: Recursive Backtracking (Pick, Skip)</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(2^n \times n)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span>, where <span class="arithmatex">\(n\)</span> is the length of the array <span class="arithmatex">\(candidates\)</span>.</p>
+<div class="language-text highlight"><pre><span></span><code>                                            candidates[i]
+                                                /    \
+                                            pick     skip
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<ol>
+<li>For every position in candidate we will either <code>pick</code> the element or <code>skip</code> the element in current list <code>cur</code></li>
+<li>While picking the element recursively we can pick the same element multiple times</li>
+<li>Terminate the function on various conditions</li>
+</ol>
 </div>
-<!-- tabs:start -->
-<div class="tabbed-set tabbed-alternate" data-tabs="1:16"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"><input id="__tabbed_1_8" name="__tabbed_1" type="radio"><input id="__tabbed_1_9" name="__tabbed_1" type="radio"/><input id="__tabbed_1_10" name="__tabbed_1" type="radio"/><input id="__tabbed_1_11" name="__tabbed_1" type="radio"/><input id="__tabbed_1_12" name="__tabbed_1" type="radio"/><input id="__tabbed_1_13" name="__tabbed_1" type="radio"/><input id="__tabbed_1_14" name="__tabbed_1" type="radio"/><input id="__tabbed_1_15" name="__tabbed_1" type="radio"/><input id="__tabbed_1_16" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">Java</label><label for="__tabbed_1_3">C</label><label for="__tabbed_1_4">C++</label><label for="__tabbed_1_5">Go</label><label for="__tabbed_1_6">TypeScript</label><label for="__tabbed_1_7">Rust</label><label for="__tabbed_1_8">JavaScript</label><label for="__tabbed_1_9">C#</label><label for="__tabbed_1_10">PHP</label><label for="__tabbed_1_11">Scala</label><label for="__tabbed_1_12">Swift</label><label for="__tabbed_1_13">Ruby</label><label for="__tabbed_1_14">Kotlin</label><label for="__tabbed_1_15">Nim</label><label for="__tabbed_1_16">Cangjie</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>        <span class="n">seen</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#map elements with their indexs {ele:idx}</span>
-</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">ele</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>            <span class="n">num</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">ele</span>
-</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>            <span class="k">if</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
-</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>                <span class="k">return</span> <span class="p">[</span><span class="n">seen</span><span class="p">[</span><span class="n">num</span><span class="p">],</span><span class="n">idx</span><span class="p">]</span>
-</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>            <span class="n">seen</span><span class="p">[</span><span class="n">ele</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">combinationSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">cur</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>            <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">cur</span><span class="p">))</span>
+</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>            <span class="k">return</span>                              <span class="c1">#Dont Forget to return</span>
+</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span> <span class="ow">or</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+</span><span id="__span-3-12"><a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>            <span class="k">return</span>
+</span><span id="__span-3-13"><a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>        <span class="c1">#pick the element at position i, given we can pick the same element multiple times to reach to target</span>
+</span><span id="__span-3-15"><a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>        <span class="n">backtrack</span><span class="p">(</span><span class="n">cur</span> <span class="o">+</span> <span class="p">[</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="c1"># Here when we are picking we can pick the same element multiple times to reach to target sum i.e why in function backtrack argument i is i and not i+1</span>
+</span><span id="__span-3-16"><a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>        <span class="c1">#skip the element at position i and move ahead</span>
+</span><span id="__span-3-18"><a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>        <span class="n">backtrack</span><span class="p">(</span><span class="n">cur</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-19"><a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>    <span class="n">backtrack</span><span class="p">([],</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-3-21"><a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>    <span class="k">return</span> <span class="n">ans</span>
 </span></code></pre></div>
 </div>
-<div class="tabbed-block">
-<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">complement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
-</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">complement</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">complement</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-4-8"><a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">            </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
-</span><span id="__span-4-10"><a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-4-11"><a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
-</span><span id="__span-4-12"><a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-4-13"><a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="p">}</span>
-</span></code></pre></div>
 </div>
+</input></div>
+<details class="example">
+<summary>equivalency</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>  <span class="c1"># deepcopy</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># shallow copy</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>  <span class="o">||</span>
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>  <span class="o">||</span>
+</span><span id="__span-4-7"><a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>  <span class="o">||</span>
+</span><span id="__span-4-8"><a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="n">cur</span><span class="p">[::]</span>     <span class="c1">#slice notation</span>
+</span><span id="__span-4-9"><a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>  <span class="o">||</span>
+</span><span id="__span-4-10"><a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>  <span class="o">||</span>
+</span><span id="__span-4-11"><a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>  <span class="o">||</span>
+</span><span id="__span-4-12"><a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="n">cur</span><span class="p">[:]</span>      <span class="c1">#slice notation</span>
+</span><span id="__span-4-13"><a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>  <span class="o">||</span>
+</span><span id="__span-4-14"><a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a>  <span class="o">||</span>
+</span><span id="__span-4-15"><a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a>  <span class="o">||</span>
+</span><span id="__span-4-16"><a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="n">cur</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
+<h3 id="approach-2-recursive-backtracking-loop">Approach 2 : Recursive Backtracking (Loop)</h3>
+<ul>
+<li>I prefer this</li>
+</ul>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(∣candidates∣^{target})\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(target)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Algorithm</p>
+<ol>
+<li>Make the recursive decision tree, then we will realize it is a backtracking</li>
+<li>Start the dfs with empty path list and the current level i.e 0</li>
+<li>
+<p>The tree branches are seen through for loop , the for loop starts from the current level</p>
+<blockquote>
+<p>We can pick the same element multiple times from the candidate list in the path list when we are backtracking</p>
+</blockquote>
+</li>
+<li>
+<p>Prune the tree meaning return if the sum(path) becomes more than the target</p>
+</li>
+<li>Store/Save the path if sum(path) reaches target</li>
+<li>Upon returning from a level pop out the last added elemet in the past list</li>
+</ol>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cm">/**</span>
-</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="cm">* Note: The returned array must be malloced, assume caller calls free().</span>
-</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="cm">*/</span>
-</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numsSize</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">returnSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">combinationSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
 </span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">==</span><span class="n">target</span><span class="p">:</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>            <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">[::])</span>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>            <span class="k">return</span>
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a>        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+</span><span id="__span-5-12"><a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a>            <span class="k">return</span>
+</span><span id="__span-5-13"><a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-5-15"><a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a>            <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="__span-5-16"><a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a>            <span class="n">dfs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-5-17"><a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a>            <span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-5-18"><a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="n">dfs</span><span class="p">([],</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-5-20"><a href="#__codelineno-5-20" id="__codelineno-5-20" name="__codelineno-5-20"></a>    <span class="k">return</span> <span class="n">ans</span>
 </span></code></pre></div>
 </div>
+</div>
+</input></div>
+<details class="example">
+<summary>equivalency</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">dfs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="o">||</span>
+</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">equivalent</span>
+</span><span id="__span-6-7"><a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>    <span class="o">||</span>
+</span><span id="__span-6-8"><a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">dfs</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">i</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<h3 id="approach-3-sorting-pruning-backtracking">Approach 3 : Sorting + Pruning + Backtracking</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">public</span><span class="o">:</span>
-</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">twoSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">        </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">indices</span><span class="p">;</span>
-</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">complement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span><span id="__span-6-7"><a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">indices</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">complement</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-8"><a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">indices</span><span class="p">[</span><span class="n">complement</span><span class="p">],</span><span class="w"> </span><span class="n">i</span><span class="p">};</span>
-</span><span id="__span-6-9"><a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-6-10"><a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">            </span><span class="n">indices</span><span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-6-11"><a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-6-12"><a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
-</span><span id="__span-6-13"><a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-14"><a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="p">};</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-go highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">twoSum</span><span class="p">(</span><span class="nx">nums</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">target</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-ts highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">twoSum</span><span class="p">(</span><span class="nx">nums</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[],</span><span class="w"> </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">seen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
-</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">nums</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-4"><a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">target</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span><span id="__span-8-5"><a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">seen</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">diff</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-6"><a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="nx">seen</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">diff</span><span class="p">),</span><span class="w"> </span><span class="nx">i</span><span class="p">];</span>
-</span><span id="__span-8-7"><a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-8-8"><a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">        </span><span class="nx">seen</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="nx">i</span><span class="p">);</span>
-</span><span id="__span-8-9"><a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-8-10"><a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[];</span>
-</span><span id="__span-8-11"><a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-rust highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">impl</span><span class="w"> </span><span class="n">Solution</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">two_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>
-</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cm">/**</span>
-</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="cm"> * @param {number[]} nums</span>
-</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="cm"> * @param {number} target</span>
-</span><span id="__span-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="cm"> * @return {number[]}</span>
-</span><span id="__span-10-5"><a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="cm">*/</span>
-</span><span id="__span-10-6"><a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>
-</span><span id="__span-10-7"><a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="kd">var</span><span class="w"> </span><span class="nx">twoSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span><span class="w"> </span><span class="nx">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-8"><a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>
-</span><span id="__span-10-9"><a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-cs highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="nf">TwoSum</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-11-4"><a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-php highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x">class Solution {</span>
-</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x">    /**</span>
-</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">    * @param Integer[] $nums</span>
-</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">    * @param Integer $target</span>
-</span><span id="__span-12-5"><a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">    * @return Integer[]</span>
-</span><span id="__span-12-6"><a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="x">    */</span>
-</span><span id="__span-12-7"><a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="x">    function twoSum($nums, $target) {</span>
-</span><span id="__span-12-8"><a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="x">    }</span>
-</span><span id="__span-12-9"><a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="x">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-scala highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">object</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span><span class="w"> </span><span class="nc">Array</span><span class="p">[</span><span class="nc">Int</span><span class="p">],</span><span class="w"> </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="nc">Int</span><span class="p">):</span><span class="w"> </span><span class="nc">Array</span><span class="p">[</span><span class="nc">Int</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-swift highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="kd">func</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">nums</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Int</span><span class="p">],</span><span class="w"> </span><span class="kc">_</span><span class="w"> </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">Int</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>
-</span><span id="__span-14-4"><a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-14-5"><a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-rb highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># @param {Integer[]} nums</span>
-</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="c1"># @param {Integer} target</span>
-</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="c1"># @return {Integer[]}</span>
-</span><span id="__span-15-4"><a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">two_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">)</span>
-</span><span id="__span-15-5"><a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>
-</span><span id="__span-15-6"><a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="k">end</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span><span class="w"> </span><span class="n">IntArray</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="n">IntArray</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-16-5"><a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="p">}</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-nim highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">proc</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span><span class="w"> </span><span class="nb">seq</span><span class="o">[</span><span class="nb">int</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="nb">int</span><span class="p">):</span><span class="w"> </span><span class="nb">seq</span><span class="o">[</span><span class="nb">int</span><span class="o">]</span><span class="w"> </span><span class="o">=</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>class Solution {
-</span><span id="__span-18-2"><a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>    func twoSum(nums: Array&lt;Int64&gt;, target: Int64): Array&lt;Int64&gt; {
-</span><span id="__span-18-3"><a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>
-</span><span id="__span-18-4"><a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>    }
-</span><span id="__span-18-5"><a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>}
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">combinationSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-7-7"><a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a>        <span class="k">if</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-7-8"><a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a>            <span class="k">return</span>
+</span><span id="__span-7-9"><a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a>        <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-7-11"><a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a>            <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">clone</span><span class="p">())</span>
+</span><span id="__span-7-12"><a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a>            <span class="k">return</span>
+</span><span id="__span-7-13"><a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span><span id="__span-7-15"><a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a>            <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="__span-7-16"><a href="#__codelineno-7-16" id="__codelineno-7-16" name="__codelineno-7-16"></a>            <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">path</span><span class="p">)</span>
+</span><span id="__span-7-17"><a href="#__codelineno-7-17" id="__codelineno-7-17" name="__codelineno-7-17"></a>            <span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-7-18"><a href="#__codelineno-7-18" id="__codelineno-7-18" name="__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a href="#__codelineno-7-19" id="__codelineno-7-19" name="__codelineno-7-19"></a>        <span class="n">candidates</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="__span-7-20"><a href="#__codelineno-7-20" id="__codelineno-7-20" name="__codelineno-7-20"></a>        <span class="n">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="p">[])</span>
+</span><span id="__span-7-21"><a href="#__codelineno-7-21" id="__codelineno-7-21" name="__codelineno-7-21"></a>    <span class="k">return</span> <span class="n">ans</span>
 </span></code></pre></div>
 </div>
 </div>
-</input></input></input></input></input></input></input></input></div>
-<!-- tabs:end -->
+</input></div>
 <!-- solution:end -->
 <!--Author html-->
 <!-- Post authors from meta-->
@@ -1218,6 +1201,7 @@
 </div>
 </div>
 </section>
+<!-- Include both links, & abbreviations -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -1255,7 +1239,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+1.%20Two%20Sum+-+/problems/1/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+39.%20Combination%20Sum+-+/problems/39/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -1311,20 +1295,20 @@
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: Pricing" class="md-footer__link md-footer__link--prev" href="../../pricing/">
+<a aria-label="Previous: 33. Search in Rotated Sorted Array" class="md-footer__link md-footer__link--prev" href="../33/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">Pricing</div>
+<div class="md-ellipsis">33. Search in Rotated Sorted Array</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: 2. Add Two Numbers" class="md-footer__link md-footer__link--next" href="../2/">
+<a aria-label="Next: 40. Coming Soon" class="md-footer__link md-footer__link--next" href="../40/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">2. Add Two Numbers</div>
+<div class="md-ellipsis">40. Coming Soon</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
