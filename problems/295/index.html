@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/optimizations/7/" rel="canonical"/>
-<link href="../6/" rel="prev"/>
-<link href="../../companies/" rel="next"/>
+<link href="https://dsabible.com/problems/295/" rel="canonical"/>
+<link href="../242/" rel="prev"/>
+<link href="../297/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
-<title>Coming Soon - DSA-Bible</title>
+<title>295. Find Median from Data Stream - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -27,9 +27,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="7. Coming Soon - DSA-Bible" property="og:title">
+<meta content="295. Find Median from Data Stream - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/optimizations/7/" property="og:url">
+<meta content="https://dsabible.com/problems/295/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -37,7 +37,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="7. Coming Soon - DSA-Bible" name="twitter:title"/>
+<meta content="295. Find Median from Data Stream - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -55,7 +55,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#more-optimization-problems-coming-soon">
+<a class="md-skip" href="#295-find-median-from-data-stream">
           Skip to content
         </a>
 </div>
@@ -102,7 +102,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Coming Soon
+              295. Find Median from Data Stream
             
           </span>
 </div>
@@ -364,8 +364,8 @@
 
       </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../problems/1/">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../1/">
           
   
   
@@ -375,8 +375,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../1/">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../optimizations/1/">
           
   
   
@@ -451,34 +451,25 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../../problems/1/">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
 <span class="md-ellipsis">
     Problems
     
   </span>
 <span class="md-nav__icon md-icon"></span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-<span class="md-ellipsis">
-    Optimizations
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-            Optimizations
+            Problems
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../1/">
 <span class="md-ellipsis">
-    1. Mixed Integer Programming
+    1. Two Sum
     
   </span>
 </a>
@@ -486,7 +477,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../2/">
 <span class="md-ellipsis">
-    2. Mermaid Examples
+    2. Add Two Numbers
     
   </span>
 </a>
@@ -494,7 +485,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../3/">
 <span class="md-ellipsis">
-    3. Composing flight crews
+    3. Longest Substring Without Repeating Characters
     
   </span>
 </a>
@@ -502,7 +493,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../4/">
 <span class="md-ellipsis">
-    4. N Queen
+    4. Median of Two Sorted Arrays
     
   </span>
 </a>
@@ -510,7 +501,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../5/">
 <span class="md-ellipsis">
-    5. GraphViz Examples
+    5. Longest Palindromic Substring
     
   </span>
 </a>
@@ -518,22 +509,436 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../6/">
 <span class="md-ellipsis">
-    6. Depot Location
+    6. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7/">
+<span class="md-ellipsis">
+    7. Reverse Integer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15/">
+<span class="md-ellipsis">
+    15. 3Sum
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19/">
+<span class="md-ellipsis">
+    19. Remove Nth Node From End of List
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20/">
+<span class="md-ellipsis">
+    20. Valid Parentheses
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+<span class="md-ellipsis">
+    21. Merge Two Sorted Lists
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../29/">
+<span class="md-ellipsis">
+    29. Divide Two Integers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+<span class="md-ellipsis">
+    33. Search in Rotated Sorted Array
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../40/">
+<span class="md-ellipsis">
+    40. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../42/">
+<span class="md-ellipsis">
+    42. Trapping Rain Water
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../45/">
+<span class="md-ellipsis">
+    45. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../50/">
+<span class="md-ellipsis">
+    50. Pow(x, n)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../52/">
+<span class="md-ellipsis">
+    52. N-Queens II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../62/">
+<span class="md-ellipsis">
+    62. Unique Paths
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../74/">
+<span class="md-ellipsis">
+    74. Search a 2D Matrix
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../79/">
+<span class="md-ellipsis">
+    79. Word Search
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../100/">
+<span class="md-ellipsis">
+    100. Same Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../104/">
+<span class="md-ellipsis">
+    104. Maximum Depth of Binary Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../121/">
+<span class="md-ellipsis">
+    121. Best Time to Buy and Sell Stock
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../125/">
+<span class="md-ellipsis">
+    125. Valid Palindrome
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../135/">
+<span class="md-ellipsis">
+    135. Candy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../136/">
+<span class="md-ellipsis">
+    136. Single Number
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../139/">
+<span class="md-ellipsis">
+    139. Word Break
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../141/">
+<span class="md-ellipsis">
+    141. Linked List Cycle
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../146/">
+<span class="md-ellipsis">
+    146. LRU Cache
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../206/">
+<span class="md-ellipsis">
+    206. Reverse Linked List
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../212/">
+<span class="md-ellipsis">
+    212. Word Search II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../226/">
+<span class="md-ellipsis">
+    226. Invert Binary Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../238/">
+<span class="md-ellipsis">
+    238. Product of Array Except Self
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../240/">
+<span class="md-ellipsis">
+    240. Search a 2D Matrix II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../242/">
+<span class="md-ellipsis">
+    242. Valid Anagram
     
   </span>
 </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    295. Find Median from Data Stream
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    7. Coming Soon
+    295. Find Median from Data Stream
+    
+  </span>
+</a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solutions">
+<span class="md-ellipsis">
+      Solutions 🔒
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../297/">
+<span class="md-ellipsis">
+    297. Serialize and Deserialize Binary Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../355/">
+<span class="md-ellipsis">
+    355. Design Twitter
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../374/">
+<span class="md-ellipsis">
+    374. Guess Number Higher or Lower
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../407/">
+<span class="md-ellipsis">
+    407. Trapping Rain Water II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../424/">
+<span class="md-ellipsis">
+    424. Longest Repeating Character Replacement
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../703/">
+<span class="md-ellipsis">
+    703. Kth Largest Element in a Stream
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../704/">
+<span class="md-ellipsis">
+    704. Binary Search
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../705/">
+<span class="md-ellipsis">
+    705. Design HashSet
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../706/">
+<span class="md-ellipsis">
+    706. Design HashMap
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../739/">
+<span class="md-ellipsis">
+    739. Daily Temperatures
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../746/">
+<span class="md-ellipsis">
+    746. Min Cost Climbing Stairs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../875/">
+<span class="md-ellipsis">
+    875. Koko Eating Bananas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1095/">
+<span class="md-ellipsis">
+    1095. Find in Mountain Array
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2140/">
+<span class="md-ellipsis">
+    2140. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2226/">
+<span class="md-ellipsis">
+    2226. Maximum Candies Allocated to K Children
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2294/">
+<span class="md-ellipsis">
+    2294. Partition Array Such That Maximum Difference Is K
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2503/">
+<span class="md-ellipsis">
+    2503. Coming Soon
     
   </span>
 </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../optimizations/1/">
+<span class="md-ellipsis">
+    Optimizations
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
 </li>
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
 <a class="md-nav__link" href="../../companies/">
@@ -568,7 +973,72 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="more-optimization-problems-coming-soon">More Optimization Problems Coming Soon</h1>
+<nav class="md-tags">
+<a class="md-tag" href="../../topics/#tag:data-stream">Data Stream</a>
+<a class="md-tag" href="../../topics/#tag:design">Design</a>
+<a class="md-tag" href="../../topics/#tag:heap-priority-queue">Heap (Priority Queue)</a>
+<a class="md-tag" href="../../topics/#tag:sorting">Sorting</a>
+<a class="md-tag" href="../../topics/#tag:two-pointers">Two Pointers</a>
+</nav>
+<!-- problem:start -->
+<h1 id="295-find-median-from-data-stream"><a href="https://leetcode.com/problems/find-median-from-data-stream/" title="Click me to Open Playground">295. Find Median from Data Stream</a></h1>
+<p><span class="md-tag md-tag--hard">Hard</span></p>
+<h2 id="description"><strong>Description</strong></h2>
+<!-- description:start -->
+<p>The <strong>median</strong> is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values.</p>
+<ul>
+<li>
+<p>For example, for <code>arr = [2,3,4]</code>, the median is <code>3</code>.</p>
+</li>
+<li>
+<p>For example, for <code>arr = [2,3]</code>, the median is <code>(2 + 3) / 2 = 2.5</code>.</p>
+</li>
+</ul>
+<p>Implement the MedianFinder class:</p>
+<ul>
+<li>
+<p><code>MedianFinder()</code> initializes the <code>MedianFinder</code> object.</p>
+</li>
+<li>
+<p><code>void addNum(int num)</code> adds the integer <code>num</code> from the data stream to the data structure.</p>
+</li>
+<li>
+<p><code>double findMedian()</code> returns the median of all elements so far. Answers within <code>10⁻⁵</code> of the actual answer will be accepted.</p>
+</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">Input</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"]</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">[[], [1], [2], [], [3], []]</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">Output</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">[null, null, null, 1.5, null, 2.0]</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="l l-Scalar l-Scalar-Plain">Explanation</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="l l-Scalar l-Scalar-Plain">MedianFinder medianFinder = new MedianFinder();</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="l l-Scalar l-Scalar-Plain">medianFinder.addNum(1);    // arr = [1]</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="l l-Scalar l-Scalar-Plain">medianFinder.addNum(2);    // arr = [1, 2]</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="l l-Scalar l-Scalar-Plain">medianFinder.findMedian(); // return 1.5 (i.e., (1 + 2) / 2)</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="l l-Scalar l-Scalar-Plain">medianFinder.addNum(3);    // arr[1, 2, 3]</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="l l-Scalar l-Scalar-Plain">medianFinder.findMedian(); // return 2.0</span>
+</span></code></pre></div>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-10⁵ &lt;= num &lt;= 10⁵</code></li>
+<li>There will be at least one element in the data structure before calling <code>findMedian</code>.</li>
+<li>At most <code>5 * 10⁴</code> calls will be made to <code>addNum</code> and <code>findMedian</code>.</li>
+</ul>
+<p><strong>Follow up:</strong></p>
+<blockquote>
+<p>If all integer numbers from the stream are in the range [0, 100], how would you optimize your solution?</p>
+<p>If 99% of all integer numbers from the stream are in the range [0, 100], how would you optimize your solution?</p>
+</blockquote>
+<!-- description:end -->
+<h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon">🔒</span></h2>
+<section data-problem-id="295" data-section-type="problems" id="solution-section">
+<!-- This section will be populated by JavaScript based on authentication -->
+<!-- solution gets injected here -->
+</section>
+<!-- problem:end -->
 <!-- Login Prompt Template -->
 <!-- Login prompt template -->
 <p><template id="login-prompt-template">
@@ -698,14 +1168,7 @@
 </div>
 </div>
 </section>
-<!--
-(empty line)
-[comment]: # (This actually is the most platform independent comment)
--->
-<!---
-your comment goes here
-and here
--->
+<!-- Include both links, & abbreviations -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -743,7 +1206,7 @@ and here
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+Coming%20Soon+-+/optimizations/7/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+295.%20Find%20Median%20from%20Data%20Stream+-+/problems/295/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -799,20 +1262,20 @@ and here
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: 6. Depot Location" class="md-footer__link md-footer__link--prev" href="../6/">
+<a aria-label="Previous: 242. Valid Anagram" class="md-footer__link md-footer__link--prev" href="../242/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">6. Depot Location</div>
+<div class="md-ellipsis">242. Valid Anagram</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: Companies" class="md-footer__link md-footer__link--next" href="../../companies/">
+<a aria-label="Next: 297. Serialize and Deserialize Binary Tree" class="md-footer__link md-footer__link--next" href="../297/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">Companies</div>
+<div class="md-ellipsis">297. Serialize and Deserialize Binary Tree</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
