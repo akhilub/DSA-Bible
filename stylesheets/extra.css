@@ -235,6 +235,6 @@ code {
 }
 
 /*Positioning of back-to-top button*/
-[dir="ltr"] .md-top {
+/* [dir="ltr"] .md-top {
   margin-top: calc(94vh - 66px) !important;
-}
+} */
