@@ -235,6 +235,8 @@ code {
 }
 
 /*Positioning of back-to-top button*/
-/* [dir="ltr"] .md-top {
-  margin-top: calc(94vh - 66px) !important;
-} */
+[dir=ltr] .md-top {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  /* margin-top: calc(65vh - 65px) !important; */
+}
