@@ -514,8 +514,8 @@
 <p class="admonition-title">Algorithm 1</p>
 <p>To solve this problem, we can use the XOR operation.</p>
 <ul>
-<li>When we XOR a number with itself, the result is 0.</li>
-<li>When we XOR a number with 0, the result is the number itself.</li>
+<li>When we XOR a number with itself, the result is 0. i.e., <span class="arithmatex">\(x \oplus x = 0\)</span>;</li>
+<li>When we XOR a number with 0, the result is the number itself. i.e., <span class="arithmatex">\(x \oplus 0 = x\)</span>;</li>
 </ul>
 <p>Since every number appears twice except for one number, if we XOR all numbers together, all the pairs will cancel out (become 0), and we'll be left with the single number.</p>
 <p>This approach has linear time complexity O(n) and uses constant extra space O(1) .</p>
