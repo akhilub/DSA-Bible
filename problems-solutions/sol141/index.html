@@ -509,14 +509,15 @@
 <h3 id="approach-fast-and-slow-pointers">Approach :Fast and Slow Pointers</h3>
 <details class="abstract">
 <summary>Algorithm Discussion</summary>
-<h3 id="fast-and-slow-pointers"><strong>Fast and Slow Pointers</strong></h3>
+<h3 id="floyds-cycle-detection"><strong>Floyd's Cycle Detection</strong></h3>
 <ul>
 <li>
 <p>We define two pointers, <span class="arithmatex">\(fast\)</span> and <span class="arithmatex">\(slow\)</span>, both initially pointing to <span class="arithmatex">\(head\)</span>.</p>
 </li>
 <li>
-<p>The fast pointer moves two steps at a time, and the slow pointer moves one step at a time, in a continuous loop. When the fast and slow pointers meet, it indicates that there is a cycle in the linked list. If the loop ends without the pointers meeting, it indicates that there is no cycle in the linked list.</p>
+<p>The fast pointer moves two steps at a time, and the slow pointer moves one step at a time, in a continuous loop.</p>
 </li>
+<li>When the fast and slow pointers meet, it indicates that there is a cycle in the linked list. If the loop ends without the pointers meeting, it indicates that there is no cycle in the linked list.</li>
 </ul>
 <p><em>The time complexity is <span class="arithmatex">\(O(n)\)</span>, and the space complexity is <span class="arithmatex">\(O(1)\)</span>, where <span class="arithmatex">\(n\)</span> is the number of nodes in the linked list.</em></p>
 </details>
