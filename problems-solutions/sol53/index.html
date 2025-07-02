@@ -47,7 +47,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -508,8 +508,22 @@
 <p>We define <span class="arithmatex">\(f(i)\)</span> to represent the maximum sum of contigous subarray ending with element <span class="arithmatex">\(nums[i]\)</span> at index <span class="arithmatex">\(i\)</span>.</p>
 <p>At each index, we can choose to use previous subarray sum at <span class="arithmatex">\(f(i-1)\)</span> or we can choose to ignore and start a new subarray with current single number <span class="arithmatex">\(nums[i]\)</span></p>
 <p>Core idea is <span class="arithmatex">\(f(i) = max(f(i-1),0) + nums[i], \quad  1 \leq i \lt n\)</span></p>
-<p>Initially,  <span class="arithmatex">\(F(0) = f[0] = nums[0]\)</span>.</p>
+<p>Initially,  <span class="arithmatex">\(F(0) = f(0) = nums[0]\)</span>.</p>
 <p>The final answer we are seeking for is <span class="arithmatex">\(F(i) = max(F(i),f[i]) \quad for \quad 0 \leq i \lt n\)</span></p>
+<p>So Our function translates to:</p>
+<div class="arithmatex">\[
+f(i) = \begin{cases}
+nums[0] &amp; \text{if } i = 0 \\
+max(f(i-1),0) + nums[i] &amp; \forall i \in [1,n] \\
+\end{cases}
+\]</div>
+<p>Thus our functional relationship is</p>
+<div class="arithmatex">\[
+F(i) = \begin{cases}
+f(0) = nums[0] &amp; \text{if } i = 0 \\
+max(F(i), f(i)) &amp; \forall i \in [0,n] \\
+\end{cases}
+\]</div>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
