@@ -47,7 +47,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -506,7 +506,7 @@
 </div>
 <!-- vide solution:end -->
 <!-- solution:start -->
-<h3 id="approachgreedy-algorithm-cumulative-max-profit-problem">Approach:Greedy Algorithm (Cumulative Max Profit Problem)</h3>
+<h3 id="approach-greedy-algorithm-cumulative-max-profit-problem">Approach: Greedy Algorithm (Cumulative Max Profit Problem)</h3>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition note">
@@ -514,9 +514,7 @@
 <p>To maximize profit, we'll iterate through the prices and buy the stock whenever the price is lower than the next day's price. Then, we'll sell it the next day.</p>
 <p>Starting from the second day, if the stock price is higher than the previous day, buy on the previous day and sell on the current day to make a profit.</p>
 <p>If the stock price is lower than the previous day, do not buy or sell.</p>
-<p>In other words, buy and sell on all rising trading days, and do not trade on all falling trading days. The final profit will be the maximum.</p>
-<p>Note the state of the <span class="arithmatex">\(i^{th}\)</span> day is only related to the state of the <span class="arithmatex">\({i- 1}^{th}\)</span> day.</p>
-<p>Therefore, we can use only two variables to maintain the state of the <span class="arithmatex">\({i- 1}^{th}\)</span> day, thereby optimizing the space complexity to <span class="arithmatex">\(O(1)\)</span>.
+<p>In other words, buy and sell on all rising trading days, and do not trade on all falling trading days. The final profit will be the maximum.
 '''</p>
 </div>
 <h4 id="way-1-algorithmic">Way 1: Algorithmic</h4>
@@ -537,11 +535,11 @@
 </div>
 </div>
 </input></div>
-<h4 id="way-2-pythonic">Way 2: Pythonic</h4>
+<h4 id="way-2-using-inbuilt-methods">Way 2: Using Inbuilt Methods</h4>
 <blockquote>
 <p>Python One Liners</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python_1</label><label for="__tabbed_2_2">Python_2</label><label for="__tabbed_2_3">Python_3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python(using sum)</label><label for="__tabbed_2_2">Python(using sum + max)</label><label for="__tabbed_2_3">Python(using sum + max + pairwise)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
@@ -595,8 +593,10 @@
 </div>
 </input></div>
 <h3 id="approach-4-dp">Approach 4: DP</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition note">
-<p>We can observe, that the state of the <span class="arithmatex">\(i\)</span>th day is only related to the state of the <span class="arithmatex">\(i-1\)</span>th day. Therefore, we can use only two variables to maintain the state of the <span class="arithmatex">\(i-1\)</span>th day, thereby optimizing the space complexity to <span class="arithmatex">\(O(1)\)</span>.</p>
+<p>We can observe, that the state of the <span class="arithmatex">\(i^{th}\)</span> day is only related to the state of the <span class="arithmatex">\(i-1^{th}\)</span> day. Therefore, we can use only two variables to maintain the state of the <span class="arithmatex">\(i-1^{th}\)</span> day, thereby optimizing the space complexity to <span class="arithmatex">\(O(1)\)</span>.</p>
 <p>The time complexity is <span class="arithmatex">\(O(n)\)</span>, where <span class="arithmatex">\(n\)</span> is the length of the <code>prices</code> array. The space complexity is <span class="arithmatex">\(O(1)\)</span>.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label></div>
