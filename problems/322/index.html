@@ -7,29 +7,29 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/companies/" rel="canonical"/>
-<link href="../optimizations/7/" rel="prev"/>
-<link href="../topics/" rel="next"/>
-<link href="../assets/images/favicon.png" rel="icon"/>
+<link href="https://dsabible.com/problems/322/" rel="canonical"/>
+<link href="../297/" rel="prev"/>
+<link href="../344/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>Companies - DSA-Bible</title>
-<link href="../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>322. Coin Change - DSA-Bible</title>
+<link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-KCCH3FJH34"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-KCCH3FJH34",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-KCCH3FJH34",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
-<link href="../manifest.webmanifest" rel="manifest">
+<link href="../../manifest.webmanifest" rel="manifest">
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="Companies - DSA-Bible" property="og:title">
+<meta content="322. Coin Change - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/companies/" property="og:url">
+<meta content="https://dsabible.com/problems/322/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -37,10 +37,10 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Companies - DSA-Bible" name="twitter:title"/>
+<meta content="322. Coin Change - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
-<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -49,13 +49,13 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#company-wise-asked-problems">
+<a class="md-skip" href="#322-coin-change">
           Skip to content
         </a>
 </div>
@@ -84,7 +84,7 @@
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <!-- Link to home -->
-<a aria-label="DSA-Bible" class="md-header__button md-logo" data-md-component="logo" href=".." title="DSA-Bible">
+<a aria-label="DSA-Bible" class="md-header__button md-logo" data-md-component="logo" href="../.." title="DSA-Bible">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
 <!-- Button to open drawer -->
@@ -96,13 +96,13 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <!-- Link to home on site name especially for PWA-->
-<a aria-label="Back to home page" class="md-ellipsis" href=".." title="Back to home page">DSA-Bible</a>
+<a aria-label="Back to home page" class="md-ellipsis" href="../.." title="Back to home page">DSA-Bible</a>
 <!-- Repository information -->
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Companies
+              322. Coin Change
             
           </span>
 </div>
@@ -343,7 +343,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
+<a class="md-tabs__link" href="../..">
         
   
   
@@ -354,7 +354,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../pricing/">
+<a class="md-tabs__link" href="../../pricing/">
         
   
   
@@ -364,8 +364,8 @@
 
       </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../problems/1/">
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../1/">
           
   
   
@@ -376,7 +376,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../optimizations/1/">
+<a class="md-tabs__link" href="../../optimizations/1/">
           
   
   
@@ -386,8 +386,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../companies/">
           
   
   
@@ -398,7 +398,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../glossary/definitions/">
+<a class="md-tabs__link" href="../../glossary/definitions/">
           
   
   
@@ -409,7 +409,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../releases/">
+<a class="md-tabs__link" href="../../releases/">
         
   
   
@@ -429,14 +429,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="DSA-Bible" class="md-nav__button md-logo" data-md-component="logo" href=".." title="DSA-Bible">
+<a aria-label="DSA-Bible" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="DSA-Bible">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
     DSA-Bible
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     Home
     
@@ -444,58 +444,432 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../pricing/">
+<a class="md-nav__link" href="../../pricing/">
 <span class="md-ellipsis">
     Pricing
     
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../problems/1/">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
 <span class="md-ellipsis">
     Problems
     
   </span>
 <span class="md-nav__icon md-icon"></span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../optimizations/1/">
-<span class="md-ellipsis">
-    Optimizations
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-<span class="md-ellipsis">
-    Folksonomy
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-            Folksonomy
+            Problems
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1/">
+<span class="md-ellipsis">
+    1. Two Sum
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2/">
+<span class="md-ellipsis">
+    2. Add Two Numbers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3/">
+<span class="md-ellipsis">
+    3. Longest Substring Without Repeating Characters
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4/">
+<span class="md-ellipsis">
+    4. Median of Two Sorted Arrays
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5/">
+<span class="md-ellipsis">
+    5. Longest Palindromic Substring
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6/">
+<span class="md-ellipsis">
+    6. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7/">
+<span class="md-ellipsis">
+    7. Reverse Integer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15/">
+<span class="md-ellipsis">
+    15. 3Sum
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19/">
+<span class="md-ellipsis">
+    19. Remove Nth Node From End of List
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20/">
+<span class="md-ellipsis">
+    20. Valid Parentheses
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+<span class="md-ellipsis">
+    21. Merge Two Sorted Lists
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../29/">
+<span class="md-ellipsis">
+    29. Divide Two Integers
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+<span class="md-ellipsis">
+    33. Search in Rotated Sorted Array
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../39/">
+<span class="md-ellipsis">
+    39. Combination Sum
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../40/">
+<span class="md-ellipsis">
+    40. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../42/">
+<span class="md-ellipsis">
+    42. Trapping Rain Water
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../45/">
+<span class="md-ellipsis">
+    45. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../50/">
+<span class="md-ellipsis">
+    50. Pow(x, n)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../52/">
+<span class="md-ellipsis">
+    52. N-Queens II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../53/">
+<span class="md-ellipsis">
+    53. Maximum Subarray
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../62/">
+<span class="md-ellipsis">
+    62. Unique Paths
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../70/">
+<span class="md-ellipsis">
+    70. Climbing Stairs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../74/">
+<span class="md-ellipsis">
+    74. Search a 2D Matrix
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../79/">
+<span class="md-ellipsis">
+    79. Word Search
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../100/">
+<span class="md-ellipsis">
+    100. Same Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../101/">
+<span class="md-ellipsis">
+    101. Symmetric Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../104/">
+<span class="md-ellipsis">
+    104. Maximum Depth of Binary Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../108/">
+<span class="md-ellipsis">
+    108. Convert Sorted Array to Binary Search Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../121/">
+<span class="md-ellipsis">
+    121. Best Time to Buy and Sell Stock
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../122/">
+<span class="md-ellipsis">
+    122. Best Time to Buy and Sell Stock II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../123/">
+<span class="md-ellipsis">
+    123. Best Time to Buy and Sell Stock III
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../125/">
+<span class="md-ellipsis">
+    125. Valid Palindrome
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../135/">
+<span class="md-ellipsis">
+    135. Candy
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../136/">
+<span class="md-ellipsis">
+    136. Single Number
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../139/">
+<span class="md-ellipsis">
+    139. Word Break
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../141/">
+<span class="md-ellipsis">
+    141. Linked List Cycle
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../146/">
+<span class="md-ellipsis">
+    146. LRU Cache
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../169/">
+<span class="md-ellipsis">
+    169. Majority Element
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../200/">
+<span class="md-ellipsis">
+    200. Number of Islands
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../206/">
+<span class="md-ellipsis">
+    206. Reverse Linked List
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../207/">
+<span class="md-ellipsis">
+    207. Course Schedule
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../212/">
+<span class="md-ellipsis">
+    212. Word Search II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../226/">
+<span class="md-ellipsis">
+    226. Invert Binary Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../238/">
+<span class="md-ellipsis">
+    238. Product of Array Except Self
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../240/">
+<span class="md-ellipsis">
+    240. Search a 2D Matrix II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../242/">
+<span class="md-ellipsis">
+    242. Valid Anagram
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../268/">
+<span class="md-ellipsis">
+    268. Missing Number
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../295/">
+<span class="md-ellipsis">
+    295. Find Median from Data Stream
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../297/">
+<span class="md-ellipsis">
+    297. Serialize and Deserialize Binary Tree
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Companies
+    322. Coin Change
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Companies
+    322. Coin Change
     
   </span>
 </a>
@@ -506,156 +880,16 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:adobe">
+<a class="md-nav__link" href="#description">
 <span class="md-ellipsis">
-      Adobe
+      Description
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tag:airbnb">
+<a class="md-nav__link" href="#solutions">
 <span class="md-ellipsis">
-      Airbnb
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:amazon">
-<span class="md-ellipsis">
-      Amazon
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:apple">
-<span class="md-ellipsis">
-      Apple
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:asana">
-<span class="md-ellipsis">
-      Asana
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:bloomberg">
-<span class="md-ellipsis">
-      Bloomberg
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:google">
-<span class="md-ellipsis">
-      Google
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:impetus">
-<span class="md-ellipsis">
-      Impetus
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:linkedin">
-<span class="md-ellipsis">
-      LinkedIn
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:lyft">
-<span class="md-ellipsis">
-      Lyft
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:meta">
-<span class="md-ellipsis">
-      Meta
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:microsoft">
-<span class="md-ellipsis">
-      Microsoft
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:netflix">
-<span class="md-ellipsis">
-      Netflix
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:openai">
-<span class="md-ellipsis">
-      OpenAI
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:oracle">
-<span class="md-ellipsis">
-      Oracle
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:paypal">
-<span class="md-ellipsis">
-      PayPal
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:pinterest">
-<span class="md-ellipsis">
-      Pinterest
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:tesla">
-<span class="md-ellipsis">
-      Tesla
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:tiktok">
-<span class="md-ellipsis">
-      TikTok
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:tiktok">
-<span class="md-ellipsis">
-      Tiktok
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:uber">
-<span class="md-ellipsis">
-      Uber
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tag:x-formerly-twitter">
-<span class="md-ellipsis">
-      X (formerly Twitter)
+      Solutions 🔒
     </span>
 </a>
 </li>
@@ -663,17 +897,177 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../topics/">
+<a class="md-nav__link" href="../344/">
 <span class="md-ellipsis">
-    Topics
+    344. Reverse String
     
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../lists/">
+<a class="md-nav__link" href="../355/">
 <span class="md-ellipsis">
-    Popular Lists
+    355. Design Twitter
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../374/">
+<span class="md-ellipsis">
+    374. Guess Number Higher or Lower
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../407/">
+<span class="md-ellipsis">
+    407. Trapping Rain Water II
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../424/">
+<span class="md-ellipsis">
+    424. Longest Repeating Character Replacement
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../451/">
+<span class="md-ellipsis">
+    451. Sort Characters By Frequency
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../543/">
+<span class="md-ellipsis">
+    543. Diameter of Binary Tree
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../703/">
+<span class="md-ellipsis">
+    703. Kth Largest Element in a Stream
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../704/">
+<span class="md-ellipsis">
+    704. Binary Search
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../705/">
+<span class="md-ellipsis">
+    705. Design HashSet
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../706/">
+<span class="md-ellipsis">
+    706. Design HashMap
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../739/">
+<span class="md-ellipsis">
+    739. Daily Temperatures
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../746/">
+<span class="md-ellipsis">
+    746. Min Cost Climbing Stairs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../875/">
+<span class="md-ellipsis">
+    875. Koko Eating Bananas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../876/">
+<span class="md-ellipsis">
+    876. Middle of the Linked List
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1095/">
+<span class="md-ellipsis">
+    1095. Find in Mountain Array
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1636/">
+<span class="md-ellipsis">
+    1636. Sort Array by Increasing Frequency
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1143/">
+<span class="md-ellipsis">
+    1143. Longest Common Subsequence
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2140/">
+<span class="md-ellipsis">
+    2140. Coming Soon
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2226/">
+<span class="md-ellipsis">
+    2226. Maximum Candies Allocated to K Children
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2294/">
+<span class="md-ellipsis">
+    2294. Partition Array Such That Maximum Difference Is K
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2503/">
+<span class="md-ellipsis">
+    2503. Coming Soon
     
   </span>
 </a>
@@ -682,7 +1076,25 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../glossary/definitions/">
+<a class="md-nav__link" href="../../optimizations/1/">
+<span class="md-ellipsis">
+    Optimizations
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../companies/">
+<span class="md-ellipsis">
+    Folksonomy
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../glossary/definitions/">
 <span class="md-ellipsis">
     Glossary
     
@@ -691,7 +1103,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../releases/">
+<a class="md-nav__link" href="../../releases/">
 <span class="md-ellipsis">
     Releases
     
@@ -705,11 +1117,47 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="company-wise-asked-problems"><a class="md-title" href="#">Company-Wise Asked Problems</a> <span id="lock-icon">🔒</span></h1>
-<p>Below is the classification of problems based on asked by various companies for focused practice.</p>
-<section id="solution-section">
+<nav class="md-tags">
+<a class="md-tag" href="../../topics/#tag:array">Array</a>
+<a class="md-tag" href="../../topics/#tag:breadth-first-search">Breadth-First Search</a>
+<a class="md-tag" href="../../topics/#tag:dynamic-programming">Dynamic Programming</a>
+</nav>
+<!-- problem:start -->
+<h1 id="322-coin-change"><a href="https://leetcode.com/problems/coin-change/" title="Click me to Open Playground">322. Coin Change</a></h1>
+<p><span class="md-tag md-tag--easy">Easy</span></p>
+<h2 id="description"><strong>Description</strong></h2>
+<!-- description:start -->
+<p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer amount representing a total <code>amount</code> of money.</p>
+<p>Return the <em>fewest number of coins that you need to make up that amount</em>. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
+<p>You may assume that you have an infinite number of each kind of coin.</p>
+<p><strong>Example 1:</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coins = [1,2,5], amount = 11</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11 = 5 + 5 + 1</span>
+</span></code></pre></div>
+<p><strong>Example 2:</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coins = [2], amount = 3</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+</span></code></pre></div>
+<p><strong>Example 3:</strong></p>
+<p>Input: coins = [1], amount = 0
+Output: 0</p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= coins.length &lt;= 12</code></li>
+<li><code>1 &lt;= coins[i] &lt;= 2³¹ - 1</code></li>
+<li><code>0 &lt;= amount &lt;= 10⁴</code></li>
+</ul>
+<!-- description:end -->
+<!-- interpreter start -->
+<!-- interpreter end -->
+<h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon">🔒</span></h2>
+<section data-problem-id="322" data-section-type="problems" id="solution-section">
 <!-- This section will be populated by JavaScript based on authentication -->
+<!-- solution gets injected here -->
 </section>
+<!-- problem:end -->
+<!-- Login Prompt Template -->
 <!-- Login prompt template -->
 <p><template id="login-prompt-template">
 <br/>
@@ -820,6 +1268,7 @@
   }
   */
 </style>
+<!--Author html-->
 <!-- Post authors from meta-->
 <section>
 <div class="md-post__authors md-typeset">
@@ -837,780 +1286,6 @@
 </div>
 </div>
 </section>
-<script>
-// Store the original companies content when page loads
-window.storeCompaniesContent = function() {
-    // Find all company tag sections
-    const companyElements = document.querySelectorAll('.md-content__inner h2[id^="tag:"], .md-content__inner h2[id^="tag:"] + ul');
-
-    if (companyElements.length > 0 && !window.companiesContentStored) {
-        window.originalCompaniesHTML = [];
-
-        companyElements.forEach((el, index) => {
-            // Store the HTML content
-            window.originalCompaniesHTML.push({
-                html: el.outerHTML,
-                element: el
-            });
-
-            // Remove from DOM completely
-            el.remove();
-        });
-
-        window.companiesContentStored = true;
-        window.companiesContentRestored = false; // Track if content is currently restored
-        console.log('Companies content stored and removed from DOM');
-    }
-}
-
-// Show companies content when authenticated and subscribed
-window.showCompaniesContent = function() {
-    // Check if content is already restored to prevent duplication
-    if (window.companiesContentRestored) {
-        console.log('Companies content already restored, skipping...');
-        return;
-    }
-
-    if (window.originalCompaniesHTML && window.originalCompaniesHTML.length > 0) {
-        // First, ensure any existing company content is removed
-        window.hideCompaniesContent();
-
-        // Find the insertion point (after the author section)
-        const authorSection = document.querySelector('.md-post__authors').parentElement;
-
-        // Combine all HTML and insert at once
-        const allHTML = window.originalCompaniesHTML.map(item => item.html).join('');
-        authorSection.insertAdjacentHTML('afterend', allHTML);
-
-        window.companiesContentRestored = true;
-        console.log('Companies content restored to DOM in correct order');
-    }
-}
-
-// Hide companies content (remove from DOM)
-window.hideCompaniesContent = function() {
-    const companyElements = document.querySelectorAll('.md-content__inner h2[id^="tag:"], .md-content__inner h2[id^="tag:"] + ul');
-    companyElements.forEach(el => {
-        el.remove();
-    });
-
-    if (companyElements.length > 0) {
-        window.companiesContentRestored = false;
-        console.log('Companies content removed from DOM');
-    }
-}
-
-// Store content immediately when script runs
-window.storeCompaniesContent();
-</script>
-<h2 id="tag:adobe">
-<span class="md-tag">Adobe</span></h2>
-<ul>
-<li>
-<a href="../problems/100/">
-          100. Same Tree
-        </a>
-</li>
-<li>
-<a href="../problems/15/">
-          15. 3Sum
-        </a>
-</li>
-<li>
-<a href="../problems/207/">
-          207. Course Schedule
-        </a>
-</li>
-<li>
-<a href="../problems/424/">
-          424. Longest Repeating Character Replacement
-        </a>
-</li>
-<li>
-<a href="../problems/876/">
-          876. Middle of the Linked List
-        </a>
-</li>
-</ul>
-<h2 id="tag:airbnb">
-<span class="md-tag">Airbnb</span></h2>
-<ul>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/42/">
-          42. Trapping Rain Water
-        </a>
-</li>
-</ul>
-<h2 id="tag:amazon">
-<span class="md-tag">Amazon</span></h2>
-<ul>
-<li>
-<a href="../problems/1/">
-          1. Two Sum
-        </a>
-</li>
-<li>
-<a href="../problems/100/">
-          100. Same Tree
-        </a>
-</li>
-<li>
-<a href="../problems/104/">
-          104. Maximum Depth of Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/108/">
-          108. Convert Sorted Array to Binary Search Tree
-        </a>
-</li>
-<li>
-<a href="../problems/139/">
-          139. Word Break
-        </a>
-</li>
-<li>
-<a href="../problems/141/">
-          141. Linked List Cycle
-        </a>
-</li>
-<li>
-<a href="../problems/146/">
-          146. LRU Cache
-        </a>
-</li>
-<li>
-<a href="../problems/15/">
-          15. 3Sum
-        </a>
-</li>
-<li>
-<a href="../problems/169/">
-          169. Majority Element
-        </a>
-</li>
-<li>
-<a href="../problems/2/">
-          2. Add Two Numbers
-        </a>
-</li>
-<li>
-<a href="../problems/200/">
-          200. Number of Islands
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/207/">
-          207. Course Schedule
-        </a>
-</li>
-<li>
-<a href="../problems/322/">
-          322. Coin Change
-        </a>
-</li>
-<li>
-<a href="../problems/33/">
-          33. Search in Rotated Sorted Array
-        </a>
-</li>
-<li>
-<a href="../problems/39/">
-          39. Combination Sum
-        </a>
-</li>
-<li>
-<a href="../problems/424/">
-          424. Longest Repeating Character Replacement
-        </a>
-</li>
-<li>
-<a href="../problems/53/">
-          53. Maximum Subarray
-        </a>
-</li>
-<li>
-<a href="../problems/62/">
-          62. Unique Paths
-        </a>
-</li>
-<li>
-<a href="../problems/70/">
-          70. Climbing Stairs
-        </a>
-</li>
-<li>
-<a href="../problems/79/">
-          79. Word Search
-        </a>
-</li>
-</ul>
-<h2 id="tag:apple">
-<span class="md-tag">Apple</span></h2>
-<ul>
-<li>
-<a href="../problems/19/">
-          19. Remove Nth Node From End of List
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/53/">
-          53. Maximum Subarray
-        </a>
-</li>
-<li>
-<a href="../problems/543/">
-          543. Diameter of Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/876/">
-          876. Middle of the Linked List
-        </a>
-</li>
-</ul>
-<h2 id="tag:asana">
-<span class="md-tag">Asana</span></h2>
-<ul>
-<li>
-<a href="../problems/238/">
-          238. Product of Array Except Self
-        </a>
-</li>
-</ul>
-<h2 id="tag:bloomberg">
-<span class="md-tag">Bloomberg</span></h2>
-<ul>
-<li>
-<a href="../problems/322/">
-          322. Coin Change
-        </a>
-</li>
-<li>
-<a href="../problems/62/">
-          62. Unique Paths
-        </a>
-</li>
-<li>
-<a href="../problems/79/">
-          79. Word Search
-        </a>
-</li>
-</ul>
-<h2 id="tag:google">
-<span class="md-tag">Google</span></h2>
-<ul>
-<li>
-<a href="../problems/100/">
-          100. Same Tree
-        </a>
-</li>
-<li>
-<a href="../problems/101/">
-          101. Symmetric Tree
-        </a>
-</li>
-<li>
-<a href="../problems/104/">
-          104. Maximum Depth of Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/108/">
-          108. Convert Sorted Array to Binary Search Tree
-        </a>
-</li>
-<li>
-<a href="../problems/139/">
-          139. Word Break
-        </a>
-</li>
-<li>
-<a href="../problems/141/">
-          141. Linked List Cycle
-        </a>
-</li>
-<li>
-<a href="../problems/146/">
-          146. LRU Cache
-        </a>
-</li>
-<li>
-<a href="../problems/15/">
-          15. 3Sum
-        </a>
-</li>
-<li>
-<a href="../problems/169/">
-          169. Majority Element
-        </a>
-</li>
-<li>
-<a href="../problems/200/">
-          200. Number of Islands
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/207/">
-          207. Course Schedule
-        </a>
-</li>
-<li>
-<a href="../problems/226/">
-          226. Invert Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/238/">
-          238. Product of Array Except Self
-        </a>
-</li>
-<li>
-<a href="../problems/322/">
-          322. Coin Change
-        </a>
-</li>
-<li>
-<a href="../problems/4/">
-          4. Median of Two Sorted Arrays
-        </a>
-</li>
-<li>
-<a href="../problems/424/">
-          424. Longest Repeating Character Replacement
-        </a>
-</li>
-<li>
-<a href="../problems/62/">
-          62. Unique Paths
-        </a>
-</li>
-<li>
-<a href="../problems/70/">
-          70. Climbing Stairs
-        </a>
-</li>
-<li>
-<a href="../problems/79/">
-          79. Word Search
-        </a>
-</li>
-<li>
-<a href="../problems/876/">
-          876. Middle of the Linked List
-        </a>
-</li>
-</ul>
-<h2 id="tag:impetus">
-<span class="md-tag">Impetus</span></h2>
-<ul>
-<li>
-<a href="../problems/1636/">
-          1636. Sort Array by Increasing Frequency
-        </a>
-</li>
-</ul>
-<h2 id="tag:linkedin">
-<span class="md-tag">LinkedIn</span></h2>
-<ul>
-<li>
-<a href="../problems/101/">
-          101. Symmetric Tree
-        </a>
-</li>
-</ul>
-<h2 id="tag:lyft">
-<span class="md-tag">Lyft</span></h2>
-<ul>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/2226/">
-          2226. Maximum Candies Allocated to K Children
-        </a>
-</li>
-<li>
-<a href="../problems/2294/">
-          2294. Partition Array Such That Maximum Difference Is K
-        </a>
-</li>
-<li>
-<a href="../problems/705/">
-          705. Design HashSet
-        </a>
-</li>
-<li>
-<a href="../problems/706/">
-          706. Design HashMap
-        </a>
-</li>
-<li>
-<a href="../problems/739/">
-          739. Daily Temperatures
-        </a>
-</li>
-<li>
-<a href="../problems/746/">
-          746. Min Cost Climbing Stairs
-        </a>
-</li>
-<li>
-<a href="../problems/875/">
-          875. Koko Eating Bananas
-        </a>
-</li>
-</ul>
-<h2 id="tag:meta">
-<span class="md-tag">Meta</span></h2>
-<ul>
-<li>
-<a href="../problems/100/">
-          100. Same Tree
-        </a>
-</li>
-<li>
-<a href="../problems/104/">
-          104. Maximum Depth of Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/108/">
-          108. Convert Sorted Array to Binary Search Tree
-        </a>
-</li>
-<li>
-<a href="../problems/121/">
-          121. Best Time to Buy and Sell Stock
-        </a>
-</li>
-<li>
-<a href="../problems/122/">
-          122. Best Time to Buy and Sell Stock II
-        </a>
-</li>
-<li>
-<a href="../problems/123/">
-          123. Best Time to Buy and Sell Stock III
-        </a>
-</li>
-<li>
-<a href="../problems/139/">
-          139. Word Break
-        </a>
-</li>
-<li>
-<a href="../problems/15/">
-          15. 3Sum
-        </a>
-</li>
-<li>
-<a href="../problems/2/">
-          2. Add Two Numbers
-        </a>
-</li>
-<li>
-<a href="../problems/200/">
-          200. Number of Islands
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/207/">
-          207. Course Schedule
-        </a>
-</li>
-<li>
-<a href="../problems/238/">
-          238. Product of Array Except Self
-        </a>
-</li>
-<li>
-<a href="../problems/33/">
-          33. Search in Rotated Sorted Array
-        </a>
-</li>
-<li>
-<a href="../problems/39/">
-          39. Combination Sum
-        </a>
-</li>
-<li>
-<a href="../problems/424/">
-          424. Longest Repeating Character Replacement
-        </a>
-</li>
-<li>
-<a href="../problems/50/">
-          50. Pow(x, n)
-        </a>
-</li>
-<li>
-<a href="../problems/543/">
-          543. Diameter of Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/62/">
-          62. Unique Paths
-        </a>
-</li>
-</ul>
-<h2 id="tag:microsoft">
-<span class="md-tag">Microsoft</span></h2>
-<ul>
-<li>
-<a href="../problems/101/">
-          101. Symmetric Tree
-        </a>
-</li>
-<li>
-<a href="../problems/104/">
-          104. Maximum Depth of Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/108/">
-          108. Convert Sorted Array to Binary Search Tree
-        </a>
-</li>
-<li>
-<a href="../problems/139/">
-          139. Word Break
-        </a>
-</li>
-<li>
-<a href="../problems/141/">
-          141. Linked List Cycle
-        </a>
-</li>
-<li>
-<a href="../problems/146/">
-          146. LRU Cache
-        </a>
-</li>
-<li>
-<a href="../problems/169/">
-          169. Majority Element
-        </a>
-</li>
-<li>
-<a href="../problems/200/">
-          200. Number of Islands
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/212/">
-          212. Word Search II
-        </a>
-</li>
-<li>
-<a href="../problems/226/">
-          226. Invert Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/238/">
-          238. Product of Array Except Self
-        </a>
-</li>
-<li>
-<a href="../problems/3/">
-          3. Longest Substring Without Repeating Characters
-        </a>
-</li>
-<li>
-<a href="../problems/53/">
-          53. Maximum Subarray
-        </a>
-</li>
-<li>
-<a href="../problems/543/">
-          543. Diameter of Binary Tree
-        </a>
-</li>
-<li>
-<a href="../problems/70/">
-          70. Climbing Stairs
-        </a>
-</li>
-</ul>
-<h2 id="tag:netflix">
-<span class="md-tag">Netflix</span></h2>
-<ul>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/29/">
-          29. Divide Two Integers
-        </a>
-</li>
-</ul>
-<h2 id="tag:openai">
-<span class="md-tag">OpenAI</span></h2>
-<ul>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/74/">
-          74. Search a 2D Matrix
-        </a>
-</li>
-</ul>
-<h2 id="tag:oracle">
-<span class="md-tag">Oracle</span></h2>
-<ul>
-<li>
-<a href="../problems/20/">
-          20. Valid Parentheses
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/21/">
-          21. Merge Two Sorted Lists
-        </a>
-</li>
-</ul>
-<h2 id="tag:paypal">
-<span class="md-tag">PayPal</span></h2>
-<ul>
-<li>
-<a href="../problems/79/">
-          79. Word Search
-        </a>
-</li>
-</ul>
-<h2 id="tag:pinterest">
-<span class="md-tag">Pinterest</span></h2>
-<ul>
-<li>
-<a href="../problems/322/">
-          322. Coin Change
-        </a>
-</li>
-</ul>
-<h2 id="tag:tesla">
-<span class="md-tag">Tesla</span></h2>
-<ul>
-<li>
-<a href="../problems/1/">
-          1. Two Sum
-        </a>
-</li>
-<li>
-<a href="../problems/1095/">
-          1095. Find in Mountain Array
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-</ul>
-<h2 id="tag:tiktok">
-<span class="md-tag">TikTok</span></h2>
-<ul>
-<li>
-<a href="../problems/200/">
-          200. Number of Islands
-        </a>
-</li>
-<li>
-<a href="../problems/53/">
-          53. Maximum Subarray
-        </a>
-</li>
-</ul>
-<h2 id="tag:tiktok">
-<span class="md-tag">Tiktok</span></h2>
-<ul>
-<li>
-<a href="../problems/238/">
-          238. Product of Array Except Self
-        </a>
-</li>
-</ul>
-<h2 id="tag:uber">
-<span class="md-tag">Uber</span></h2>
-<ul>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/374/">
-          374. Guess Number Higher or Lower
-        </a>
-</li>
-<li>
-<a href="../problems/70/">
-          70. Climbing Stairs
-        </a>
-</li>
-</ul>
-<h2 id="tag:x-formerly-twitter">
-<span class="md-tag">X (formerly Twitter)</span></h2>
-<ul>
-<li>
-<a href="../problems/1143/">
-          1143. Longest Common Subsequence
-        </a>
-</li>
-<li>
-<a href="../problems/206/">
-          206. Reverse Linked List
-        </a>
-</li>
-<li>
-<a href="../problems/355/">
-          355. Design Twitter
-        </a>
-</li>
-</ul>
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -1648,12 +1323,47 @@ window.storeCompaniesContent();
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+Companies+-+/companies/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+322.%20Coin%20Change+-+/problems/322/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
 </fieldset>
 </form>
+<h2 id="__comments">Comments</h2>
+<!-- Generated snippet -->
+<script async="" crossorigin="anonymous" data-category="Q&amp;A" data-category-id="DIC_kwDOOT8I7s4CqD83" data-emit-metadata="1" data-input-position="top" data-lang="en" data-loading="lazy" data-mapping="og:title" data-reactions-enabled="1" data-repo="akhilub/DSA-Bible" data-repo-id="R_kgDOOT8I7g" data-strict="1" data-theme="preferred_color_scheme" src="https://giscus.app/client.js"></script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]")
+
+  // Set palette on initial load
+  var palette = __md_get("__palette")
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "transparent_dark" : "light"
+
+    // Instruct Giscus to set theme
+    giscus.setAttribute("data-theme", theme)
+  }
+
+  // Register event handlers after documented loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function () {
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme =
+          palette.color.scheme === "slate" ? "transparent_dark" : "light"
+
+        // Instruct Giscus to change theme
+        var frame = document.querySelector(".giscus-frame")
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app"
+        )
+      }
+    })
+  })
+</script>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1669,20 +1379,20 @@ window.storeCompaniesContent();
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: 7. Coming Soon" class="md-footer__link md-footer__link--prev" href="../optimizations/7/">
+<a aria-label="Previous: 297. Serialize and Deserialize Binary Tree" class="md-footer__link md-footer__link--prev" href="../297/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">7. Coming Soon</div>
+<div class="md-ellipsis">297. Serialize and Deserialize Binary Tree</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: Topics" class="md-footer__link md-footer__link--next" href="../topics/">
+<a aria-label="Next: 344. Reverse String" class="md-footer__link md-footer__link--next" href="../344/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">Topics</div>
+<div class="md-ellipsis">344. Reverse String</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
@@ -1776,17 +1486,17 @@ window.storeCompaniesContent();
 </aside>
 </div>
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
-<script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-<script src="../javascripts/mathjax.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="../javascripts/utils.js"></script>
-<script src="../javascripts/auth.js"></script>
-<script src="../javascripts/ads.js"></script>
+<script src="../../javascripts/utils.js"></script>
+<script src="../../javascripts/auth.js"></script>
+<script src="../../javascripts/ads.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-graphviz.js"></script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });
-</script><script src="../assets/javascripts/panzoom.min.js"></script><script src="../assets/javascripts/zoompan.js"></script></body>
+</script><script src="../../assets/javascripts/panzoom.min.js"></script><script src="../../assets/javascripts/zoompan.js"></script></body>
 </html>

@@ -47,7 +47,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -588,8 +588,8 @@ Continue to traverse the array prices until the traversal ends.Finally return th
 <p class="admonition-title">Concept</p>
 <p>Given the prices array <span class="arithmatex">\(A = [a_0, a_1, a_2, a_3, a_4, a_5]\)</span> and</p>
 <p><span class="arithmatex">\(B\)</span> array is the difference array where <span class="arithmatex">\(B[0] = 0\)</span> and <span class="arithmatex">\(B[i] = A[i]-A[i-1]\)</span>, if <span class="arithmatex">\(i\)</span> not equal to zero.</p>
-<p><span class="arithmatex">\(B[3] = A[3]-A[2]\)</span>
-<span class="arithmatex">\(B[4] = A[4]-A[3]\)</span>
+<p><span class="arithmatex">\(B[3] = A[3]-A[2]\)</span>,
+<span class="arithmatex">\(B[4] = A[4]-A[3]\)</span>,
 <span class="arithmatex">\(B[5] = A[5]-A[4]\)</span></p>
 <p>If the lowest point is at <span class="arithmatex">\(A[2](a_2)\)</span>, and the highest point after <span class="arithmatex">\(A[2](a_2)\)</span> is at <span class="arithmatex">\(A[5](a_5)\)</span>, the max profit we can get is <span class="arithmatex">\(A[5]-A[2]\)</span> which is same as <span class="arithmatex">\(B[3]+B[4]+B[5]\)</span> i.e. we need to find the maximum sum of <abbr title="🙋 A contiguous portion of an array">subarray</abbr> – and we can use Kadane’s Algorithm.</p>
 </div>
