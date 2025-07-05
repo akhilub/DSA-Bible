@@ -89,76 +89,12 @@
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
 </label>
-<!--Back Button-->
-<!-- Back Button -->
-<button aria-label="Go back to previous page" class="back-button" id="back-btn" onclick="goBack()" title="Back">
-<span class="md-icon twemoji">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6z"></path></svg>
-</span>
-</button>
-<script>
-    function goBack() {
-      // Check if there's a valid referrer and it's not the same page
-      if (document.referrer && 
-          document.referrer !== window.location.href && 
-          document.referrer.includes(window.location.origin)) {
-        window.history.back();
-      } else {
-        // Fallback to home page if no referrer or external referrer
-        window.location.href = '/';
-      }
-    }
-    
-    // Wait for DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      // Hide back button on home page
-      const currentPath = window.location.pathname;
-      const isHomePage = currentPath === '/' || 
-                        currentPath === '/index.html' || 
-                        currentPath === '/index/';
-      
-      if (isHomePage) {
-        const backButton = document.querySelector('.back-button');
-        if (backButton) {
-          backButton.style.display = 'none';
-        }
-      }
-      
-    });
-</script>
-<style>
-    .back-button {
-      color: var(--md-primary-bg-color) !important;
-      border: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 0.2rem;
-      font-size: 0px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .back-button:hover {
-      background: var(--md-accent-fg-color) !important;
-      transform: translateY(0px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    .back-button:focus {
-      outline: 2px solid var(--md-accent-fg-color);
-      outline-offset: 2px;
-    }
-    
-    .back-button .md-icon {
-      margin-right: 0px;
-    }
-</style>
 <!-- Header title -->
 <div class="md-header__title" data-md-component="header-title">
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
-<!--Reload on click -->
-<a aria-label="Reload" class="md-ellipsis" href="javascript:void(0);" onclick="window.location.reload();" title="Reload">DSA-Bible</a>
 <!-- Link to home on site name especially for PWA-->
+<a aria-label="Back to home page" class="md-ellipsis" href="../.." title="Back to home page">DSA-Bible</a>
 <!-- Repository information -->
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
@@ -958,6 +894,7 @@ Since this is a feasibility problem (finding valid queen placements), we use a d
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
 <div class="md-consent" data-md-component="consent" hidden="" id="__consent">
 <div class="md-consent__overlay"></div>
 <aside class="md-consent__inner">
@@ -985,7 +922,7 @@ Since this is a feasibility problem (finding valid queen placements), we use a d
 </aside>
 </div>
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
-<script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
