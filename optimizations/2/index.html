@@ -49,7 +49,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -91,12 +91,111 @@
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
 </label>
+<!--Back Button-->
+<!-- Back Button -->
+<button aria-label="Go back to previous page" class="back-button" id="back-btn" onclick="goBack()" title="Back">
+<span class="md-icon twemoji">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6z"></path></svg>
+</span>
+</button>
+<script>
+    function goBack() {
+      // Check if there's a valid referrer and it's not the same page
+      if (document.referrer && 
+          document.referrer !== window.location.href && 
+          document.referrer.includes(window.location.origin)) {
+        window.history.back();
+      } else {
+        // Fallback to home page if no referrer or external referrer
+        window.location.href = '/';
+      }
+    }
+    
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide back button on home page
+      const currentPath = window.location.pathname;
+      const isHomePage = currentPath === '/' || 
+                        currentPath === '/index.html' || 
+                        currentPath === '/index/'||
+                        currentPath === '';
+      
+      if (isHomePage) {
+        const backButton = document.querySelector('.back-button');
+        if (backButton) {
+          backButton.style.display = 'none';
+        }
+      }
+      
+    });
+</script>
+<style>
+    .back-button {
+      color: var(--md-primary-bg-color) !important;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.2rem;
+      font-size: 0px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+      background: var(--md-accent-fg-color) !important;
+      transform: translateY(0px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .back-button:focus {
+      outline: 2px solid var(--md-accent-fg-color);
+      outline-offset: 2px;
+    }
+    
+    .back-button .md-icon {
+      margin-right: 0px;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 768px) {
+      .back-button {
+        padding: 0.1rem 0.2rem;
+
+      }
+      
+    }
+    
+    @media screen and (max-width: 480px) {
+      .back-button {
+        padding: 0.1rem 0.2rem;
+      }
+      
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .back-button {
+        border: 2px solid var(--md-primary-fg-color);
+      }
+    }
+    
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      .back-button {
+        transition: none;
+      }
+      
+      .back-button:hover {
+        transform: none;
+      }
+    }
+</style>
 <!-- Header title -->
 <div class="md-header__title" data-md-component="header-title">
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
+<!--Reload on click -->
+<a aria-label="Reload" class="md-ellipsis" href="javascript:void(0);" onclick="window.location.reload();" title="Reload">DSA-Bible</a>
 <!-- Link to home on site name especially for PWA-->
-<a aria-label="Back to home page" class="md-ellipsis" href="../.." title="Back to home page">DSA-Bible</a>
 <!-- Repository information -->
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
@@ -199,6 +298,12 @@
 <!-- Navigation tabs (sticky) -->
 </header>
 <style>
+  /* header-title on all screens*/
+  [dir=ltr] .md-header__title {
+    margin-left: 0.4rem !important;
+    margin-right: 0.4rem !important;
+ }
+
   /* Auth buttons container */
   .md-header__auth-buttons {
     display: flex;
@@ -232,6 +337,7 @@
   
   .md-header__auth-buttons .md-header__button:hover {
     background: var(--md-accent-fg-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
   
   .md-header__auth-buttons .md-header__button:focus {
@@ -267,7 +373,7 @@
     line-height: 1;
   }
   
-  /* Medium screens - reduce spacing */
+  /* Medium screens 1220px- reduce spacing */
   @media screen and (max-width: 76.1875em) {
     .md-header__auth-buttons {
       gap: 0.2rem;
@@ -283,7 +389,7 @@
     }
   }
   
-  /* Small screens - hide text, show only icons */
+  /* Small screens 768px - hide text, show only icons */
   @media screen and (max-width: 48em) {
     /* Force visibility on small screens */
     .md-header__source:has(.md-header__auth-buttons) {
@@ -311,7 +417,7 @@
     }
   }
   
-  /* Extra small screens - further optimize */
+  /* Extra small screens 480px - further optimize */
   @media screen and (max-width: 30em) {
     .md-header__auth-buttons {
       gap: 0.05rem;
@@ -884,7 +990,7 @@ flowchart LR
 </aside>
 </div>
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
-<script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
