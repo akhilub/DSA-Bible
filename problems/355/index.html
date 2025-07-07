@@ -1011,7 +1011,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#solutions">
 <span class="md-ellipsis">
-      Solutions 🔒
+      Solutions 🔓
     </span>
 </a>
 </li>
@@ -1295,7 +1295,7 @@
 <!-- interpreter start -->
 <!-- interpreter end -->
 <hr/>
-<h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon">🔒</span></h2>
+<h2 id="solutions"><strong>Solutions</strong> 🔓</h2>
 <!-- vide solution:start -->
 <div class="video-message">
 <p>Video Solution Coming Soon</p>
@@ -1340,26 +1340,25 @@
 </span><span id="__span-1-20"><a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a>        <span class="n">merged</span><span class="o">*</span><span class="n">tweets</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="o">*</span><span class="n">tweets</span><span class="p">)</span>                        <span class="c1"># Merge the sorted deques into a single sorted iterator</span>
 </span><span id="__span-1-21"><a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">tweetId</span> <span class="k">for</span> <span class="o">*</span><span class="p">,</span> <span class="n">tweetId</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">merged_tweets</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]]</span> <span class="c1"># Return the last 10 tweetIds from the merged sorted iterator</span>
 </span><span id="__span-1-22"><a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a>
-</span><span id="__span-1-23"><a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>
-</span><span id="__span-1-24"><a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">follow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">followerId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">followeeId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-1-25"><a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">followerId</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">followeeId</span><span class="p">)</span>                  <span class="c1"># Add followeeId to the set of users that followerId is following</span>
-</span><span id="__span-1-26"><a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a>
-</span><span id="__span-1-27"><a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">unfollow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">followerId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">followeeId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-1-28"><a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">followerId</span><span class="p">]</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">followeeId</span><span class="p">)</span>              <span class="c1"># Remove followeeId from the set of users that followerId is following</span>
-</span><span id="__span-1-29"><a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a>
-</span><span id="__span-1-30"><a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="c1"># Your Twitter object will be instantiated and called as such:</span>
-</span><span id="__span-1-31"><a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="c1"># obj = Twitter()</span>
-</span><span id="__span-1-32"><a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="c1"># obj.postTweet(userId,tweetId)</span>
-</span><span id="__span-1-33"><a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="c1"># param_2 = obj.getNewsFeed(userId)</span>
-</span><span id="__span-1-34"><a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="c1"># obj.follow(followerId,followeeId)</span>
-</span><span id="__span-1-35"><a href="#__codelineno-1-35" id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="c1"># obj.unfollow(followerId,followeeId)</span>
+</span><span id="__span-1-23"><a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">follow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">followerId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">followeeId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-24"><a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">followerId</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">followeeId</span><span class="p">)</span>                  <span class="c1"># Add followeeId to the set of users that followerId is following</span>
+</span><span id="__span-1-25"><a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">unfollow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">followerId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">followeeId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-27"><a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">followerId</span><span class="p">]</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">followeeId</span><span class="p">)</span>              <span class="c1"># Remove followeeId from the set of users that followerId is following</span>
+</span><span id="__span-1-28"><a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a>
+</span><span id="__span-1-29"><a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="c1"># Your Twitter object will be instantiated and called as such:</span>
+</span><span id="__span-1-30"><a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="c1"># obj = Twitter()</span>
+</span><span id="__span-1-31"><a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="c1"># obj.postTweet(userId,tweetId)</span>
+</span><span id="__span-1-32"><a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="c1"># param_2 = obj.getNewsFeed(userId)</span>
+</span><span id="__span-1-33"><a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="c1"># obj.follow(followerId,followeeId)</span>
+</span><span id="__span-1-34"><a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="c1"># obj.unfollow(followerId,followeeId)</span>
 </span></code></pre></div>
 </div>
 </div>
 </input></div>
 <details class="example">
 <summary>equivalency</summary>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">getNewsFeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">getNewsFeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 </span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="n">tweets</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="k">for</span> <span class="n">followee</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span> <span class="o">|</span> <span class="p">{</span><span class="n">userId</span><span class="p">}:</span>
 </span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>        <span class="n">tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">followee</span><span class="p">])</span>

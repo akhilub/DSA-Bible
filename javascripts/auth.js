@@ -51,9 +51,11 @@ const updateLock = async () => {
   const lockIcon = document.getElementById("lock-icon")
   if (lockIcon) {
     if (getAuthenticatedUserState()) {
-      lockIcon.style.display = "none"
+      // lockIcon.style.display = "inline"
+      lockIcon.innerHTML = "🔓"
     } else {
-      lockIcon.style.display = "inline"
+      // lockIcon.style.display = "inline"
+      lockIcon.innerHTML = "🔒"
     }
   }
 }
@@ -394,6 +396,8 @@ const checkAuth = async () => {
 
     console.log("Final isAuthenticated status:", isAuthenticated)
     setAuthenticatedUserState(isAuthenticated)
+
+    await updateLock()
 
     // Get navigation UI elements
     const loginBtn = document.getElementById("login-btn")
