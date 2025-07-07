@@ -47,7 +47,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -627,7 +627,7 @@ F(n) = \begin{cases}
 0 &amp; \text{if } i=0 \\
 nums[0] &amp; \text{if } i=1 \\
 max(nums[0],nums[1]) &amp; \text{if } i=2 \\
-max(F(i-1),F(i-2)+nums[i-1]) &amp; \text{for } 2&lt;i&lt;=n
+max(F(n-1),F(n-2)+nums[i-1]) &amp; \text{for } 2&lt;i&lt;=n
 \end{cases}
 \]</div>
 <blockquote>
@@ -636,10 +636,10 @@ max(F(i-1),F(i-2)+nums[i-1]) &amp; \text{for } 2&lt;i&lt;=n
 </div>
 <details class="question">
 <summary>How to implement Bottom Up Dynamic Programming to solve the problem?</summary>
-<p>Let's maintain a 1D array <span class="arithmatex">\(dp\)</span>, where <span class="arithmatex">\(dp[i]\)</span> represents the maximum value that can be grabbed in the <span class="arithmatex">\([0, i]\)</span> interval.</p>
+<p>Let's maintain a 1D array dp, where <span class="arithmatex">\(dp[i]\)</span> represents the maximum value that can be grabbed in the <span class="arithmatex">\([0, i]\)</span> interval.</p>
 <p>For the current <span class="arithmatex">\(i\)</span>, there are two mutually exclusive options for robbing and not robbing.</p>
-<p><strong>Not robbing</strong> is <span class="arithmatex">\(dp[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i]\)</span>, while robbing is the maximum value of <span class="arithmatex">\([0, i-1]\)</span> ),</p>
-<p>** Robbing** is <span class="arithmatex">\(dp[i-2] + nums[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i-1]\)</span>).</p>
+<p>Not robbing is <span class="arithmatex">\(dp[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i]\)</span>), while robbing is the maximum value of <span class="arithmatex">\([0, i-1]\)</span>),</p>
+<p>Robbing is <span class="arithmatex">\(dp[i-2] + nums[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i-1]\)</span> ).</p>
 <p>Hence <span class="arithmatex">\(dp[i] = max(nums[i-1] + dp[i - 2], dp[i - 1])\)</span></p>
 <blockquote>
 <p>please note that dp[ ] has one extra element to handle zero house</p>
