@@ -627,7 +627,7 @@ F(n) = \begin{cases}
 0 &amp; \text{if } i=0 \\
 nums[0] &amp; \text{if } i=1 \\
 max(nums[0],nums[1]) &amp; \text{if } i=2 \\
-max(F(n-1),F(n-2)+nums[i-1]) &amp; \text{for } 2&lt;i&lt;=n
+max(F(i-1),F(i-2)+nums[i-1]) &amp; \text{for } 2&lt;i&lt;=n
 \end{cases}
 \]</div>
 <blockquote>
@@ -636,10 +636,10 @@ max(F(n-1),F(n-2)+nums[i-1]) &amp; \text{for } 2&lt;i&lt;=n
 </div>
 <details class="question">
 <summary>How to implement Bottom Up Dynamic Programming to solve the problem?</summary>
-<p>Let's maintain a 1D array dp, where <span class="arithmatex">\(dp[i]\)</span> represents the maximum value that can be grabbed in the <span class="arithmatex">\([0, i]\)</span> interval.</p>
+<p>Let's maintain a 1D array <span class="arithmatex">\(dp\)</span>, where <span class="arithmatex">\(dp[i]\)</span> represents the maximum value that can be grabbed in the <span class="arithmatex">\([0, i]\)</span> interval.</p>
 <p>For the current <span class="arithmatex">\(i\)</span>, there are two mutually exclusive options for robbing and not robbing.</p>
-<p>Not robbing is <span class="arithmatex">\(dp[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i]\)</span>), while robbing is the maximum value of <span class="arithmatex">\([0, i-1]\)</span>),</p>
-<p>Robbing is <span class="arithmatex">\(dp[i-2] + nums[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i-1]\)</span> ).</p>
+<p><strong>Not robbing</strong> is <span class="arithmatex">\(dp[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i]\)</span>, while robbing is the maximum value of <span class="arithmatex">\([0, i-1]\)</span> ),</p>
+<p>** Robbing** is <span class="arithmatex">\(dp[i-2] + nums[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i-1]\)</span>).</p>
 <p>Hence <span class="arithmatex">\(dp[i] = max(nums[i-1] + dp[i - 2], dp[i - 1])\)</span></p>
 <blockquote>
 <p>please note that dp[ ] has one extra element to handle zero house</p>
