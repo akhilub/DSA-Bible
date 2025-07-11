@@ -616,12 +616,14 @@
 <div class="admonition note">
 <p class="admonition-title">Algorithm</p>
 <blockquote>
-<p>One thing is certain robber is always starting from house 1(i.e nums[0])</p>
+<p>One thing is certain robber is always starting from house 1(i.e. nums[0])</p>
 </blockquote>
-<p>Let <span class="arithmatex">\(F(i)\)</span> denote the max numbers we can get up to i<sup>th</sup> house, we can observe
-- if we pick current i<sup>th</sup> value, the total value would be F(i-2)+nums[i-1]
-- and if we don’t pick i<sup>th</sup> value we have F(i-1).</p>
-<p>Thus picking the max of two gives the value of F(n).</p>
+<p>Let <span class="arithmatex">\(F(i)\)</span> denote the max numbers we can get up to i<sup>th</sup> house, we can observe</p>
+<ul>
+<li>if we pick current i<sup>th</sup> value, the total value would be <span class="arithmatex">\(F(i-2)+nums[i-1]\)</span></li>
+<li>and if we don’t pick i<sup>th</sup> value we have <span class="arithmatex">\(F(i-1)\)</span>.</li>
+</ul>
+<p>Thus picking the max of two gives the value of <span class="arithmatex">\(F(n)\)</span>.</p>
 <div class="arithmatex">\[
 F(n) = \begin{cases}
 0 &amp; \text{if } i=0 \\
@@ -639,7 +641,7 @@ max(F(i-1),F(i-2)+nums[i-1]) &amp; \text{for } 2&lt;i&lt;=n
 <p>Let's maintain a 1D array <span class="arithmatex">\(dp\)</span>, where <span class="arithmatex">\(dp[i]\)</span> represents the maximum value that can be grabbed in the <span class="arithmatex">\([0, i]\)</span> interval.</p>
 <p>For the current <span class="arithmatex">\(i\)</span>, there are two mutually exclusive options for robbing and not robbing.</p>
 <p><strong>Not robbing</strong> is <span class="arithmatex">\(dp[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i]\)</span>, while robbing is the maximum value of <span class="arithmatex">\([0, i-1]\)</span> ),</p>
-<p>** Robbing** is <span class="arithmatex">\(dp[i-2] + nums[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i-1]\)</span>).</p>
+<p><strong>Robbing</strong> is <span class="arithmatex">\(dp[i-2] + nums[i-1]\)</span> (equivalent to removing <span class="arithmatex">\(nums[i-1]\)</span>).</p>
 <p>Hence <span class="arithmatex">\(dp[i] = max(nums[i-1] + dp[i - 2], dp[i - 1])\)</span></p>
 <blockquote>
 <p>please note that dp[ ] has one extra element to handle zero house</p>

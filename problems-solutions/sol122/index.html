@@ -612,7 +612,7 @@
 </div>
 <!-- vide solution:end -->
 <!-- solution:start -->
-<h3 id="approach-greedy-algorithm-cumulative-max-profit-problem">Approach: Greedy Algorithm (Cumulative Max Profit Problem)</h3>
+<h3 id="approach-1-greedy-algorithm-cumulative-max-profit-problem">Approach 1: Greedy Algorithm (Cumulative Max Profit Problem)</h3>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition note">
@@ -677,36 +677,31 @@
 </span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>[(-1, 0), (0, 1), (1, 0), (0, -1)]
 </span></code></pre></div>
 </details>
-<h3 id="approach-3-greedy-optimal">Approach 3: Greedy (Optimal)</h3>
+<h3 id="approach-2-no-memory-dp-optimal">Approach 2: No Memory DP (Optimal)</h3>
 <blockquote>
 <p>Write this in interviews</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">maxProfit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prices</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="n">sell</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="n">hold</span> <span class="o">=</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span>
-</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>        <span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
-</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>            <span class="n">sell</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sell</span><span class="p">,</span> <span class="n">hold</span> <span class="o">+</span> <span class="n">price</span><span class="p">)</span>
-</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>            <span class="n">hold</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">hold</span><span class="p">,</span> <span class="n">sell</span> <span class="o">-</span> <span class="n">price</span><span class="p">)</span>
-</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>
-</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>        <span class="k">return</span> <span class="n">sell</span>
-</span></code></pre></div>
-</div>
-</div>
-</input></div>
-<h3 id="approach-4-dp">Approach 4: DP</h3>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition note">
 <p>We can observe, that the state of the <span class="arithmatex">\(i^{th}\)</span> day is only related to the state of the <span class="arithmatex">\(i-1^{th}\)</span> day. Therefore, we can use only two variables to maintain the state of the <span class="arithmatex">\(i-1^{th}\)</span> day, thereby optimizing the space complexity to <span class="arithmatex">\(O(1)\)</span>.</p>
 <p>The time complexity is <span class="arithmatex">\(O(n)\)</span>, where <span class="arithmatex">\(n\)</span> is the length of the <code>prices</code> array. The space complexity is <span class="arithmatex">\(O(1)\)</span>.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python_1</label><label for="__tabbed_3_2">Python_2</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">maxProfit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prices</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="n">hold</span> <span class="o">=</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="n">sell</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>        <span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>            <span class="n">hold</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">hold</span><span class="p">,</span> <span class="n">sell</span> <span class="o">-</span> <span class="n">price</span><span class="p">)</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>            <span class="n">sell</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sell</span><span class="p">,</span> <span class="n">hold</span> <span class="o">+</span> <span class="n">price</span><span class="p">)</span>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>        <span class="k">return</span> <span class="n">sell</span>
+</span></code></pre></div>
+</div>
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
 </span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">maxProfit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -721,7 +716,7 @@
 </span></code></pre></div>
 </div>
 </div>
-</input></div>
+</input></input></div>
 <!-- solution:end -->
 <!-- Include both links, & abbreviations -->
 <!-- gated-content end -->
