@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/problems/146/" rel="canonical"/>
-<link href="../141/" rel="prev"/>
-<link href="../155/" rel="next"/>
+<link href="https://dsabible.com/problems/208/" rel="canonical"/>
+<link href="../207/" rel="prev"/>
+<link href="../212/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>146. LRU Cache - DSA-Bible</title>
+<title>208. Implement Trie (Prefix Tree) - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -27,9 +27,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="146. LRU Cache - DSA-Bible" property="og:title">
+<meta content="208. Implement Trie (Prefix Tree) - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/problems/146/" property="og:url">
+<meta content="https://dsabible.com/problems/208/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -37,7 +37,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="146. LRU Cache - DSA-Bible" name="twitter:title"/>
+<meta content="208. Implement Trie (Prefix Tree) - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -55,7 +55,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#146-lru-cache">
+<a class="md-skip" href="#208-implement-trie-prefix-tree">
           Skip to content
         </a>
 </div>
@@ -201,7 +201,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              146. LRU Cache
+              208. Implement Trie (Prefix Tree)
             
           </span>
 </div>
@@ -932,43 +932,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    146. LRU Cache
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../146/">
 <span class="md-ellipsis">
     146. LRU Cache
     
   </span>
 </a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#solutions">
-<span class="md-ellipsis">
-      Solutions 🔓
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../155/">
@@ -1026,13 +996,43 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../208/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    208. Implement Trie (Prefix Tree)
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     208. Implement Trie (Prefix Tree)
     
   </span>
 </a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solutions">
+<span class="md-ellipsis">
+      Solutions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../212/">
@@ -1353,208 +1353,171 @@
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
 <a class="md-tag" href="../../topics/#tag:design">Design</a>
-<a class="md-tag" href="../../topics/#tag:doubly-linked-list">Doubly-Linked List</a>
 <a class="md-tag" href="../../topics/#tag:hash-table">Hash Table</a>
-<a class="md-tag" href="../../topics/#tag:linked-list">Linked List</a>
+<a class="md-tag" href="../../topics/#tag:string">String</a>
+<a class="md-tag" href="../../topics/#tag:trie">Trie</a>
 </nav>
 <!-- problem:start -->
-<h1 id="146-lru-cache"><a href="https://leetcode.com/problems/lru-cache/" title="Click me to Open Playground">146. LRU Cache</a></h1>
+<h1 id="208-implement-trie-prefix-tree"><a href="https://leetcode.com/problems/implement-trie-prefix-tree/" title="Click me to Open Playground">208. Implement Trie (Prefix Tree)</a></h1>
 <p><span class="md-tag md-tag--medium">Medium</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
-<p>Design a data structure that follows the constraints of a <strong>Least Recently Used (LRU) cache</strong>.</p>
-<p>Implement the <code>LRUCache</code> class:</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Trie">trie</a> (pronounced as "try") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.</p>
+<p>Implement the <strong>Trie</strong> class:</p>
 <ul>
 <li>
-<p><code>LRUCache(int capacity)</code> Initialize the LRU cache with <strong>positive</strong> size <code>capacity</code>.</p>
+<p><code>Trie()</code> Initializes the trie object.</p>
 </li>
 <li>
-<p><code>int get(int key)</code> Return the value of the <code>key</code> if the key exists, otherwise return <code>-1</code>.</p>
+<p><code>void insert(String word)</code> Inserts the string word into the trie.</p>
 </li>
 <li>
-<p><code>void put(int key, int value)</code> Update the value of the <code>key</code> if the key exists. Otherwise, add the <code>key-value</code> pair to the cache. If the number of keys exceeds the <code>capacity</code> from this operation, <strong>evict</strong> the least recently used key.</p>
+<p><code>boolean search(String word)</code> Returns <code>true</code> if the string <code>word</code> is in the trie (i.e., was inserted before), and <code>false</code> otherwise.</p>
+</li>
+<li>
+<p><code>boolean startsWith(String prefix)</code> Returns <code>true</code> if there is a previously inserted string <code>word</code> that has the prefix <code>prefix</code>, and <code>false</code> otherwise.</p>
 </li>
 </ul>
-<p>The functions <code>get</code> and <code>put</code> must each run in <code>O(1)</code> average time complexity.</p>
 <p><strong>Example 1:</strong></p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">Input</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]</span>
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">["Trie", "insert", "search", "search", "startsWith", "insert", "search"]</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">[[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]</span>
 </span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">Output</span>
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">[null, null, null, 1, null, -1, null, -1, 3, 4]</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">[null, null, true, false, true, null, true]</span>
 </span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
 </span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="l l-Scalar l-Scalar-Plain">Explanation</span>
-</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="l l-Scalar l-Scalar-Plain">LRUCache lRUCache = new LRUCache(2);</span>
-</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.put(1, 1); // cache is {1=1}</span>
-</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.put(2, 2); // cache is {1=1, 2=2}</span>
-</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.get(1);    // return 1</span>
-</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}</span>
-</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.get(2);    // returns -1 (not found)</span>
-</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}</span>
-</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.get(1);    // return -1 (not found)</span>
-</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.get(3);    // return 3</span>
-</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="l l-Scalar l-Scalar-Plain">lRUCache.get(4);    // return 4</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="l l-Scalar l-Scalar-Plain">Trie trie = new Trie();</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="l l-Scalar l-Scalar-Plain">trie.insert("apple");</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="l l-Scalar l-Scalar-Plain">trie.search("apple");   // return True</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="l l-Scalar l-Scalar-Plain">trie.search("app");     // return False</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="l l-Scalar l-Scalar-Plain">trie.startsWith("app"); // return True</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="l l-Scalar l-Scalar-Plain">trie.insert("app");</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="l l-Scalar l-Scalar-Plain">trie.search("app");     // return True</span>
 </span></code></pre></div>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= capacity &lt;= 3000</code>.</li>
-<li><code>0 &lt;= key &lt;= 10⁴</code></li>
-<li><code>0 &lt;= value &lt;= 10⁵</code></li>
-<li>At most <code>2 * 10⁵</code> calls will be made to <code>get</code> and <code>put</code>.</li>
+<li><code>1 &lt;= word.length, prefix.length &lt;= 2000</code></li>
+<li><code>word</code> and <code>prefix</code> consist only of lowercase English letters.</li>
+<li>At most <code>3 * 10⁴</code> calls <strong>in total</strong> will be made to <code>insert</code>, <code>search</code>, and <code>startsWith</code>.</li>
 </ul>
 <!-- description:end -->
-<h2 id="solutions"><strong>Solutions</strong> 🔓</h2>
-<h3 id="approach1-hash-table-doubly-linked-list">Approach1: Hash Table + Doubly Linked List</h3>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: get(key: int), put(key: int, value: int): <span class="arithmatex">\(O(1)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(capacity)\)</span></p>
-<div class="admonition tip">
-<p class="admonition-title">Algorithm</p>
-<p>We can implement an LRU (Least Recently Used) cache using a "hash table" and a "doubly linked list".</p>
-<ul>
-<li>Hash Table: Used to store cache entries for O(1) access.</li>
-<li>Doubly Linked List: Used to maintain the order of usage, with head being the most recently used and tail being the least recently used.</li>
-</ul>
-<p>Define helper methods to remove a node from the list and to add a node to the head of the list.</p>
-<ul>
-<li>In the get method, if the key exists, move the corresponding node to the head of the list and return its value.</li>
-<li>In the put method, if the key exists, remove the old node. Add the new node to the head of the list. If the cache exceeds capacity, remove the node from the tail of the list.</li>
-</ul>
-<p>The time complexity is <span class="arithmatex">\(O(1)\)</span>, and the space complexity is <span class="arithmatex">\(O(\textit{capacity})\)</span>.</p>
-</div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
-</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
-</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">LRUCache</span><span class="p">:</span>
-</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span> <span class="o">=</span> <span class="n">capacity</span>
-</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
-</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
-</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span>
-</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
-</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>
-</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node</span><span class="p">):</span>
-</span><span id="__span-1-18"><a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>        <span class="n">prev_node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">prev</span>
-</span><span id="__span-1-19"><a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a>        <span class="n">next_node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
-</span><span id="__span-1-20"><a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a>        <span class="n">prev_node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">next_node</span>
-</span><span id="__span-1-21"><a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>        <span class="n">next_node</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">prev_node</span>
-</span><span id="__span-1-22"><a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a>
-</span><span id="__span-1-23"><a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_add_to_head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node</span><span class="p">):</span>
-</span><span id="__span-1-24"><a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a>        <span class="n">node</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
-</span><span id="__span-1-25"><a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span>
-</span><span id="__span-1-26"><a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">node</span>
-</span><span id="__span-1-27"><a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span>
-</span><span id="__span-1-28"><a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a>
-</span><span id="__span-1-29"><a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="__span-1-30"><a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
-</span><span id="__span-1-31"><a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a>            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-</span><span id="__span-1-32"><a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_remove</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-1-33"><a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_add_to_head</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-1-34"><a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a>            <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span>
-</span><span id="__span-1-35"><a href="#__codelineno-1-35" id="__codelineno-1-35" name="__codelineno-1-35"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</span><span id="__span-1-36"><a href="#__codelineno-1-36" id="__codelineno-1-36" name="__codelineno-1-36"></a>
-</span><span id="__span-1-37"><a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-1-38"><a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
-</span><span id="__span-1-39"><a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-</span><span id="__span-1-40"><a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a>        <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
-</span><span id="__span-1-41"><a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_add_to_head</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-1-42"><a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span>
-</span><span id="__span-1-43"><a href="#__codelineno-1-43" id="__codelineno-1-43" name="__codelineno-1-43"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">.</span><span class="n">capacity</span><span class="p">:</span>
-</span><span id="__span-1-44"><a href="#__codelineno-1-44" id="__codelineno-1-44" name="__codelineno-1-44"></a>            <span class="n">lru</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">prev</span>
-</span><span id="__span-1-45"><a href="#__codelineno-1-45" id="__codelineno-1-45" name="__codelineno-1-45"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_remove</span><span class="p">(</span><span class="n">lru</span><span class="p">)</span>
-</span><span id="__span-1-46"><a href="#__codelineno-1-46" id="__codelineno-1-46" name="__codelineno-1-46"></a>            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">lru</span><span class="o">.</span><span class="n">key</span><span class="p">]</span>
-</span><span id="__span-1-47"><a href="#__codelineno-1-47" id="__codelineno-1-47" name="__codelineno-1-47"></a>
-</span><span id="__span-1-48"><a href="#__codelineno-1-48" id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="c1"># Your LRUCache object will be instantiated and called as such:</span>
-</span><span id="__span-1-49"><a href="#__codelineno-1-49" id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="c1"># obj = LRUCache(capacity)</span>
-</span><span id="__span-1-50"><a href="#__codelineno-1-50" id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="c1"># param_1 = obj.get(key)</span>
-</span><span id="__span-1-51"><a href="#__codelineno-1-51" id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="c1"># obj.put(key,value)</span>
-</span></code></pre></div>
-</div>
-</div>
-</input></div>
-<h3 id="approach2-ordered-dictionary">Approach2: Ordered Dictionary</h3>
-<div class="admonition note">
-<p class="admonition-title">Python Corner</p>
-<p>Python provides <code>OrderedDict</code> data structure that helps to implement LRU cache in a much more concise way.</p>
-<p><code>OrderedDict</code> seems to be introduced specifically to implement LRU cache.</p>
-<p><code>OrderedDict</code> vs <code>dict</code></p>
-<p>OrderedDict is not exactly the same as the dict class. dict is fully implemented on the interpreter level. It does preserve the order of inserted keys, but doesn’t expose the move_to_end() method. OrderedDict is partially implemented on the Python level (as dict and a linked list), so it incurs some memory overhead.</p>
-</div>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: get(key: int), put(key: int, value: int): <span class="arithmatex">\(O(1)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(capacity)\)</span></p>
-<details class="example">
-<summary>Example</summary>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">()</span>
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="o">&gt;&gt;&gt;</span>
-</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
-</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
-</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">3</span>
-</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="o">&gt;&gt;&gt;</span>
-</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span>
-</span><span id="__span-2-8"><a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">OrderedDict</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
-</span><span id="__span-2-9"><a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-2-10"><a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span>
-</span><span id="__span-2-11"><a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="n">OrderedDict</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
-</span><span id="__span-2-12"><a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="o">&gt;&gt;&gt;</span>
-</span><span id="__span-2-13"><a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-2-14"><a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="mi">1</span>
-</span><span id="__span-2-15"><a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
-</span><span id="__span-2-16"><a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-2-17"><a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span>
-</span><span id="__span-2-18"><a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="n">OrderedDict</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
-</span><span id="__span-2-19"><a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="o">&gt;&gt;&gt;</span>
-</span><span id="__span-2-20"><a href="#__codelineno-2-20" id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
-</span><span id="__span-2-21"><a href="#__codelineno-2-21" id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span>
-</span><span id="__span-2-22"><a href="#__codelineno-2-22" id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="n">OrderedDict</span><span class="p">([(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
-</span><span id="__span-2-23"><a href="#__codelineno-2-23" id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="o">&gt;&gt;&gt;</span>
-</span><span id="__span-2-24"><a href="#__codelineno-2-24" id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span><span class="o">.</span><span class="n">popitem</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="__span-2-25"><a href="#__codelineno-2-25" id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-2-26"><a href="#__codelineno-2-26" id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span>
-</span><span id="__span-2-27"><a href="#__codelineno-2-27" id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="n">OrderedDict</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
-</span></code></pre></div>
-</details>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">LRUCache</span><span class="p">:</span>
-</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="s1">'int'</span><span class="p">):</span>
-</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
-</span><span id="__span-3-6"><a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">remain</span> <span class="o">=</span> <span class="n">capacity</span>
-</span><span id="__span-3-7"><a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="s1">'int'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'int'</span><span class="p">:</span>
-</span><span id="__span-3-9"><a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
-</span><span id="__span-3-10"><a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</span><span id="__span-3-11"><a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="c1"># meaning end is the most recently used</span>
-</span><span id="__span-3-12"><a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="__span-3-13"><a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>
-</span><span id="__span-3-14"><a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="s1">'int'</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="s1">'int'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'None'</span><span class="p">:</span>
-</span><span id="__span-3-15"><a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span>
-</span><span id="__span-3-16"><a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">remain</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-3-17"><a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">remain</span> <span class="o">-=</span> <span class="mi">1</span>
-</span><span id="__span-3-18"><a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-3-19"><a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">popitem</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># pop start position</span>
-</span><span id="__span-3-20"><a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-3-21"><a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="__span-3-22"><a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="c1"># add to end of dict, meaning most recently used</span>
-</span><span id="__span-3-23"><a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a>
-</span><span id="__span-3-24"><a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="c1"># Your LRUCache object will be instantiated and called as such:</span>
-</span><span id="__span-3-25"><a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="c1"># obj = LRUCache(capacity)</span>
-</span><span id="__span-3-26"><a href="#__codelineno-3-26" id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="c1"># param_1 = obj.get(key)</span>
-</span><span id="__span-3-27"><a href="#__codelineno-3-27" id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="c1"># obj.put(key,value)</span>
-</span></code></pre></div>
-</div>
-</div>
-</input></div>
+<h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon"></span></h2>
+<section data-problem-id="208" data-section-type="problems" id="solution-section">
+<!-- This section will be populated by JavaScript based on authentication -->
+<!-- solution gets injected here -->
+</section>
 <!-- problem:end -->
+<!-- Login Prompt Template -->
+<!-- Login prompt template -->
+<p><template id="login-prompt-template">
+<br/>
+<div class="login-message">
+<h3>👋 Already have an account?</h3>
+<p>Please log in to view the solution</p>
+<button class="md-button md-button--primary" id="login-btn-inline">
+<span class="twemoji">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8z"></path></svg>
+</span>
+      Log In
+    </button>
+<h3>👋 Don't have an account yet?</h3>
+<p>Access to detailed solutions requires an active subscription account. Get one now 🚀</p>
+<button class="md-button" id="signup-btn-inline">
+<span class="twemoji">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4"></path></svg>
+</span>
+      Sign Up
+    </button>
+</div></template></p>
+<p></p>
+<!-- Subscription prompt template -->
+<p><template id="subscription-prompt-template">
+<br/>
+<div class="subscription-message">
+<h3>🔒 Premium Content</h3>
+<p>This solution requires an active subscription to view.</p>
+<button class="md-button md-button--primary" onclick="window.location.href='/pricing/'">
+<span class="twemoji">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.45 4.73L5.82 21z"></path></svg>
+</span>
+      Upgrade to Pro
+    </button>
+<p>
+<small>Already subscribed? Try refreshing the page.</small>
+</p>
+</div></template></p>
+<p></p>
+<style>
+  .login-message, .subscription-message {
+    background-color: var(--md-default-bg-color);
+    border: 1px solid var(--md-primary-fg-color--light);
+    border-radius: 10px;
+    padding: 20px 20px 0px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .login-message h3, .subscription-message h3 {
+    margin-top: 0;
+  }
+
+  .md-button {
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.2rem !important;
+  }
+
+  .subscription-message {
+    border-color: var(--md-accent-fg-color);
+  }
+
+  /* Icon styling for buttons */
+  .md-button .twemoji {
+    display: inline-flex;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .md-button .twemoji svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  /* Responsive design 
+  @media screen and (max-width: 76.1875em) {
+    .md-button {
+      gap: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 48em) {
+    .md-button {
+      gap: 0.4rem;
+    }
+
+    .md-button .twemoji {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+  }
+
+  @media screen and (max-width: 30em) {
+    .md-button {
+      gap: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .md-button .twemoji {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+  }
+  */
+</style>
 <!--Author html-->
 <!-- Post authors from meta-->
 <section>
@@ -1610,7 +1573,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+146.%20LRU%20Cache+-+/problems/146/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+208.%20Implement%20Trie%20%28Prefix%20Tree%29+-+/problems/208/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -1666,20 +1629,20 @@
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: 141. Linked List Cycle" class="md-footer__link md-footer__link--prev" href="../141/">
+<a aria-label="Previous: 207. Course Schedule" class="md-footer__link md-footer__link--prev" href="../207/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">141. Linked List Cycle</div>
+<div class="md-ellipsis">207. Course Schedule</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: 155. Min Stack" class="md-footer__link md-footer__link--next" href="../155/">
+<a aria-label="Next: 212. Word Search II" class="md-footer__link md-footer__link--next" href="../212/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">155. Min Stack</div>
+<div class="md-ellipsis">212. Word Search II</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
