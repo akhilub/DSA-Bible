@@ -7,12 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/problems/206/" rel="canonical"/>
-<link href="../200/" rel="prev"/>
-<link href="../207/" rel="next"/>
+<link href="https://dsabible.com/problems-solutions/sol76/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>206. Reverse Linked List - DSA-Bible</title>
+<title>Sol76 - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -28,9 +26,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="206. Reverse Linked List - DSA-Bible" property="og:title">
+<meta content="Sol76 - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/problems/206/" property="og:url">
+<meta content="https://dsabible.com/problems-solutions/sol76/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -38,7 +36,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="206. Reverse Linked List - DSA-Bible" name="twitter:title"/>
+<meta content="Sol76 - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -56,9 +54,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#206-reverse-linked-list">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 <aside class="md-banner">
@@ -202,7 +197,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              206. Reverse Linked List
+              Sol76
             
           </span>
 </div>
@@ -471,8 +466,8 @@
 
       </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../1/">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../problems/1/">
           
   
   
@@ -558,797 +553,14 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../problems/1/">
 <span class="md-ellipsis">
     Problems
     
   </span>
 <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-            Problems
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../1/">
-<span class="md-ellipsis">
-    1. Two Sum
-    
-  </span>
 </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../2/">
-<span class="md-ellipsis">
-    2. Add Two Numbers
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../3/">
-<span class="md-ellipsis">
-    3. Longest Substring Without Repeating Characters
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../4/">
-<span class="md-ellipsis">
-    4. Median of Two Sorted Arrays
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../5/">
-<span class="md-ellipsis">
-    5. Longest Palindromic Substring
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../6/">
-<span class="md-ellipsis">
-    6. Coming Soon
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../7/">
-<span class="md-ellipsis">
-    7. Reverse Integer
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../11/">
-<span class="md-ellipsis">
-    11. Container With Most Water
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../15/">
-<span class="md-ellipsis">
-    15. 3Sum
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../19/">
-<span class="md-ellipsis">
-    19. Remove Nth Node From End of List
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../20/">
-<span class="md-ellipsis">
-    20. Valid Parentheses
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../21/">
-<span class="md-ellipsis">
-    21. Merge Two Sorted Lists
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../29/">
-<span class="md-ellipsis">
-    29. Divide Two Integers
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../33/">
-<span class="md-ellipsis">
-    33. Search in Rotated Sorted Array
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../39/">
-<span class="md-ellipsis">
-    39. Combination Sum
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../40/">
-<span class="md-ellipsis">
-    40. Coming Soon
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../42/">
-<span class="md-ellipsis">
-    42. Trapping Rain Water
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../45/">
-<span class="md-ellipsis">
-    45. Coming Soon
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../49/">
-<span class="md-ellipsis">
-    49. Group Anagrams
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../50/">
-<span class="md-ellipsis">
-    50. Pow(x, n)
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../52/">
-<span class="md-ellipsis">
-    52. N-Queens II
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../53/">
-<span class="md-ellipsis">
-    53. Maximum Subarray
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../54/">
-<span class="md-ellipsis">
-    54. Spiral Matrix
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../56/">
-<span class="md-ellipsis">
-    56. Merge Intervals
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../62/">
-<span class="md-ellipsis">
-    62. Unique Paths
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../70/">
-<span class="md-ellipsis">
-    70. Climbing Stairs
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../73/">
-<span class="md-ellipsis">
-    73. Set Matrix Zeroes
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../74/">
-<span class="md-ellipsis">
-    74. Search a 2D Matrix
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../76/">
-<span class="md-ellipsis">
-    76. Minimum Window Substring
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../79/">
-<span class="md-ellipsis">
-    79. Word Search
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../98/">
-<span class="md-ellipsis">
-    98. Validate Binary Search Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../100/">
-<span class="md-ellipsis">
-    100. Same Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../101/">
-<span class="md-ellipsis">
-    101. Symmetric Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../103/">
-<span class="md-ellipsis">
-    103. Binary Tree Zigzag Level Order Traversal
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../104/">
-<span class="md-ellipsis">
-    104. Maximum Depth of Binary Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../105/">
-<span class="md-ellipsis">
-    105. Construct Binary Tree from Preorder and Inorder Traversal
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../108/">
-<span class="md-ellipsis">
-    108. Convert Sorted Array to Binary Search Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../114/">
-<span class="md-ellipsis">
-    114. Flatten Binary Tree to Linked List
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../121/">
-<span class="md-ellipsis">
-    121. Best Time to Buy and Sell Stock
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../122/">
-<span class="md-ellipsis">
-    122. Best Time to Buy and Sell Stock II
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../123/">
-<span class="md-ellipsis">
-    123. Best Time to Buy and Sell Stock III
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../125/">
-<span class="md-ellipsis">
-    125. Valid Palindrome
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../135/">
-<span class="md-ellipsis">
-    135. Candy
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../136/">
-<span class="md-ellipsis">
-    136. Single Number
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../139/">
-<span class="md-ellipsis">
-    139. Word Break
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../141/">
-<span class="md-ellipsis">
-    141. Linked List Cycle
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../146/">
-<span class="md-ellipsis">
-    146. LRU Cache
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../152/">
-<span class="md-ellipsis">
-    152. Maximum Product Subarray
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../155/">
-<span class="md-ellipsis">
-    155. Min Stack
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../169/">
-<span class="md-ellipsis">
-    169. Majority Element
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../191/">
-<span class="md-ellipsis">
-    191. Number of 1 Bits
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../198/">
-<span class="md-ellipsis">
-    198. House Robber
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../200/">
-<span class="md-ellipsis">
-    200. Number of Islands
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    206. Reverse Linked List
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    206. Reverse Linked List
-    
-  </span>
-</a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#solutions">
-<span class="md-ellipsis">
-      Solutions
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../207/">
-<span class="md-ellipsis">
-    207. Course Schedule
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../208/">
-<span class="md-ellipsis">
-    208. Implement Trie (Prefix Tree)
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../212/">
-<span class="md-ellipsis">
-    212. Word Search II
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../215/">
-<span class="md-ellipsis">
-    215. Kth Largest Element in an Array
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../217/">
-<span class="md-ellipsis">
-    217. Contains Duplicate
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../221/">
-<span class="md-ellipsis">
-    221. Maximal Square
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../226/">
-<span class="md-ellipsis">
-    226. Invert Binary Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../230/">
-<span class="md-ellipsis">
-    230. Kth Smallest Element in a BST
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../238/">
-<span class="md-ellipsis">
-    238. Product of Array Except Self
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../240/">
-<span class="md-ellipsis">
-    240. Search a 2D Matrix II
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../242/">
-<span class="md-ellipsis">
-    242. Valid Anagram
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../268/">
-<span class="md-ellipsis">
-    268. Missing Number
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../295/">
-<span class="md-ellipsis">
-    295. Find Median from Data Stream
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../297/">
-<span class="md-ellipsis">
-    297. Serialize and Deserialize Binary Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../322/">
-<span class="md-ellipsis">
-    322. Coin Change
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../344/">
-<span class="md-ellipsis">
-    344. Reverse String
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../355/">
-<span class="md-ellipsis">
-    355. Design Twitter
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../374/">
-<span class="md-ellipsis">
-    374. Guess Number Higher or Lower
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../407/">
-<span class="md-ellipsis">
-    407. Trapping Rain Water II
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../424/">
-<span class="md-ellipsis">
-    424. Longest Repeating Character Replacement
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../442/">
-<span class="md-ellipsis">
-    442. Find All Duplicates in an Array
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../451/">
-<span class="md-ellipsis">
-    451. Sort Characters By Frequency
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../543/">
-<span class="md-ellipsis">
-    543. Diameter of Binary Tree
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../703/">
-<span class="md-ellipsis">
-    703. Kth Largest Element in a Stream
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../704/">
-<span class="md-ellipsis">
-    704. Binary Search
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../705/">
-<span class="md-ellipsis">
-    705. Design HashSet
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../706/">
-<span class="md-ellipsis">
-    706. Design HashMap
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../739/">
-<span class="md-ellipsis">
-    739. Daily Temperatures
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../746/">
-<span class="md-ellipsis">
-    746. Min Cost Climbing Stairs
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../875/">
-<span class="md-ellipsis">
-    875. Koko Eating Bananas
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../876/">
-<span class="md-ellipsis">
-    876. Middle of the Linked List
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../978/">
-<span class="md-ellipsis">
-    978. Longest Turbulent Subarray
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../1095/">
-<span class="md-ellipsis">
-    1095. Find in Mountain Array
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../1636/">
-<span class="md-ellipsis">
-    1636. Sort Array by Increasing Frequency
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../1143/">
-<span class="md-ellipsis">
-    1143. Longest Common Subsequence
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../2140/">
-<span class="md-ellipsis">
-    2140. Coming Soon
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../2226/">
-<span class="md-ellipsis">
-    2226. Maximum Candies Allocated to K Children
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../2294/">
-<span class="md-ellipsis">
-    2294. Partition Array Such That Maximum Difference Is K
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../2503/">
-<span class="md-ellipsis">
-    2503. Coming Soon
-    
-  </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
 <a class="md-nav__link" href="../../optimizations/1/">
@@ -1392,172 +604,73 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<nav class="md-tags">
-<a class="md-tag" href="../../topics/#tag:linked-list">Linked List</a>
-<a class="md-tag" href="../../topics/#tag:recursion">Recursion</a>
-</nav>
-<!-- problem:start -->
-<h1 id="206-reverse-linked-list"><a href="https://leetcode.com/problems/reverse-linked-list/" title="Click me to Open Playground">206. Reverse Linked List</a></h1>
-<p><span class="md-tag md-tag--medium">Medium</span></p>
-<h2 id="description"><strong>Description</strong></h2>
-<!-- description:start -->
-<p>Given the <code>head</code> of a singly linked list, reverse the list, and return the reversed list.</p>
-<p><strong>Example 1:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg"/></a></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">head = [1,2,3,4,5]</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
+<h1>Sol76</h1>
+<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
+<!-- gated-content start -->
+<!-- vide solution:start -->
+<div class="video-message">
+<p>Video Solution Coming Soon</p>
+</div>
+<!-- vide solution: end -->
+<!-- solution:start -->
+<h3 id="approach-sliding-window-two-pointers-hashtable">Approach :Sliding Window (Two Pointers + HashTable)</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(m + n)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(128)\)</span> = <span class="arithmatex">\(O(1)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Algorithm</p>
+<p>To solve this problem, we'll use a sliding window approach with two pointers.
+We'll maintain a dictionary to keep track of the characters we need and their frequencies.</p>
+<p>We'll move the right pointer to expand the window until we have all the required characters.
+Then, we'll move the left pointer to shrink the window while maintaining the required characters.</p>
+<p>We'll update the minimum window whenever we find a valid window.
+This process continues until we've examined all characters in <code>s</code>.</p>
+<p>The time complexity of this solution is <span class="arithmatex">\(O(m + n)\)</span>, where <span class="arithmatex">\(m\)</span> is the length of <code>s</code> and <span class="arithmatex">\(n\)</span> is the length of <code>t</code>.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">minWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="sd">"""Count characters in t"""</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="n">cnt</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="sd">"""Initialize variables"""</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">l</span><span class="p">,</span> <span class="n">minL</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="n">min_len</span> <span class="o">=</span> <span class="n">inf</span>                             <span class="c1"># or float('inf') or math.inf</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="n">required</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>                       <span class="c1">#required no of characters</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">            </span><span class="sd">"""Expand the window"""</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="ow">in</span> <span class="n">cnt</span><span class="p">:</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>                <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>                <span class="k">if</span> <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>                    <span class="n">required</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">            </span><span class="sd">"""Shrink the window if all characters are found"""</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>            <span class="k">while</span> <span class="n">required</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>                <span class="c1"># Update minimum window</span>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>                <span class="k">if</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">min_len</span><span class="p">:</span>
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>                    <span class="n">min_len</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>                    <span class="n">minL</span> <span class="o">=</span> <span class="n">l</span>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>                <span class="c1"># Remove left character from the window</span>
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>                <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="ow">in</span> <span class="n">cnt</span><span class="p">:</span>
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>                    <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>                    <span class="k">if</span> <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>                        <span class="n">required</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>                <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-0-34"><a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="c1"># Return the minimum window substring</span>
+</span><span id="__span-0-36"><a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">minL</span><span class="p">:</span><span class="n">minL</span><span class="o">+</span><span class="n">min_len</span><span class="p">]</span> <span class="k">if</span> <span class="n">min_len</span> <span class="o">!=</span> <span class="n">inf</span> <span class="k">else</span> <span class="s2">""</span>
 </span></code></pre></div>
-<p><strong>Example 2:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg"><img alt="Example_2_img" src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg"/></a></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">head = [1,2]</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
-</span></code></pre></div>
-<p><strong>Example 3:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">head = []</span>
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
-</span></code></pre></div>
-<p><strong>Constraints:</strong></p>
-<ul>
-<li><code>The number of nodes in the list is the range [0, 5000].</code></li>
-<li><code>-5000 &lt;= Node.val &lt;= 5000</code></li>
-</ul>
-<p><strong>Follow up:</strong> <em>A linked list can be reversed either iteratively or recursively. Could you implement both?</em></p>
-<!-- description:end -->
-<h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon"></span></h2>
-<section data-problem-id="206" data-section-type="problems" id="solution-section">
-<!-- This section will be populated by JavaScript based on authentication -->
-<!-- solution gets injected here -->
-</section>
-<!-- problem:end -->
-<!-- Login Prompt Template -->
-<!-- Login prompt template -->
-<p><template id="login-prompt-template">
-<br/>
-<div class="login-message">
-<h3>👋 Already have an account?</h3>
-<p>Please log in to view the solution</p>
-<button class="md-button md-button--primary" id="login-btn-inline">
-<span class="twemoji">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8z"></path></svg>
-</span>
-      Log In
-    </button>
-<h3>👋 Don't have an account yet?</h3>
-<p>Access to detailed solutions requires an active subscription account. Get one now 🚀</p>
-<button class="md-button" id="signup-btn-inline">
-<span class="twemoji">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4"></path></svg>
-</span>
-      Sign Up
-    </button>
-</div></template></p>
-<p></p>
-<!-- Subscription prompt template -->
-<p><template id="subscription-prompt-template">
-<br/>
-<div class="subscription-message">
-<h3>🔒 Premium Content</h3>
-<p>This solution requires an active subscription to view.</p>
-<button class="md-button md-button--primary" onclick="window.location.href='/pricing/'">
-<span class="twemoji">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.45 4.73L5.82 21z"></path></svg>
-</span>
-      Upgrade to Pro
-    </button>
-<p>
-<small>Already subscribed? Try refreshing the page.</small>
-</p>
-</div></template></p>
-<p></p>
-<style>
-  .login-message, .subscription-message {
-    background-color: var(--md-default-bg-color);
-    border: 1px solid var(--md-primary-fg-color--light);
-    border-radius: 10px;
-    padding: 20px 20px 0px;
-    margin: 20px 0;
-    text-align: center;
-  }
-
-  .login-message h3, .subscription-message h3 {
-    margin-top: 0;
-  }
-
-  .md-button {
-    margin-bottom: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 0.2rem !important;
-  }
-
-  .subscription-message {
-    border-color: var(--md-accent-fg-color);
-  }
-
-  /* Icon styling for buttons */
-  .md-button .twemoji {
-    display: inline-flex;
-    align-items: center;
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .md-button .twemoji svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-  }
-
-  /* Responsive design 
-  @media screen and (max-width: 76.1875em) {
-    .md-button {
-      gap: 0.5rem;
-    }
-  }
-
-  @media screen and (max-width: 48em) {
-    .md-button {
-      gap: 0.4rem;
-    }
-
-    .md-button .twemoji {
-      width: 0.9rem;
-      height: 0.9rem;
-    }
-  }
-
-  @media screen and (max-width: 30em) {
-    .md-button {
-      gap: 0.3rem;
-      font-size: 0.9rem;
-    }
-
-    .md-button .twemoji {
-      width: 0.8rem;
-      height: 0.8rem;
-    }
-  }
-  */
-</style>
-<!--Author html-->
-<!-- Post authors from meta-->
-<section>
-<div class="md-post__authors md-typeset">
-<div class="md-profile md-post__profile">
-<span class="md-author md-author--long">
-<img alt="Akhil Singh Chauhan" class="skip-lightbox" src="https://avatars.githubusercontent.com/u/60491139"/>
-</span>
-<span class="md-profile__description">
-<strong>
-<a href="https://github.com/akhilub">Akhil Singh Chauhan</a>
-</strong>
-<br/>
-                        Creator
-                    </span>
 </div>
 </div>
-</section>
+</input></div>
+<!-- solution:end -->
+<!-- gated-content end -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -1595,7 +708,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+206.%20Reverse%20Linked%20List+-+/problems/206/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+Sol76+-+/problems-solutions/sol76/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -1649,28 +762,6 @@
 <!-- Footer -->
 <footer class="md-footer">
 <!-- Link to previous and/or next page -->
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<!-- Link to previous page -->
-<a aria-label="Previous: 200. Number of Islands" class="md-footer__link md-footer__link--prev" href="../200/">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-</div>
-<div class="md-footer__title">
-<span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">200. Number of Islands</div>
-</div>
-</a>
-<!-- Link to next page -->
-<a aria-label="Next: 207. Course Schedule" class="md-footer__link md-footer__link--next" href="../207/">
-<div class="md-footer__title">
-<span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">207. Course Schedule</div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
-</div>
-</a>
-</nav>
 <!-- Further information -->
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
