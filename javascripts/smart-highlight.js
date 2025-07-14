@@ -69,12 +69,12 @@ const processSmartHighlights = () => {
 }
 
 // Handle initial page load
-document.addEventListener("DOMContentLoaded", () => {
-  // Wait for syntax highlighter to finish
-  setTimeout(() => {
-    processSmartHighlights()
-  }, 200)
-})
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Wait for syntax highlighter to finish
+//   setTimeout(() => {
+//     processSmartHighlights()
+//   }, 200)
+// })
 
 // Subscribe to MkDocs Material navigation events
 if (

@@ -355,6 +355,11 @@ const reinitializeMaterialComponents = async (container) => {
       console.error("Panzoom init error:", err)
     }
   }
+
+  // ✅ Process smart highlights after content is loaded
+  if (typeof processSmartHighlights === "function") {
+    processSmartHighlights()
+  }
 }
 
 // Function to show subscription prompt
@@ -511,6 +516,7 @@ if (
       storeOriginalAnnotationPositions()
     }, 100)
     renderContent(getAuthenticatedUserState())
+    // processSmartHighlights()
     // initializeAnnotationClickHandlers(document.body)
   })
 }
