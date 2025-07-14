@@ -1,6 +1,6 @@
 // console.log('Smart highlight script loaded (deferred)');
 
-function processSmartHighlights() {
+const processSmartHighlights = () => {
   //console.log('Processing smart highlights...');
 
   const smartHighlights = document.querySelectorAll(".smart-highlight")
@@ -24,7 +24,11 @@ function processSmartHighlights() {
         const groupNum = parseInt(match[1])
         const startLine = parseInt(match[2])
         const endLine = parseInt(match[3])
-        groupMappings.push({ group: groupNum, start: startLine, end: endLine })
+        groupMappings.push({
+          group: groupNum,
+          start: startLine,
+          end: endLine,
+        })
         //console.log(`Found group mapping: g${groupNum} lines ${startLine}-${endLine}`)
       }
     })
@@ -64,25 +68,41 @@ function processSmartHighlights() {
   return true
 }
 
-// Since script is deferred, try processing immediately
-if (processSmartHighlights()) {
-  //console.log("Smart highlights processed successfully")
-} else {
-  // If not found immediately, try a few more times
-  let attempts = 0
-  const maxAttempts = 5
+// Debugging: Since script is deferred, try processing immediately
+// if (processSmartHighlights()) {
+//   //console.log("Smart highlights processed successfully")
+// } else {
+//   // If not found immediately, try a few more times
+//   let attempts = 0
+//   const maxAttempts = 5
 
-  const interval = setInterval(() => {
-    attempts++
-    //console.log(`Retry attempt ${attempts}`)
+//   const interval = setInterval(() => {
+//     attempts++
+//     //console.log(`Retry attempt ${attempts}`)
 
-    if (processSmartHighlights() || attempts >= maxAttempts) {
-      clearInterval(interval)
-      if (attempts >= maxAttempts) {
-        //console.log("Max attempts reached, smart highlights may not be present")
-      } else {
-        //console.log("Smart highlights processed successfully on retry")
-      }
-    }
-  }, 200)
+//     if (processSmartHighlights() || attempts >= maxAttempts) {
+//       clearInterval(interval)
+//       if (attempts >= maxAttempts) {
+//         //console.log("Max attempts reached, smart highlights may not be present")
+//       } else {
+//         //console.log("Smart highlights processed successfully on retry")
+//       }
+//     }
+//   }, 200)
+// }
+
+// Initialize on page load (script is deferred, so DOM is ready)
+processSmartHighlights()
+
+// Subscribe to MkDocs Material navigation events
+if (
+  typeof document$ !== "undefined" &&
+  typeof document$.subscribe === "function"
+) {
+  document$.subscribe(() => {
+    // Add small delay to ensure content is rendered
+    setTimeout(() => {
+      processSmartHighlights()
+    }, 100)
+  })
 }
