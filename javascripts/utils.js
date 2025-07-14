@@ -27,7 +27,7 @@ const storeOriginalAnnotationPositions = () => {
     }
   })
 
-  console.log(`Stored ${originalAnnotationPositions.size} annotation positions`)
+  //console.log(`Stored ${originalAnnotationPositions.size} annotation positions`)
 }
 
 // Function to restore original annotation positions
@@ -47,9 +47,7 @@ const restoreOriginalAnnotationPositions = () => {
     }
   })
 
-  console.log(
-    `Restored ${originalAnnotationPositions.size} annotation positions`
-  )
+  // console.log(`Restored ${originalAnnotationPositions.size} annotation positions`)
 }
 
 // Manual annotation click handler that mimics Material's behavior

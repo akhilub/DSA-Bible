@@ -224,14 +224,14 @@ let isRenderingContent = false
 const renderContent = async (isAuthenticated) => {
   // Prevent concurrent rendering
   if (isRenderingContent) {
-    console.log("Content rendering already in progress, skipping...")
+    //console.log("Content rendering already in progress, skipping...")
     return
   }
 
   const solutionSection = document.getElementById("solution-section")
 
   if (!solutionSection) {
-    console.log("Solution section not found, skipping render")
+    //console.log("Solution section not found, skipping render")
     return
   }
 
@@ -306,7 +306,7 @@ const reinitializeMaterialComponents = async (container) => {
   // ✅ This Reinitialize MkDocs Material components
   if (typeof document$ !== "undefined" && document$.next) {
     document$.next(document)
-    console.log("Triggered Material document stream")
+    //console.log("Triggered Material document stream")
   }
 
   // ✅ Wait for Material to process, then restore positions and initialize handlers
@@ -334,7 +334,7 @@ const reinitializeMaterialComponents = async (container) => {
         await mermaid.run({
           nodes: mermaidElements,
         })
-        console.log("Mermaid diagrams re-initialized")
+        //console.log("Mermaid diagrams re-initialized")
       }
     } catch (err) {
       console.error("Mermaid render error", err)
@@ -349,7 +349,7 @@ const reinitializeMaterialComponents = async (container) => {
         window.panzoom.init({
           include: [".mermaid", "svg"],
         })
-        console.log("Panzoom re-initialized for new content")
+        //console.log("Panzoom re-initialized for new content")
       }, 200)
     } catch (err) {
       console.error("Panzoom init error:", err)
@@ -377,7 +377,7 @@ const checkAuth = async () => {
     isCheckingAuth = true
 
     if (!auth0) {
-      console.log("Auth0 not initialized yet, initializing...")
+      //console.log("Auth0 not initialized yet, initializing...")
       auth0 = await createAuth0Client(config)
     }
 
@@ -388,13 +388,13 @@ const checkAuth = async () => {
       try {
         await auth0.getTokenSilently()
         isAuthenticated = await auth0.isAuthenticated()
-        console.log("Silent authentication successful")
+        //console.log("Silent authentication successful")
       } catch (e) {
         console.warn("Silent authentication failed:", e)
       }
     }
 
-    console.log("Final isAuthenticated status:", isAuthenticated)
+    //console.log("Final isAuthenticated status:", isAuthenticated)
     setAuthenticatedUserState(isAuthenticated)
 
     await updateLock()

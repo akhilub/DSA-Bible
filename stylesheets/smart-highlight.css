@@ -1,0 +1,115 @@
+/* Dynamic multi-color highlight system based on groups */
+.smart-highlight {
+  --group-1-bg: rgba(255, 0, 0, 0.1); /* Red - 1st group */
+  --group-1-line: #ff0000;
+  --group-2-bg: rgba(0, 255, 0, 0.3); /* Green - 2nd group */
+  --group-2-line: #00ff00;
+  --group-3-bg: rgba(0, 0, 255, 0.3); /* Blue - 3rd group */
+  --group-3-line: #0000ff;
+  --group-4-bg: rgba(255, 0, 255, 0.1); /* Magenta - 4th group */
+  --group-4-line: #ff00ff;
+  --group-5-bg: rgba(255, 165, 0, 0.3); /* Orange - 5th group */
+  --group-5-line: #ff8c00;
+  --group-6-bg: rgba(0, 255, 255, 0.3); /* Cyan - 6th group */
+  --group-6-line: #00ffff;
+  --group-7-bg: rgba(128, 0, 128, 0.3); /* Purple - 7th group */
+  --group-7-line: #800080;
+  --group-8-bg: rgba(255, 215, 0, 0.3); /* Gold - 8th group */
+  --group-8-line: #ffd700;
+}
+
+/* Default fallback for all highlighted lines */
+.smart-highlight .highlight .hll {
+  background-color: rgba(66, 135, 255, 0.1) !important;
+}
+
+.smart-highlight .highlight .hll .lineno {
+  color: #ff6b6b !important;
+}
+
+/* Dynamic group styling - applied via JavaScript with higher specificity */
+.smart-highlight .highlight .hll.group-1 {
+  background-color: var(--group-1-bg) !important;
+}
+.smart-highlight .highlight .hll.group-1 a.lineno {
+  color: var(--group-1-line) !important;
+}
+
+.smart-highlight .highlight .hll.group-2 {
+  background-color: var(--group-2-bg) !important;
+}
+.smart-highlight .highlight .hll.group-2 a.lineno {
+  color: var(--group-2-line) !important;
+}
+
+.smart-highlight .highlight .hll.group-3 {
+  background-color: var(--group-3-bg) !important;
+}
+.smart-highlight .highlight .hll.group-3 a.lineno {
+  color: var(--group-3-line) !important;
+}
+
+.smart-highlight .highlight .hll.group-4 {
+  background-color: var(--group-4-bg) !important;
+}
+.smart-highlight .highlight .hll.group-4 a.lineno {
+  color: var(--group-4-line) !important;
+}
+
+.smart-highlight .highlight .hll.group-5 {
+  background-color: var(--group-5-bg) !important;
+}
+.smart-highlight .highlight .hll.group-5 a.lineno {
+  color: var(--group-5-line) !important;
+}
+
+.smart-highlight .highlight .hll.group-6 {
+  background-color: var(--group-6-bg) !important;
+}
+.smart-highlight .highlight .hll.group-6 a.lineno {
+  color: var(--group-6-line) !important;
+}
+
+.smart-highlight .highlight .hll.group-7 {
+  background-color: var(--group-7-bg) !important;
+}
+.smart-highlight .highlight .hll.group-7 a.lineno {
+  color: var(--group-7-line) !important;
+}
+
+.smart-highlight .highlight .hll.group-8 {
+  background-color: var(--group-8-bg) !important;
+}
+.smart-highlight .highlight .hll.group-8 a.lineno {
+  color: var(--group-8-line) !important;
+}
+
+/* Remove all spacing from smart-highlight containers */
+.smart-highlight {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.smart-highlight > p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.smart-highlight .highlight {
+  margin: 0 !important;
+}
+
+.smart-highlight .highlight pre {
+  margin: 0 !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Remove spacing in tabbed content */
+.tabbed-content .tabbed-block .smart-highlight {
+  margin: 0 !important;
+}
+
+.tabbed-content .tabbed-block p:has(.smart-highlight) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
