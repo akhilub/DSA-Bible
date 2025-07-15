@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -614,18 +614,31 @@
 <!-- vide solution: end -->
 <!-- solution:start -->
 <h3 id="approach-1-simulation">Approach 1: Simulation</h3>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(max((M,N)))\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(max((m,n)))\)</span></p>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <h4 id="way-1">Way 1</h4>
 <div class="admonition note">
 <p class="admonition-title">Algorithmic</p>
-<p>We traverse two linked lists and at the same time, and use the variable <span class="arithmatex">\(carry\)</span> to indicate whether there is a carry.</p>
-<p>Each time we traverse, we take out the current bit of the corresponding linked list, calculate the sum with the carry <span class="arithmatex">\(carry\)</span>, and then update the value of the carry. Then we add the current bit to the answer linked list.</p>
-<p>If both linked lists are traversed, and the carry is 0, the traversal ends.</p>
-<p>Finally, we return the <code>head</code> node of the answer linked list.</p>
-<p>The time complexity is <span class="arithmatex">\(O(max((M,N)))\)</span>, where <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(N\)</span> are the lengths of the two linked lists.
-We need to traverse the entire position of the two linked lists, and each position only needs <span class="arithmatex">\(O(1)\)</span> time.
-Ignoring the space consumption of the answer, the space complexity is <span class="arithmatex">\(O(1)\)</span>.</p>
+<p>To solve this problem, we will iterate through both linked lists simultaneously, add the corresponding digits and keep track of the carry.</p>
+<p>We'll create a dummy node to start the result linked list and a current node to build the result.</p>
+<p>At each step:</p>
+<ol>
+<li>
+<p>Add the values of the current nodes of both lists (if they exist) and the carry.</p>
+</li>
+<li>
+<p>Create a new node with the ones digit of the sum and add it to the result linked list.</p>
+</li>
+<li>
+<p>Update the carry to be the tens digit of the sum.</p>
+</li>
+<li>
+<p>Move to the next nodes in both lists.</p>
+</li>
+</ol>
+<p>After the loop, if there's still a carry, we'll add an additional node to the result.</p>
+<p>The time complexity of this solution is <span class="arithmatex">\(O(max(m, n))\)</span>, where <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the lengths of the input linked lists.</p>
+<p>Ignoring the space consumption of the answer, the space complexity is <span class="arithmatex">\(O(1)\)</span>.</p>
 </div>
 <!-- tabs:start -->
 <div class="tabbed-set tabbed-alternate" data-tabs="1:11"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"/><input id="__tabbed_1_8" name="__tabbed_1" type="radio"/><input id="__tabbed_1_9" name="__tabbed_1" type="radio"/><input id="__tabbed_1_10" name="__tabbed_1" type="radio"/><input id="__tabbed_1_11" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">Java</label><label for="__tabbed_1_3">C++</label><label for="__tabbed_1_4">Go</label><label for="__tabbed_1_5">TypeScript</label><label for="__tabbed_1_6">Rust</label><label for="__tabbed_1_7">JavaScript</label><label for="__tabbed_1_8">C#</label><label for="__tabbed_1_9">PHP</label><label for="__tabbed_1_10">Swift</label><label for="__tabbed_1_11">Ruby</label></div>
