@@ -131,11 +131,16 @@
             
       
 <!-- Add announcement here, including arbitrary HTML -->
+<div class="md-announce">
+    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4zm9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4"/></svg></span>
+    <span class="md-title">Scroll in Peace, SKIP ADS</span>
+    <button class="md-tag md-button" onclick="window.location.href='/pricing/'">
+        <strong>GO PRO</strong>
+    </button>
+</div>
+
 <!-- Announcement bar content -->
-<a href="/pricing/">
-    <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4zm9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4"/></svg></span>
-    <strong>GO ADS FREE</strong> by choosing a pro plan »
-</a>
+
 
 <!--Benefit-Focused Announcement-->
 
@@ -150,6 +155,33 @@
 
 <!--Social Proof + CTA-->
 
+
+<style>
+
+.md-announce {
+    gap: 1rem;
+    display: flex; /* Ensure flexbox is enabled */
+    align-items: center; /* Center items vertically */
+    justify-items: center;
+    /* justify-content: space-between; /* Distributes space between items */
+    /* justify-content: center; gap: 2rem; /* for centered with gap */
+}
+
+.md-announce .md-tag {
+    background: var(--md-accent-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+}
+
+.md-announce .md-button {
+    border: 0 !important;
+}
+
+.md-announce  svg {
+    width: 1rem !important; 
+    height: 1rem !important;
+    fill: currentColor;
+  }
+</style>
 
           </div>
           

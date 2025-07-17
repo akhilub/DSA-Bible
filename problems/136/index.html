@@ -50,7 +50,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -67,15 +67,44 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
 </button>
 <!-- Add announcement here, including arbitrary HTML -->
+<div class="md-announce">
+<span><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4zm9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4"></path></svg></span>
+<span class="md-title">Scroll in Peace, SKIP ADS</span>
+<button class="md-tag md-button" onclick="window.location.href='/pricing/'">
+<strong>GO PRO</strong>
+</button>
+</div>
 <!-- Announcement bar content -->
-<a href="/pricing/">
-<span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4zm9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4"></path></svg></span>
-<strong>GO ADS FREE</strong> by choosing a pro plan »
-</a>
 <!--Benefit-Focused Announcement-->
 <!-- Urgency + Value Announcement -->
 <!-- Problem-Solution Focused Announcement-->
 <!--Social Proof + CTA-->
+<style>
+
+.md-announce {
+    gap: 1rem;
+    display: flex; /* Ensure flexbox is enabled */
+    align-items: center; /* Center items vertically */
+    justify-items: center;
+    /* justify-content: space-between; /* Distributes space between items */
+    /* justify-content: center; gap: 2rem; /* for centered with gap */
+}
+
+.md-announce .md-tag {
+    background: var(--md-accent-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+}
+
+.md-announce .md-button {
+    border: 0 !important;
+}
+
+.md-announce  svg {
+    width: 1rem !important; 
+    height: 1rem !important;
+    fill: currentColor;
+  }
+</style>
 </div>
 <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
 </aside>
@@ -1611,7 +1640,7 @@
     margin-top: 0;
   }
 
-  .md-button {
+  .login-message .md-button {
     margin-bottom: 20px;
     display: inline-flex;
     align-items: center;
@@ -1624,14 +1653,14 @@
   }
 
   /* Icon styling for buttons */
-  .md-button .twemoji {
+  .login-message .md-button .twemoji {
     display: inline-flex;
     align-items: center;
     width: 1rem;
     height: 1rem;
   }
 
-  .md-button .twemoji svg {
+  .login-message .md-button .twemoji svg {
     width: 100%;
     height: 100%;
     fill: currentColor;
@@ -1639,29 +1668,29 @@
 
   /* Responsive design 
   @media screen and (max-width: 76.1875em) {
-    .md-button {
+    .login-message .md-button {
       gap: 0.5rem;
     }
   }
 
   @media screen and (max-width: 48em) {
-    .md-button {
+    .login-message .md-button {
       gap: 0.4rem;
     }
 
-    .md-button .twemoji {
+    .login-message .md-button .twemoji {
       width: 0.9rem;
       height: 0.9rem;
     }
   }
 
   @media screen and (max-width: 30em) {
-    .md-button {
+    .login-message .md-button {
       gap: 0.3rem;
       font-size: 0.9rem;
     }
 
-    .md-button .twemoji {
+    .login-message .md-button .twemoji {
       width: 0.8rem;
       height: 0.8rem;
     }
