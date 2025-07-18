@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -64,8 +64,8 @@
 <!-- Add announcement here, including arbitrary HTML -->
 <div class="md-announce">
 <span><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4zm9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4"></path></svg></span>
-<span class="md-title">Scroll in Peace, SKIP ADS</span>
-<button class="md-tag md-button" onclick="window.location.href='/pricing/'">
+<span class="md-announce__title">Scroll in Peace, SKIP ADS</span>
+<button aria-label="Go Pro" class="md-tag md-button" id="announce-btn" onclick="window.location.href='/pricing/'" title="Go Pro">
 <strong>GO PRO</strong>
 </button>
 </div>
@@ -85,13 +85,30 @@
     /* justify-content: center; gap: 2rem; /* for centered with gap */
 }
 
+.md-announce__title {
+    font-size: .8rem !important;
+}
+
 .md-announce .md-tag {
-    background: var(--md-accent-fg-color) !important;
+    background: var(--md-primary-fg-color) !important;
     color: var(--md-primary-bg-color) !important;
 }
 
 .md-announce .md-button {
-    border: 0 !important;
+    border: none !important;
+}
+
+/* Alternative approach - override the theme's transition */
+.md-announce .md-button:hover {
+    background-color: var(--md-accent-fg-color) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+    transform: translateX(2px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.md-announce .md-button:focus {
+    outline: 2px solid var(--md-accent-fg-color) !important;
+    outline-offset: 2px !important;
 }
 
 .md-announce  svg {
