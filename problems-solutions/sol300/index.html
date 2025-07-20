@@ -671,7 +671,6 @@
 <p>Let <span class="arithmatex">\(F(n)\)</span> be the number of the longest subsequence that ends at <span class="arithmatex">\(nums[n]\)</span>, and the DP relation equation is:</p>
 <p><span class="arithmatex">\(F(i) = max( F(i), F(j)+1 ), \textit{ if j &lt; i and nums[j] &lt; nums[i]}\)</span></p>
 <p>Initialize <span class="arithmatex">\(F(i)\)</span> to 1 where <span class="arithmatex">\(i \in [1, n]\)</span>.</p>
-<p>Since we use a <span class="arithmatex">\(dp\)</span> array, the space complexity is <span class="arithmatex">\(O(n)\)</span>.</p>
 </div>
 <blockquote>
 <p>Way 1 : BOTTOM-UP DYNAMIC PROGRAMMING ALGORITHM TO FIND THE LONGEST INCREASING SUBSEQUENCE</p>
@@ -697,6 +696,9 @@
 </div>
 </div>
 </input></div>
+<ul>
+<li>Since we use a <span class="arithmatex">\(dp\)</span> array, the space complexity is <span class="arithmatex">\(O(n)\)</span>.</li>
+</ul>
 <div class="admonition note">
 <p>We can also do this via Recursion + Memoization (aka Top-Down Dynamic Programming Algorithm).</p>
 <p>To compute <span class="arithmatex">\(F(n)\)</span> value, we need to check the values between <span class="arithmatex">\(nums[0]\)</span> to <span class="arithmatex">\(nums[n-1]\)</span> and if it is smaller than <span class="arithmatex">\(nums[n]\)</span>, we recursively calling <span class="arithmatex">\(F\)</span> function with a smaller value. But we have to use <code>@cache</code> (or <code>@lru_cache(None)</code>, or <code>@lru_cache(maxsize=None)</code>) to rememebr the values that we already know so that we don’t re-calculate them over and over agin.</p>

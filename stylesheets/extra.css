@@ -236,7 +236,7 @@ code {
 
 /*Positioning of back-to-top button*/
 [dir="ltr"] .md-top {
-  background-color: var(--md-accent-fg-color);
+  background-color: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
   /* margin-top: calc(65vh - 65px) !important; */
 }
