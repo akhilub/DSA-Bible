@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -660,6 +660,25 @@
 <!-- vide solution: end -->
 <!-- solution:start -->
 <h3 id="approachdfs-recursionmemomization">Approach:DFS (Recursion+Memomization)</h3>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithm</p>
+<ol>
+<li>To clone a graph, we need to create a new graph where each node has the same value and connections as the original graph.</li>
+<li>Since the graph is connected and undirected, we can use Depth First Search (DFS) to traverse the graph and clone each node and its neighbors recursively.</li>
+<li>We use a dictionary (named notebook) <span class="arithmatex">\(nb\)</span> to keep track of nodes that have already been cloned to avoid duplicating nodes and to handle cycles in the graph.</li>
+<li>
+<p>For each node, we check if it has already been cloned by looking it up in the <span class="arithmatex">\(nb\)</span> dictionary.</p>
+<ul>
+<li>If it has, we return the cloned node.</li>
+<li>If the node hasn't been cloned yet, we create a new node with the same value as the original node and add it to the <span class="arithmatex">\(nb\)</span> dictionary.</li>
+</ul>
+</li>
+<li>
+<p>We then recursively clone all the neighbors of the original node and assign them to the neighbors of the cloned node.</p>
+</li>
+<li>Finally, we return the cloned version of the starting node.</li>
+</ol>
+</div>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <blockquote>
