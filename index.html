@@ -49,7 +49,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"]}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -761,6 +761,7 @@
 <p><a class="md-tag" href="topics/#tag:bucket-sort">Bucket Sort</a></p>
 <p><a class="md-tag" href="topics/#tag:combinatorics">Combinatorics</a></p>
 <p><a class="md-tag" href="topics/#tag:counting">Counting</a></p>
+<p><a class="md-tag" href="topics/#tag:counting-sort">Counting Sort</a></p>
 <p><a class="md-tag" href="topics/#tag:data-stream">Data Stream</a></p>
 <p><a class="md-tag" href="topics/#tag:depth-first-search">Depth-First Search</a></p>
 <p><a class="md-tag" href="topics/#tag:design">Design</a></p>
@@ -780,10 +781,15 @@
 <p><a class="md-tag" href="topics/#tag:math">Math</a></p>
 <p><a class="md-tag" href="topics/#tag:matrix">Matrix</a></p>
 <p><a class="md-tag" href="topics/#tag:memoization">Memoization</a></p>
+<p><a class="md-tag" href="topics/#tag:merge-sort">Merge Sort</a></p>
 <p><a class="md-tag" href="topics/#tag:monotonic-stack">Monotonic Stack</a></p>
 <p><a class="md-tag" href="topics/#tag:optimization">Optimization</a></p>
 <p><a class="md-tag" href="topics/#tag:prefix-sum">Prefix Sum</a></p>
+<p><a class="md-tag" href="topics/#tag:queue">Queue</a></p>
+<p><a class="md-tag" href="topics/#tag:quickselect">Quickselect</a></p>
+<p><a class="md-tag" href="topics/#tag:radix-sort">Radix Sort</a></p>
 <p><a class="md-tag" href="topics/#tag:recursion">Recursion</a></p>
+<p><a class="md-tag" href="topics/#tag:simulation">Simulation</a></p>
 <p><a class="md-tag" href="topics/#tag:sliding-window">Sliding Window</a></p>
 <p><a class="md-tag" href="topics/#tag:sorting">Sorting</a></p>
 <p><a class="md-tag" href="topics/#tag:stack">Stack</a></p>
@@ -810,25 +816,30 @@
 <p><a class="md-tag" href="companies/#tag:adobe">Adobe</a></p>
 <p><a class="md-tag" href="companies/#tag:asana">Asana</a></p>
 <p><a class="md-tag" href="companies/#tag:bloomberg">Bloomberg</a></p>
+<p><a class="md-tag" href="companies/#tag:flipkart">Flipkart</a></p>
+<p><a class="md-tag" href="companies/#tag:goldman-sachs">Goldman Sachs</a></p>
 <p><a class="md-tag" href="companies/#tag:impetus">Impetus</a></p>
 <p><a class="md-tag" href="companies/#tag:linkedin">LinkedIn</a></p>
+<p><a class="md-tag" href="companies/#tag:lyft">Lyft</a></p>
 <p><a class="md-tag" href="companies/#tag:openai">OpenAI</a></p>
 <p><a class="md-tag" href="companies/#tag:oracle">Oracle</a></p>
 <p><a class="md-tag" href="companies/#tag:paypal">PayPal</a></p>
 <p><a class="md-tag" href="companies/#tag:pinterest">Pinterest</a></p>
-<p><a class="md-tag" href="companies/#tag:tiktok">TikTok</a></p>
 <p><a class="md-tag" href="companies/#tag:tiktok">Tiktok</a></p>
+<p><a class="md-tag" href="companies/#tag:wise">Wise</a></p>
 <p><a class="md-tag" href="companies/#tag:x-formerly-twitter">X (formerly Twitter)</a></p>
+<p><a class="md-tag" href="companies/#tag:yahoo">Yahoo</a></p>
+<p><a class="md-tag" href="companies/#tag:yandex">Yandex</a></p>
 </div>
 <p>For a complete list of company asked problems, see the <a href="companies/"><mark>Companies page</mark></a>.</p>
 <h2 id="popular-lists"><a class="md-title" href="#popular-lists"><strong>Popular Lists</strong></a></h2>
 <div class="tag-container">
-<p><a class="md-tag" href="lists/#tag:blind-75">Blind 75</a></p>
-<p><a class="md-tag" href="lists/#tag:grind-75">Grind 75</a></p>
-<p><a class="md-tag" href="lists/#tag:interview-master-100">Interview Master 100</a></p>
-<p><a class="md-tag" href="lists/#tag:neetcode-150">Neetcode 150</a></p>
-<p><a class="md-tag" href="lists/#tag:grind-169">Grind 169</a></p>
-<p><a class="md-tag" href="lists/#tag:neetcode-250">Neetcode 250</a></p>
+<p><a class="md-tag md-button md-button--primary pulse" href="lists/#tag:blind-75">Blind 75</a></p>
+<p><a class="md-tag md-button md-button--primary pulse" href="lists/#tag:grind-75">Grind 75</a></p>
+<p><a class="md-tag md-button md-button--primary pulse" href="lists/#tag:interview-master-100">Interview Master 100</a></p>
+<p><a class="md-tag md-button md-button--primary pulse" href="lists/#tag:neetcode-150">Neetcode 150</a></p>
+<p><a class="md-tag md-button md-button--primary pulse" href="lists/#tag:grind-169">Grind 169</a></p>
+<p><a class="md-tag md-button md-button--primary pulse" href="lists/#tag:neetcode-250">Neetcode 250</a></p>
 </div>
 <p>For beginner friendly popular lists, see the <a href="lists/"><mark>Popular Lists page</mark></a></p>
 </article>
