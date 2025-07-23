@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/problems/230/" rel="canonical"/>
-<link href="../226/" rel="prev"/>
-<link href="../232/" rel="next"/>
+<link href="https://dsabible.com/problems/106/" rel="canonical"/>
+<link href="../105/" rel="prev"/>
+<link href="../108/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.15" name="generator"/>
-<title>230. Kth Smallest Element in a BST - DSA-Bible</title>
+<title>106. Construct Binary Tree from Inorder and Postorder Traversal - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -28,9 +28,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="230. Kth Smallest Element in a BST - DSA-Bible" property="og:title">
+<meta content="106. Construct Binary Tree from Inorder and Postorder Traversal - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/problems/230/" property="og:url">
+<meta content="https://dsabible.com/problems/106/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -38,7 +38,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="230. Kth Smallest Element in a BST - DSA-Bible" name="twitter:title"/>
+<meta content="106. Construct Binary Tree from Inorder and Postorder Traversal - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -56,7 +56,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#230-kth-smallest-element-in-a-bst">
+<a class="md-skip" href="#106-construct-binary-tree-from-inorder-and-postorder-traversal">
           Skip to content
         </a>
 </div>
@@ -248,7 +248,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              230. Kth Smallest Element in a BST
+              106. Construct Binary Tree from Inorder and Postorder Traversal
             
           </span>
 </div>
@@ -1019,13 +1019,43 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../106/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    106. Construct Binary Tree from Inorder and Postorder Traversal
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     106. Construct Binary Tree from Inorder and Postorder Traversal
     
   </span>
 </a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solutions">
+<span class="md-ellipsis">
+      Solutions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../108/">
@@ -1323,43 +1353,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    230. Kth Smallest Element in a BST
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../230/">
 <span class="md-ellipsis">
     230. Kth Smallest Element in a BST
     
   </span>
 </a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#solutions">
-<span class="md-ellipsis">
-      Solutions
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../232/">
@@ -1719,39 +1719,43 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
-<a class="md-tag" href="../../topics/#tag:binary-search-tree">Binary Search Tree</a>
+<a class="md-tag" href="../../topics/#tag:array">Array</a>
 <a class="md-tag" href="../../topics/#tag:binary-tree">Binary Tree</a>
-<a class="md-tag" href="../../topics/#tag:depth-first-search">Depth-First Search</a>
+<a class="md-tag" href="../../topics/#tag:divide-and-conquer">Divide and Conquer</a>
+<a class="md-tag" href="../../topics/#tag:hash-table">Hash Table</a>
 <a class="md-tag" href="../../topics/#tag:tree">Tree</a>
 </nav>
 <!-- problem:start -->
-<h1 id="230-kth-smallest-element-in-a-bst"><a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/" title="Click me to Open Playground">230. Kth Smallest Element in a BST</a></h1>
+<h1 id="106-construct-binary-tree-from-inorder-and-postorder-traversal"><a href="https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/" title="Click me to Open Playground">106. Construct Binary Tree from Inorder and Postorder Traversal</a></h1>
 <p><span class="md-tag md-tag--medium">Medium</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
-<p>Given the <code>root</code> of a binary search tree, and an integer <code>k</code>, return the k<sup>th</sup> smallest value <em>(<strong>1-indexed</strong>) of all the values of the nodes in the tree.</em></p>
+<p>Given two integer arrays <code>inorder</code> and <code>postorder</code> where <code>inorder</code> is the inorder traversal of a <abbr title="🙋🏿‍♀️ Tree where each node has atmost two children.">binary tree</abbr> and <code>postorder</code> is the postorder traversal of the same tree, construct and return <em>the <abbr title="🙋🏿‍♀️ Tree where each node has atmost two children.">binary tree</abbr></em>.</p>
 <p><strong>Example 1:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/01/28/kthtree1.jpg"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2021/01/28/kthtree1.jpg"/></a></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root = [3,1,4,null,2], k = 1</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg"/></a></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inorder = [9,3,15,20,7], postorder = [9,15,7,20,3]</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">20</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">null</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">null</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">15</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">7</span><span class="p p-Indicator">]</span>
 </span></code></pre></div>
 <p><strong>Example 2:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/01/28/kthtree2.jpg"><img alt="Example_2_img" src="https://assets.leetcode.com/uploads/2021/01/28/kthtree2.jpg"/></a></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root = [5,3,6,2,4,null,null,1], k = 3</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inorder = [-1], postorder = [-1]</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-1</span><span class="p p-Indicator">]</span>
 </span></code></pre></div>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li>The number of nodes in the tree is <code>n</code>.</li>
-<li><code>1 &lt;= k &lt;= n &lt;= 10⁴</code></li>
-<li><code>0 &lt;= Node.val &lt;= 10⁴</code></li>
+<li><code>1 &lt;= inorder.length &lt;= 3000</code></li>
+<li><code>postorder.length == inorder.length</code></li>
+<li><code>-3000 &lt;= inorder[i], postorder[i] &lt;= 3000</code></li>
+<li><code>inorder and postorder consist of unique values.</code></li>
+<li><code>Each value of postorder also appears in inorder.</code></li>
+<li><code>inorder is guaranteed to be the inorder traversal of the tree.</code></li>
+<li><code>postorder is guaranteed to be the postorder traversal of the tree.</code></li>
 </ul>
-<p><strong>Follow up:</strong> If the BST is modified often (i.e., we can do insert and delete operations) and you need to find the kth smallest frequently, how would you optimize?</p>
 <!-- description:end -->
 <!-- interpreter start -->
 <!-- interpreter end -->
+<hr/>
 <h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon"></span></h2>
-<section data-problem-id="230" data-section-type="problems" id="solution-section">
+<section data-problem-id="106" data-section-type="problems" id="solution-section">
 <!-- This section will be populated by JavaScript based on authentication -->
 <!-- solution gets injected here -->
 </section>
@@ -1885,6 +1889,7 @@
 </div>
 </div>
 </section>
+<!-- Include both links, & abbreviations -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -1922,7 +1927,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+230.%20Kth%20Smallest%20Element%20in%20a%20BST+-+/problems/230/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+106.%20Construct%20Binary%20Tree%20from%20Inorder%20and%20Postorder%20Traversal+-+/problems/106/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -1978,20 +1983,20 @@
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: 226. Invert Binary Tree" class="md-footer__link md-footer__link--prev" href="../226/">
+<a aria-label="Previous: 105. Construct Binary Tree from Preorder and Inorder Traversal" class="md-footer__link md-footer__link--prev" href="../105/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">226. Invert Binary Tree</div>
+<div class="md-ellipsis">105. Construct Binary Tree from Preorder and Inorder Traversal</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: 232. Implement Queue using Stacks" class="md-footer__link md-footer__link--next" href="../232/">
+<a aria-label="Next: 108. Convert Sorted Array to Binary Search Tree" class="md-footer__link md-footer__link--next" href="../108/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">232. Implement Queue using Stacks</div>
+<div class="md-ellipsis">108. Convert Sorted Array to Binary Search Tree</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
