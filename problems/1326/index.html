@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/problems/289/" rel="canonical"/>
-<link href="../268/" rel="prev"/>
-<link href="../295/" rel="next"/>
+<link href="https://dsabible.com/problems/1326/" rel="canonical"/>
+<link href="../1325/" rel="prev"/>
+<link href="../2140/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.16" name="generator"/>
-<title>289. Game of Life - DSA-Bible</title>
+<title>1326. Minimum Number of Taps to Open to Water a Garden - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -28,9 +28,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="289. Game of Life - DSA-Bible" property="og:title">
+<meta content="1326. Minimum Number of Taps to Open to Water a Garden - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/problems/289/" property="og:url">
+<meta content="https://dsabible.com/problems/1326/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -38,7 +38,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="289. Game of Life - DSA-Bible" name="twitter:title"/>
+<meta content="1326. Minimum Number of Taps to Open to Water a Garden - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -56,7 +56,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#289-game-of-life">
+<a class="md-skip" href="#1326-minimum-number-of-taps-to-open-to-water-a-garden">
           Skip to content
         </a>
 </div>
@@ -248,7 +248,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              289. Game of Life
+              1326. Minimum Number of Taps to Open to Water a Garden
             
           </span>
 </div>
@@ -1443,43 +1443,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    289. Game of Life
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../289/">
 <span class="md-ellipsis">
     289. Game of Life
     
   </span>
 </a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#solutions">
-<span class="md-ellipsis">
-      Solutions
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../295/">
@@ -1753,13 +1723,43 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../1326/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    1326. Minimum Number of Taps to Open to Water a Garden
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     1326. Minimum Number of Taps to Open to Water a Garden
     
   </span>
 </a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solutions">
+<span class="md-ellipsis">
+      Solutions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../2140/">
@@ -1848,47 +1848,45 @@
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
 <a class="md-tag" href="../../topics/#tag:array">Array</a>
-<a class="md-tag" href="../../topics/#tag:matrix">Matrix</a>
-<a class="md-tag" href="../../topics/#tag:simulation">Simulation</a>
+<a class="md-tag" href="../../topics/#tag:dynamic-programming">Dynamic Programming</a>
+<a class="md-tag" href="../../topics/#tag:greedy">Greedy</a>
+<a class="md-tag" href="../../topics/#tag:weekly-contest-172">Weekly Contest 172</a>
 </nav>
 <!-- problem:start -->
-<h1 id="289-game-of-life"><a href="https://leetcode.com/problems/game-of-life/" title="Click me to Open Playground">289. Game of Life</a></h1>
-<p><span class="md-tag md-tag--medium">Medium</span></p>
+<h1 id="1326-minimum-number-of-taps-to-open-to-water-a-garden"><a href="https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/" title="Click me to Open Playground">1326. Minimum Number of Taps to Open to Water a Garden</a></h1>
+<p><span class="md-tag md-tag--hard">Hard</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
-<p>According to Wikipedia's article: "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970."</p>
-<p>The board is made up of an m x n grid of cells, where each cell has an initial state: live (represented by a 1) or dead (represented by a 0). Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):</p>
-<ol>
-<li>Any live cell with fewer than two live neighbors dies as if caused by under-population.</li>
-<li>Any live cell with two or three live neighbors lives on to the next generation.</li>
-<li>Any live cell with more than three live neighbors dies, as if by over-population.</li>
-<li>Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
-</ol>
-<p>The next state of the board is determined by applying the above rules simultaneously to every cell in the current state of the m x n grid board. In this process, births and deaths occur simultaneously.</p>
-<p>Given the current state of the board, update the board to reflect its next state.</p>
-<p>Note that you do not need to return anything.</p>
-<p><strong>Example 1:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2020/12/26/grid1.jpg"/></a></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]]</span>
+<p>There is a one-dimensional garden on the x-axis. The garden starts at the point <code>0</code> and ends at the point <code>n</code>. (i.e., the length of the garden is <code>n</code>).</p>
+<p>There are <code>n + 1</code> taps located at points <code>[0, 1, ..., n]</code> in the garden.</p>
+<p>Given an integer <code>n</code> and an integer array ranges of length <code>n + 1</code> where <code>ranges[i]</code> (0-indexed) means the <code>i-th</code> tap can water the area <code>[i - ranges[i], i + ranges[i]]</code> if it was open.</p>
+<p>Return the <em>minimum number of taps</em> that should be open to water the whole garden, If the garden cannot be watered return <strong>-1</strong>.
+<strong>Example 1:</strong></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2020/01/16/1685_example_1.png"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2020/01/16/1685_example_1.png" width="800px"/></a></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n = 5, ranges = [3,4,1,1,0,0]</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The tap at point 0 can cover the interval [-3,3]</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">The tap at point 1 can cover the interval [-3,5]</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">The tap at point 2 can cover the interval [1,3]</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="l l-Scalar l-Scalar-Plain">The tap at point 3 can cover the interval [2,4]</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="l l-Scalar l-Scalar-Plain">The tap at point 4 can cover the interval [4,4]</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="l l-Scalar l-Scalar-Plain">The tap at point 5 can cover the interval [5,5]</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="l l-Scalar l-Scalar-Plain">Opening Only the second tap will water the whole garden [0,5]</span>
 </span></code></pre></div>
 <p><strong>Example 2:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg"><img alt="Example_2_img" src="https://assets.leetcode.com/uploads/2020/12/26/grid2.jpg"/></a></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">board = [[1,1],[1,0]]</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]]</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">n = 3, ranges = [0,0,0,0]</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nt">Explanation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Even if you activate all the four taps you cannot water the whole garden.</span>
 </span></code></pre></div>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li>m == board.length</li>
-<li>n == board[i].length</li>
-<li>1 &lt;= m, n &lt;= 25</li>
-<li>board[i][j] is 0 or 1.</li>
+<li><code>1 &lt;= n &lt;= 10⁴</code></li>
+<li><code>ranges.length == n + 1</code></li>
+<li><code>0 &lt;= ranges[i] &lt;= 100</code></li>
 </ul>
 <!-- description:end -->
-<!-- interpreter start -->
-<!-- interpreter end -->
 <h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon"></span></h2>
-<section data-problem-id="289" data-section-type="problems" id="solution-section">
+<section data-problem-id="1326" data-section-type="problems" id="solution-section">
 <!-- This section will be populated by JavaScript based on authentication -->
 <!-- solution gets injected here -->
 </section>
@@ -2022,7 +2020,6 @@
 </div>
 </div>
 </section>
-<!-- Include both links, & abbreviations -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -2060,7 +2057,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+289.%20Game%20of%20Life+-+/problems/289/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+1326.%20Minimum%20Number%20of%20Taps%20to%20Open%20to%20Water%20a%20Garden+-+/problems/1326/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -2116,20 +2113,20 @@
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: 268. Missing Number" class="md-footer__link md-footer__link--prev" href="../268/">
+<a aria-label="Previous: 1325. Delete Leaves With a Given Value" class="md-footer__link md-footer__link--prev" href="../1325/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">268. Missing Number</div>
+<div class="md-ellipsis">1325. Delete Leaves With a Given Value</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: 295. Find Median from Data Stream" class="md-footer__link md-footer__link--next" href="../295/">
+<a aria-label="Next: 2140. Coming Soon" class="md-footer__link md-footer__link--next" href="../2140/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">295. Find Median from Data Stream</div>
+<div class="md-ellipsis">2140. Coming Soon</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
