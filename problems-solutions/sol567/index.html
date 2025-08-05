@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -665,28 +665,29 @@
 <blockquote>
 <p>Using Two Pointers</p>
 </blockquote>
-<div class="language-text highlight"><pre><span></span><code>!!! tip "Algorithm"
-
-1.Check if s1 is longer than s2:
-
-- If s1 is longer, it cannot be a permutation of any substring in s2.
-
-2.Create character count dictionaries:
-
-- Use Counter to create dictionaries for both strings, counting the occurrences of each character in s1 and the first len(s1) characters of s2.
-
-3.Slide the window:
-
-- Iterate through s2, maintaining a window of size len(s1).
-
-4.Compare counts:
-
-- At each position, check if the character counts in the window match the counts in s1. If they match, you've found a permutation.
-
-5.Update counts:
-
-- Add the new character entering the window to the count and remove the character leaving the window.
-</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>1.Check if s1 is longer than s2:</p>
+<ul>
+<li>If s1 is longer, it cannot be a permutation of any substring in s2.</li>
+</ul>
+<p>2.Create character count dictionaries:</p>
+<ul>
+<li>Use Counter to create dictionaries for both strings, counting the occurrences of each character in s1 and the first len(s1) characters of s2.</li>
+</ul>
+<p>3.Slide the window:</p>
+<ul>
+<li>Iterate through s2, maintaining a window of size len(s1).</li>
+</ul>
+<p>4.Compare counts:</p>
+<ul>
+<li>At each position, check if the character counts in the window match the counts in s1. If they match, you've found a permutation.</li>
+</ul>
+<p>5.Update counts:</p>
+<ul>
+<li>Add the new character entering the window to the count and remove the character leaving the window.</li>
+</ul>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
