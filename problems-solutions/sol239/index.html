@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -699,53 +699,47 @@
 <h3 id="approach-monotonic-queue-decreasing">Approach : Monotonic queue (Decreasing)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
-<p>We can use a double-ended queue (deque) that allows insertion and deletion operations at both ends in O(1) time complexity. To maintain a sliding window of size k, store indices instead of actual numbers in the deque.</p>
-<p>For the first <code>k</code> elements from <code>nums</code>, add them directly to the deque. Before adding each new element, compare it with the element at the back of the deque (if the last element in the deque is index <code>i</code>, the corresponding number is <code>nums[i]</code>).</p>
+<p>To find the maximum value in a sliding window, we can use a monotonic queue.</p>
+<p>We can maintain a queue <span class="arithmatex">\(q\)</span> that is monotonically decreasing from the front to the back, storing the indices of the elements.</p>
+<p>As we traverse the array <span class="arithmatex">\(\textit{nums}\)</span>, for the current element <span class="arithmatex">\(\textit{nums}[i]\)</span>, we first check if the front element of the queue is out of the window.</p>
 <ul>
-<li>If the current number is greater, remove the last element from the deque.</li>
-<li>Continue this process until either the deque is empty or the last element in the deque is greater than or equal to the current number.</li>
-<li>The index of the maximum element in the first window of size k is at the front of the deque.</li>
-<li>Add this maximum element to the result array at index 0.</li>
+<li>If it is, we remove the front element. Then, we compare the current element <span class="arithmatex">\(\textit{nums}[i]\)</span> with the elements at the back of the queue.</li>
+<li>If the elements at the back are less than or equal to the current element, we remove them until the element at the back is greater than the current element or the queue is empty. Then, we add the index of the current element to the queue.</li>
 </ul>
-<p>Then, iterate over nums starting from index k to the end.</p>
-<ul>
-<li>For each index <code>i</code>, first check if the first element in the deque equals <code>i - k</code> (which means it’s outside the current window) and remove it if necessary.</li>
-<li>Next, if the number corresponding to the last index in the deque is less than the current number, remove the last element from the deque.</li>
-<li>Repeat until the deque is empty or the number corresponding to the last element in the deque is greater than or equal to the current number.</li>
-<li>The index of the maximum element in the current window is at the front of the deque.</li>
-<li>Place this maximum element in the corresponding position of the result array.</li>
-</ul>
-<p>Finally, return the result array.</p>
+<p>At this point, the front element of the queue is the maximum value of the current sliding window. Note that we add the front element of the queue to the result array when the index <span class="arithmatex">\(i\)</span> is greater than or equal to <span class="arithmatex">\(k-1\)</span>.</p>
+<p>The time complexity is <span class="arithmatex">\(O(n)\)</span>, and the space complexity is <span class="arithmatex">\(O(k)\)</span>. Here, <span class="arithmatex">\(n\)</span> is the length of the array <span class="arithmatex">\(\textit{nums}\)</span>.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
 </span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">maxSlidingWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>                             <span class="c1"># a deque to store indices</span>
 </span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="sd">'''Remove smaller elements indices from the queue'''</span>
-</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>            <span class="k">while</span> <span class="n">q</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">v</span><span class="p">:</span> <span class="c1"># `&lt;=`, not `&lt;`, to ensure the bigger index stored in deque</span>
-</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>                <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>            <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">            </span><span class="sd">'''Remove indices that are out of current window'''</span>
-</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>            <span class="k">if</span> <span class="n">q</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>                <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>               <span class="c1"># remove index if out of window left</span>
-</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>        <span class="k">return</span> <span class="n">ans</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="sd">'''Remove indices from front that are out of current window'''</span>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>            <span class="k">if</span> <span class="n">q</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>                <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>                     <span class="c1"># remove index if out of window left</span>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">            </span><span class="sd">'''Remove smaller elements indices from the queue back that are smaller than the current element'''</span>
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>            <span class="k">while</span> <span class="n">q</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">v</span><span class="p">:</span>       <span class="c1"># `&lt;=`, not `&lt;`, to ensure the bigger index stored in deque (in decreasing order)</span>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>                <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">            </span><span class="sd">'''Add the current element index to the back of deque'''</span>
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>            <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">            </span><span class="sd">'''If the window has reached size k, the front of deque is maximum'''</span>
+</span><span id="__span-1-18"><a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-1-19"><a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a>                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</span><span id="__span-1-20"><a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a>        <span class="k">return</span> <span class="n">ans</span>
 </span></code></pre></div>
 </div>
 </div>
 </input></div>
 <h3 id="approach-sliding-window-fixed-length">Approach: Sliding Window (Fixed Length)</h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> TLE</li>
-</ul>
+<p><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/274c.svg" title=":cross_mark:"/> TLE</p>
 <blockquote>
-<p>For Beginner, check out how to implement sliding window</p>
+<p>Beginner's, check out how to implement sliding window</p>
 </blockquote>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python (via 2 pointers)</label><label for="__tabbed_3_2">Python (via hashtable)</label></div>
 <div class="tabbed-content">
