@@ -643,13 +643,6 @@
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#site-architecture">
-<span class="md-ellipsis">
-      Site Architecture
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </li>
@@ -850,98 +843,6 @@
 <p><a class="md-tag md-button md-button--primary pulse" href="lists/#tag:neetcode-250">Neetcode 250</a></p>
 </div>
 <p>For beginner friendly popular lists, see the <a href="lists/"><mark>Popular Lists page</mark></a></p>
-<figure>
-<h2 id="site-architecture"><a class="md-title" href="#site-architecture"><strong>Site Architecture</strong></a></h2>
-<figcaption>
-<p>DSA-Bible.com</p>
-</figcaption>
-</figure>
-<div class="panzoom-box" data-key="alt" id="panzoom0" oncontextmenu="return false;"><nav class="panzoom-top-nav"><button class="panzoom-reset panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"></path></svg></button><button class="panzoom-max panzoom-button"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"></path></svg></button><button class="panzoom-min panzoom-button panzoom-hidden"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 320c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0z"></path></svg></button></nav><pre class="mermaid"><code>---
-config:
-  layout: elk
----
-flowchart LR
- subgraph Source_Repository["Source_Repository"]
-        RepoRoot["Repo root"]
-        mkdocsYml["mkdocs.yml"]
-        reqTxt["requirements.txt"]
-        scriptsDir["scripts/"]
-        genNav["gen_nav.py"]
-        docsContent["docs/"]
-        overridesDir["overrides/"]
-        includesDir["docs/_includes/"]
-        authActionsDir["auth0-actions/"]
-        ghFolder[".github/"]
-  end
- subgraph CI_CD_Pipeline["CI_CD_Pipeline"]
-        CI["GitHub Actions"]
-        ciYaml["ci.yaml"]
-  end
- subgraph Static_Hosting["Static_Hosting"]
-        Host["GitHub Pages"]
-        CNAME["docs/CNAME"]
-  end
- subgraph Browser_End_User["Browser_End_User"]
-        Browser["Browser"]
-        authJs["auth.js"]
-  end
-    RepoRoot -- Git Push --&gt; CI
-    mkdocsYml --&gt; CI
-    reqTxt --&gt; CI
-    scriptsDir --&gt; CI
-    genNav --&gt; CI
-    docsContent --&gt; CI
-    overridesDir --&gt; CI
-    includesDir --&gt; CI
-    authActionsDir --&gt; CI
-    ghFolder --&gt; CI
-    ciYaml --&gt; CI
-    CI -- Deploy site/ --&gt; Host
-    CNAME --&gt; Host
-    Browser -- HTTPS GET --&gt; Host
-    Host -- HTML/CSS/JS --&gt; Browser
-    Browser -- Auth Request --&gt; Auth0["Auth0"]
-    Auth0 --&gt; postLoginStripe["post-login-stripe.js"]
-    postLoginStripe --&gt; Stripe["Stripe"]
-    Stripe --&gt; Auth0
-    Auth0 -- JWT / Session --&gt; Browser
-     RepoRoot:::artifact
-     mkdocsYml:::artifact
-     reqTxt:::artifact
-     scriptsDir:::artifact
-     genNav:::artifact
-     docsContent:::artifact
-     overridesDir:::artifact
-     includesDir:::artifact
-     authActionsDir:::artifact
-     ghFolder:::artifact
-     CI:::build
-     ciYaml:::artifact
-     Host:::runtime
-     CNAME:::artifact
-     Browser:::runtime
-     authJs:::artifact
-     Auth0:::external
-     postLogin:::artifact
-     postLoginStripe:::artifact
-     Stripe:::external
-    classDef build fill:#ADD8E6,stroke:#333,stroke-width:1px
-    classDef runtime fill:#90EE90,stroke:#333,stroke-width:1px
-    classDef external fill:#FFA500,stroke:#333,stroke-width:1px
-    classDef artifact fill:#D3D3D3,stroke:#333,stroke-width:1px
-    click RepoRoot "https://github.com/akhilub/dsa-bible-source/tree/main/"
-    click mkdocsYml "https://github.com/akhilub/dsa-bible-source/blob/main/mkdocs.yml"
-    click reqTxt "https://github.com/akhilub/dsa-bible-source/blob/main/requirements.txt"
-    click scriptsDir "https://github.com/akhilub/dsa-bible-source/tree/main/scripts/"
-    click genNav "https://github.com/akhilub/dsa-bible-source/blob/main/scripts/gen_nav.py"
-    click docsContent "https://github.com/akhilub/dsa-bible-source/tree/main/docs/"
-    click overridesDir "https://github.com/akhilub/dsa-bible-source/tree/main/overrides/"
-    click includesDir "https://github.com/akhilub/dsa-bible-source/tree/main/docs/_includes/"
-    click authActionsDir "https://github.com/akhilub/dsa-bible-source/tree/main/auth0-actions/"
-    click ciYaml "https://github.com/akhilub/dsa-bible-source/blob/main/.github/workflows/ci.yaml"
-    click CNAME "https://github.com/akhilub/dsa-bible-source/tree/main/docs/CNAME"
-    click authJs "https://github.com/akhilub/dsa-bible-source/blob/main/docs/javascripts/auth.js"
-    click postLoginStripe "https://github.com/akhilub/dsa-bible-source/blob/main/auth0-actions/post-login-stripe.js"</code></pre><div class="panzoom-info-box">Press "Alt" / "Option" to enable Pan &amp; Zoom</div></div>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
