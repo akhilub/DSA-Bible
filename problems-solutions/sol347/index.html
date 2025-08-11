@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -785,10 +785,9 @@
 </div>
 </div>
 </input></input></input></input></input></div>
-<blockquote>
-<p>Equivalencies</p>
-</blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">TOP K FREQUENT ELEMENTS VIA SORTING BY THE COUNTER’S ITEMS</label><label for="__tabbed_3_2">TOP K FREQUENT ELEMENTS VIA COUNTER’S MOST_COMMON</label></div>
+<div class="admonition example">
+<p class="admonition-title">Equivalencies</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">Python (HashTables + Sorting)</label><label for="__tabbed_3_2">Python (most_common)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">sorted_freqs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">freqs</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -800,12 +799,13 @@
 </div>
 <div class="tabbed-block">
 <div class="admonition info">
-<p>The Counter returns a dictionary (hash map) that stores the key-value pairs (items) where keys are numbers/elements and values are the corresponding frequencies. We can returned the most common items by using the most_common method.</p>
+<p>The Counter returns a dictionary (hash map) that stores the key-value pairs (items) where keys are numbers/elements and values are the corresponding &gt; frequencies. We can returned the most common items by using the most_common method.</p>
 <p>It does not provide a least common, but we can workaround by most_common (sorted in the descending order of the frequencies):</p>
 <blockquote>
 <p>c.most_common()[-1]</p>
 </blockquote>
 <p>The most_common is essential sorting the items by the values (frequencies).</p>
+</div>
 </div>
 </div>
 </div>
