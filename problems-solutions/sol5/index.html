@@ -653,22 +653,38 @@
 <h1>Sol5</h1>
 <!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
 <!-- gated-content start -->
-<h3 id="approach-enumerate-palindrome-midpoint">Approach: Enumerate Palindrome MidPoint</h3>
+<h3 id="approach-enumerate-palindrome-midpoint-expand-around-center">Approach: Enumerate Palindrome MidPoint (Expand Around Center)</h3>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n^2)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">Best Algorithm</p>
-<ul>
-<li>We can enumerate the midpoint of the palindrome, spread to both sides, and find the longest palindrome.
-The time complexity is <span class="arithmatex">\(O(n²)\)</span>, and the space complexity is <span class="arithmatex">\(O(1)\)</span>. Here, n is the length of the string s.</li>
-</ul>
+<p>We can enumerate the midpoint (expand around the center) of the palindrome, spread to both sides, and find the longest palindrome.</p>
+<p>In any given string, there can be two possibilities:</p>
+<ol>
+<li>The longest palindromic substring is of even length.</li>
+<li>The longest palindromic substring is of odd length.</li>
+</ol>
+<p><strong>Implementation</strong></p>
+<ol>
+<li>
+<p>Initialize left and right pointer. For odd length, both at the current character. For even length, at the current and next character.</p>
+</li>
+<li>
+<p>While characters match and pointers are in bounds, update the longest palindromic substring's length if needed.</p>
+</li>
+<li>
+<p>Expand outward by decrementing the left pointer and incrementing the right pointer.</p>
+</li>
+<li>
+<p>Return the maximum length found between odd and even cases.</p>
+</li>
+</ol>
+<p>This technique is also sometimes referred to as the "expand around center" technique.</p>
+<p>The time complexity is <span class="arithmatex">\(O(n^2)\)</span>, and the space complexity is <span class="arithmatex">\(O(1)\)</span>. Here, <span class="arithmatex">\(n\)</span> is the length of the string <span class="arithmatex">\(s\)</span>.</p>
 </div>
-<details class="tip">
-<summary>Tip</summary>
-<ul>
-<li>Write this <code>Best DP Algorithm</code> in interviews after telling intial brute force approach</li>
-</ul>
-</details>
+<blockquote>
+<p>Write this <code>Best DP Algorithm</code> in interviews after telling intial brute force approach</p>
+</blockquote>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -682,8 +698,8 @@ The time complexity is <span class="arithmatex">\(O(n²)\)</span>, and the space
 </span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">start</span><span class="p">,</span> <span class="n">mx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
 </span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>            <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>            <span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>            <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>                 <span class="c1"># odd length palindrome</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>            <span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>             <span class="c1"># even length palindrome</span>
 </span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>
 </span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>            <span class="n">t</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>            <span class="k">if</span> <span class="n">mx</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">:</span>
