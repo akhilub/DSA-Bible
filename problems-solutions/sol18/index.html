@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -651,12 +651,36 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>Sol18</h1>
+<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users -->
+<!-- gated-content start -->
+<!-- vide solution:start -->
+<div class="video-message">
+<p>Video Solution Coming Soon</p>
+</div>
+<!-- vide solution: end -->
+<!-- solution:start -->
+<details class="abstrct">
+<summary>Algorithm Discussion</summary>
+<p>To solve this problem, we can use a similar approach to 3Sum, leveraging sorting and the two-pointer technique.
+We will reduce the problem by fixing two numbers and using the two-pointer technique to find the remaining two numbers.</p>
+<p>Time complexity: <span class="arithmatex">\(𝑂(𝑛^3)\)</span>, where 𝑛 is the length of the array. Sorting the array takes 𝑂(𝑛 log 𝑛), and the three nested loops (with the two-pointer approach) take <span class="arithmatex">\(𝑂(𝑛^3)\)</span> in total.</p>
+<p>Space complexity: <span class="arithmatex">\(O(1)\)</span>, ignoring the space needed for the output list. We only use a few extra variables to keep track of indices.</p>
+</details>
 <h3 id="approach-sorting-two-pointers-using-hashset">Approach: Sorting + Two Pointers (using HashSet)</h3>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n^3)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: $O(m)</p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(m)\)</span></p>
 <blockquote>
 <p>Stick to this for interviews</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>We sort the array first, then traverse the array.</p>
+<p>For each element <code>nums[i]</code>, we use pointers <code>l</code> and <code>r</code> to point to <code>i+1</code> and <code>n-1</code> respectively, calculate the sum of the four numbers.</p>
+<p>If the sum of the four numbers equals <code>target</code>, we add it to the answer set.
+Otherwise, we update the pointers based on whether the sum is less than or greater than <code>target</code>.</p>
+<p>The time complexity is <span class="arithmatex">\(O(n^3)\)</span>, and the space complexity is <span class="arithmatex">\(O(m)\)</span>, where <span class="arithmatex">\(m\)</span> is the number of unique quadruplets found.
+Here, <span class="arithmatex">\(n\)</span> is the length of the array.</p>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -680,7 +704,7 @@
 </span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>                    <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>                        <span class="n">r</span><span class="o">-=</span><span class="mi">1</span>
 </span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span> <span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">]</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span> <span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">]</span>       <span class="c1">#Note: ans is a set containing tuple of all the unique quadruplets</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -724,6 +748,8 @@
 </div>
 </div>
 </input></div>
+<!-- solution:end -->
+<!-- gated-content end -->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">

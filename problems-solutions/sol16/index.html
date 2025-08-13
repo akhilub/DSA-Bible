@@ -48,7 +48,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -665,10 +665,11 @@
 <div class="admonition tip">
 <p class="admonition-title">Algorithm Discussion</p>
 <p>We sort the array first, then traverse the array.</p>
-<p>For each element <span class="arithmatex">\(nums[i]\)</span>, we use pointers <span class="arithmatex">\(j\)</span> and <span class="arithmatex">\(k\)</span> to point to <span class="arithmatex">\(i+1\)</span> and <span class="arithmatex">\(n-1\)</span> respectively, calculate the sum of the three numbers.</p>
-<p>If the sum of the three numbers equals <span class="arithmatex">\(target\)</span>, we directly return <span class="arithmatex">\(target\)</span>.
+<p>For each element <span class="arithmatex">\(nums[i]\)</span>, we use pointers <span class="arithmatex">\(l\)</span> and <span class="arithmatex">\(r\)</span> to point to <span class="arithmatex">\(i+1\)</span> and <span class="arithmatex">\(n-1\)</span> respectively, calculate the sum of the three numbers.</p>
+<p>If the sum of the three numbers equals <span class="arithmatex">\(target\)</span>, we directly return <span class="arithmatex">\(target\)</span>.</p>
+<p>We also keep track of the closest sum to <span class="arithmatex">\(target\)</span> found so far, updating it whenever we find a closer sum.
 Otherwise, we update the answer based on the difference from <span class="arithmatex">\(target\)</span>.</p>
-<p>If the sum of the three numbers is greater than <span class="arithmatex">\(target\)</span>, we move <span class="arithmatex">\(k\)</span> one place to the left, otherwise, we move <span class="arithmatex">\(j\)</span> one place to the right.</p>
+<p>If the sum of the three numbers is lesser than <span class="arithmatex">\(target\)</span>, we move <span class="arithmatex">\(l\)</span> one place to the right, otherwise, we move <span class="arithmatex">\(r\)</span> one place to the left.</p>
 <p>The time complexity is <span class="arithmatex">\(O(n^2)\)</span>, and the space complexity is <span class="arithmatex">\(O(\log n)\)</span>. Here, <span class="arithmatex">\(n\)</span> is the length of the array.</p>
 </div>
 <details class="note">
