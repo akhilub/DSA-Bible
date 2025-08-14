@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/problems/973/" rel="canonical"/>
-<link href="../918/" rel="prev"/>
-<link href="../978/" rel="next"/>
+<link href="https://dsabible.com/problems/227/" rel="canonical"/>
+<link href="../226/" rel="prev"/>
+<link href="../230/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.16" name="generator"/>
-<title>973. K Closest Points to Origin - DSA-Bible</title>
+<title>227. Basic Calculator II - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -28,9 +28,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="973. K Closest Points to Origin - DSA-Bible" property="og:title">
+<meta content="227. Basic Calculator II - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/problems/973/" property="og:url">
+<meta content="https://dsabible.com/problems/227/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -38,7 +38,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="973. K Closest Points to Origin - DSA-Bible" name="twitter:title"/>
+<meta content="227. Basic Calculator II - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -56,7 +56,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#973-k-closest-points-to-origin">
+<a class="md-skip" href="#227-basic-calculator-ii">
           Skip to content
         </a>
 </div>
@@ -248,7 +248,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              973. K Closest Points to Origin
+              227. Basic Calculator II
             
           </span>
 </div>
@@ -1459,13 +1459,43 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../227/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    227. Basic Calculator II
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     227. Basic Calculator II
     
   </span>
 </a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solutions">
+<span class="md-ellipsis">
+      Solutions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../230/">
@@ -1843,43 +1873,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    973. K Closest Points to Origin
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../973/">
 <span class="md-ellipsis">
     973. K Closest Points to Origin
     
   </span>
 </a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#solutions">
-<span class="md-ellipsis">
-      Solutions
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../978/">
@@ -2127,49 +2127,44 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
-<a class="md-tag" href="../../topics/#tag:array">Array</a>
-<a class="md-tag" href="../../topics/#tag:divide-and-conquer">Divide and Conquer</a>
-<a class="md-tag" href="../../topics/#tag:geometry">Geometry</a>
-<a class="md-tag" href="../../topics/#tag:heap-priority-queue">Heap (Priority Queue)</a>
 <a class="md-tag" href="../../topics/#tag:math">Math</a>
-<a class="md-tag" href="../../topics/#tag:quickselect">Quickselect</a>
-<a class="md-tag" href="../../topics/#tag:sorting">Sorting</a>
+<a class="md-tag" href="../../topics/#tag:stack">Stack</a>
+<a class="md-tag" href="../../topics/#tag:string">String</a>
 </nav>
 <!-- problem:start -->
-<h1 id="973-k-closest-points-to-origin"><a href="https://leetcode.com/problems/k-closest-points-to-origin/" title="Click me to Open Playground">973. K Closest Points to Origin</a></h1>
+<h1 id="227-basic-calculator-ii"><a href="https://leetcode.com/problems/basic-calculator-ii/" title="Click me to Open Playground">227. Basic Calculator II</a></h1>
 <p><span class="md-tag md-tag--medium">Medium</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
-<p>Given an array of <code>points</code> where <code>points[i] = [xᵢ, yᵢ]</code> represents a point on the X-Y plane and an integer <code>k</code>, return the <code>k</code> closest points to the origin <code>(0, 0)</code>.</p>
-<p>The distance between two points on the X-Y plane is the Euclidean distance (i.e., <code>√(x1 - x2)² + (y1 - y2)²</code>).</p>
-<p>You may return the answer in <strong>any order</strong>. The answer is <strong>guaranteed</strong> to be <strong>unique</strong> (except for the order that it is in).</p>
+<p>Given a string <code>s</code> which represents an expression, evaluate _this expression and return its value. _</p>
+<p>The integer division should truncate toward zero.</p>
+<p>You may assume that the given expression is always valid. All intermediate results will be in the range of [-2<sup>31</sup>, 2<sup>31</sup> - 1].</p>
+<p><strong>Note:</strong> You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as <code>eval()</code>.</p>
 <p><strong>Example 1:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/03/03/closestplane1.jpg"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2021/03/03/closestplane1.jpg" width="400px"/></a></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">points = [[1,3],[-2,2]], k = 1</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">]]</span>
-</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span>
-</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">The distance between (1, 3) and the origin is sqrt(10).</span>
-</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">The distance between (-2, 2) and the origin is sqrt(8).</span>
-</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="l l-Scalar l-Scalar-Plain">Since sqrt(8) &lt; sqrt(10), (-2, 2) is closer to the origin.</span>
-</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="l l-Scalar l-Scalar-Plain">We only want the closest k = 1 points from the origin, so the answer is just [[-2,2]].</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s = "3+2*2"</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7</span>
 </span></code></pre></div>
 <p><strong>Example 2:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">points = [[3,3],[5,-1],[-2,4]], k = 2</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">]]</span>
-</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nt">Explanation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The answer [[-2,4],[3,3]] would also be accepted.</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s = " 3/2 "</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </span></code></pre></div>
 <p><strong>Example 3:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arr = [100]</span>
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s = " 3+5 / 2 "</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
 </span></code></pre></div>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= k &lt;= points.length &lt;= 10⁴</code></li>
-<li><code>-10⁴ &lt;= xᵢ, yᵢ &lt;= 10⁴</code></li>
+<li><code>1 &lt;= s.length &lt;= 3*10⁵</code></li>
+<li><code>s</code> consists of integers and operators <code>('+', '-', '*', '/')</code> separated by some number of spaces.</li>
+<li><code>s</code> represents a valid expression.</li>
+<li>All the integers in the expression are non-negative integers in the range [0, 2<sup>31</sup> - 1].</li>
+<li>The answer is guaranteed to fit in a 32-bit integer.</li>
 </ul>
 <!-- description:end -->
+<!-- interpreter start -->
+<!-- interpreter end -->
 <h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon"></span></h2>
-<section data-problem-id="973" data-section-type="problems" id="solution-section">
+<section data-problem-id="227" data-section-type="problems" id="solution-section">
 <!-- This section will be populated by JavaScript based on authentication -->
 <!-- solution gets injected here -->
 </section>
@@ -2340,7 +2335,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+973.%20K%20Closest%20Points%20to%20Origin+-+/problems/973/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+227.%20Basic%20Calculator%20II+-+/problems/227/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -2396,20 +2391,20 @@
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: 918. Maximum Sum Circular Subarray" class="md-footer__link md-footer__link--prev" href="../918/">
+<a aria-label="Previous: 226. Invert Binary Tree" class="md-footer__link md-footer__link--prev" href="../226/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">918. Maximum Sum Circular Subarray</div>
+<div class="md-ellipsis">226. Invert Binary Tree</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: 978. Longest Turbulent Subarray" class="md-footer__link md-footer__link--next" href="../978/">
+<a aria-label="Next: 230. Kth Smallest Element in a BST" class="md-footer__link md-footer__link--next" href="../230/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">978. Longest Turbulent Subarray</div>
+<div class="md-ellipsis">230. Kth Smallest Element in a BST</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
