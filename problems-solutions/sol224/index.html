@@ -9,7 +9,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <link href="https://dsabible.com/problems-solutions/sol224/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.16" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.17" name="generator"/>
 <title>Sol224 - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
@@ -736,33 +736,19 @@
 </span><span id="__span-1-33"><a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a>                <span class="n">ans</span><span class="o">=</span> <span class="n">ans</span> <span class="o">+</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">num</span>  <span class="c1"># Add the last number in parenthesis</span>
 </span><span id="__span-1-34"><a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a>                <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># Reset current number</span>
 </span><span id="__span-1-35"><a href="#__codelineno-1-35" id="__codelineno-1-35" name="__codelineno-1-35"></a>
-</span><span id="__span-1-36"><a href="#__codelineno-1-36" id="__codelineno-1-36" name="__codelineno-1-36"></a>                <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">*</span><span class="n">stk</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>    <span class="c1"># Multiply the result of the sub-expression by the sign before the parenthesis</span>
-</span><span id="__span-1-37"><a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a>                <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">+</span><span class="n">stk</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>    <span class="c1"># Add the result accumulated before the paranthesis</span>
-</span><span id="__span-1-38"><a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a>
-</span><span id="__span-1-39"><a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a>        <span class="c1"># Add the last number if there's any remaining after the loop</span>
-</span><span id="__span-1-40"><a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">+</span> <span class="n">sign</span><span class="o">*</span><span class="n">num</span>
-</span><span id="__span-1-41"><a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a>
-</span><span id="__span-1-42"><a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="k">return</span> <span class="n">ans</span>
+</span><span id="__span-1-36"><a href="#__codelineno-1-36" id="__codelineno-1-36" name="__codelineno-1-36"></a>                <span class="c1"># Multiply the result of the sub-expression by the sign before the parenthesis</span>
+</span><span id="__span-1-37"><a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a>                <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">*</span><span class="n">stk</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-1-38"><a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a>                <span class="c1"># Add the result accumulated before the paranthesis</span>
+</span><span id="__span-1-39"><a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a>                <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">+</span><span class="n">stk</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-1-40"><a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a>
+</span><span id="__span-1-41"><a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a>        <span class="c1"># Add the last number if there's any remaining after the loop</span>
+</span><span id="__span-1-42"><a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">+</span> <span class="n">sign</span><span class="o">*</span><span class="n">num</span>
+</span><span id="__span-1-43"><a href="#__codelineno-1-43" id="__codelineno-1-43" name="__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a href="#__codelineno-1-44" id="__codelineno-1-44" name="__codelineno-1-44"></a>        <span class="k">return</span> <span class="n">ans</span>
 </span></code></pre></div>
 </div>
 </div>
 </input></input></div>
-<details class="info">
-<summary>Python Corner</summary>
-<p>When a Python list is used to simulate a stack, list.pop() removes and returns the last element of the list.</p>
-<p>If an optional integer argument is provided, it removes and returns the element at that specific index.</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">stk</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
-</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">popped_element</span> <span class="o">=</span> <span class="n">stk</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># popped_element will be 30</span>
-</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">stk</span><span class="p">)</span>                 <span class="c1"># Output: [10, 20]</span>
-</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">stk</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
-</span><span id="__span-2-6"><a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">stk</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</span><span id="__span-2-7"><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="mi">30</span>
-</span><span id="__span-2-8"><a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">stk</span>
-</span><span id="__span-2-9"><a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
-</span><span id="__span-2-10"><a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="o">&gt;&gt;&gt;</span>
-</span></code></pre></div>
-</details>
 <!-- solution:end -->
 <!-- gated-content end -->
 <form class="md-feedback" hidden="" name="feedback">
@@ -868,13 +854,11 @@
 <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">&amp; Material Theme</a>
 </div>
 <!--Legal page links-->
-<section>
 <div class="footer-legal">
 <a href="/legal/terms-of-service/">Terms of Service</a>
 <a href="/legal/privacy-policy/">Privacy Policy</a>
 <a href="/legal/subscription-agreement/">Subscription Agreement</a>
 </div>
-</section>
 <style>
 .footer-legal{
     color: var(--md-footer-fg-color--lighter);
@@ -945,8 +929,8 @@
 </aside>
 </div>
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
-<script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.top", "navigation.tracking", "navigation.sections", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
 <script src="../../javascripts/mathjax.js"></script>
