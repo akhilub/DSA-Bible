@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="description"/>
 <meta content="A.S.Chauhan" name="author"/>
-<link href="https://dsabible.com/problems/74/" rel="canonical"/>
-<link href="../73/" rel="prev"/>
-<link href="../76/" rel="next"/>
+<link href="https://dsabible.com/problems/218/" rel="canonical"/>
+<link href="../217/" rel="prev"/>
+<link href="../219/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.17" name="generator"/>
-<title>74. Search a 2D Matrix - DSA-Bible</title>
+<title>218. The Skyline Problem - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
@@ -28,9 +28,9 @@
 <meta content="" name="theme-color">
 <!-- Open Graph meta tags for social media sharing -->
 <meta content="website" property="og:type">
-<meta content="74. Search a 2D Matrix - DSA-Bible" property="og:title">
+<meta content="218. The Skyline Problem - DSA-Bible" property="og:title">
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" property="og:description">
-<meta content="https://dsabible.com/problems/74/" property="og:url">
+<meta content="https://dsabible.com/problems/218/" property="og:url">
 <meta content="https://dsabible.com/assets/images/og-image.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -38,7 +38,7 @@
 <meta content="A.S.Chauhan" name="author"/>
 <!-- Twitter Card meta tags -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="74. Search a 2D Matrix - DSA-Bible" name="twitter:title"/>
+<meta content="218. The Skyline Problem - DSA-Bible" name="twitter:title"/>
 <meta content="𝑌𝑜𝑢𝑟 𝑔𝑜-𝑡𝑜 𝑟𝑒𝑠𝑜𝑢𝑟𝑐𝑒 𝑓𝑜𝑟 𝑚𝑎𝑠𝑡𝑒𝑟𝑖𝑛𝑔 𝐷𝑎𝑡𝑎 𝑆𝑡𝑟𝑢𝑐𝑡𝑢𝑟𝑒𝑠, 𝐴𝑙𝑔𝑜𝑟𝑖𝑡ℎ𝑚𝑠 𝑎𝑛𝑑 𝑂𝑝𝑡𝑖𝑚𝑖𝑧𝑎𝑡𝑖𝑜𝑛𝑠 𝑃𝑟𝑜𝑏𝑙𝑒𝑚𝑠" name="twitter:description"/>
 <meta content="https://dsabible.com/assets/images/og-image.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><style>
@@ -56,7 +56,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#74-search-a-2d-matrix">
+<a class="md-skip" href="#218-the-skyline-problem">
           Skip to content
         </a>
 </div>
@@ -248,7 +248,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              74. Search a 2D Matrix
+              218. The Skyline Problem
             
           </span>
 </div>
@@ -995,43 +995,13 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    74. Search a 2D Matrix
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../74/">
 <span class="md-ellipsis">
     74. Search a 2D Matrix
     
   </span>
 </a>
-<nav aria-label="On this page" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#solutions">
-<span class="md-ellipsis">
-      Solutions
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../76/">
@@ -1537,13 +1507,43 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../218/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    218. The Skyline Problem
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     218. The Skyline Problem
     
   </span>
 </a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solutions">
+<span class="md-ellipsis">
+      Solutions
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../219/">
@@ -2352,45 +2352,120 @@
 <article class="md-content__inner md-typeset">
 <nav class="md-tags">
 <a class="md-tag" href="../../topics/#tag:array">Array</a>
-<a class="md-tag" href="../../topics/#tag:binary-search">Binary Search</a>
-<a class="md-tag" href="../../topics/#tag:matrix">Matrix</a>
+<a class="md-tag" href="../../topics/#tag:binary-indexed-tree">Binary Indexed Tree</a>
+<a class="md-tag" href="../../topics/#tag:divide-and-conquer">Divide and Conquer</a>
+<a class="md-tag" href="../../topics/#tag:heap-priority-queue">Heap (Priority Queue)</a>
+<a class="md-tag" href="../../topics/#tag:line-sweep">Line Sweep</a>
+<a class="md-tag" href="../../topics/#tag:ordered-set">Ordered Set</a>
+<a class="md-tag" href="../../topics/#tag:segment-tree">Segment Tree</a>
 </nav>
 <!-- problem:start -->
-<h1 id="74-search-a-2d-matrix"><a href="https://leetcode.com/problems/search-a-2d-matrix/" title="Click me to Open Playground">74. Search a 2D Matrix</a></h1>
-<p><span class="md-tag md-tag--medium">Medium</span></p>
+<h1 id="218-the-skyline-problem"><a href="https://leetcode.com/problems/the-skyline-problem/description/" title="Click me to Open Playground">218. The Skyline Problem</a></h1>
+<p><span class="md-tag md-tag--hard">Hard</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
-<p>You are given an m x n integer matrix matrix with the following two properties:</p>
-<ul>
-<li>Each row is sorted in non-decreasing order.</li>
-<li>The first integer of each row is greater than the last integer of the previous row.</li>
-<li>Given an integer target, return true if target is in matrix or false otherwise.</li>
-</ul>
-<p><strong>You must write a solution in <code>O(log(m * n))</code> time complexity.</strong></p>
+<p>A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Given the locations and heights of all the buildings, return the skyline formed by these buildings collectively.</p>
+<p>The geometric information of each building is given in the array buildings where buildings[i] = [left<sub>i</sub>, right<sub>i</sub>, height<sub>i</sub>]:</p>
+<p>left<sub>i</sub> is the x coordinate of the left edge of the i<sup>th</sup> building.
+right<sub>i</sub> is the x coordinate of the right edge of the i<sup>th</sup> building.
+height<sub>i</sub> is the height of the ith building.</p>
+<p>You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height 0.</p>
+<p>The skyline should be represented as a list of "key points" sorted by their x-coordinate in the form [[x<sub>1</sub>,y<sub>1</sub>],[x<sub>2</sub>,y<sub>2</sub>],...]. Each key point is the left endpoint of some horizontal segment in the skyline except the last point in the list, which always has a y-coordinate 0 and is used to mark the skyline's termination where the rightmost building ends. Any ground between the leftmost and rightmost buildings should be part of the skyline's contour.</p>
+<p><strong>Note:</strong> There must be no consecutive horizontal lines of equal height in the output skyline. For instance, <code>[...,[2 3],[4 5],[7 5],[11 5],[12 7],...]</code> is not acceptable; the three lines of height 5 should be merged into one in the final output as such: <code>[...,[2 3],[4 5],[12 7],...]</code></p>
 <p><strong>Example 1:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3</span>
-</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2020/12/01/merged.jpg"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2020/12/01/merged.jpg"/></a></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">buildings = [[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">10</span><span class="p p-Indicator">],[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="nv">15</span><span class="p p-Indicator">],[</span><span class="nv">7</span><span class="p p-Indicator">,</span><span class="nv">12</span><span class="p p-Indicator">],[</span><span class="nv">12</span><span class="p p-Indicator">,</span><span class="nv">0</span><span class="p p-Indicator">],[</span><span class="nv">15</span><span class="p p-Indicator">,</span><span class="nv">10</span><span class="p p-Indicator">],[</span><span class="nv">20</span><span class="p p-Indicator">,</span><span class="nv">8</span><span class="p p-Indicator">],[</span><span class="nv">24</span><span class="p p-Indicator">,</span><span class="nv">0</span><span class="p p-Indicator">]]</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">Figure A shows the buildings of the input.</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="l l-Scalar l-Scalar-Plain">Figure B shows the skyline formed by those buildings. The red points in figure B represent the key points in the output list.</span>
 </span></code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2020/10/05/mat.jpg"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2020/10/05/mat.jpg"/></a></p>
 <p><strong>Example 2:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13</span>
-</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">buildings = [[0,2,3],[2,5,3]]</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]]</span>
 </span></code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2020/10/05/mat2.jpg"><img alt="Example_2_img" src="https://assets.leetcode.com/uploads/2020/10/05/mat2.jpg"/></a></p>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li><code>m == matrix.length</code></li>
-<li><code>n == matrix[i].length</code></li>
-<li><code>1 &lt;= m, n &lt;= 100</code></li>
-<li><code>-104 &lt;= matrix[i][j], target &lt;= 104</code></li>
+<li>1 &lt;= buildings.length &lt;= 10^4</li>
+<li>0 &lt;= left<sub>i</sub> &lt; right<sub>i</sub> &lt;= 2<sup>31</sup> - 1</li>
+<li>1 &lt;= height<sub>i</sub> &lt;= 2<sup>31</sup> - 1</li>
+<li>buildings is sorted by left<sub>i</sub> in non-decreasing order.</li>
 </ul>
 <!-- description:end -->
 <!-- interpreter start -->
 <!-- interpreter end -->
+<div class="annotate">
+<blockquote>
+<p><strong>Hint</strong> : Remember Array Operations (1)</p>
+</blockquote>
+</div>
+<ol>
+<li>
+<p><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:"/></p>
+<div class="title-center" markdown="">
+<p>Arrays (dynamic array/list), Given n = arr.length</p>
+</div>
+<div class="title-center" markdown="">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Operations</strong></th>
+<th style="text-align: center;"><strong>Time Complexity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Add or Remove element at the end</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span> Amortized</td>
+</tr>
+<tr>
+<td style="text-align: center;">Access or modify element at arbitrary index</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Finding the sum of a subarray given a prefix sum</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Searching Sorted Array for an Element</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span> Binary Search</td>
+</tr>
+<tr>
+<td style="text-align: center;">Add or Remove Element from arbitrary index</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Check if element exists/Searching Array for an Element</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Copying Array</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Sliding Window</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Building a prefix sum:</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Two pointers:</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n⋅k)\)</span>, where <span class="arithmatex">\(k\)</span> is the work done at each iteration, includes sliding window</td>
+</tr>
+<tr>
+<td style="text-align: center;">All Pairs of Array Elements</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ol>
 <h2 id="solutions"><strong>Solutions</strong> <span id="lock-icon"></span></h2>
-<section data-problem-id="74" data-section-type="problems" id="solution-section">
+<section data-problem-id="218" data-section-type="problems" id="solution-section">
 <!-- This section will be populated by JavaScript based on authentication -->
-<!-- solution gets injected here -->
 </section>
 <!-- problem:end -->
 <!-- Login Prompt Template -->
@@ -2559,7 +2634,7 @@
                 
                 
               
-              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+74.%20Search%20a%202D%20Matrix+-+/problems/74/" rel="noopener" target="_blank">Report us here</a>.
+              Thanks for your feedback! Help us improve this page by writing your issue in our issue page. <a href="https://github.com/akhilub/DSA-Bible/issues/?title=[Feedback]+218.%20The%20Skyline%20Problem+-+/problems/218/" rel="noopener" target="_blank">Report us here</a>.
             </div>
 </div>
 </div>
@@ -2615,20 +2690,20 @@
 <!-- Link to previous and/or next page -->
 <nav aria-label="Footer" class="md-footer__inner md-grid">
 <!-- Link to previous page -->
-<a aria-label="Previous: 73. Set Matrix Zeroes" class="md-footer__link md-footer__link--prev" href="../73/">
+<a aria-label="Previous: 217. Contains Duplicate" class="md-footer__link md-footer__link--prev" href="../217/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
 <div class="md-footer__title">
 <span class="md-footer__direction">Previous</span>
-<div class="md-ellipsis">73. Set Matrix Zeroes</div>
+<div class="md-ellipsis">217. Contains Duplicate</div>
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: 76. Minimum Window Substring" class="md-footer__link md-footer__link--next" href="../76/">
+<a aria-label="Next: 219. Contains Duplicate II" class="md-footer__link md-footer__link--next" href="../219/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">76. Minimum Window Substring</div>
+<div class="md-ellipsis">219. Contains Duplicate II</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
