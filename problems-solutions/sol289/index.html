@@ -662,17 +662,43 @@
 <h3 id="approach-inplace-marking">Approach : Inplace Marking</h3>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(m \cdot n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
+<p>To solve the Game of Life problem, we'll use an in-place modification technique that allows us to track both the current and next state of each cell simultaneously.</p>
+<p>We'll introduce two new states to represent the transition:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(2\)</span> represents a cell that was <span class="arithmatex">\(0\)</span> and will become <span class="arithmatex">\(1\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(3\)</span> represents a cell that was 1 and will become <span class="arithmatex">\(0\)</span></p>
+</li>
+</ul>
+<p>This approach allows us to modify the board while preserving the original information needed to determine neighboring cell states.</p>
+<p>The algorithm works as follows:</p>
+<ol>
+<li>
+<p>Check each cell's neighbors</p>
+</li>
+<li>
+<p>Apply the Game of Life rules</p>
+</li>
+<li>
+<p>Convert the temporary states back to <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(1\)</span></p>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Algorithm Implementatio</p>
 <p>We'll solve the Game of Life in-place, without using extra space.</p>
-<p>First, for every cell in the board, we check all 8 of its neighbors — up, down, left, right, and the four diagonals. While counting live neighbors, we treat any neighbor with a value of <code>1</code> or <code>3</code> as alive. That’s because <code>1</code> means it's currently alive, and <code>3</code> means it was alive but is marked to die — we still consider it alive during this generation.</p>
+<p>First, for every cell in the board, we check all 8 of its neighbors — up, down, left, right, and the four diagonals. While counting live neighbors, we treat any neighbor with a value of <span class="arithmatex">\(1\)</span> or <span class="arithmatex">\(3\)</span> as alive. That’s because <span class="arithmatex">\(1\)</span> means it's currently alive, and <span class="arithmatex">\(3\)</span> means it was alive but is marked to die — we still consider it alive during this generation.</p>
 <p>Now, based on the number of live neighbors and the cell’s current state, we update the cell using temporary markers:</p>
 <ul>
 <li>
-<p>If a live cell dies, we mark it as 3 (alive → dead).</p>
+<p>If a live cell dies, we mark it as <span class="arithmatex">\(3\)</span> (alive → dead).</p>
 </li>
 <li>
-<p>If a dead cell becomes alive, we mark it as 2 (dead → alive).</p>
+<p>If a dead cell becomes alive, we mark it as <span class="arithmatex">\(2\)</span> (dead → alive).</p>
 </li>
 <li>
 <p>If a cell stays the same, we don’t change it.</p>
@@ -681,13 +707,13 @@
 <p>After we’ve done this for every cell, we make one final pass over the board and decode those temporary values:</p>
 <ul>
 <li>
-<p>Change <code>2</code> to <code>1</code> (newborn live cell),</p>
+<p>Change <span class="arithmatex">\(2\)</span> to <span class="arithmatex">\(1\)</span> (newborn live cell),</p>
 </li>
 <li>
-<p>Change 3 to 0 (dead cell),</p>
+<p>Change <span class="arithmatex">\(3\)</span> to <span class="arithmatex">\(0\)</span> (dead cell),</p>
 </li>
 <li>
-<p>Leave 0 and 1 as they are.</p>
+<p>Leave <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(1\)</span> as they are.</p>
 </li>
 </ul>
 <p>That’s it. We’ve updated the board in-place without needing extra space, and every change happened simultaneously — just like the problem requires.</p>
@@ -706,29 +732,52 @@
 </span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
 </span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">directions</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># All Eight directions</span>
 </span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>                <span class="n">live</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>                <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">:</span>
-</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>                    <span class="n">ni</span><span class="p">,</span> <span class="n">nj</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dy</span>
-</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>                    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">ni</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nj</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>                        <span class="n">live</span> <span class="o">+=</span> <span class="n">board</span><span class="p">[</span><span class="n">ni</span><span class="p">][</span><span class="n">nj</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">1</span>  <span class="c1"># check current state</span>
-</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>                <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">live</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">live</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">):</span>
-</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># make live → dead</span>
-</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>                <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">live</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># make dead → live</span>
-</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>                <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>                <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="c1">#First pass: mark cells for transition</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>                <span class="n">live</span> <span class="o">=</span> <span class="mi">0</span>                            <span class="c1"># Count live neighbors for a cell</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>                <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">:</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>                    <span class="n">ni</span><span class="p">,</span> <span class="n">nj</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dy</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>                    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">ni</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nj</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span> <span class="c1"># Within Bounds</span>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>                        <span class="n">live</span> <span class="o">+=</span> <span class="n">board</span><span class="p">[</span><span class="n">ni</span><span class="p">][</span><span class="n">nj</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">1</span>   <span class="c1"># odd number check &amp; update live</span>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>                <span class="c1"># Live cells rules</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>                <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="n">live</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">live</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">):</span>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># make live → dead</span>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>                <span class="c1"># Dead cells rules</span>
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>                <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">live</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># make dead → live</span>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="c1">#Second Pass: Convert temporary states back to 0 and 1</span>
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>                <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>                <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>                    <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </span></code></pre></div>
 </div>
 </div>
 </input></div>
+<div class="admonition example">
+<p class="admonition-title">equivalency</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">ni</span><span class="p">][</span><span class="n">nj</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">board</span><span class="p">[</span><span class="n">ni</span><span class="p">][</span><span class="n">nj</span><span class="p">]</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>    <span class="s1">'''Count original lives cells and cells transitiong to dead'''</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="n">live</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>            <span class="o">||</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="n">equivalent</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>            <span class="o">||</span>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">ni</span><span class="p">][</span><span class="n">nj</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>          <span class="c1"># odd number check</span>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="n">live</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>            <span class="o">||</span>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="n">equivalent</span>
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>            <span class="o">||</span>
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="n">live</span> <span class="o">+=</span> <span class="n">board</span><span class="p">[</span><span class="n">ni</span><span class="p">][</span><span class="n">nj</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mi">1</span>      <span class="c1"># check current state &amp; update</span>
+</span></code></pre></div>
+</div>
 <!-- solution:end -->
 <!-- gated-content end -->
 <form class="md-feedback" hidden="" name="feedback">
