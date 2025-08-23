@@ -660,6 +660,14 @@
 <!-- vide solution: end -->
 <!-- solution:start -->
 <h3 id="approach-dfs">Approach: DFS</h3>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(mn)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(mn)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Algorithm</p>
+<p>This problem can be solved using a depth-first search (DFS). We first define a helper function, explore, that performs a DFS starting from a given cell and records the position of each cell in the island relative to the first cell of the island. We then store these relative positions in a set, shape. The explore function adds the current cell to visited and shapes and then recursively explores adjacent cells.</p>
+<p>We then traverse the grid. For each unvisited cell that is part of an island, we initialize shape to an empty set and call explore from that cell. After exploring the island, we add shape to shapes, which is the set of all distinct shapes. Finally, we return the number of distinct shapes.</p>
+<p>The time complexity of this solution is O(mn), where m and n are the number of rows and columns in the grid, respectively. This is because we visit each cell once. The space complexity is also O(mn), due to storing visited and shapes.</p>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
