@@ -9,9 +9,9 @@
 <meta content="A.S.Chauhan" name="author"/>
 <link href="https://dsabible.com/problems/1765/" rel="canonical"/>
 <link href="../1738/" rel="prev"/>
-<link href="../1985/" rel="next"/>
+<link href="../1937/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.17" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
 <title>1765. Map of Highest Peak - DSA-Bible</title>
 <link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
@@ -1652,6 +1652,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../256/">
+<span class="md-ellipsis">
+    256. Paint House 🔒
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../257/">
 <span class="md-ellipsis">
     257. Binary Tree Paths
@@ -1663,6 +1671,14 @@
 <a class="md-nav__link" href="../259/">
 <span class="md-ellipsis">
     259. 3Sum Smaller 🔒
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../265/">
+<span class="md-ellipsis">
+    265. Paint House II 🔒
     
   </span>
 </a>
@@ -2228,6 +2244,14 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../1730/">
+<span class="md-ellipsis">
+    1730. Shortest Path to Get Food 🔒
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../1738/">
 <span class="md-ellipsis">
     1738. Find Kth Largest XOR Coordinate Value
@@ -2272,6 +2296,14 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1937/">
+<span class="md-ellipsis">
+    1937. Maximum Number of Points with Cost
+    
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../1985/">
@@ -2424,28 +2456,29 @@
 <p><span class="md-tag md-tag--medium">Medium</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
-<p>You are given an integer matrix isWater of size m x n that represents a map of land and water cells.</p>
+<p>You are given an integer matrix <code>isWater</code> of size <code>m x n</code> that represents a map of land and water cells.</p>
 <ul>
-<li>If isWater[i][j] == 0, cell (i, j) is a land cell.</li>
-<li>If isWater[i][j] == 1, cell (i, j) is a water cell.</li>
+<li>If <code>isWater[i][j] == 0</code>, cell <code>(i, j)</code> is a land cell.</li>
+<li>If <code>isWater[i][j] == 1</code>, cell <code>(i, j)</code> is a water cell.</li>
 </ul>
 <p>You must assign each cell a height in a way that follows these rules:</p>
 <ul>
 <li>The height of each cell must be non-negative.</li>
-<li>If the cell is a water cell, its height must be 0.</li>
-<li>Any two adjacent cells must have an absolute height difference of at most 1. A cell is adjacent to another cell if the former is directly north, east, south, or west of the latter (i.e., their sides are touching).</li>
+<li>If the cell is a water cell, its height must be <code>0</code>.</li>
+<li>Any two adjacent cells must have an absolute height difference of at most <code>1</code>.</li>
+<li>A cell is adjacent to another cell if the former is directly north, east, south, or west of the latter (i.e., their sides are touching).</li>
 </ul>
 <p>Find an assignment of heights such that the maximum height in the matrix is maximized.</p>
-<p>Return an integer matrix height of size m x n where height[i][j] is cell (i, j)'s height. If there are multiple solutions, return any of them.</p>
+<p>Return an integer matrix <code>height</code> of size <code>m x n</code> where <code>height[i][j]</code> is cell <code>(i, j)'s</code> height. If there are multiple solutions, return any of them.</p>
 <p><strong>Example 1:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82045-am.png"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82045-am.png" width="400px"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82045-am.png"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82045-am.png" width="300px"/></a></p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isWater = [[0,1],[0,0]]</span>
 </span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">0</span><span class="p p-Indicator">],[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">1</span><span class="p p-Indicator">]]</span>
 </span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The image shows the assigned heights of each cell.</span>
 </span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">The blue cell is the water cell, and the green cells are the land cells.</span>
 </span></code></pre></div>
 <p><strong>Example 2:</strong></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82050-am.png"><img alt="Example_2_img" src="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82050-am.png" width="400px"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82050-am.png"><img alt="Example_2_img" src="https://assets.leetcode.com/uploads/2021/01/10/screenshot-2021-01-11-at-82050-am.png" width="300px"/></a></p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isWater = [[0,0,1],[1,0,0],[0,0,0]]</span>
 </span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">0</span><span class="p p-Indicator">],[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">1</span><span class="p p-Indicator">],[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">]]</span>
 </span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nt">Explanation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A height of 2 is the maximum possible height of any assignment.</span>
@@ -2453,10 +2486,10 @@
 </span></code></pre></div>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li>m == isWater.length</li>
-<li>n == isWater[i].length</li>
-<li>1 &lt;= m, n &lt;= 1000</li>
-<li>isWater[i][j] is 0 or 1.</li>
+<li><code>m == isWater.length</code></li>
+<li><code>n == isWater[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 1000</code></li>
+<li><code>isWater[i][j] is 0 or 1</code>.</li>
 <li>There is at least one water cell.</li>
 </ul>
 <p><strong>Note:</strong> This question is the same as <a href="../542">542. 01 Matrix</a></p>
@@ -2701,10 +2734,10 @@
 </div>
 </a>
 <!-- Link to next page -->
-<a aria-label="Next: 1985. Find the Kth Largest Integer in the Array" class="md-footer__link md-footer__link--next" href="../1985/">
+<a aria-label="Next: 1937. Maximum Number of Points with Cost" class="md-footer__link md-footer__link--next" href="../1937/">
 <div class="md-footer__title">
 <span class="md-footer__direction">Next</span>
-<div class="md-ellipsis">1985. Find the Kth Largest Integer in the Array</div>
+<div class="md-ellipsis">1937. Maximum Number of Points with Cost</div>
 </div>
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
