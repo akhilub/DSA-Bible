@@ -50,7 +50,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -2539,17 +2539,35 @@
 <p><span class="twemoji md-checkmark"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(capacity)\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
-<p>We can implement an LRU (Least Recently Used) cache using a "hash table" and a "doubly linked list".</p>
+<p>To achieve <span class="arithmatex">\(O(1)\)</span> time complexity for both <code>get</code> and <code>put</code> operations, we can use a combination of a hash table (dictionary) and a doubly linked list.</p>
+<ol>
+<li>
+<p><strong>Hash Table</strong>: This will store the keys and their corresponding nodes in the doubly linked list. This allows us to access nodes in <span class="arithmatex">\(O(1)\)</span> time.</p>
+</li>
+<li>
+<p><strong>Doubly Linked List</strong>: This will maintain the order of usage of the nodes. The most recently used node will be at the tail, and the least recently used node will be at the head. When we access or update a node, we will move it to the tail of the list. When we need to evict a node, we will remove the head of the list.</p>
+</li>
+</ol>
+<p>The steps for each operation are as follows:</p>
+<p><strong>Get</strong> Method:</p>
 <ul>
-<li>Hash Table: Used to store cache entries for O(1) access.</li>
-<li>Doubly Linked List: Used to maintain the order of usage, with head being the most recently used and tail being the least recently used.</li>
+<li>If the key exists in the hash table, retrieve the corresponding node.<ul>
+<li>Move this node to the tail of the doubly linked list (marking it as most recently used).</li>
+<li>Return the value of the node.</li>
 </ul>
-<p>Define helper methods to remove a node from the list and to insert a node at right before tail of the list.</p>
+</li>
+<li>If the key does not exist, return -1.</li>
+</ul>
+<p><strong>Put</strong> Method:</p>
 <ul>
-<li>In the get method, if the key exists, move the corresponding node to the head of the list and return its value.</li>
-<li>In the put method, if the key exists, remove the old node. Insert the new node to the tail of the list. If the cache exceeds capacity, remove the node from the head of the list.</li>
+<li>If the key already exists, update its value and move it to the tail of the list.</li>
+<li>If the key does not exist:<ul>
+<li>If the cache is at capacity, remove the head of the list (the least recently used node) and delete its entry from the hash table.</li>
+<li>Create a new node with the key and value, add it to the tail of the list, and add it to the hash table.</li>
 </ul>
-<p>The time complexity is <span class="arithmatex">\(O(1)\)</span>, and the space complexity is <span class="arithmatex">\(O(\textit{capacity})\)</span>.</p>
+</li>
+</ul>
+<p>This approach ensures that both operations run in constant time, <span class="arithmatex">\(O(1)\)</span>.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
