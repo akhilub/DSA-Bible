@@ -50,7 +50,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></link></meta></meta></meta></meta></meta></link><link href="../../assets/stylesheets/panzoom.css" rel="stylesheet"/><meta content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}' name="panzoom-data"/><meta content="material" name="panzoom-theme"/></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -2547,7 +2547,7 @@
 <p>Define helper methods to remove a node from the list and to insert a node at right before tail of the list.</p>
 <ul>
 <li>In the get method, if the key exists, move the corresponding node to the head of the list and return its value.</li>
-<li>In the put method, if the key exists, remove the old node. Add the new node to the head of the list. If the cache exceeds capacity, remove the node from the tail of the list.</li>
+<li>In the put method, if the key exists, remove the old node. Insert the new node to the tail of the list. If the cache exceeds capacity, remove the node from the head of the list.</li>
 </ul>
 <p>The time complexity is <span class="arithmatex">\(O(1)\)</span>, and the space complexity is <span class="arithmatex">\(O(\textit{capacity})\)</span>.</p>
 </div>
