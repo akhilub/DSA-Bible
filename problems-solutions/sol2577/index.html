@@ -1661,6 +1661,15 @@
 </blockquote>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Time complexity: <span class="arithmatex">\(O(m \cdot n \log(m \cdot n))\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span> Space complexity: <span class="arithmatex">\(O(m \cdot n)\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>The problem involves finding the shortest time to reach the bottom-right cell from the top-left cell in a grid where each cell has a minimum time requirement to be visited.</p>
+<p>We should use a priority queue (min-heap) to expand the least time-consuming option first, which is typical for shortest path problems with weighted edges.</p>
+<p>The initial check ensures that we can move from the starting cell (0,0) to either (0,1) or (1,0) since being stuck at the start would mean we can never leave.</p>
+<p>We use a set to keep track of visited cells to prevent re-processing them.</p>
+<p>For each cell, we calculate the next possible time we can move to its neighbors. If the target cell's minimum time requirement is greater than our current time, we might need to wait until the time requirement is met. Since we can only wait in place by making unnecessary moves (back and forth), the waiting time is calculated as a multiple of 2 seconds.</p>
+<p>The algorithm continues until the bottom-right cell is reached or there are no more cells to explore.</p>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python(Advcanced)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1716,9 +1725,9 @@
 </span></code></pre></div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">new_cost</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_cost</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">grid</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                                <span class="o">||</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                                <span class="o">||</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>                                <span class="o">||</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                        <span class="o">||</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                        <span class="o">||</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>                        <span class="o">||</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">new_cost</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">nr</span><span class="p">][</span><span class="n">nc</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_cost</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span>
 </span></code></pre></div>
