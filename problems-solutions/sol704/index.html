@@ -113,7 +113,7 @@
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
     body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1400,6 +1400,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1698,9 +1708,9 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">r</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">while</span> <span class="n">l</span> <span class="o">&lt;=</span><span class="n">r</span><span class="p">:</span> <span class="c1">#left &lt; = right</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">while</span> <span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">:</span>                       <span class="c1">#read as left &lt;= right</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">l</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;</span><span class="n">target</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                <span class="c1">#update right pointer since target lies in left half</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="k">elif</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
@@ -1714,13 +1724,6 @@
 </div>
 </div>
 </div>
-<details class="info">
-<summary>Why Algorithm2 is Faster?</summary>
-<p><strong>Hermann Bottenbruch alternative procedure</strong></p>
-<ul>
-<li>In the above procedure, the algorithm checks whether the middle element (<code>mid</code>) is equal to the target (<code>target</code>) in every iteration. Some implementations leave out this check during each iteration. The algorithm would perform this check only when one element is left (when 𝐿 = 𝑅 ). This results in a faster comparison loop, as one comparison is eliminated per iteration, while it requires only one more iteration on average</li>
-</ul>
-</details>
 <div class="admonition note">
 <p class="admonition-title">Algorithm2 : Faster</p>
 <p>We define the left boundary <span class="arithmatex">\(l=0\)</span> and the right boundary <span class="arithmatex">\(r=n-1\)</span> for binary search.</p>
@@ -1768,6 +1771,13 @@
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">||</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="l l-Scalar l-Scalar-Plain">mid = (r-(r-l)//2)</span>
 </span></code></pre></div>
+</details>
+<details class="info">
+<summary>Why Algorithm2 is Faster?</summary>
+<p><strong>Hermann Bottenbruch alternative procedure</strong></p>
+<ul>
+<li>In the above procedure, the algorithm checks whether the middle element (<code>mid</code>) is equal to the target (<code>target</code>) in every iteration. Some implementations leave out this check during each iteration. The algorithm would perform this check only when one element is left (when 𝐿 = 𝑅 ). This results in a faster comparison loop, as one comparison is eliminated per iteration, while it requires only one more iteration on average</li>
+</ul>
 </details>
 <h4 id="way-3">Way 3:</h4>
 <div class="admonition tip">
