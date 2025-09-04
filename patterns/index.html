@@ -1400,6 +1400,8 @@
       
         
       
+        
+      
     
     
     
@@ -1738,6 +1740,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tag:backtracking--constraint-satisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backtracking / Constraint Satisfaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag:backtracking--subsets-include-or-exclude" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backtracking / Subsets (Include or Exclude)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tag:graph--deep-copy-or-cloning" class="md-nav__link">
     <span class="md-ellipsis">
       Graph / Deep Copy or Cloning
@@ -1992,7 +2012,8 @@ window.transformPatternsToHierarchy = function() {
     const contentInner = document.querySelector('.md-content__inner');
     const insertPoint = contentInner.querySelector('.md-post__authors').parentElement || contentInner.querySelector('h1');
 
-    Object.entries(hierarchy).forEach(([parent, children]) => {
+    const entries = Object.entries(hierarchy);
+    entries.reverse().forEach(([parent, children]) => {
         // Create parent heading with md-tag styling
         const parentH2 = document.createElement('h2');
         const parentSpan = document.createElement('span');
@@ -2002,7 +2023,7 @@ window.transformPatternsToHierarchy = function() {
         parentH2.id = parent.toLowerCase().replace(/\s+/g, '-');
         insertPoint.insertAdjacentElement('afterend', parentH2);
 
-        children.forEach(child => {
+        children.reverse().forEach(child => {
             // Create child heading with md-tag styling
             const childH3 = document.createElement('h3');
             const childSpan = document.createElement('span');
@@ -2138,6 +2159,52 @@ document.addEventListener('DOMContentLoaded', function() {
       <li>
         <a href="../problems/66/">
           66. Plus One
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:backtracking--constraint-satisfaction">
+
+
+<span class="md-tag">Backtracking / Constraint Satisfaction</span></h2>
+  <ul>
+    
+      <li>
+        <a href="../problems/17/">
+          17. Letter Combinations of a Phone Number
+        </a>
+      </li>
+    
+    
+  </ul>
+
+
+
+  <h2 id="tag:backtracking--subsets-include-or-exclude">
+
+
+<span class="md-tag">Backtracking / Subsets (Include or Exclude)</span></h2>
+  <ul>
+    
+      <li>
+        <a href="../problems/77/">
+          77. Combinations
+        </a>
+      </li>
+    
+      <li>
+        <a href="../problems/78/">
+          78. Subsets
+        </a>
+      </li>
+    
+      <li>
+        <a href="../problems/90/">
+          90. Subsets II
         </a>
       </li>
     
