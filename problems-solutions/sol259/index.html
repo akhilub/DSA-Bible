@@ -107,7 +107,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1673,6 +1673,19 @@
 <!-- solution:start -->
 
 <h3 id="approach-sorting-two-pointers">Approach : Sorting + Two Pointers</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n^2)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>To solve this problem, we can use a sorting and two-pointer approach. First, we sort the input array <code>nums</code>. Then, we iterate through the array with an index <code>i</code>, and for each <code>i</code>, we use two pointers <code>l</code> and <code>r</code> to find pairs of numbers that, along with <code>nums[i]</code>, sum to less than the target.</p>
+<p>Specifically, for each fixed <code>i</code>, we set <code>l</code> to <code>i + 1</code> (the next element) and <code>r</code> to <code>n-1</code> (the last element of the array).</p>
+<p>We then check the sum of <code>nums[i]</code>, <code>nums[l]</code>, and <code>nums[r]</code>.</p>
+<ul>
+<li>If this sum is less than the target, it means that all combinations of <code>nums[i]</code> with <code>nums[l]</code> and any element between <code>l</code> and <code>r</code> will also be less than the target (since the array is sorted). Therefore, we can add <code>(r - l)</code> to our count <code>ans</code> and move the left pointer <code>l</code> one step to the right to explore more combinations.</li>
+<li>If the sum is greater than or equal to the target, we move the right pointer <code>r</code> one step to the left to try a smaller sum.</li>
+</ul>
+<p>We repeat this process until the left pointer is no longer less than the right pointer. This approach ensures that we efficiently count all valid triplets without needing to check every possible combination explicitly.</p>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
