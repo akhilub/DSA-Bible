@@ -7972,7 +7972,7 @@
 
     <!-- Further information -->
     <div class="md-footer-meta md-typeset">
-        <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-meta__inner md-grid footer-layout">
             <div class="md-copyright">
   <div class="md-copyright__highlight">Ownership, Copyright, © 2025 <a href="https://github.com/akhilub" target="_blank" rel="noopener">A.S.Chauhan</a></div>
 
@@ -7984,13 +7984,24 @@
 </div>
 
             <!--Legal page links-->
-            <div class="footer-legal">
-    <a href="/legal/terms-of-service/">Terms of Service</a>
-    <a href="/legal/privacy-policy/">Privacy Policy</a>
-    <a href="/legal/subscription-agreement/">Subscription Agreement</a>
+            <div class="footer-center">
+    <div class="footer-legal">
+        <a href="/legal/terms-of-service/">Terms of Service</a>
+        <a href="/legal/privacy-policy/">Privacy Policy</a>
+        <a href="/legal/subscription-agreement/">Subscription Agreement</a>
+    </div>
+    <div class="footer-quote">"Designed with passion, Built for love, and Inspired by life"</div>
 </div>
 
 <style>
+.footer-center {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+}
+
 .footer-legal{
     color: var(--md-footer-fg-color--lighter);
     font-size: .64rem;
@@ -8005,6 +8016,27 @@
   color: var(--md-footer-fg-color);
   text-decoration: underline;
   background-color: var(--md-footer-bg-color--dark);
+}
+
+.footer-quote {
+    color: var(--md-footer-fg-color--lighter);
+    font-size: .6rem;
+    font-style: italic;
+    margin-top: .2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-center {
+        flex-direction: column;
+        text-align: left;
+        margin: auto 0.6rem;
+    }
+    .footer-legal {
+        gap: 3rem;
+        margin: auto 0;
+        display: flex;
+        justify-content: center;
+    }
 }
 </style>
 
@@ -8073,6 +8105,40 @@
         </div>
     </div>
 </footer>
+
+<style>
+.footer-layout {
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.md-copyright {
+    flex: 1;
+    text-align: left;
+}
+
+.md-social {
+    flex: 1;
+    text-align: right;
+    display: flex !important;
+    justify-content: end !important;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-layout {
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .md-copyright,
+    .md-social {
+        text-align: left;
+    }
+}
+</style>
       
     </div>
     <div class="md-dialog" data-md-component="dialog">
