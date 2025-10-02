@@ -107,7 +107,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1677,6 +1677,8 @@
 <!-- solution:start -->
 
 <h3 id="approach-linked-list-reordering-partioning">Approach : Linked List - Reordering / Partioning</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
 <p>We can use two pointers <span class="arithmatex">\(odd\)</span> and <span class="arithmatex">\(even\)</span> to represent the tail nodes of the odd and even nodes respectively. Initially, pointer <span class="arithmatex">\(odd\)</span> points to the head node <span class="arithmatex">\(head\)</span> of the list, and pointer <span class="arithmatex">\(even\)</span> points to the second node <span class="arithmatex">\(head.next\)</span> of the list. In addition, we use a pointer <span class="arithmatex">\(curr\)</span> to point to the head node <span class="arithmatex">\(head.next\)</span> of the even nodes, which is the initial position of pointer <span class="arithmatex">\(even\)</span>.</p>
