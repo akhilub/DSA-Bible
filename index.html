@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1950,20 +1950,11 @@ config:
 ---
 flowchart LR
  subgraph Source_Repository["Source_Repository"]
-        RepoRoot["Repo root"]
-        mkdocsYml["mkdocs.yml"]
-        reqTxt["requirements.txt"]
-        scriptsDir["scripts/"]
-        genNav["gen_nav.py"]
-        docsContent["docs/"]
-        overridesDir["overrides/"]
-        includesDir["docs/_includes/"]
-        authActionsDir["auth0-actions/"]
-        ghFolder[".github/"]
+        Repo["Repo"]
+        ciYaml["ci.yaml"]
   end
  subgraph CI_CD_Pipeline["CI_CD_Pipeline"]
         CI["GitHub Actions"]
-        ciYaml["ci.yaml"]
   end
  subgraph Static_Hosting["Static_Hosting"]
         Host["GitHub Pages"]
@@ -1973,39 +1964,26 @@ flowchart LR
         Browser["Browser"]
         authJs["auth.js"]
   end
-  subgraph Backend["Service Workers"]
-      Auth0["Auth0"]
-      Stripe["Stripe"]
+ subgraph Auth0-Actions["Actions"]
+        Actions["Simultaneous Connect User"]
   end
-    RepoRoot -- Git Push --&gt; CI
-    mkdocsYml --&gt; CI
-    reqTxt --&gt; CI
-    scriptsDir --&gt; CI
-    genNav --&gt; CI
-    docsContent --&gt; CI
-    overridesDir --&gt; CI
-    includesDir --&gt; CI
-    authActionsDir --&gt; CI
-    ghFolder --&gt; CI
-    ciYaml --&gt; CI
+ subgraph Backend["Service Workers"]
+        Auth0["Auth0"]
+        Stripe["Stripe"]
+  end
+    Repo -- Git Push --&gt; CI
+    ciYaml --Git Push --&gt; CI
     CI -- Deploy site/ --&gt; Host
     CNAME --&gt; Host
     Browser -- HTTPS GET --&gt; Host
     Host -- HTML/CSS/JS --&gt; Browser
     Browser -- Auth Request --&gt; Auth0["Auth0"]
+    Auth0 --&gt; Actions
+    Actions -- postLoginScript --&gt; Stripe
     Auth0 -- Payment Actions--&gt; Stripe["Stripe"]
     Stripe -- Validation--&gt; Auth0
     Auth0 -- JWT / Session --&gt; Browser
-     RepoRoot:::artifact
-     mkdocsYml:::artifact
-     reqTxt:::artifact
-     scriptsDir:::artifact
-     genNav:::artifact
-     docsContent:::artifact
-     overridesDir:::artifact
-     includesDir:::artifact
-     authActionsDir:::artifact
-     ghFolder:::artifact
+     Repo:::artifact
      CI:::build
      ciYaml:::artifact
      Host:::runtime
@@ -2013,25 +1991,18 @@ flowchart LR
      Browser:::runtime
      authJs:::artifact
      Auth0:::external
-     postLoginStripe:::artifact
      Stripe:::external
+     Actions:::runtime
+
     classDef build fill: #0fb7cde0,stroke:#333,stroke-width:1px
     classDef runtime fill:  #00c98dcc,stroke:#333,stroke-width:1px
     classDef external fill: #ff4220bd, stroke:#333,stroke-width:1px
     classDef artifact fill: #f21cb28f ,stroke:#333,stroke-width:1px
-    click RepoRoot "https://github.com/akhilub/dsa-bible-source/tree/main/"
-    click mkdocsYml "https://github.com/akhilub/dsa-bible-source/blob/main/mkdocs.yml"
-    click reqTxt "https://github.com/akhilub/dsa-bible-source/blob/main/requirements.txt"
-    click scriptsDir "https://github.com/akhilub/dsa-bible-source/tree/main/scripts/"
-    click genNav "https://github.com/akhilub/dsa-bible-source/blob/main/scripts/gen_nav.py"
-    click docsContent "https://github.com/akhilub/dsa-bible-source/tree/main/docs/"
-    click overridesDir "https://github.com/akhilub/dsa-bible-source/tree/main/overrides/"
-    click includesDir "https://github.com/akhilub/dsa-bible-source/tree/main/docs/_includes/"
-    click authActionsDir "https://github.com/akhilub/dsa-bible-source/tree/main/auth0-actions/"
+    click Repo "https://github.com/akhilub/dsa-bible-source/tree/main/"
     click ciYaml "https://github.com/akhilub/dsa-bible-source/blob/main/.github/workflows/ci.yaml"
     click CNAME "https://github.com/akhilub/dsa-bible-source/tree/main/docs/CNAME"
     click authJs "https://github.com/akhilub/dsa-bible-source/blob/main/docs/javascripts/auth.js"
-    click postLoginStripe "https://github.com/akhilub/dsa-bible-source/blob/main/auth0-actions/post-login-stripe.js"</code></pre> 
+    click Actions "https://github.com/akhilub/dsa-bible-source/blob/main/auth0-actions/post-login-stripe.js"</code></pre> 
     <div class="panzoom-info-box panzoom-info-box-bottom">
 Hold "Alt" / "Option" to enable pan &amp; zoom
 </div>
