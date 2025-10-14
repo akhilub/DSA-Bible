@@ -1971,18 +1971,18 @@ flowchart LR
         Auth0["Auth0"]
         Stripe["Stripe"]
   end
-    Repo -- Git Push --&gt; CI
-    ciYaml --Git Push --&gt; CI
-    CI -- Deploy site/ --&gt; Host
-    CNAME --&gt; Host
-    Browser -- HTTPS GET --&gt; Host
-    Host -- HTML/CSS/JS --&gt; Browser
-    Browser -- Auth Request --&gt; Auth0["Auth0"]
-    Auth0 --&gt; Actions
-    Actions -- postLoginScript --&gt; Stripe
-    Auth0 -- Payment Actions--&gt; Stripe["Stripe"]
-    Stripe -- Validation--&gt; Auth0
-    Auth0 -- JWT / Session --&gt; Browser
+    Repo L_Repo_CI_0@-- Git Push --&gt; CI
+    ciYaml L_ciYaml_CI_0@-- Git Push --&gt; CI
+    CI L_CI_Host_0@-- Deploy site/ --&gt; Host
+    CNAME L_CNAME_Host_0@--&gt; Host
+    Browser L_Browser_Host_0@-- HTTPS GET --&gt; Host
+    Host L_Host_Browser_0@-- HTML/CSS/JS --&gt; Browser
+    Browser L_Browser_Auth0_0@-- Auth Request --&gt; Auth0
+    Auth0 L_Auth0_Actions_0@==&gt; Actions
+    Actions L_Actions_Stripe_0@== postLoginScript ==&gt; Stripe
+    Auth0 L_Auth0_Stripe_0@-- Payment Actions --&gt; Stripe
+    Stripe L_Stripe_Auth0_0@-- Validation --&gt; Auth0
+    Auth0 L_Auth0_Browser_0@-- JWT / Session --&gt; Browser
      Repo:::artifact
      CI:::build
      ciYaml:::artifact
@@ -1998,6 +1998,20 @@ flowchart LR
     classDef runtime fill:  #00c98dcc,stroke:#333,stroke-width:1px
     classDef external fill: #ff4220bd, stroke:#333,stroke-width:1px
     classDef artifact fill: #f21cb28f ,stroke:#333,stroke-width:1px
+    linkStyle 7 stroke:#00C853
+    linkStyle 8 stroke:#00C853
+    L_Repo_CI_0@{ animation: slow }
+    L_ciYaml_CI_0@{ animation: slow }
+    L_CI_Host_0@{ animation: slow }
+    L_CNAME_Host_0@{ animation: slow }
+    L_Browser_Host_0@{ animation: slow }
+    L_Host_Browser_0@{ animation: slow }
+    L_Browser_Auth0_0@{ animation: slow }
+    L_Auth0_Actions_0@{ animation: slow }
+    L_Actions_Stripe_0@{ animation: slow }
+    L_Auth0_Stripe_0@{ animation: slow }
+    L_Stripe_Auth0_0@{ animation: slow }
+    L_Auth0_Browser_0@{ animation: slow }
     click Repo "https://github.com/akhilub/dsa-bible-source/tree/main/"
     click ciYaml "https://github.com/akhilub/dsa-bible-source/blob/main/.github/workflows/ci.yaml"
     click CNAME "https://github.com/akhilub/dsa-bible-source/tree/main/docs/CNAME"
