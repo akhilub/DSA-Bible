@@ -107,7 +107,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1743,10 +1743,13 @@
 <p>USING TWO POINTERS TO REVERSE SUB ARRAYS TO ROTATE</p>
 <p>Write this in interviews</p>
 </blockquote>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
+<p>We'll implement an in-place rotation algorithm that minimizes extra space usage and handles cases where k might be larger than the array length.</p>
 <p>We can reverse the array once, then reverse the first <span class="arithmatex">\(k\)</span> elements, and then reverse the last <span class="arithmatex">\(n-k\)</span> elements.</p>
-<p>The time complexity is <span class="arithmatex">\(O(n)\)</span>.</p>
+<p>The time complexity is <span class="arithmatex">\(O(n)\)</span>. We perform three reverse operations, each taking <span class="arithmatex">\(O(n/2)\)</span> time. Space complexity is O(1) as we modify the array in-place.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
 <div class="tabbed-content">
@@ -1764,7 +1767,7 @@
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="k">return</span> <span class="n">arr</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">%</span><span class="n">n</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">%</span><span class="n">n</span>                   <span class="c1">#to handle cases where k is larger than the array length.</span>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">reverseList</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#Reverse the entire array.</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">reverseList</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#Reverse the first elements.</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">reverseList</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#Reverse the last n-k elements</span>
