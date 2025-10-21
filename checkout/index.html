@@ -107,7 +107,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1792,8 +1792,10 @@ function showError(message) {
 <style>
 .checkout-container {
   max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .checkout-header {
@@ -1811,8 +1813,69 @@ function showError(message) {
 }
 
 #checkout {
-  min-height: 400px;
+  /* height: 100vh; */
+  overflow: scroll;
+  /* min-height: 1000px;*/
+
 }
+
+#checkout iframe {
+  height: 100vh !important;
+  width: 100% !important;
+  display: block !important;
+  border: none !important;
+  transition: height 0.3s ease;
+}
+
+/* --- Desktop (large screens) --- */
+@media screen and (min-width: 1600px) {
+  #checkout iframe {
+    height: 100vh !important;
+    min-height: 1050px !important;
+  }
+}
+
+/* --- Standard laptop / mid desktop --- */
+@media screen and (min-width: 1025px) and (max-width: 1599px) {
+  #checkout iframe {
+    height: 100vh !important;
+    min-height: 850px !important;
+  }
+}
+
+/* --- Tablet screens --- */
+
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #checkout iframe {
+    height: 100vh !important;
+    min-height: 900px !important;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 819px) {
+  #checkout iframe {
+    height: 100vh !important;
+    min-height: 1000px !important;
+  }
+}
+
+/* --- Small tablets & large phones --- */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  #checkout iframe {
+    height: 100vh !important;
+    min-height: 1150px !important;
+  }
+}
+
+/* --- Small phones --- */
+@media screen and (max-width: 480px) {
+  #checkout iframe {
+    height: 100vh !important;
+    min-height: 1100px !important;
+  }
+}
+
 
 .loading, .error {
   text-align: center;
