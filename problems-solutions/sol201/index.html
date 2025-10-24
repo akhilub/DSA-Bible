@@ -107,7 +107,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1702,7 +1702,7 @@
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(\log n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition tip">
-<p class="admonition-title">Algorithm</p>
+<p class="admonition-title">Algorithm Discussion</p>
 <ul>
 <li>The key observation is that the bitwise AND of a range of numbers will zero out all the bits that differ between the smallest and largest number in the range.</li>
 <li>By shifting both numbers to the right until they are equal, we effectively find the common prefix of their binary representations.</li>
@@ -1711,21 +1711,88 @@
 <p><strong>Time Complexity:</strong> <span class="arithmatex">\(O(\log n)\)</span> where <span class="arithmatex">\(n\)</span> is the difference between right and left. This is because in the worst case, we might need to shift the bits for the entire range, which is proportional to the number of bits in the integer, i.e., <span class="arithmatex">\(\log n\)</span>.</p>
 <p><strong>Space Complexity:</strong> <span class="arithmatex">\(O(1)\)</span> because we are using a constant amount of extra space regardless of the input size.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Algorithm Implementation</p>
+<p>When you AND all numbers in a range together, only the bits that stay constant across every number survive. Everything else becomes zero.</p>
+<p>Within the range [left , right], the least significant bits will change. But the most significant bits (the prefix) remain the same across the range. So you just need to find the longest common binary prefix of left and right.</p>
+<p>Here is how to solve the problem:</p>
+<ol>
+<li>
+<p>Continuously right-shift both left and right numbers until they become equal. This will give you the longest common prefix.</p>
+</li>
+<li>
+<p>Keep track of the number of shifts</p>
+</li>
+<li>
+<p>Left-shift the prefix by the number of shifts to get the answer</p>
+</li>
+</ol>
+</div>
+<details class="abstract">
+<summary>Illustration</summary>
+<p>For example:</p>
+<ul>
+<li>
+<p>left = 7 (111 in binary)</p>
+</li>
+<li>
+<p>right = 9 (1001 in binary)</p>
+</li>
+</ul>
+<p>Shifting right once gives:</p>
+<ul>
+<li>
+<p>7 becomes 3 (011 in binary)</p>
+</li>
+<li>
+<p>9 becomes 4 (100 in binary)</p>
+</li>
+</ul>
+<p>Shifting right once more gives:</p>
+<ul>
+<li>
+<p>3 becomes 1 (1 in binary)</p>
+</li>
+<li>
+<p>4 becomes 2 (10 in binary)</p>
+</li>
+</ul>
+<p>Now both numbers are not equal yet, so we shift right once more:</p>
+<ul>
+<li>
+<p>1 becomes 0 (0 in binary)</p>
+</li>
+<li>
+<p>2 becomes 1 (1 in binary)</p>
+</li>
+</ul>
+<p>Shifting right once more , since both numbers are not equal gives:</p>
+<ul>
+<li>
+<p>0 becomes 0 (0 in binary)</p>
+</li>
+<li>
+<p>1 becomes 0 (0 in binary)</p>
+</li>
+</ul>
+<p>Now both numbers are equal to 0. We shifted 4 times in total.</p>
+<p>The common prefix is 0. Left-shifting it back by 4 gives 0, which is the final result.</p>
+</details>
 <blockquote>
 <p>Way 1: Iterative</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python_1</label><label for="__tabbed_1_2">Python_2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python (Basic)</label><label for="__tabbed_1_2">Python (Advanced)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">rangeBitwiseAnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">shift</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="c1"># Find the common prefix bits</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">shift</span> <span class="o">=</span> <span class="mi">0</span>                       <span class="c1"># Track number of shifts</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="c1"># Find the common prefix bits by shifting right</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">:</span>     <span class="c1"># or, while left != right:</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="n">left</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="n">right</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="n">shift</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="c1"># Append zeros to the right</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="c1"># Shift back to get result</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">return</span> <span class="n">left</span> <span class="o">&lt;&lt;</span> <span class="n">shift</span>
 </span></code></pre></div>
 </div>
