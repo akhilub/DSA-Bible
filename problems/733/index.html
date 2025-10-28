@@ -111,7 +111,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -8269,24 +8269,47 @@
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
 
-<p>Given strings <code>s1</code> and <code>s2</code>, return the minimum contiguous substring part of <code>s1</code>, so that <code>s2</code> is a subsequence of the part.</p>
-<p>If there is no such window in s1 that covers all characters in <code>s2</code>, return the empty string <code>""</code>. If there are multiple such minimum-length windows, return the one with the <strong>left-most starting index</strong>.</p>
+<p>You are given an image represented by an <code>m x n</code> grid of integers <code>image</code>, where <code>image[i][j]</code> represents the pixel value of the image. You are also given three integers <code>sr</code>, <code>sc</code>, and <code>color</code>. Your task is to perform a <strong>flood fill</strong> on the image starting from the pixel <code>image[sr][sc]</code>.</p>
+<p>To perform a <strong>flood fill</strong>:</p>
+<ol>
+<li>
+<p>Begin with the starting pixel and change its color to <code>color</code>.</p>
+</li>
+<li>
+<p>Perform the same process for each pixel that is <strong>directly adjacent</strong> (pixels that share a side with the original pixel, either horizontally or vertically) and shares the <strong>same color</strong> as the starting pixel.</p>
+</li>
+<li>
+<p>Keep <strong>repeating</strong> this process by checking neighboring pixels of the updated pixels and modifying their color if it matches the original color of the starting pixel.</p>
+</li>
+<li>
+<p>The process <strong>stops</strong> when there are <strong>no more</strong> adjacent pixels of the original color to update.</p>
+</li>
+</ol>
+<p>Return the <strong>modified</strong> image after performing the flood fill.</p>
 <p><strong>Example 1:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s1 = "abcdebdde", s2 = "bde"</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="s">"bcde"</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">Explanation</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s">"bcde"</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is the answer because it occurs before "bdde" which has the same length.</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s">"deb"</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is not a smaller window because the elements of s2 in the window must occur in order.</span>
-</span></code></pre></div>
+<blockquote>
+<p><strong>Input:</strong> image = [ [1,1,1], [1,1,0], [1,0,1] ], sr = 1, sc = 1, color = 2</p>
+<p><strong>Output:</strong> [ [2, 2, 2], [2, 2, 0], [2, 0, 1] ]</p>
+<p><strong>Explanation:</strong></p>
+<p>From the center of the image with position (sr, sc) = (1, 1) (i.e., the red pixel), all pixels connected by a path of the same color as the starting pixel (i.e., the blue pixels) are colored with the new color.</p>
+<p>Note the bottom corner is not colored 2, because it is not horizontally or vertically connected to the starting pixel.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://assets.leetcode.com/uploads/2021/06/01/flood1-grid.jpg" data-desc-position="bottom"><img alt="Example_1_img" src="https://assets.leetcode.com/uploads/2021/06/01/flood1-grid.jpg"></a></p>
+</blockquote>
 <p><strong>Example 2:</strong></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s1 = "jmeqksfrsdcmsiwvaovztaqenprpvnbstl", s2 = "u"</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="s">""</span>
-</span></code></pre></div>
+<blockquote>
+<p><strong>Input:</strong> image = [ [0,0,0], [0,0,0] ], sr = 0, sc = 0, color = 0</p>
+<p><strong>Output:</strong> [ [0,0,0], [0,0,0] ]</p>
+<p><strong>Explanation:</strong></p>
+<p>The starting pixel is already colored with 0, which is the same as the target color. Therefore, no changes are made to the image.</p>
+</blockquote>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= s1.length &lt;= 2 * 104</code></li>
-<li><code>1 &lt;= s2.length &lt;= 100</code></li>
-<li><code>s1</code> and <code>s2</code> consist of lowercase English letters.</li>
+<li><code>m == image.length</code></li>
+<li><code>n == image[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 50</code></li>
+<li><code>0 &lt;= image[i][j], color &lt; 2¹⁶</code></li>
+<li><code>0 &lt;= sr &lt; m</code></li>
+<li><code>0 &lt;= sc &lt; n</code></li>
 </ul>
 <!-- description:end -->
 
