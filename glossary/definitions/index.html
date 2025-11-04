@@ -12,10 +12,10 @@
         <link rel="canonical" href="https://dsabible.com/glossary/definitions/">
       
       
-        <link rel="prev" href="../../patterns/">
+        <link rel="prev" href="../strategies/">
       
       
-        <link rel="next" href="../style-guide/">
+        <link rel="next" href="../graph/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -783,7 +783,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../style-guide/" class="md-tabs__link">
           
   
   
@@ -903,6 +903,8 @@
   
     
     
+      
+        
       
         
       
@@ -1670,6 +1672,8 @@
       
         
       
+        
+      
     
     
     
@@ -1710,6 +1714,52 @@
             Glossary
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Style-Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1856,13 +1906,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4">
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Theory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../style-guide/" class="md-nav__link">
+      <a href="../graph/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Style-Guide
+    Graph Theory
     
   </span>
   
@@ -1873,24 +1977,9 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../strategies/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Strategies
-    
-  </span>
-  
-
-      </a>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2626,547 +2715,6 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 <ul>
 <li>Best-first search algorithm for path finding</li>
 </ul>
-<details class="abstract">
-<summary>Types of Graph</summary>
-<ol>
-<li>
-<h3 id="undirected_1">Undirected</h3>
-<blockquote>
-<p>A graph where edges connect two vertices symmetrically, allowing traversal both ways.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="332pt" height="188pt" viewBox="0.00 0.00 332.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 328,-184 328,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 1&#45;&#45;2 --><g id="edge1" class="edge"><title>1--2</title><path fill="none" stroke="#9aff9a" d="M36.24,-162C63.94,-162 116.3,-162 143.91,-162"></path></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&#45;5 --><g id="edge2" class="edge"><title>1--5</title><path fill="none" stroke="#9aff9a" d="M18,-143.76C18,-116.06 18,-63.7 18,-36.09"></path></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="306" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="306" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 2&#45;&#45;3 --><g id="edge3" class="edge"><title>2--3</title><path fill="none" stroke="#9aff9a" d="M178.24,-153.88C205.9,-140.05 261.83,-112.08 289.6,-98.2"></path></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 2&#45;&#45;4 --><g id="edge4" class="edge"><title>2--4</title><path fill="none" stroke="#9aff9a" d="M162,-143.76C162,-116.06 162,-63.7 162,-36.09"></path></g><!-- 4&#45;&#45;3 --><g id="edge5" class="edge"><title>4--3</title><path fill="none" stroke="#9aff9a" d="M178.24,-26.12C205.9,-39.95 261.83,-67.92 289.6,-81.8"></path></g><!-- 4&#45;&#45;5 --><g id="edge6" class="edge"><title>4--5</title><path fill="none" stroke="#9aff9a" d="M143.76,-18C116.06,-18 63.7,-18 36.09,-18"></path></g></g></svg></p>
-</li>
-<li>
-<h3 id="directed_1">Directed</h3>
-<blockquote>
-<p>A graph where edges point from one vertex to another, restricting traversal to one direction.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="332pt" height="188pt" viewBox="0.00 0.00 332.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 328,-184 328,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 1&#45;&gt;2 --><g id="edge1" class="edge"><title>1-&gt;2</title><path fill="none" stroke="#9aff9a" d="M36.24,-162C60.8,-162 104.75,-162 133.65,-162"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="133.91,-165.5 143.91,-162 133.91,-158.5 133.91,-165.5"></polygon></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&gt;5 --><g id="edge2" class="edge"><title>1-&gt;5</title><path fill="none" stroke="#9aff9a" d="M18,-143.76C18,-119.2 18,-75.25 18,-46.35"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="21.5,-46.09 18,-36.09 14.5,-46.09 21.5,-46.09"></polygon></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="306" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="306" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 2&#45;&gt;3 --><g id="edge3" class="edge"><title>2-&gt;3</title><path fill="none" stroke="#9aff9a" d="M178.24,-153.88C203.09,-141.46 250.76,-117.62 280.33,-102.84"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="282.22,-105.8 289.6,-98.2 279.09,-99.54 282.22,-105.8"></polygon></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 4&#45;&gt;2 --><g id="edge4" class="edge"><title>4-&gt;2</title><path fill="none" stroke="#9aff9a" d="M162,-36.24C162,-60.8 162,-104.75 162,-133.65"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="158.5,-133.91 162,-143.91 165.5,-133.91 158.5,-133.91"></polygon></g><!-- 4&#45;&gt;3 --><g id="edge5" class="edge"><title>4-&gt;3</title><path fill="none" stroke="#9aff9a" d="M178.24,-26.12C203.09,-38.54 250.76,-62.38 280.33,-77.16"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="279.09,-80.46 289.6,-81.8 282.22,-74.2 279.09,-80.46"></polygon></g><!-- 4&#45;&gt;5 --><g id="edge6" class="edge"><title>4-&gt;5</title><path fill="none" stroke="#9aff9a" d="M143.76,-18C119.2,-18 75.25,-18 46.35,-18"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="46.09,-14.5 36.09,-18 46.09,-21.5 46.09,-14.5"></polygon></g></g></svg></p>
-</li>
-<li>
-<h3 id="sparse">Sparse</h3>
-<blockquote>
-<p>A graph where the number of edges is close to the number of vertices rather than the maximum possible.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="332pt" height="188pt" viewBox="0.00 0.00 332.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 328,-184 328,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 1&#45;&#45;2 --><g id="edge1" class="edge"><title>1--2</title><path fill="none" stroke="#9aff9a" d="M36.24,-162C63.94,-162 116.3,-162 143.91,-162"></path></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&#45;5 --><g id="edge2" class="edge"><title>1--5</title><path fill="none" stroke="#9aff9a" d="M18,-143.76C18,-116.06 18,-63.7 18,-36.09"></path></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="306" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="306" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 2&#45;&#45;3 --><g id="edge3" class="edge"><title>2--3</title><path fill="none" stroke="#9aff9a" d="M178.24,-153.88C205.9,-140.05 261.83,-112.08 289.6,-98.2"></path></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 4&#45;&#45;5 --><g id="edge4" class="edge"><title>4--5</title><path fill="none" stroke="#9aff9a" d="M143.76,-18C116.06,-18 63.7,-18 36.09,-18"></path></g></g></svg></p>
-</li>
-<li>
-<h3 id="dense">Dense</h3>
-<blockquote>
-<p>A graph where the number of edges is close to the maximum possible for the given number of vertices.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="332pt" height="188pt" viewBox="0.00 0.00 332.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 328,-184 328,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 1&#45;&#45;2 --><g id="edge1" class="edge"><title>1--2</title><path fill="none" stroke="#9aff9a" d="M36.24,-162C63.94,-162 116.3,-162 143.91,-162"></path></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="306" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="306" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 1&#45;&#45;3 --><g id="edge2" class="edge"><title>1--3</title><path fill="none" stroke="#9aff9a" d="M35.58,-157.6C87,-144.75 236.69,-107.33 288.28,-94.43"></path></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 1&#45;&#45;4 --><g id="edge3" class="edge"><title>1--4</title><path fill="none" stroke="#9aff9a" d="M30.78,-149.22C58.04,-121.96 121.63,-58.37 149.04,-30.96"></path></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&#45;5 --><g id="edge4" class="edge"><title>1--5</title><path fill="none" stroke="#9aff9a" d="M18,-143.76C18,-116.06 18,-63.7 18,-36.09"></path></g><!-- 2&#45;&#45;3 --><g id="edge5" class="edge"><title>2--3</title><path fill="none" stroke="#9aff9a" d="M178.24,-153.88C205.9,-140.05 261.83,-112.08 289.6,-98.2"></path></g><!-- 2&#45;&#45;4 --><g id="edge6" class="edge"><title>2--4</title><path fill="none" stroke="#9aff9a" d="M162,-143.76C162,-116.06 162,-63.7 162,-36.09"></path></g><!-- 2&#45;&#45;5 --><g id="edge7" class="edge"><title>2--5</title><path fill="none" stroke="#9aff9a" d="M149.22,-149.22C121.96,-121.96 58.37,-58.37 30.96,-30.96"></path></g><!-- 4&#45;&#45;3 --><g id="edge8" class="edge"><title>4--3</title><path fill="none" stroke="#9aff9a" d="M178.24,-26.12C205.9,-39.95 261.83,-67.92 289.6,-81.8"></path></g><!-- 4&#45;&#45;5 --><g id="edge9" class="edge"><title>4--5</title><path fill="none" stroke="#9aff9a" d="M143.76,-18C116.06,-18 63.7,-18 36.09,-18"></path></g><!-- 5&#45;&#45;3 --><g id="edge10" class="edge"><title>5--3</title><path fill="none" stroke="#9aff9a" d="M35.58,-22.4C87,-35.25 236.69,-72.67 288.28,-85.57"></path></g></g></svg></p>
-</li>
-<li>
-<h3 id="weighted">Weighted</h3>
-<blockquote>
-<p>A graph where edges carry numerical values such as cost, distance, or capacity.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="333pt" height="188pt" viewBox="0.00 0.00 333.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 329,-184 329,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="19" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="19" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="163" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="163" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 1&#45;&#45;2 --><g id="edge1" class="edge"><title>1--2</title><path fill="none" stroke="#9aff9a" d="M37.24,-162C64.94,-162 117.3,-162 144.91,-162"></path><text text-anchor="middle" x="81.57" y="-165.8" font-family="Times,serif" font-size="14.00" fill="#789abc">30</text></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="19" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="19" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&#45;5 --><g id="edge2" class="edge"><title>1--5</title><path fill="none" stroke="#9aff9a" d="M19,-143.76C19,-116.06 19,-63.7 19,-36.09"></path><text text-anchor="middle" x="9.5" y="-93.73" font-family="Times,serif" font-size="14.00" fill="#789abc">24</text></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="307" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="307" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 2&#45;&#45;3 --><g id="edge3" class="edge"><title>2--3</title><path fill="none" stroke="#9aff9a" d="M179.24,-153.88C206.9,-140.05 262.83,-112.08 290.6,-98.2"></path><text text-anchor="middle" x="225.42" y="-129.84" font-family="Times,serif" font-size="14.00" fill="#789abc">25</text></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="163" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="163" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 2&#45;&#45;4 --><g id="edge4" class="edge"><title>2--4</title><path fill="none" stroke="#9aff9a" d="M163,-143.76C163,-116.06 163,-63.7 163,-36.09"></path><text text-anchor="middle" x="153.5" y="-93.73" font-family="Times,serif" font-size="14.00" fill="#789abc">27</text></g><!-- 4&#45;&#45;3 --><g id="edge5" class="edge"><title>4--3</title><path fill="none" stroke="#9aff9a" d="M179.24,-26.12C206.9,-39.95 262.83,-67.92 290.6,-81.8"></path><text text-anchor="middle" x="225.42" y="-57.76" font-family="Times,serif" font-size="14.00" fill="#789abc">28</text></g><!-- 4&#45;&#45;5 --><g id="edge6" class="edge"><title>4--5</title><path fill="none" stroke="#9aff9a" d="M144.76,-18C117.06,-18 64.7,-18 37.09,-18"></path><text text-anchor="middle" x="81.43" y="-21.8" font-family="Times,serif" font-size="14.00" fill="#789abc">25</text></g></g></svg></p>
-</li>
-<li>
-<h3 id="unweighted">Unweighted</h3>
-<blockquote>
-<p>A graph where all edges are considered equal, with no numerical values assigned.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="332pt" height="188pt" viewBox="0.00 0.00 332.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 328,-184 328,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 1&#45;&#45;2 --><g id="edge1" class="edge"><title>1--2</title><path fill="none" stroke="#9aff9a" d="M36.24,-162C63.94,-162 116.3,-162 143.91,-162"></path></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&#45;5 --><g id="edge2" class="edge"><title>1--5</title><path fill="none" stroke="#9aff9a" d="M18,-143.76C18,-116.06 18,-63.7 18,-36.09"></path></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="306" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="306" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 2&#45;&#45;3 --><g id="edge3" class="edge"><title>2--3</title><path fill="none" stroke="#9aff9a" d="M178.24,-153.88C205.9,-140.05 261.83,-112.08 289.6,-98.2"></path></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 2&#45;&#45;4 --><g id="edge4" class="edge"><title>2--4</title><path fill="none" stroke="#9aff9a" d="M162,-143.76C162,-116.06 162,-63.7 162,-36.09"></path></g><!-- 4&#45;&#45;3 --><g id="edge5" class="edge"><title>4--3</title><path fill="none" stroke="#9aff9a" d="M178.24,-26.12C205.9,-39.95 261.83,-67.92 289.6,-81.8"></path></g><!-- 4&#45;&#45;5 --><g id="edge6" class="edge"><title>4--5</title><path fill="none" stroke="#9aff9a" d="M143.76,-18C116.06,-18 63.7,-18 36.09,-18"></path></g></g></svg></p>
-</li>
-<li>
-<h3 id="acyclic">Acyclic</h3>
-<blockquote>
-<p>A graph that contains no cycles, meaning no path loops back to its starting vertex.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="332pt" height="188pt" viewBox="0.00 0.00 332.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 328,-184 328,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 1&#45;&gt;2 --><g id="edge1" class="edge"><title>1-&gt;2</title><path fill="none" stroke="#9aff9a" d="M36.24,-162C60.8,-162 104.75,-162 133.65,-162"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="133.91,-165.5 143.91,-162 133.91,-158.5 133.91,-165.5"></polygon></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&gt;5 --><g id="edge2" class="edge"><title>1-&gt;5</title><path fill="none" stroke="#9aff9a" d="M18,-143.76C18,-119.2 18,-75.25 18,-46.35"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="21.5,-46.09 18,-36.09 14.5,-46.09 21.5,-46.09"></polygon></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="306" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="306" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 2&#45;&gt;3 --><g id="edge3" class="edge"><title>2-&gt;3</title><path fill="none" stroke="#9aff9a" d="M178.24,-153.88C203.09,-141.46 250.76,-117.62 280.33,-102.84"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="282.22,-105.8 289.6,-98.2 279.09,-99.54 282.22,-105.8"></polygon></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 4&#45;&gt;2 --><g id="edge4" class="edge"><title>4-&gt;2</title><path fill="none" stroke="#9aff9a" d="M162,-36.24C162,-60.8 162,-104.75 162,-133.65"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="158.5,-133.91 162,-143.91 165.5,-133.91 158.5,-133.91"></polygon></g><!-- 4&#45;&gt;3 --><g id="edge5" class="edge"><title>4-&gt;3</title><path fill="none" stroke="#9aff9a" d="M178.24,-26.12C203.09,-38.54 250.76,-62.38 280.33,-77.16"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="279.09,-80.46 289.6,-81.8 282.22,-74.2 279.09,-80.46"></polygon></g><!-- 4&#45;&gt;5 --><g id="edge6" class="edge"><title>4-&gt;5</title><path fill="none" stroke="#9aff9a" d="M143.76,-18C119.2,-18 75.25,-18 46.35,-18"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="46.09,-14.5 36.09,-18 46.09,-21.5 46.09,-14.5"></polygon></g></g></svg></p>
-</li>
-<li>
-<h3 id="cyclic">Cyclic</h3>
-<blockquote>
-<p>A graph that contains at least one cycle, where a path loops back to its starting vertex.</p>
-</blockquote>
-<p><span class="graphviz-light-dark" data-library-default="#789abc" data-default="#789abc" data-light="#000000" data-dark="#ffffff"></span><svg width="332pt" height="188pt" viewBox="0.00 0.00 332.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graphviz dot"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)"><title>G</title><polygon fill="transparent" stroke="transparent" points="-4,4 -4,-184 328,-184 328,4 -4,4"></polygon><!-- 1 --><g id="node1" class="node"><title>1</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">1</text></g><!-- 5 --><g id="node5" class="node"><title>5</title><ellipse fill="#789abc" stroke="#789abc" cx="18" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">5</text></g><!-- 1&#45;&gt;5 --><g id="edge1" class="edge"><title>1-&gt;5</title><path fill="none" stroke="#9aff9a" d="M18,-143.76C18,-119.2 18,-75.25 18,-46.35"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="21.5,-46.09 18,-36.09 14.5,-46.09 21.5,-46.09"></polygon></g><!-- 2 --><g id="node2" class="node"><title>2</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-162" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00" fill="#789abc">2</text></g><!-- 2&#45;&gt;1 --><g id="edge2" class="edge"><title>2-&gt;1</title><path fill="none" stroke="#9aff9a" d="M143.76,-162C119.2,-162 75.25,-162 46.35,-162"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="46.09,-158.5 36.09,-162 46.09,-165.5 46.09,-158.5"></polygon></g><!-- 3 --><g id="node3" class="node"><title>3</title><ellipse fill="#789abc" stroke="#789abc" cx="306" cy="-90" rx="18" ry="18"></ellipse><text text-anchor="middle" x="306" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#789abc">3</text></g><!-- 2&#45;&gt;3 --><g id="edge3" class="edge"><title>2-&gt;3</title><path fill="none" stroke="#9aff9a" d="M178.24,-153.88C203.09,-141.46 250.76,-117.62 280.33,-102.84"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="282.22,-105.8 289.6,-98.2 279.09,-99.54 282.22,-105.8"></polygon></g><!-- 4 --><g id="node4" class="node"><title>4</title><ellipse fill="#789abc" stroke="#789abc" cx="162" cy="-18" rx="18" ry="18"></ellipse><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#789abc">4</text></g><!-- 3&#45;&gt;4 --><g id="edge4" class="edge"><title>3-&gt;4</title><path fill="none" stroke="#9aff9a" d="M289.76,-81.88C264.91,-69.46 217.24,-45.62 187.67,-30.84"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="188.91,-27.54 178.4,-26.2 185.78,-33.8 188.91,-27.54"></polygon></g><!-- 4&#45;&gt;2 --><g id="edge5" class="edge"><title>4-&gt;2</title><path fill="none" stroke="#9aff9a" d="M162,-36.24C162,-60.8 162,-104.75 162,-133.65"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="158.5,-133.91 162,-143.91 165.5,-133.91 158.5,-133.91"></polygon></g><!-- 5&#45;&gt;4 --><g id="edge6" class="edge"><title>5-&gt;4</title><path fill="none" stroke="#9aff9a" d="M36.24,-18C60.8,-18 104.75,-18 133.65,-18"></path><polygon fill="#9aff9a" stroke="#9aff9a" points="133.91,-21.5 143.91,-18 133.91,-14.5 133.91,-21.5"></polygon></g></g></svg></p>
-</li>
-</ol>
-</details>
-<details class="note">
-<summary>Graph Input</summary>
-<ol>
-<li>
-<blockquote>
-<p>Array of Edges</p>
-</blockquote>
-<ul>
-<li>
-<p>Given as a 2D array, and each element will contain a pair of vertices that have an edge connecting them.</p>
-</li>
-<li>
-<p>[u, v] means there is an edge going from vertex u to v.</p>
-</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>edges = [[0,1], [1,2], [2,0], [2,3]]
-</span></code></pre></div>
-</li>
-<li>
-<blockquote>
-<p>Adjacency List</p>
-</blockquote>
-<ul>
-<li>The most convenient format. It tells us exactly the vertices a given vertex is connected to.</li>
-<li>The easiest way to represent it is with a hashmap or 2D List, where the key represents the vertex and the value represents its neighbors.</li>
-<li>Usually built from an array of edges</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>edges = [[A, B], [B, C], [B, E ], [C, E], [E, D]]
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>G = {
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    A : [B],
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    B : [C, E],
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    C : [E],
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    E : [D],
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    D : []
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>}
-</span></code></pre></div>
-</li>
-<li>
-<blockquote>
-<p>Adjacency Matrix</p>
-</blockquote>
-<ul>
-<li>Given as a 2D matrix of size <code>nxn</code></li>
-<li>The value in each square denotes whether there is an edge connecting two vertices.</li>
-<li>G[i][j] = 1 denotes an edge going from i to j. These can also be pre-processed to put in the adjacency list format, but isn't mandatory</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>G = [[0, 1, 0, 0, 0],
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    [0, 0, 1, 0, 0],
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    [1, 0, 0, 1, 0],
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    [0, 0, 0, 0, 1],
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    [0, 0, 0, 0, 0]]
-</span></code></pre></div>
-</li>
-<li>
-<blockquote>
-<p>Matrix</p>
-</blockquote>
-<ul>
-<li>This format will be given as a 2D matrix and each square will represent a a vertex. The problem statement will describe how these vertices are connected.</li>
-</ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>grid = [["1","1","0","0","0"],
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        ["1","1","0","0","0"],
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        ["0","0","1","0","0"],
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        ["0","0","0","1","1"]]
-</span></code></pre></div>
-</li>
-</ol>
-</details>
-<details class="danger">
-<summary>Graph Algorithms</summary>
-<ol>
-<li>
-<h3 id="depth-first-search-dfs">Depth First Search (DFS)</h3>
-<ul>
-<li>Prioritizes depth first.</li>
-<li>Go deep as possible exploring each node before hitting the base case.</li>
-<li>A hash set is used to keep track of visited nodes.</li>
-</ul>
-<blockquote>
-<p>Time Complexity : <span class="arithmatex">\(O(N)\)</span></p>
-<p>Data Strctures: Hashsets</p>
-</blockquote>
-</li>
-<li>
-<h3 id="breadth-first-search-bfs">Breadth First Search (BFS)</h3>
-<ul>
-<li>Prioritizes breadth first.</li>
-<li>Explores all possible neighbors of a vertex before moving on to the next level.</li>
-<li>Use a queue to process each vertex and a hash set to avoid revisiting.</li>
-<li>Can be used to find the length of the shortest path from one vertex to the other but only in unweighted graph</li>
-</ul>
-<blockquote>
-<p>Time Complexity : <span class="arithmatex">\(O(N)\)</span></p>
-<p>Data Strctures: Queue, Hashsets</p>
-</blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">shortest_path_unweighted</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">,</span> <span class="n">end_node</span><span class="p">):</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    Finds the shortest path between two nodes in an unweighted graph using BFS.</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="sd">    Args:</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="sd">        graph (dict): An adjacency list representation of the graph.</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="sd">                    e.g., {0: [1, 2], 1: [0, 3], ...}</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="sd">        start_node: The starting node for the path.</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="sd">        end_node: The destination node for the path.</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="sd">    Returns:</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="sd">        list: The shortest path as a list of nodes, or None if no path exists.</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="sd">    """</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">if</span> <span class="n">start_node</span> <span class="o">==</span> <span class="n">end_node</span><span class="p">:</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">start_node</span><span class="p">]</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([(</span><span class="n">start_node</span><span class="p">,</span> <span class="p">[</span><span class="n">start_node</span><span class="p">])])</span>  <span class="c1"># (current_node, current_path)</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">start_node</span><span class="p">}</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="n">current_node</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">current_node</span><span class="p">,</span> <span class="p">[]):</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>            <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>                <span class="n">new_path</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">neighbor</span><span class="p">]</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>                <span class="k">if</span> <span class="n">neighbor</span> <span class="o">==</span> <span class="n">end_node</span><span class="p">:</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>                    <span class="k">return</span> <span class="n">new_path</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>                <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">neighbor</span><span class="p">,</span> <span class="n">new_path</span><span class="p">))</span>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>    <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># No path found</span>
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="c1"># Example Usage:</span>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>    <span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>        <span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>        <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>        <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>        <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>        <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>        <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>        <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>    <span class="p">}</span>
-</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
-</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>    <span class="n">end</span> <span class="o">=</span> <span class="mi">6</span>
-</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>    <span class="n">path</span> <span class="o">=</span> <span class="n">shortest_path_unweighted</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>    <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
-</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shortest path from </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>    <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No path found from </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
-</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>    <span class="n">start_no_path</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>    <span class="n">end_no_path</span> <span class="o">=</span> <span class="mi">7</span>     <span class="c1"># Node 7 does not exist or is unreachable</span>
-</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>    <span class="n">path_no_path</span> <span class="o">=</span> <span class="n">shortest_path_unweighted</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_no_path</span><span class="p">,</span> <span class="n">end_no_path</span><span class="p">)</span>
-</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>    <span class="k">if</span> <span class="n">path_no_path</span><span class="p">:</span>
-</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shortest path from </span><span class="si">{</span><span class="n">start_no_path</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">end_no_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">path_no_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>    <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No path found from </span><span class="si">{</span><span class="n">start_no_path</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">end_no_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<h3 id="union-find_1">Union-Find</h3>
-<ul>
-<li>Used to combine disjoint sets.</li>
-<li>Tells us the number of connected components in a graph.</li>
-<li>Used in Kruskal's algorithm for detecting cycles.</li>
-</ul>
-<blockquote>
-<p>Time Complexity : <span class="arithmatex">\(O(1)\)</span></p>
-<p>Data Strctures: Forest of Trees</p>
-</blockquote>
-</li>
-<li>
-<h3 id="topological-sort_1">Topological Sort</h3>
-<ul>
-<li><strong>Only</strong> works on a (<em>DAG</em>) <strong>directed acyclic graph</strong> (directed graph with no cycles)</li>
-<li>Used to order vertices such that for every directed edge u -&gt; v, vertex u appears before vertex v</li>
-</ul>
-<blockquote>
-<p>Time Complexity : <span class="arithmatex">\(O(V + E)\)</span></p>
-<p>Data Strctures: Hashsets</p>
-</blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python_1</label><label for="__tabbed_2_2">Python_2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">topologicalSort</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="n">vis</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        <span class="k">for</span> <span class="n">nei</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>         <span class="c1"># nei - neighbor</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            <span class="k">if</span> <span class="n">nei</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vis</span><span class="p">:</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>                <span class="n">dfs</span><span class="p">(</span><span class="n">nei</span><span class="p">)</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">G</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="c1"># s - source, d - destination</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="n">G</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">vis</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vis</span><span class="p">:</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="k">return</span> <span class="n">res</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    <span class="c1">#or, res.reverse()</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">"__main__"</span><span class="p">:</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1"># A → D</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>  <span class="c1"># A → B</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>  <span class="c1"># A → C</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1"># D → H</span>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1"># D → G</span>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>  <span class="c1"># B → E</span>
-</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>  <span class="c1"># B → F</span>
-</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>        <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="c1"># F → I</span>
-</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1"># C → G</span>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>        <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>  <span class="c1"># F → J</span>
-</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="c1"># J → K</span>
-</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>        <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>  <span class="c1"># G → K</span>
-</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>        <span class="p">]</span>
-</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">11</span>
-</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">topologicalSort</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="c1"># [1, 4, 6, 8, 9, 11, 7, 2, 5, 10, 3]</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">topologicalSort</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">vis</span><span class="p">:</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>            <span class="k">return</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="n">vis</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="k">for</span> <span class="n">nei</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>         <span class="c1"># nei - neighbor</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>            <span class="n">dfs</span><span class="p">(</span><span class="n">nei</span><span class="p">)</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">G</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="c1"># s - source, d - destination</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="n">G</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    <span class="n">vis</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="k">return</span> <span class="n">res</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    <span class="c1">#or, res.reverse()</span>
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">"__main__"</span><span class="p">:</span>
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1"># A → D</span>
-</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>  <span class="c1"># A → B</span>
-</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>  <span class="c1"># A → C</span>
-</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1"># D → H</span>
-</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1"># D → G</span>
-</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>  <span class="c1"># B → E</span>
-</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>  <span class="c1"># B → F</span>
-</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>        <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="c1"># F → I</span>
-</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1"># C → G</span>
-</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>        <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>  <span class="c1"># F → J</span>
-</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="c1"># J → K</span>
-</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>        <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>  <span class="c1"># G → K</span>
-</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>    <span class="p">]</span>
-</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">11</span>
-</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">topologicalSort</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="c1"># [1, 4, 6, 8, 9, 11, 7, 2, 5, 10, 3]</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<h3 id="dijkstras-algorithm">Dijkstra's Algorithm</h3>
-<ul>
-<li>A greedy algorithm that operates on weighted graphs</li>
-<li>Used to find the shortest path from one source to all other vertices in the graph</li>
-<li>Uses a min heap to pick the shortest path at each step and a hash set to avoid cycles</li>
-<li>Used to find the shortest path in a directed, weighted graph with positive edge weights</li>
-</ul>
-<blockquote>
-<p>Time Complexity : <span class="arithmatex">\(O(E \log V)\)</span></p>
-<p>Data Strctures: Heaps, Hashsets</p>
-</blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python_1</label><label for="__tabbed_3_2">Python_2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sd">"""</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="sd">Given a connected graph represented by a list of edges, where edge[0] = src, edge[1] = dst, and edge[2] = weight,</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sd">find the shortest path from a given source vertex/node to all other vertices/nodes in the graph. There are n nodes in the graph.</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sd">"""</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">heapq</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">shortest_path_weighted</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="c1"># Build adjacency list graph</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">G</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>           <span class="c1"># s - src, d - dst , w - weight</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>            <span class="n">G</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>        <span class="n">G</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">d</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="n">path</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="n">pq</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">src</span><span class="p">]]</span>                 <span class="c1"># (distance, node)</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="k">while</span> <span class="n">pq</span><span class="p">:</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        <span class="n">w</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>          <span class="c1"># w - current weight, u - current node</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>        <span class="k">if</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>            <span class="k">continue</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>        <span class="n">path</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
-</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
-</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>        <span class="k">for</span> <span class="n">nei_u</span><span class="p">,</span> <span class="n">nei_w</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="p">[]):</span>   <span class="c1"># nei_w - next/neighbor weight, nei_u - next/neighbor node</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>            <span class="k">if</span> <span class="n">nei_u</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
-</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>                <span class="n">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,</span> <span class="p">[</span><span class="n">w</span> <span class="o">+</span> <span class="n">nei_w</span><span class="p">,</span> <span class="n">nei_u</span><span class="p">])</span>      <span class="c1"># new weight - w + nw</span>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
-</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>    <span class="k">return</span> <span class="n">path</span>
-</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
-</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="c1"># Example input</span>
-</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>    <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>        <span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
-</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>        <span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
-</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>        <span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
-</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>        <span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>        <span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
-</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>        <span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>        <span class="p">(</span><span class="s1">'E'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>    <span class="p">]</span>
-</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>
-</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>    <span class="n">src</span> <span class="o">=</span> <span class="s1">'A'</span>
-</span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">shortest_path_weighted</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span> <span class="c1">#{'A': 0, 'C': 3, 'E': 5, 'B': 7, 'D': 9}</span>
-</span><span id="__span-8-44"><a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
-</span><span id="__span-8-45"><a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shortest distances from </span><span class="si">{</span><span class="n">src</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
-</span><span id="__span-8-46"><a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-</span><span id="__span-8-47"><a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-8-48"><a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>
-</span><span id="__span-8-49"><a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>    <span class="n">edges</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-8-50"><a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>  <span class="c1"># A -&gt; B</span>
-</span><span id="__span-8-51"><a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>   <span class="c1"># A -&gt; C</span>
-</span><span id="__span-8-52"><a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>   <span class="c1"># C -&gt; B</span>
-</span><span id="__span-8-53"><a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>   <span class="c1"># B -&gt; D</span>
-</span><span id="__span-8-54"><a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>   <span class="c1"># C -&gt; D</span>
-</span><span id="__span-8-55"><a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a>        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>   <span class="c1"># C -&gt; E</span>
-</span><span id="__span-8-56"><a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>    <span class="c1"># E -&gt; D</span>
-</span><span id="__span-8-57"><a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a>    <span class="p">]</span>
-</span><span id="__span-8-58"><a id="__codelineno-8-58" name="__codelineno-8-58" href="#__codelineno-8-58"></a>    <span class="n">src</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># A as the source</span>
-</span><span id="__span-8-59"><a id="__codelineno-8-59" name="__codelineno-8-59" href="#__codelineno-8-59"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">shortest_path_weighted</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span> <span class="c1">#{1: 0, 3: 3, 5: 5, 2: 7, 4: 9}</span>
-</span><span id="__span-8-60"><a id="__codelineno-8-60" name="__codelineno-8-60" href="#__codelineno-8-60"></a>
-</span><span id="__span-8-61"><a id="__codelineno-8-61" name="__codelineno-8-61" href="#__codelineno-8-61"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shortest distances from </span><span class="si">{</span><span class="n">src</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
-</span><span id="__span-8-62"><a id="__codelineno-8-62" name="__codelineno-8-62" href="#__codelineno-8-62"></a>    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-</span><span id="__span-8-63"><a id="__codelineno-8-63" name="__codelineno-8-63" href="#__codelineno-8-63"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sd">    Finds the shortest path from a start_node to all other nodes in a weighted graph.</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="sd">    Args:</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sd">        graph (dict): An adjacency list representation of the graph,</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="sd">                    where keys are nodes and values are lists of tuples (neighbor, weight).</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="sd">        start_node: The starting node for finding shortest paths.</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="sd">    Returns:</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="sd">        dict: A dictionary where keys are nodes and values are their shortest distances</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="sd">            from the start_node.</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="sd">    """</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="n">distances</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">}</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    <span class="n">distances</span><span class="p">[</span><span class="n">start_node</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    <span class="n">priority_queue</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">start_node</span><span class="p">)]</span>  <span class="c1"># (distance, node)</span>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    <span class="k">while</span> <span class="n">priority_queue</span><span class="p">:</span>
-</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        <span class="n">current_distance</span><span class="p">,</span> <span class="n">current_node</span> <span class="o">=</span> <span class="n">heappop</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">)</span>
-</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
-</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>        <span class="c1"># If we found a shorter path to current_node already, skip</span>
-</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        <span class="k">if</span> <span class="n">current_distance</span> <span class="o">&gt;</span> <span class="n">distances</span><span class="p">[</span><span class="n">current_node</span><span class="p">]:</span>
-</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>            <span class="k">continue</span>
-</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
-</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        <span class="k">for</span> <span class="n">neighbor</span><span class="p">,</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">current_node</span><span class="p">]:</span>
-</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>            <span class="n">distance</span> <span class="o">=</span> <span class="n">current_distance</span> <span class="o">+</span> <span class="n">weight</span>
-</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>
-</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>            <span class="c1"># If a shorter path to the neighbor is found, update and add to priority queue</span>
-</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>            <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">distances</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]:</span>
-</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>                <span class="n">distances</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span>
-</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>                <span class="n">heappush</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">,</span> <span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">))</span>
-</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>
-</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    <span class="k">return</span> <span class="n">distances</span>
-</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
-</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="c1"># Example Usage:</span>
-</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>    <span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>        <span class="s1">'A'</span><span class="p">:</span> <span class="p">[(</span><span class="s1">'B'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
-</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>        <span class="s1">'B'</span><span class="p">:</span> <span class="p">[(</span><span class="s1">'A'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">'D'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span>
-</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>        <span class="s1">'C'</span><span class="p">:</span> <span class="p">[(</span><span class="s1">'A'</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">'D'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
-</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>        <span class="s1">'D'</span><span class="p">:</span> <span class="p">[(</span><span class="s1">'B'</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
-</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>    <span class="p">}</span>
-</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>
-</span><span id="__span-9-46"><a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>    <span class="n">start_node</span> <span class="o">=</span> <span class="s1">'A'</span>
-</span><span id="__span-9-47"><a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>    <span class="n">shortest_distances</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">)</span>
-</span><span id="__span-9-48"><a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shortest distances from node </span><span class="si">{</span><span class="n">start_node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">shortest_distances</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-9-49"><a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>
-</span><span id="__span-9-50"><a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>    <span class="n">start_node</span> <span class="o">=</span> <span class="s1">'B'</span>
-</span><span id="__span-9-51"><a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>    <span class="n">shortest_distances</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">)</span>
-</span><span id="__span-9-52"><a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shortest distances from node </span><span class="si">{</span><span class="n">start_node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">shortest_distances</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<details class="example">
-<summary>equivalency</summary>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">G</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>           <span class="c1"># s - src, d - dst , w - weight</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">G</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">d</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>            <span class="n">V</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>         <span class="n">better</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>            <span class="n">V</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">G</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>           <span class="c1"># s - src, d - dst , w - weight</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        <span class="n">G</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="n">G</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">d</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span></code></pre></div>
-</details>
-</li>
-</ol>
-</details>
-<details class="info">
-<summary>Minimum Spanning Tree</summary>
-<h3 id="what-is-a-minimum-spanning-tree">What is a Minimum Spanning Tree?</h3>
-<ul>
-<li>A spanning tree connects all nodes in a graph with the minimum number of edges (no cycles).</li>
-<li>The minimum spanning tree is the spanning tree with the lowest total edge cost.</li>
-</ul>
-<h3 id="two-main-algorithms">Two Main Algorithms:</h3>
-<ol>
-<li>
-<p><strong>Kruskal’s Algorithm</strong></p>
-<ul>
-<li>Sort all possible connections by cost, then picking the cheapest ones one by one.</li>
-<li>Only add a connection if it doesn’t create a cycle (like not revisiting a friend’s house you’ve already connected).</li>
-<li>Uses a Union-Find (Disjoint Set Union, DSU) data structure to quickly check if adding an edge creates a cycle.</li>
-</ul>
-<blockquote>
-<p><strong>Time Complexity:</strong> <span class="arithmatex">\(O(E \log E)\)</span> (<span class="arithmatex">\(E\)</span> = number of edges; sorting edges is the bottleneck)
-<strong>Space Complexity:</strong> Mainly for storing the graph and helper structures
-Data Structure : DSU</p>
-</blockquote>
-</li>
-<li>
-<p><strong>Prim’s Algorithm</strong></p>
-<ul>
-<li>Start from any node, and always connect to the nearest unconnected node.</li>
-<li>Imagine expanding your network like a growing blob, always reaching out to the closest neighbor.</li>
-<li>Uses a Priority Queue (Heap) to efficiently pick the next cheapest edge.</li>
-</ul>
-<blockquote>
-<p><strong>Time Complexity:</strong> <span class="arithmatex">\(O(E \log V)\)</span> (<span class="arithmatex">\(V\)</span> = number of nodes; heap operations dominate)
-<strong>Space Complexity:</strong> Mainly for storing the graph and helper structures
-Data Structure : Heap</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="mathematical-foundations">Mathematical Foundations</h3>
-<ul>
-<li>Both algorithms guarantee the minimum cost by always choosing the cheapest available connection that doesn’t form a cycle.</li>
-</ul>
-<h3 id="visualizing-the-process">Visualizing the Process</h3>
-<ul>
-<li>Imagine building a tree by connecting dots with lines, always choosing the shortest line that doesn’t make a loop.</li>
-<li>Each step, ask: “Does this connection help reach more nodes without making a circle?”</li>
-</ul>
-</details>
 <h2 id="miscellaneous"><a class="md-title" href="#miscellaneous"><strong>Miscellaneous</strong></a></h2>
 <h3 id="amortized-analysis">Amortized Analysis</h3>
 <ul>
@@ -3289,14 +2837,14 @@ Data Structure : Heap</p>
                 <!-- Link to previous page -->
                 
                     
-                    <a href="../../patterns/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patterns">
+                    <a href="../strategies/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Strategies">
                         <div class="md-footer__button md-icon">
                             
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
                         </div>
                         <div class="md-footer__title">
                             <span class="md-footer__direction">Previous</span>
-                            <div class="md-ellipsis">Patterns</div>
+                            <div class="md-ellipsis">Strategies</div>
                         </div>
                     </a>
                 
@@ -3304,10 +2852,10 @@ Data Structure : Heap</p>
                 <!-- Link to next page -->
                 
                     
-                    <a href="../style-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Style-Guide">
+                    <a href="../graph/" class="md-footer__link md-footer__link--next" aria-label="Next: Graph Theory">
                         <div class="md-footer__title">
                             <span class="md-footer__direction">Next</span>
-                            <div class="md-ellipsis">Style-Guide</div>
+                            <div class="md-ellipsis">Graph Theory</div>
                         </div>
                         <div class="md-footer__button md-icon">
                             
