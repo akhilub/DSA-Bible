@@ -111,7 +111,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -903,6 +903,8 @@
   
     
     
+      
+        
       
         
       
@@ -3118,6 +3120,52 @@ Hold "Alt" / "Option" to enable pan &amp; zoom
 </details>
 </li>
 </ol>
+</details>
+<details class="info">
+<summary>Minimum Spanning Tree</summary>
+<h3 id="what-is-a-minimum-spanning-tree">What is a Minimum Spanning Tree?</h3>
+<ul>
+<li>A spanning tree connects all nodes in a graph with the minimum number of edges (no cycles).</li>
+<li>The minimum spanning tree is the spanning tree with the lowest total edge cost.</li>
+</ul>
+<h3 id="two-main-algorithms">Two Main Algorithms:</h3>
+<ol>
+<li>
+<p><strong>Kruskal’s Algorithm</strong></p>
+<ul>
+<li>Sort all possible connections by cost, then picking the cheapest ones one by one.</li>
+<li>Only add a connection if it doesn’t create a cycle (like not revisiting a friend’s house you’ve already connected).</li>
+<li>Uses a Union-Find (Disjoint Set Union, DSU) data structure to quickly check if adding an edge creates a cycle.</li>
+</ul>
+<blockquote>
+<p><strong>Time Complexity:</strong> <span class="arithmatex">\(O(E \log E)\)</span> (<span class="arithmatex">\(E\)</span> = number of edges; sorting edges is the bottleneck)
+<strong>Space Complexity:</strong> Mainly for storing the graph and helper structures
+Data Structure : DSU</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Prim’s Algorithm</strong></p>
+<ul>
+<li>Start from any node, and always connect to the nearest unconnected node.</li>
+<li>Imagine expanding your network like a growing blob, always reaching out to the closest neighbor.</li>
+<li>Uses a Priority Queue (Heap) to efficiently pick the next cheapest edge.</li>
+</ul>
+<blockquote>
+<p><strong>Time Complexity:</strong> <span class="arithmatex">\(O(E \log V)\)</span> (<span class="arithmatex">\(V\)</span> = number of nodes; heap operations dominate)
+<strong>Space Complexity:</strong> Mainly for storing the graph and helper structures
+Data Structure : Heap</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="mathematical-foundations">Mathematical Foundations</h3>
+<ul>
+<li>Both algorithms guarantee the minimum cost by always choosing the cheapest available connection that doesn’t form a cycle.</li>
+</ul>
+<h3 id="visualizing-the-process">Visualizing the Process</h3>
+<ul>
+<li>Imagine building a tree by connecting dots with lines, always choosing the shortest line that doesn’t make a loop.</li>
+<li>Each step, ask: “Does this connection help reach more nodes without making a circle?”</li>
+</ul>
 </details>
 <h2 id="miscellaneous"><a class="md-title" href="#miscellaneous"><strong>Miscellaneous</strong></a></h2>
 <h3 id="amortized-analysis">Amortized Analysis</h3>
