@@ -1757,19 +1757,61 @@
 <!-- solution:start -->
 
 <h3 id="approach-kruskals-algorithm-minimum-spanning-tree">Approach : Kruskal's Algorithm (Minimum Spanning Tree)</h3>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(E \log E)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(E)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(E \log V)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(V + E)\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
 <p>We'll use Kruskal's algorithm to find the Minimum Spanning Tree (MST) of the graph formed by the wells and pipes. We treat each house as a node, and each pipe as an edge with a given cost. Additionally, we introduce a virtual node (node 0) that connects to each house with an edge weight equal to the cost of drilling a well at that house.</p>
-<p>Steps:
-1. Create a list of all edges, including the edges from the virtual node to each house.
-2. Sort all edges based on their weights.
-3. Initialize a Disjoint Set Union (DSU) structure to keep track of connected components.
-4. Iterate through the sorted edges and add them to the MST if they connect two different components (using DSU).
-5. Continue until all houses are connected.</p>
-<p>The time complexity is <span class="arithmatex">\(O(E \log E)\)</span> due to sorting the edges, where <span class="arithmatex">\(E\)</span> is the number of edges. The space complexity is <span class="arithmatex">\(O(E)\)</span> for storing the edges.</p>
+<p>Steps:</p>
+<ol>
+<li>
+<p>Create a list of all edges, including the edges from the virtual node to each house.</p>
+</li>
+<li>
+<p>Sort all edges based on their weights.</p>
+</li>
+<li>
+<p>Initialize a Disjoint Set Union (DSU) structure to keep track of connected components.</p>
+</li>
+<li>
+<p>Iterate through the sorted edges and add them to the MST if they connect two different components (using DSU).</p>
+</li>
+<li>
+<p>Continue until all houses are connected.</p>
+</li>
+</ol>
+<p>The time complexity is <span class="arithmatex">\(O(E \log E)\)</span> due to sorting the edges. The space complexity is <span class="arithmatex">\(O( V + E)\)</span> for storing the edges and DSU parent of each vertex, where <span class="arithmatex">\(E\)</span> is the number of edges, <span class="arithmatex">\(V\)</span> is the number of vertices.</p>
 </div>
+<details class="abstract">
+<summary>Detailed Complexity Discussion</summary>
+<p>Kruskal's algorithm, used to find the Minimum Spanning Tree (MST) of a connected, undirected graph, has the following complexities:</p>
+<p><strong>Time Complexity:</strong></p>
+<p>The dominant factor in Kruskal's algorithm's time complexity is the sorting of edges.</p>
+<ul>
+<li>
+<p>Sorting Edges: This step takes <span class="arithmatex">\(O(E\log E)\)</span> time, where <span class="arithmatex">\(E\)</span> is the number of edges in the graph.&nbsp;</p>
+</li>
+<li>
+<p>Union-Find Operations: The subsequent operations involving the Disjoint Set Union (DSU) data structure (Union and Find operations) take nearly constant time on average, specifically <span class="arithmatex">\(O(\alpha (V))\)</span> per operation, where <span class="arithmatex">\(V\)</span> is the number of vertices and <span class="arithmatex">\(\alpha \)</span> is the inverse Ackermann function, which grows extremely slowly and is practically considered a constant. Since there are <span class="arithmatex">\(E\)</span> such operations, this part contributes <span class="arithmatex">\(O(E\alpha (V))\)</span>.</p>
+</li>
+<li>
+<p>Overall Time Complexity: Combining these, the total time complexity is <span class="arithmatex">\((O(E \log E + E \alpha (V)))\)</span>, which simplifies to <span class="arithmatex">\((O(E \log E))\)</span> because <span class="arithmatex">\(( E \log E)\)</span> typically dominates <span class="arithmatex">\((E \alpha (V))\)</span>. Alternatively, since <span class="arithmatex">\((E \le V^{2})\)</span>, <span class="arithmatex">\(O(E\log E)\)</span> can also be expressed as <span class="arithmatex">\(O(E\log V)\)</span></p>
+</li>
+</ul>
+<p><strong>Space Complexity:</strong></p>
+<p>The space complexity of Kruskal's algorithm is determined by the storage required for its components:</p>
+<ul>
+<li>
+<p>Storing Edges:  <span class="arithmatex">\(O(E)\)</span> space is needed to store the edges, usually in a sorted list.</p>
+</li>
+<li>
+<p>Union-Find Structure:  <span class="arithmatex">\(O(V)\)</span> space is required for the Disjoint Set Union (DSU) data structure, which stores the parent of each vertex.</p>
+</li>
+<li>
+<p>Overall Space Complexity: Therefore, the total space complexity is <span class="arithmatex">\(O(V+E)\)</span>.</p>
+</li>
+</ul>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1843,77 +1885,155 @@
 </div>
 <h3 id="approach-prims-algorithm-minimum-spanning-tree">Approach : Prim's Algorithm (Minimum Spanning Tree)</h3>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(E \log V)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(E)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(V + E)\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
 <p>We'll use Prim's algorithm to find the Minimum Spanning Tree (MST) of the graph formed by the wells and pipes. We treat each house as a node, and each pipe as an edge with a given cost. Additionally, we introduce a virtual node (node 0) that connects to each house with an edge weight equal to the cost of drilling a well at that house.</p>
-<p>Steps:
-1. Create an adjacency list to represent the graph, including edges from the virtual node to each house.
-2. Use a priority queue (min-heap) to always extend the MST with the minimum weight edge.
-3. Start from the virtual node (0) and add its edges to the priority queue.
-4. While there are still nodes to connect, extract the minimum weight edge from the priority queue and add it to the MST if it connects a new node.
-5. Add all edges from the newly connected node to the priority queue.</p>
+<p>Steps:</p>
+<ol>
+<li>
+<p>Create an adjacency list to represent the graph, including edges from the virtual node to each house.</p>
+</li>
+<li>
+<p>Use a priority queue (min-heap) to always extend the MST with the minimum weight edge.</p>
+</li>
+<li>
+<p>Start from the virtual node (0) and add its edges to the priority queue.</p>
+</li>
+<li>
+<p>While there are still nodes to connect, extract the minimum weight edge from the priority queue and add it to the MST if it connects a new node.</p>
+</li>
+<li>
+<p>Add all edges from the newly connected node to the priority queue.</p>
+</li>
+</ol>
 <p>The time complexity is <span class="arithmatex">\(O(E \log V)\)</span> due to the priority queue operations, where <span class="arithmatex">\(E\)</span> is the number of edges and <span class="arithmatex">\(V\)</span> is the number of vertices. The space complexity is <span class="arithmatex">\(O(E)\)</span> for storing the graph.</p>
 </div>
+<details class="abstract">
+<summary>Detailed Complexity Discussion</summary>
+<p>Prim's algorithm is a greedy algorithm used to find a minimum spanning tree (MST) for a weighted undirected graph. Its time and space complexity depend on the data structures used for implementation.</p>
+<p><strong>Time Complexity:</strong></p>
+<p>The time complexity of Prim's algorithm varies depending on the data structure used for the priority queue:</p>
+<ul>
+<li>
+<p><strong>Using a Binary Heap (Min-Priority Queue) with Adjacency List:</strong></p>
+<ul>
+<li><span class="arithmatex">\(O((V+E)\log V)\)</span> or <span class="arithmatex">\(O(E\log V)\)</span> (since in a connected graph, <span class="arithmatex">\(E\ge V-1\)</span>). This is generally the most efficient for sparse graphs (graphs with fewer edges).</li>
+<li><span class="arithmatex">\(V\)</span> extractions from the priority queue, each taking <span class="arithmatex">\(O(\log V)\)</span> time.</li>
+<li><span class="arithmatex">\(E\)</span> decrease-key operations on the priority queue (in the worst case), each taking <span class="arithmatex">\(O(\log V)\)</span> time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using an Adjacency Matrix:</strong>  <span class="arithmatex">\(O(V^{2})\)</span>. This is efficient for dense graphs (graphs with many edges).</p>
+<ul>
+<li>In each iteration, finding the minimum edge takes <span class="arithmatex">\(O(V)\)</span> time, and this is done <span class="arithmatex">\(V\)</span> times.</li>
+</ul>
+</li>
+<li>
+<p><strong>Using a Fibonacci Heap:</strong>  <span class="arithmatex">\(O(E+V\log V)\)</span>. This offers the best theoretical time complexity but is more complex to implement.</p>
+</li>
+</ul>
+<p><strong>Space Complexity:</strong></p>
+<p>The space complexity of Prim's algorithm is primarily determined by the storage needed for the graph representation and auxiliary data structures:</p>
+<ul>
+<li><span class="arithmatex">\(O(V)\)</span>: for storing an array to keep track of visited nodes (whether a node is in the MST or not).</li>
+<li><span class="arithmatex">\(O(V)\)</span>: for storing the key values (minimum edge weight to connect to the MST) for each vertex.</li>
+<li><span class="arithmatex">\(O(V)\)</span>: for storing the parent array to reconstruct the MST.</li>
+<li><span class="arithmatex">\(O(V+E)\)</span>: for storing the graph using an adjacency list (if used).</li>
+<li><span class="arithmatex">\(O(V^{2})\)</span>: for storing the graph using an adjacency matrix (if used).</li>
+</ul>
+<p>Therefore, the overall space complexity is typically <span class="arithmatex">\(O(V+E)\)</span> when using an adjacency list and a binary heap, or <span class="arithmatex">\(O(V^{2})\)</span> when using an adjacency matrix.</p>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">heapq</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">minCostToSupplyWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">wells</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">pipes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="c1"># Build adjacency list graph (undirected)</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="c1"># n houses + 1 virtual node (0)</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">G</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="c1"># Add edges for pipes</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">pipes</span><span class="p">:</span>                   <span class="c1"># u - start/src/origin , v - end/sink/destination , w - weight/cost/time</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="c1"># Add edges from virtual node (0) to each house with well cost</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wells</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            <span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>            <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>        <span class="c1"># Prim's Algorithm</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="n">vis</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>                     <span class="c1"># a list to indicate if each vertex is visited (initially all False)</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>                                 <span class="c1"># minimum cost (initially 0) and return value</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="n">pq</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>  <span class="c1">#(cost/distance, vertex)  # Priority queue (initially (0, 0) indicating starting from point 0 with cost/distance 0)</span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        <span class="k">while</span> <span class="n">pq</span><span class="p">:</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            <span class="n">d</span> <span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>                 <span class="c1"># d - current cost/distance, u - current node</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>            <span class="k">if</span> <span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>                <span class="k">continue</span>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>            <span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>                       <span class="c1"># mark this point as visited and add the current cost to the minimum cost.</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>            <span class="n">ans</span><span class="o">+=</span><span class="n">d</span>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
-</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="n">vis</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
-</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                    <span class="n">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
-</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        <span class="k">return</span> <span class="n">ans</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">vis</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">heapq</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">minCostToSupplyWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">wells</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">pipes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="c1"># Build adjacency list graph (undirected)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="c1"># n houses + 1 virtual node (0)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="hll">        <span class="n">G</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</span></span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="c1"># Add edges for pipes</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">pipes</span><span class="p">:</span>                   <span class="c1"># u - start/src/origin , v - end/sink/destination , w - weight/cost/time</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="c1"># Add edges from virtual node (0) to each house with well cost</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wells</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            <span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="c1"># Prim's Algorithm</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="hll">        <span class="n">vis</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>                     <span class="c1"># a list to indicate if each vertex is visited (initially all False)</span>
+</span></span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>                                 <span class="c1"># minimum cost (initially 0) and return value</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="n">pq</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>  <span class="c1">#(cost/distance, vertex)  # Priority queue (initially (0, 0) indicating starting from point 0 with cost/distance 0)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="k">while</span> <span class="n">pq</span><span class="p">:</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            <span class="n">d</span> <span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>                 <span class="c1"># d - current cost/distance, u - current node</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="hll">            <span class="k">if</span> <span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+</span></span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="hll">                <span class="k">continue</span>
+</span></span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="hll">
+</span></span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="hll">            <span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>                       <span class="c1"># mark this point as visited and add the current cost to the minimum cost.</span>
+</span></span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>            <span class="n">ans</span><span class="o">+=</span><span class="n">d</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="hll">                <span class="k">if</span> <span class="ow">not</span> <span class="n">vis</span><span class="p">[</span><span class="n">v</span><span class="p">]:</span>
+</span></span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                    <span class="n">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="hll">        <span class="k">return</span> <span class="n">ans</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">vis</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<details class="example">
+<summary>Useful Tips</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Better Use</label><label for="__tabbed_3_2">equivalency</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gd">- G = [[] for _ in range(n+1)]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gi">+ G = defaultdict(list)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>...
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="gd">- vis = [False]*(n+1)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="gi">+ vis = set()</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>...
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="gd">-     if vis[u]:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="gd">-        continue</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="gd">-     vis[u] = True</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="gi">+     if u in vis:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="gi">+        continue</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="gi">+     vis.add(u)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>...
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="gd">-        if not vis[v]:</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="gi">+        if v not in vis:</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>...
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="gd">- return ans if all(vis) else -1</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="gi">+ return and if len(vis) == n+1 else -1</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wells</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>    <span class="c1"># index variable i counter starts from `1` goes upto `len(wells) + 1`</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            <span class="o">||</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">equivalent</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="o">||</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">wells</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">wells</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">w</span> <span class="o">=</span> <span class="p">[[</span><span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wells</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">p</span> <span class="o">=</span> <span class="p">[[</span><span class="n">c</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">pipes</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
 </div>
 </div>
 </div>
-<div class="admonition example">
-<p class="admonition-title">equivalency</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">wells</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>    <span class="c1"># index variable i counter starts from `1` goes upto `len(wells) + 1`</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="o">||</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">equivalent</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="o">||</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">wells</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">wells</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-</span></code></pre></div>
-</div>
+</details>
 <!-- solution:end -->
 
 <!-- gated-content end -->
