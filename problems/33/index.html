@@ -111,7 +111,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -907,6 +907,8 @@
   
     
     
+      
+        
       
         
       
@@ -5823,6 +5825,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../449/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    449. Serialize and Deserialize BST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../450/" class="md-nav__link">
         
   
@@ -8790,26 +8815,26 @@ and write this in interviews</p>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="k">while</span> <span class="n">l</span><span class="o">&lt;=</span><span class="n">r</span><span class="p">:</span>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>            <span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span><span class="n">target</span><span class="p">:</span> <span class="c1">#pitfall see nums[mid]==target not mid ==target , mid is the index value</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span><span class="n">target</span><span class="p">:</span>               <span class="c1"># pitfall see nums[mid]==target not mid ==target , mid is the index value</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="hll">                <span class="k">return</span> <span class="n">mid</span>
 </span></span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            <span class="c1">#condition to check for duplicates , you can remove this `if` condition if you want then change below `elif` to `if`</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span> <span class="c1">#to skip the same elements/or identical values/duplicates</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>  <span class="c1"># to skip the same elements/or identical values/duplicates</span>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>                <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            <span class="k">elif</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>  <span class="c1"># left half array nums[l..m] are sorted</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>                <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">target</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            <span class="k">elif</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>             <span class="c1"># left half array nums[l..m] are sorted</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>                <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">target</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>    <span class="c1"># check if target is in left half</span>
 </span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                    <span class="n">r</span><span class="o">=</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span>
 </span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                    <span class="n">l</span><span class="o">=</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>            <span class="k">else</span><span class="p">:</span> <span class="c1">#nums[l]&gt;nums[mid]  #right half array nums[m..n - 1] are sorted</span>
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>                <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&lt;</span><span class="n">target</span><span class="o">&lt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>            <span class="k">else</span><span class="p">:</span> <span class="c1">#nums[l]&gt;nums[mid]             # right half array nums[m..n - 1] are sorted</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>                <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&lt;</span><span class="n">target</span><span class="o">&lt;=</span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>    <span class="c1"># check if target is in right half</span>
 </span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>                    <span class="n">l</span><span class="o">=</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span>
 </span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>                <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>                    <span class="n">r</span><span class="o">=</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span>
 </span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
-</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>                                <span class="c1"># target not found</span>
 </span></code></pre></div>
 </div>
 </div>
