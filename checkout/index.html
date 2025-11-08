@@ -107,7 +107,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1887,66 +1887,113 @@ function showError(message) {
 }
 
 #checkout {
-  /* height: 100vh; */
+  height: 120vh;
   overflow: scroll;
   /* min-height: 1000px;*/
 
 }
 
 #checkout iframe {
-  height: 100vh !important;
+  /* height: 100vh !important; */
   width: 100% !important;
   display: block !important;
   border: none !important;
   transition: height 0.3s ease;
+  /* min-height: 140vh !important; */
 }
 
 /* --- Desktop (large screens) --- */
 @media screen and (min-width: 1600px) {
-  #checkout iframe {
+  #checkout {
     height: 100vh !important;
-    min-height: 1050px !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 140vh !important;
+    min-height: 140vh !important;
   }
 }
 
 /* --- Standard laptop / mid desktop --- */
 @media screen and (min-width: 1025px) and (max-width: 1599px) {
-  #checkout iframe {
+  #checkout {
     height: 100vh !important;
-    min-height: 850px !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 150vh !important;
+    min-height: 150vh !important;
   }
 }
 
 /* --- Tablet screens --- */
 
-@media screen and (min-width: 820px) and (max-width: 1024px) {
-  #checkout iframe {
+@media screen and (min-width: 981px) and (max-width: 1024px) {
+  #checkout {
     height: 100vh !important;
-    min-height: 900px !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 230vh !important;
+    min-height: 230vh !important;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 980px) {
+  #checkout {
+    height: 100vh !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 122vh !important;
+    min-height: 122vh !important;
   }
 }
 
 
 @media screen and (min-width: 768px) and (max-width: 819px) {
-  #checkout iframe {
+  #checkout {
     height: 100vh !important;
-    min-height: 1000px !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 140vh !important;
+    min-height: 140vh !important;
   }
 }
 
 /* --- Small tablets & large phones --- */
 @media screen and (min-width: 481px) and (max-width: 767px) {
-  #checkout iframe {
+  #checkout {
     height: 100vh !important;
-    min-height: 1150px !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 200vh !important;
+    min-height: 200vh !important;
   }
 }
 
 /* --- Small phones --- */
-@media screen and (max-width: 480px) {
-  #checkout iframe {
+@media screen and (min-width: 376px) and (max-width: 480px) {
+  #checkout {
     height: 100vh !important;
-    min-height: 1100px !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 180vh !important;
+    min-height: 180vh !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #checkout {
+    height: 100vh !important;
+    overflow-y: scroll !important;
+  }
+  #checkout iframe {
+    height: 230vh !important;
+    min-height: 230vh !important;
   }
 }
 
