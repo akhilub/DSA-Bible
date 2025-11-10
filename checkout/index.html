@@ -107,7 +107,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1887,8 +1887,8 @@ function showError(message) {
 }
 
 #checkout {
-  height: 120vh;
-  overflow: scroll;
+  height: 100vh !important;
+  overflow-y: scroll !important;
   /* min-height: 1000px;*/
 
 }
@@ -1904,10 +1904,6 @@ function showError(message) {
 
 /* --- Desktop (large screens) --- */
 @media screen and (min-width: 1600px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
   #checkout iframe {
     height: 140vh !important;
     min-height: 140vh !important;
@@ -1916,34 +1912,25 @@ function showError(message) {
 
 /* --- Standard laptop / mid desktop --- */
 @media screen and (min-width: 1025px) and (max-width: 1599px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
+
   #checkout iframe {
-    height: 150vh !important;
-    min-height: 150vh !important;
+    height: 180vh !important;
+    min-height: auto !important;
   }
 }
 
 /* --- Tablet screens --- */
 
 @media screen and (min-width: 981px) and (max-width: 1024px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
+
   #checkout iframe {
-    height: 230vh !important;
-    min-height: 230vh !important;
+    height: 240vh !important;
+    min-height: 240vh !important;
   }
 }
 
 @media screen and (min-width: 820px) and (max-width: 980px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
+
   #checkout iframe {
     height: 122vh !important;
     min-height: 122vh !important;
@@ -1952,10 +1939,7 @@ function showError(message) {
 
 
 @media screen and (min-width: 768px) and (max-width: 819px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
+
   #checkout iframe {
     height: 140vh !important;
     min-height: 140vh !important;
@@ -1964,10 +1948,7 @@ function showError(message) {
 
 /* --- Small tablets & large phones --- */
 @media screen and (min-width: 481px) and (max-width: 767px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
+
   #checkout iframe {
     height: 200vh !important;
     min-height: 200vh !important;
@@ -1976,10 +1957,6 @@ function showError(message) {
 
 /* --- Small phones --- */
 @media screen and (min-width: 376px) and (max-width: 480px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
   #checkout iframe {
     height: 180vh !important;
     min-height: 180vh !important;
@@ -1987,10 +1964,7 @@ function showError(message) {
 }
 
 @media screen and (max-width: 375px) {
-  #checkout {
-    height: 100vh !important;
-    overflow-y: scroll !important;
-  }
+
   #checkout iframe {
     height: 230vh !important;
     min-height: 230vh !important;
