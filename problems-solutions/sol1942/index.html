@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1529,6 +1529,8 @@
       
         
       
+        
+      
     
     
     
@@ -1842,9 +1844,25 @@
 </blockquote>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n \log n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
-<div class="admonition tip">
-<p class="admonition-title">Algorithm</p>
+<div class="admonition note">
+<p class="admonition-title">Algorithm Discussion</p>
 <p>We can model the problem as an event-based simulation using two heaps (priority queues). One heap will keep track of available chairs, and the other will keep track of occupied chairs along with their leaving times. As we process each friend's arrival, we free up any chairs that have become available and assign the smallest available chair to the arriving friend. If the arriving friend is the target friend, we return the assigned chair number.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm Implementation</p>
+<ol>
+<li>Create an event list <code>E</code> where each event is a tuple <code>(arrival_time, leaving_time, friend_index)</code>.</li>
+<li>Sort the event list <code>E</code> by <code>arrival_time</code>.</li>
+<li>Use a min-heap <code>pq_free</code> to keep track of free chairs (initially containing all chair indices).</li>
+<li>Use another min-heap <code>pq_oc</code> to keep track of occupied chairs with their leaving times.</li>
+<li>For each event in <code>E</code>:<ul>
+<li>Free up chairs whose leaving time is less than or equal to the current arrival time by popping from <code>pq_oc</code> and pushing the chair index back into <code>pq_free</code>.</li>
+<li>Assign the smallest available chair from <code>pq_free</code> to the arriving friend and push the chair along with the leaving time into <code>pq_oc</code>.</li>
+<li>If the arriving friend is the target friend, store the assigned chair index.</li>
+</ul>
+</li>
+<li>Return the chair index assigned to the target friend.</li>
+</ol>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
