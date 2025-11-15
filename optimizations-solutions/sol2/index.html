@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1889,10 +1889,22 @@ u^\top A_y \ge [2,\; -3,\; 4].
 <p>Dual constraints written explicitly:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-2u_1 + 3u_2 &amp;\ge 2, \\
-3u_1 - u_2 &amp;\ge -3, \\
-6u_1 + 3u_2 &amp;\ge 4, \\
-u_1, u_2 &amp;\ge 0.
+\min\;&amp;
+(2 - (5\hat{x_1} - 3\hat{x_2} - 7\hat{x_3}))u_1
++
+(10 - (4\hat{x_1} + 2\hat{x_2} + 4\hat{x_3}))u_2  \\
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{s.t. } &amp;
+2u_1 + 3u_2 \ge 2, \\
+&amp;
+3u_1 - u_2 \ge -3, \\
+&amp;
+6u_1 + 3u_2 \ge 4, \\
+&amp;
+u_1, u_2 \ge 0.
 \end{aligned}
 \]</div>
 <hr>
