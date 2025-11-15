@@ -127,6 +127,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#benders-decomposition-for-the-given-mip" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1831,6 +1836,145 @@
   <h1>Sol2</h1>
 
 <!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users --><!-- gated-content start --><!-- solution:start --><h3 id="approach-1-benders-decomposition">Approach 1: Bender's Decomposition</h3>
+<h2 id="benders-decomposition-for-the-given-mip">Benders Decomposition for the Given MIP</h2>
+<p>We start with the original problem:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\max\;&amp; 5x_1 - 2x_2 + 9x_3 + 2y_1 - 3y_2 + 4y_3 \\
+\text{s.t. } &amp;
+5x_1 - 3x_2 - 7x_3 + 2y_1 + 3y_2 + 6y_3 \le 2, \\
+&amp;
+4x_1 + 2x_2 + 4x_3 + 3y_1 - y_2 + 3y_3 \le 10, \\
+&amp;
+0 \le x_i \le 5,\quad x_i \in \mathbb{Z},\quad i=1,2,3, \\
+&amp;
+y_i \ge 0,\quad i=1,2,3.
+\end{aligned}
+\]</div>
+<p>We treat the integer variables <span class="arithmatex">\((x)\)</span> as the <strong>master</strong> variables and the continuous variables <span class="arithmatex">\((y)\)</span> as the <strong>subproblem</strong> variables.</p>
+<hr>
+<h2 id="subproblem-for-fixed-hatx">Subproblem for Fixed <span class="arithmatex">\((\hat{x})\)</span></h2>
+<p>For a fixed integer vector <span class="arithmatex">\(\hat{x}\)</span>, the continuous subproblem is:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\theta(\hat{x}) = \max_{y \ge 0}\;&amp; [2,-3,4]\, y \\
+\text{s.t. } &amp;
+A_y\, y \le b - A_x\, \hat{x},
+\end{aligned}
+\]</div>
+<p>where</p>
+<div class="arithmatex">\[
+A_x = \begin{bmatrix}
+5 &amp; -3 &amp; -7\\
+4 &amp; 2 &amp; 4
+\end{bmatrix},\quad
+A_y =
+\begin{bmatrix}
+2 &amp; 3 &amp; 6\\
+3 &amp; -1 &amp; 3
+\end{bmatrix},\quad
+b = \begin{bmatrix} 2 \\ 10 \end{bmatrix}.
+\]</div>
+<hr>
+<h2 id="dual-of-the-subproblem">Dual of the Subproblem</h2>
+<p>Introduce dual variables <span class="arithmatex">\((u_1,u_2 \ge 0)\)</span>.<br>
+The dual LP is:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\min_{u \ge 0}\;&amp; u^\top \left(b - A_x\, \hat{x} \right) \\
+\text{s.t. } &amp;
+u^\top A_y \ge [2,\; -3,\; 4].
+\end{aligned}
+\]</div>
+<p>Dual constraints written explicitly:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+2u_1 + 3u_2 &amp;\ge 2, \\
+3u_1 - u_2 &amp;\ge -3, \\
+6u_1 + 3u_2 &amp;\ge 4, \\
+u_1, u_2 &amp;\ge 0.
+\end{aligned}
+\]</div>
+<hr>
+<h2 id="benders-optimality-cuts">Benders Optimality Cuts</h2>
+<p>Each dual extreme point <span class="arithmatex">\(((u_1,u_2))\)</span> generates an optimality cut:</p>
+<div class="arithmatex">\[
+\theta \le
+u_1 \left(2 - (5x_1 - 3x_2 - 7x_3)\right)
++
+u_2 \left(10 - (4x_1 + 2x_2 + 4x_3)\right).
+\]</div>
+<p>Expanding:</p>
+<div class="arithmatex">\[
+\theta \le
+(2u_1 + 10u_2)
+-
+x_1(5u_1 + 4u_2)
++
+x_2(3u_1 - 2u_2)
++
+x_3(7u_1 + 4u_2).
+\]</div>
+<hr>
+<h2 id="final-master-problem-after-enumerating-all-dual-extreme-points">Final Master Problem (After Enumerating All Dual Extreme Points)</h2>
+<p>The dual feasible region yields <strong>four extreme points</strong>, giving <strong>four Benders cuts</strong>.</p>
+<p>The final master MIP becomes:</p>
+<div class="arithmatex">\[
+\max\; 5x_1 - 2x_2 + 9x_3 + \theta
+\]</div>
+<p>subject to the following Benders cuts:</p>
+<h3 id="cut-1-u_1u_201overline3"><strong>Cut 1</strong> <span class="arithmatex">\(((u_1,u_2)=(0,\;1.\overline{3}))\)</span></h3>
+<div class="arithmatex">\[
+\theta \le
+13.333333
+- 5.333333\, x_1
+- 2.666667\, x_2
+- 5.333333\, x_3
+\]</div>
+<h3 id="cut-2-u_1u_203"><strong>Cut 2</strong> <span class="arithmatex">\(((u_1,u_2)=(0,\;3))\)</span></h3>
+<div class="arithmatex">\[
+\theta \le
+30
+- 12\, x_1
+- 6\, x_2
+- 12\, x_3
+\]</div>
+<h3 id="cut-3-u_1u_2050333333"><strong>Cut 3</strong> <span class="arithmatex">\(((u_1,u_2)=(0.5,\;0.333333))\)</span></h3>
+<div class="arithmatex">\[
+\theta \le
+4.333333
+- 3.833333\, x_1
++ 0.833333\, x_2
++ 2.166667\, x_3
+\]</div>
+<h3 id="cut-4-u_1u_210"><strong>Cut 4</strong> <span class="arithmatex">\(((u_1,u_2)=(1,\;0))\)</span></h3>
+<div class="arithmatex">\[
+\theta \le
+2
+- 5\, x_1
++ 3\, x_2
++ 7\, x_3
+\]</div>
+<hr>
+<h2 id="final-constraints">Final Constraints</h2>
+<div class="arithmatex">\[
+0 \le x_i \le 5,\quad x_i \in \mathbb{Z},\quad i=1,2,3,
+\]</div>
+<div class="arithmatex">\[
+\theta \text{ is continuous}.
+\]</div>
+<hr>
+<h2 id="how-to-recover-ystar">How to Recover <span class="arithmatex">\((y^\star)\)</span></h2>
+<p>Once the master gives the optimal integer <span class="arithmatex">\((x^\star)\)</span>, solve:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\max_{y \ge 0}\;&amp; [2,-3,4]\, y \\
+\quad \text{s.t.} &amp; \quad
+A_y\, y \le b - A_x\, x^\star,
+\end{aligned}
+\]</div>
+<p>to obtain the optimal continuous vector <span class="arithmatex">\((y^\star)\)</span>.</p>
+<hr>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python (Bender's)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1855,13 +1999,13 @@
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">m</span><span class="o">.</span><span class="n">setObjective</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">9</span><span class="o">*</span><span class="n">x3</span><span class="o">+</span><span class="n">n</span><span class="p">,</span><span class="n">GRB</span><span class="o">.</span><span class="n">MAXIMIZE</span><span class="p">)</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1">#Feasibility Cuts</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">3</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span><span class="s2">"c1"</span><span class="p">)</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">0</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span><span class="s2">"c2"</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">((</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">3</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span><span class="s2">"c1"</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">((</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">*</span><span class="mi">0</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span><span class="s2">"c2"</span><span class="p">)</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1">#Optimality Cuts</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">),</span><span class="s2">"c3"</span><span class="p">)</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">),</span><span class="s2">"c3"</span><span class="p">)</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x3</span><span class="p">)),</span><span class="s2">"c4"</span><span class="p">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x2</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x3</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x3</span><span class="p">)),</span><span class="s2">"c4"</span><span class="p">)</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">x3</span><span class="p">)),</span><span class="s2">"c5"</span><span class="p">)</span>
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
@@ -1878,11 +2022,13 @@
 </span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="sd">'''</span>
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="sd">if m.status == GRB.status.OPTIMAL:</span>
 </span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="sd">    m.write("mip_bender.lp")</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="sd">    m.write("mip_bender.sol")</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="sd">elif m.status == GRB.status.INFEASIBLE:</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="sd">    m.computeIIS() # It tells you which constraints, when removed, makes the m feasible</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="sd">    m.write('inf.ilp')</span>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="sd">'''</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="sd">    os.system("imshow mip_bender.lp")</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="sd">    m.write("mip_bender.sol")</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="sd">    os.system("imshow mip_bender.sol")</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="sd">elif m.status == GRB.status.INFEASIBLE:</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="sd">    m.computeIIS() # It tells you which constraints, when removed, makes the m feasible</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="sd">    m.write('inf.ilp')</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="sd">'''</span>
 </span></code></pre></div>
 </div>
 </div>
