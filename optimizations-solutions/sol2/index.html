@@ -764,6 +764,13 @@ u_1, u_2 \ge 0.
 <p><excalidraw-renderer alt="Logic" src="../../drawings/Bender.excalidraw"></excalidraw-renderer></p>
 <hr>
 <h2 id="benders-feasibilty-cuts">Benders Feasibilty Cuts</h2>
+<p>Obtain dual extreme rays from the dual LP when it is <strong>unbounded</strong> by solving.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+r^\top A_y \ge 0 \\
+r \ge 0.
+\end{aligned}
+\]</div>
 <p>Each dual extreme ray <span class="arithmatex">\(((r_1,r_2))\)</span> generates a feasibility cut:</p>
 <div class="arithmatex">\[
 (r_1)(2 - (5x_1 - 3x_2 - 7x_3))
@@ -785,6 +792,15 @@ x_3(7r_1 - 4r_2)
 $$ -->
 <hr>
 <h2 id="benders-optimality-cuts">Benders Optimality Cuts</h2>
+<p>Obtain dual extreme points from the dual LP when it is <strong>bounded</strong> by solving.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;
+u^\top A_y \ge [2,\; -3,\; 4] \\
+&amp;
+u \ge 0.
+\end{aligned}
+\]</div>
 <p>Each dual extreme point <span class="arithmatex">\(((u_1,u_2))\)</span> generates an optimality cut:</p>
 <div class="arithmatex">\[
 \theta \le
