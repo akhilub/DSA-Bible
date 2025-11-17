@@ -47,7 +47,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox">
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
@@ -681,7 +681,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>Sol2</h1>
-<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users --><!-- gated-content start --><!-- solution:start --><h3 id="approach-1-benders-decomposition">Approach 1: Bender's Decomposition</h3>
+<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users --><!-- gated-content start --><!-- solution:start --><h3 id="approach-benders-decomposition">Approach : Bender's Decomposition</h3>
 <h2 id="benders-decomposition-for-the-given-mip">Benders Decomposition for the Given MIP</h2>
 <p>We start with the original problem:</p>
 <div class="arithmatex">\[
@@ -764,13 +764,14 @@ u_1, u_2 \ge 0.
 <p><excalidraw-renderer alt="Logic" src="../../drawings/Bender.excalidraw"></excalidraw-renderer></p>
 <hr>
 <h2 id="benders-feasibilty-cuts">Benders Feasibilty Cuts</h2>
-<p>Obtain dual extreme rays from the dual LP when it is <strong>unbounded</strong> by solving.</p>
+<p>Obtain dual extreme rays from the dual LP when it is <strong>unbounded</strong> by solving</p>
 <div class="arithmatex">\[
 \begin{aligned}
 r^\top A_y \ge 0 \\
 r \ge 0.
 \end{aligned}
 \]</div>
+<p>and then normalizing <span class="arithmatex">\(r\)</span>.</p>
 <p>Each dual extreme ray <span class="arithmatex">\(((r_1,r_2))\)</span> generates a feasibility cut:</p>
 <div class="arithmatex">\[
 (r_1)(2 - (5x_1 - 3x_2 - 7x_3))
@@ -975,7 +976,7 @@ A_y\, y \le b - A_x\, x^\star,
 </div>
 </div>
 </div>
-<h3 id="approach-2-mip-model">Approach 2: MIP Model</h3>
+<h3 id="verification-by-mip-model">Verification By: MIP Model</h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python (MIP)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
