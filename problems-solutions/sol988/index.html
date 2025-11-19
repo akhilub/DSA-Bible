@@ -1557,6 +1557,8 @@
       
         
       
+        
+      
     
     
     
@@ -1956,7 +1958,7 @@
 <p>The <code>nonlocal</code> keyword in Python is used within nested functions to explicitly declare that a variable refers to a variable in the nearest enclosing but non-global scope. This allows the inner function to modify the value of a variable defined in an outer, enclosing function, rather than creating a new local variable within the inner function.</p>
 <p><strong>Purpose:</strong></p>
 <p><strong>Modifying Enclosing Scope Variables:</strong> When an inner function needs to change the value of a variable defined in its immediate outer function (not the global scope), the <code>nonlocal</code> keyword is used to indicate this intention.</p>
-<p><strong>Avoiding Local Shadowing:</strong> Without nonlocal, if an inner function assigns a value to a variable with the same name as one in an outer scope, it would create a new local variable within the inner function, leaving the outer variable unchanged. <code>nonlocal</code> prevents this shadowing.</p>
+<p><strong>Avoiding Local Shadowing:</strong> Without <code>nonlocal</code>, if an inner function assigns a value to a variable with the same name as one in an outer scope, it would create a new local variable within the inner function, leaving the outer variable unchanged. <code>nonlocal</code> prevents this shadowing.</p>
 <p><strong>How it works:</strong></p>
 <p><strong>Nested Functions:</strong> The <code>nonlocal</code> keyword is only relevant in the context of nested functions, where one function is defined inside another.</p>
 <p><strong>Enclosing Scope:</strong> When <code>nonlocal</code> is used for a variable within an inner function, Python searches for that variable in the enclosing local scopes, starting from the immediate outer function's scope, and continuing outwards until a match is found. It does not search the global scope.</p>
