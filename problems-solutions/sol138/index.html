@@ -1565,6 +1565,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1865,6 +1869,21 @@
 <h3 id="approach-recursion">Approach : Recursion</h3>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>We'll use recursion to create a deep copy of the linked list with random pointers. We maintain a mapping from original nodes to their corresponding cloned nodes to handle cycles and ensure that each node is cloned only once.</p>
+<p>The recursive function <code>deepcopy</code> takes a node as input and performs the following steps:</p>
+<ol>
+<li>If the input node is <code>None</code>, return <code>None</code>.</li>
+<li>If the node has already been cloned (exists in the mapping), return the cloned node.</li>
+<li>Create a new node with the same value as the input node and store it in the mapping.</li>
+<li>Recursively set the <code>next</code> and <code>random</code> pointers of the cloned node by calling <code>deepcopy</code> on the respective pointers of the original node.</li>
+<li>Return the cloned node.</li>
+</ol>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Definition for a Node.</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">next</span><span class="p">:</span> <span class="s1">'Node'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">random</span><span class="p">:</span> <span class="s1">'Node'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
@@ -1908,6 +1927,9 @@
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">nb</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">newNode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
+</div>
+</div>
+</div>
 <!-- solution:end -->
 
 <!-- gated-content end -->
