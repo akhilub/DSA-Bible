@@ -1586,6 +1586,8 @@
       
         
       
+        
+      
     
     
     
@@ -1882,6 +1884,9 @@
 <!-- solution:start -->
 
 <h3 id="approach-modified-cyclic-sort">Approach : Modified Cyclic Sort</h3>
+<blockquote>
+<p><strong>Cyclic Sort</strong> : Sort arrays by placing elements at their correct indices</p>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
 <p>We assume the length of the array <span class="arithmatex">\(nums\)</span> is <span class="arithmatex">\(n\)</span>, then the smallest positive integer must be in the range <span class="arithmatex">\([1, .., n + 1]\)</span>. We can traverse the array and swap each number <span class="arithmatex">\(x\)</span> to its correct position, that is, the position <span class="arithmatex">\(x - 1\)</span>. If <span class="arithmatex">\(x\)</span> is not in the range <span class="arithmatex">\([1, n + 1]\)</span>, then we can ignore it.</p>
