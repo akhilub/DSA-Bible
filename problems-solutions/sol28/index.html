@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1623,6 +1623,8 @@
       
         
       
+        
+      
     
     
     
@@ -1920,7 +1922,7 @@
 
 <!-- solution:start -->
 
-<h3 id="approach-traversal-brute-force">Approach : Traversal (Brute - Force)</h3>
+<h3 id="approach-traversal-naive-brute-force">Approach : Traversal (Naive Brute Force)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
 <p>We compare the string <code>needle</code> with each character of the string <code>haystack</code> as the starting point. If we find a matching index, we return it directly.</p>
@@ -1950,10 +1952,93 @@
 <p>The time complexity is <span class="arithmatex">\(O(m + n)\)</span>, where <span class="arithmatex">\(m\)</span> is the length of <code>haystack</code> and <span class="arithmatex">\(n\)</span> is the length of <code>needle</code>. The space complexity is <span class="arithmatex">\(O(1)\)</span>.</p>
 </div>
 <h3 id="approach-kmp-string-matching-algorithm">Approach : KMP String Matching Algorithm</h3>
-<div class="admonition tip">
-<p class="admonition-title">Algorithm</p>
+<div class="admonition info">
+<p class="admonition-title">Algorithm Discussion</p>
 <p>The Knuth-Morris-Pratt (KMP) algorithm is a string matching algorithm that preprocesses the <code>needle</code> to create a longest prefix-suffix (LPS) array. This allows the algorithm to skip unnecessary comparisons when a mismatch occurs, improving efficiency.</p>
 <p>The time complexity is <span class="arithmatex">\(O(m + n)\)</span>, where <span class="arithmatex">\(m\)</span> is the length of <code>haystack</code> and <span class="arithmatex">\(n\)</span> is the length of <code>needle</code>. The space complexity is <span class="arithmatex">\(O(n)\)</span> for storing the LPS array.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm Implementation</p>
+<ol>
+<li>
+<p><strong>Build the LPS Array</strong>:</p>
+<ul>
+<li>Create an array <code>lps</code> of size equal to the length of <code>needle</code>.</li>
+<li>Initialize two pointers: <code>length</code> (length of the previous longest prefix suffix) and <code>cur</code> (current position in the pattern).</li>
+<li>Iterate through the <code>needle</code> to fill the <code>lps</code> array based on matching prefixes and suffixes.</li>
+</ul>
+</li>
+<li>
+<p><strong>KMP Search in Haystack</strong>:</p>
+<ul>
+<li>Initialize two pointers: <code>i</code> (index for <code>haystack</code>) and <code>j</code> (index for <code>needle</code>).</li>
+<li>Traverse the <code>haystack</code> using pointer <code>i</code>:<ul>
+<li>If characters match, increment both <code>i</code> and <code>j</code>.</li>
+<li>If <code>j</code> reaches the length of <code>needle</code>, a match is found; return the starting index.</li>
+<li>If a mismatch occurs after some matches, use the <code>lps</code> array to skip unnecessary comparisons by updating <code>j</code>.</li>
+<li>If no matches, simply increment <code>i</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Return Result</strong>:</p>
+<ul>
+<li>If the end of the <code>haystack</code> is reached without finding the <code>needle</code>, return -1 indicating no match found.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">strStr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">haystack</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">needle</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="c1"># Edge case: empty needle</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">needle</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            <span class="k">return</span> <span class="mi">0</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="c1"># Step 1: Build LPS array for needle</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">def</span><span class="w"> </span><span class="nf">build_lps</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="n">lps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># length of previous longest prefix-suffix</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                <span class="c1"># Adjust l until we find a match or reach 0</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                <span class="k">while</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">pattern</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                    <span class="n">l</span> <span class="o">=</span> <span class="n">lps</span><span class="p">[</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>                <span class="k">if</span> <span class="n">pattern</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">==</span> <span class="n">pattern</span><span class="p">[</span><span class="n">l</span><span class="p">]:</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                    <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>                    <span class="n">lps</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="k">return</span> <span class="n">lps</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="n">lps</span> <span class="o">=</span> <span class="n">build_lps</span><span class="p">(</span><span class="n">needle</span><span class="p">)</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>        <span class="c1"># Step 2: KMP search in haystack</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># i → haystack, j → needle</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">haystack</span><span class="p">):</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>            <span class="k">if</span> <span class="n">haystack</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">needle</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                <span class="c1"># full match found</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">needle</span><span class="p">):</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>                    <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="n">j</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>                <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>                    <span class="n">j</span> <span class="o">=</span> <span class="n">lps</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>                <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="c1"># not found</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></code></pre></div>
+</div>
+</div>
 </div>
 <!-- solution:end -->
 
