@@ -1631,6 +1631,8 @@
       
         
       
+        
+      
     
     
     
@@ -1967,22 +1969,31 @@
 <p class="admonition-title">Algorithm Implementation</p>
 <ol>
 <li>
-<p><strong>Build the LPS Array</strong>:</p>
+<p><strong>Build the LPS Array</strong>: to store the lengths of the longest prefix that is also a suffix for each position in the pattern</p>
 <ul>
-<li>Create an array <code>lps</code> of size equal to the length of <code>needle</code>.</li>
+<li>Create an array <code>lps</code> of size equal to the length of <code>needle</code> with zeros.</li>
 <li>Initialize two pointers: <code>length</code> (length of the previous longest prefix suffix) and <code>cur</code> (current position in the pattern).</li>
-<li>Iterate through the <code>needle</code> to fill the <code>lps</code> array based on matching prefixes and suffixes.</li>
+<li>Iterate through the pattern <code>needle</code> to fill the <code>lps</code> array based on matching prefixes and suffixes.<ul>
+<li>If characters match, increment the length and set the corresponding LPS value.</li>
+<li>If there's a mismatch, adjust the length using the LPS array to skip unnecessary comparisons.</li>
+<li>If there's no match and the length is zero, set the LPS value to zero.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <p><strong>KMP Search in Haystack</strong>:</p>
 <ul>
-<li>Initialize two pointers: <code>i</code> (index for <code>haystack</code>) and <code>j</code> (index for <code>needle</code>).</li>
-<li>Traverse the <code>haystack</code> using pointer <code>i</code>:<ul>
-<li>If characters match, increment both <code>i</code> and <code>j</code>.</li>
-<li>If <code>j</code> reaches the length of <code>needle</code>, a match is found; return the starting index.</li>
+<li>Precompute the LPS (Longest Prefix Suffix) array for the pattern (<code>needle</code>).</li>
+<li>Initialize two pointers: <code>i</code> (index for text <code>haystack</code>) and <code>j</code> (index for pattern <code>needle</code>).</li>
+<li>Traverse the text <code>haystack</code> using pointer <code>i</code>:<ul>
+<li>If characters at text and pattern indices match,<ul>
+<li>increment both <code>i</code> and <code>j</code>.</li>
+<li>If patternIndex<code>j</code> reaches the length of <code>needle</code>, a match is found; return the starting index.</li>
+</ul>
+</li>
 <li>If a mismatch occurs after some matches, use the <code>lps</code> array to skip unnecessary comparisons by updating <code>j</code>.</li>
-<li>If no matches, simply increment <code>i</code>.</li>
+<li>If no matches, simply increment textIndex <code>i</code> to next character.</li>
 </ul>
 </li>
 </ul>
@@ -2034,14 +2045,13 @@
 </span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                <span class="c1"># full match found</span>
 </span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">needle</span><span class="p">):</span>
 </span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>                    <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="n">j</span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>                <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>                    <span class="n">j</span> <span class="o">=</span> <span class="n">lps</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>                <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="c1"># not found</span>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>            <span class="k">elif</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>                <span class="n">j</span> <span class="o">=</span> <span class="n">lps</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        <span class="c1"># not found</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </span></code></pre></div>
 </div>
 </div>
