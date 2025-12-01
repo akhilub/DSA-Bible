@@ -12285,20 +12285,20 @@
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
 
-<p>Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.</p>
-<p>The algorithm for myAtoi(string s) is as follows:</p>
+<p>Implement the <code>myAtoi(string s)</code> function, which converts a string to a 32-bit signed integer.</p>
+<p>The algorithm for <code>myAtoi(string s)</code> is as follows:</p>
 <ol>
 <li>
-<p>Whitespace: Ignore any leading whitespace (" ").</p>
+<p><strong>Whitespace:</strong> Ignore any leading whitespace (<code>" "</code>).</p>
 </li>
 <li>
-<p>Signedness: Determine the sign by checking if the next character is '-' or '+', assuming positivity if neither present.</p>
+<p><strong>Signedness:</strong> Determine the sign by checking if the next character is <code>'-'</code> or <code>'+'</code>, assuming positivity if neither present.</p>
 </li>
 <li>
-<p>Conversion: Read the integer by skipping leading zeros until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.</p>
+<p><strong>Conversion:</strong> Read the integer by skipping leading zeros until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is <code>0</code>.</p>
 </li>
 <li>
-<p>Rounding: If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then round the integer to remain in the range. Specifically, integers less than -231 should be rounded to -231, and integers greater than 231 - 1 should be rounded to 231 - 1.</p>
+<p><strong>Rounding:</strong> If the integer is out of the 32-bit signed integer range [-2<sup>31</sup>, 2<sup>31</sup> - 1], then round the integer to remain in the range. Specifically, integers less than -2<sup>31</sup> should be rounded to -2<sup>31</sup>, and integers greater than 2<sup>31</sup> - 1 should be rounded to 2<sup>31</sup> - 1.</p>
 </li>
 </ol>
 <p>Return the integer as the final result.</p>
@@ -12370,8 +12370,8 @@
 </span></code></pre></div>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li>0 &lt;= s.length &lt;= 200</li>
-<li>s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.</li>
+<li><code>0 &lt;= s.length &lt;= 200</code></li>
+<li><code>s</code> consists of English letters (lower-case and upper-case), digits <code>(0-9)</code>, <code>' '</code>, <code>'+'</code>, <code>'-'</code>, and <code>'.'</code>.</li>
 </ul>
 <!-- description:end -->
 

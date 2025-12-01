@@ -127,6 +127,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#default-behavior-removing-whitespace" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1928,19 +1933,27 @@
 
   <h1>Sol8</h1>
 
+<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users --><!-- gated-content start --><!-- vide solution:start --><div class="video-message">
+  <p>Video Solution Coming Soon</p>
+</div>
+
+<!-- vide solution: end -->
+
+<!-- solution:start -->
+
 <h3 id="approach-simulation">Approach : Simulation</h3>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm</p>
 <p>The problem requires us to convert a string to a 32-bit signed integer, handling various edge cases such as leading whitespace, optional signs, and overflow/underflow.</p>
-<p>The solution involves the following steps:</p>
+<p>The algorithm involves the following steps:</p>
 <ol>
 <li>
 <p><strong>Skip Leading Whitespace:</strong> We iterate through the string to skip any leading whitespace characters.</p>
 </li>
 <li>
-<p><strong>Check for Sign:</strong> We check if the next character is a '+' or '-' sign to determine the sign of the resulting integer.</p>
+<p><strong>Check for Sign:</strong> We check if the next character is a <code>'+'</code> or <code>'-'</code> sign to determine the sign of the resulting integer.</p>
 </li>
 <li>
 <p><strong>Read Digits and Convert:</strong> We read the subsequent characters as long as they are digits, converting them into an integer. We also handle overflow/underflow by checking if the integer exceeds the 32-bit signed integer range.</p>
@@ -2028,6 +2041,51 @@
 </div>
 </div>
 </div>
+<details class="info">
+<summary>Python Corner</summary>
+<p>The <code>strip()</code> function in Python is a built-in string method used to remove leading and trailing characters from a string. It <strong>returns</strong> a <strong>new string</strong> with the specified characters removed, without modifying the original string.</p>
+<h2 id="default-behavior-removing-whitespace"><strong>Default Behavior (Removing Whitespace):</strong></h2>
+<p>By default, <code>strip()</code> removes all leading and trailing whitespace characters, including: Space <code>' '</code>, Newline <code>'\n'</code>, Tab <code>'\t'</code>, and Carriage return <code>'\r'</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">message</span> <span class="o">=</span> <span class="s2">"   Hello, World!   </span><span class="se">\n</span><span class="s2">"</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">cleaned_message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">cleaned_message</span><span class="p">)</span> <span class="c1"># Output: Hello, World!</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="removing-specific-characters"><strong>Removing Specific Characters:</strong></h2>
+<p>The <code>strip()</code> method can also accept an optional chars argument, which is a string specifying a set of characters to remove from the beginning and end of the string. The function will remove any character found in this set until it encounters a character not present in the chars set.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">data</span> <span class="o">=</span> <span class="s2">"$$$123.45$$$"</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">cleaned_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"$"</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">cleaned_data</span><span class="p">)</span> <span class="c1"># Output: 123.45</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="removing-multiple-characters"><strong>Removing multiple characters</strong></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">mixed_string</span> <span class="o">=</span> <span class="s2">"---###Text###---"</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">cleaned_mixed</span> <span class="o">=</span> <span class="n">mixed_string</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"-#"</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">cleaned_mixed</span><span class="p">)</span> <span class="c1"># Output: Text</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><strong>Non-destructive</strong>: <code>strip()</code> does not modify the original string; it returns a new string with the changes.</li>
+<li><strong>Leading and Trailing only</strong>: It only removes characters from the beginning and end of the string, not from within the string.</li>
+<li><code>lstrip()</code> and <code>rstrip()</code>: Python also provides <code>lstrip()</code> to remove leading characters and <code>rstrip()</code> to remove trailing characters specifically.</li>
+</ul>
+</details>
 <!-- solution:end -->
 
 <!-- gated-content end -->
