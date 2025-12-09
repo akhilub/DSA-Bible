@@ -1680,6 +1680,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -9564,6 +9574,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../904/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    904. Fruit Into Baskets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../905/" class="md-nav__link">
         
   
@@ -11076,6 +11114,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../1658/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1658. Minimum Operations to Reduce X to Zero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1695/" class="md-nav__link">
         
   
@@ -11280,6 +11346,34 @@
     
   
     1834. Single-Threaded CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1838/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1838. Frequency of the Most Frequent Element
   
 
     
@@ -12196,6 +12290,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../2762/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2762. Continuous Subarrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2812/" class="md-nav__link">
         
   
@@ -12260,6 +12382,34 @@
     
   
     3105. Longest Strictly Increasing or Strictly Decreasing Subarray
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3318/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3318. Find X-Sum of All K-Long Subarrays I
   
 
     
@@ -12715,12 +12865,12 @@
 
 
 <!-- problem:start --><h1 id="424-longest-repeating-character-replacement"><a href="https://leetcode.com/problems/longest-repeating-character-replacement/" title="Click me to Open Playground">424. Longest Repeating Character Replacement</a></h1>
-<p><span class="md-tag md-tag--hard">Hard</span></p>
+<p><span class="md-tag md-tag--medium">Medium</span></p>
 <h2 id="description"><strong>Description</strong></h2>
 <!-- description:start -->
 
 <p>You are given a string <code>s</code> and an integer <code>k</code>. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most <code>k</code> times.</p>
-<p><em>Return the length of the longest <abbr title="🙋‍♂️ A substring is a contiguous non-empty sequence of characters within a string.">substring</abbr> containing the same letter you can get after performing the above operations.</em></p>
+<p>Return <em>the length of the longest <abbr title="🙋‍♂️ A substring is a contiguous non-empty sequence of characters within a string.">substring</abbr> containing the same letter you can get after performing the above operations.</em></p>
 <p><strong>Example 1:</strong></p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">Input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s = "ABAB", k = 2</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">Output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
@@ -12802,19 +12952,19 @@
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="k">def</span><span class="w"> </span><span class="nf">characterReplacement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>                   <span class="c1">#window, a hashtable to store the frequencies of characters like this {A:1,B:1,....}</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">maxCount</span> <span class="o">=</span> <span class="mi">0</span>                        <span class="c1"># to store the frequncy of maximum character count</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>                       <span class="c1"># window, a hashtable to store the frequencies of characters like this {A:1,B:1,....}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">maxCount</span> <span class="o">=</span> <span class="mi">0</span>                            <span class="c1"># to store the frequncy of maximum character count</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">count</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span><span class="o">+=</span><span class="mi">1</span>                  <span class="c1">#expand the window i.e add the count of incoming character in window</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">maxCount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxCount</span><span class="p">,</span><span class="n">count</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]])</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">count</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>                      <span class="c1">#expand the window i.e add the count of incoming character in window</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">maxCount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxCount</span><span class="p">,</span> <span class="n">count</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]])</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="k">while</span> <span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">maxCount</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">:</span>   <span class="c1">#window condition broken or invalid window condition , when length of window (r-l+1) minus maxCharacterCount becomes more than the k (the character can be replaced) meaning we can only expand the window until we consume the provided characters count</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            <span class="n">count</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span><span class="o">-=</span><span class="mi">1</span>              <span class="c1">#shrink the window</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            <span class="n">l</span><span class="o">+=</span><span class="mi">1</span>                        <span class="c1">#slide the window</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="k">while</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">maxCount</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">:</span>   <span class="c1">#window condition broken or invalid window condition , when length of window (r-l+1) minus maxCharacterCount becomes more than the k (the character can be replaced) meaning we can only expand the window until we consume the provided characters count</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            <span class="n">count</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="o">-=</span> <span class="mi">1</span>                  <span class="c1">#shrink the window</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>                            <span class="c1">#slide the window</span>
 </span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">r</span><span class="o">-</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
 </span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="k">return</span> <span class="n">ans</span>
 </span></code></pre></div>

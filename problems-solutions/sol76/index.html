@@ -1667,6 +1667,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1967,6 +1977,7 @@
 <h3 id="approach-sliding-window-two-pointers-hashtable">Approach :Sliding Window (Two Pointers + HashTable)</h3>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(m + n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(128)\)</span> = <span class="arithmatex">\(O(1)\)</span></p>
+<h3 id="way-1">Way 1:</h3>
 <div class="admonition note">
 <p class="admonition-title">Algorithm</p>
 <p>To solve this problem, we'll use a sliding window approach with two pointers.
@@ -2017,6 +2028,47 @@ This process continues until we've examined all characters in <code>s</code>.</p
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="c1"># Return the minimum window substring</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">minL</span><span class="p">:</span><span class="n">minL</span><span class="o">+</span><span class="n">min_len</span><span class="p">]</span> <span class="k">if</span> <span class="n">min_len</span> <span class="o">!=</span> <span class="n">inf</span> <span class="k">else</span> <span class="s2">""</span>
 </span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="way-2">Way 2:</h3>
+<div class="admonition note">
+<p class="admonition-title">Algorithm</p>
+<p>This algorithm finds the minimum window substring in <code>s</code> that contains all characters of <code>t</code> using the sliding window technique.</p>
+<p>We can use a hashmap <code>cnt</code> to track the required character counts from <code>t</code>.</p>
+<p>Expand the window by iterating through <code>s</code> with the right pointer <code>r</code>, decrementing the count for each character and reducing <code>remain</code> when a needed character is found.</p>
+<p>Once all required characters are included (<code>remain == 0</code>), try to shrink the window from the left <code>l</code> as much as possible without losing any required character (by checking if <code>cnt[s[l]] &lt; 0</code>).</p>
+<p>Update the minimum window indices <code>(i, j)</code> whenever a smaller valid window is found.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python (Advanced)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">minWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">cnt</span><span class="p">,</span> <span class="n">remain</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">l</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            <span class="n">remain</span> <span class="o">-=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            <span class="k">if</span> <span class="n">remain</span><span class="p">:</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                <span class="k">continue</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="k">while</span> <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># greedily discard uneeds</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">equivalency</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">remain</span> <span class="o">-=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="o">||</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="o">||</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="o">||</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">if</span> <span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">remain</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></code></pre></div>
+</div>
 </div>
 </div>
 </div>
