@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1677,6 +1677,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1994,21 +2008,30 @@ we will end up with (25, 25, and 10 times of 1) i.e. 12 coins while the optimal 
 <h4 id="way-1-bottom-up-tabulation">Way 1: Bottom Up (Tabulation)</h4>
 <div class="admonition note">
 <p class="admonition-title">Algorithm</p>
-<p>We maintain a one-dimensional dynamic array dp, where dp[i] represents the change of the smallest number of coins when the amount of money is i.</p>
-<p>Note that since the array starts from 0, one more bit must be applied. The size of the array is amount + 1, so the final result can be saved in dp [amount].</p>
-<p>Initialize dp[0] = 0, because if the target value is 0, no coins are needed.</p>
+<p>We maintain a one-dimensional dynamic array <span class="arithmatex">\(dp\)</span>, where <span class="arithmatex">\(dp[i]\)</span> represents the change of the smallest number of coins when the amount of money is <span class="arithmatex">\(i\)</span>.</p>
+<p>Note that since the array starts from <span class="arithmatex">\(0\)</span>, one more bit must be applied. The size of the array is <span class="arithmatex">\(amount + 1\)</span>, so the final result can be saved in <span class="arithmatex">\(dp[amount]\)</span>.</p>
+<p>Initialize <span class="arithmatex">\(dp[0] = 0\)</span>, because if the target value is <span class="arithmatex">\(0\)</span>, no coins are needed.</p>
 <blockquote>
-<p>Other values can be initialized as amount+1, why?
-- Because the smallest coin is 1, so amount requires at most amount coins, and amount+1 is equivalent to the current maximum.
-- Note that the integer maximum value cannot be used for initialization here, because there is an operation of adding 1 to the subsequent state transition equation, which may cause overflow.</p>
+<p>Other values can be initialized as <span class="arithmatex">\(amount + 1\)</span>, why?</p>
+<ul>
+<li>
+<p>Because the smallest coin is <span class="arithmatex">\(1\)</span>, so amount requires at most amount coins, and <span class="arithmatex">\(amount + 1\)</span> is equivalent to the current maximum.</p>
+</li>
+<li>
+<p>Note that the integer maximum value cannot be used for initialization here, because there is an operation of adding <span class="arithmatex">\(1\)</span> to the subsequent state transition equation, which may cause overflow.</p>
+</li>
+</ul>
 </blockquote>
 <p>The next step is to find the state transition equation.</p>
-<p>Example 1, suppose I take a coin with a value of 5, then since the target value is 11, so if we know dp[6], then we know the dp of 11 Worth it?
-So the way to update dp[i] is to traverse each coin. If the value of the traversed coin is less than the value of i (for example, a coin with a value of 5 cannot be used to update dp[3]), use dp[i-coins[j]] + 1 to update dp[i],</p>
-<p>so the state transition equation is:  dp[i] = min(dp[i], dp[i-coins[j]] + 1);among them
-- coins[j] is the j-th coin
-- i-coins[j] is the amount of money i minus the value of one of the coins, the remaining amount of money is found in the dp array</p>
-<p>Then add 1 and compare the value in the current dp array, and update the dp array with the smaller one.</p>
+<p><strong>Example</strong>, suppose I take a coin with a value of <span class="arithmatex">\(5\)</span>, then since the target value is <span class="arithmatex">\(11\)</span>, so if we know <span class="arithmatex">\(dp[6]\)</span>, then we know the <span class="arithmatex">\(dp\)</span> of <span class="arithmatex">\(11\)</span> Worth it?</p>
+<p>So the way to update <span class="arithmatex">\(dp[i]\)</span> is to traverse each coin. If the value of the traversed coin is less than the value of <span class="arithmatex">\(i\)</span> (for example, a coin with a value of <span class="arithmatex">\(5\)</span> cannot be used to update <span class="arithmatex">\(dp[3]\)</span>), use <span class="arithmatex">\(dp[i-coins[j]] + 1\)</span> to update <span class="arithmatex">\(dp[i]\)</span>,</p>
+<p>so the state transition equation is:  <span class="arithmatex">\(dp[i] = min(dp[i], dp[i - coins[j]] + 1)\)</span>; among them</p>
+<ul>
+<li><span class="arithmatex">\(coins[j]\)</span> is the <span class="arithmatex">\(j&lt;sup&gt;th&lt;/sup&gt;\)</span> coin</li>
+<li><span class="arithmatex">\(i - coins[j]\)</span> is the amount of money <span class="arithmatex">\(i\)</span> minus the value of one of the coins, the remaining amount of money is found in the <span class="arithmatex">\(dp\)</span> array</li>
+</ul>
+<p>Then add <span class="arithmatex">\(1\)</span> and compare the value in the current <span class="arithmatex">\(dp\)</span> array, and update the <span class="arithmatex">\(dp\)</span> array with the smaller one.</p>
+<p>Finally, if the value of <span class="arithmatex">\(dp[amount]\)</span> is still <span class="arithmatex">\(amount + 1\)</span>, it means that the amount of money cannot be made up with the given coins, and we return <span class="arithmatex">\(-1\)</span>.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
@@ -2017,28 +2040,36 @@ So the way to update dp[i] is to traverse each coin. If the value of the travers
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">coinChange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="c1"># Initialize dp array with large value</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)]</span><span class="o">*</span> <span class="p">(</span><span class="n">amount</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>             <span class="c1"># dp[i] := the minimum number Of coins to make up i</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                                   <span class="c1"># base case: 0 coins needed to make amount 0</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)]</span><span class="o">*</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>                      <span class="c1"># dp[i] := the minimum number Of coins to make up i</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                                              <span class="c1"># base case: 0 coins needed to make amount 0</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="c1"># Compute minimum coins for each amount</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">amount</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>                 <span class="c1"># here i is integer amount from 1 till amount</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>                         <span class="c1"># here i is integer amount from 1 till amount</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coins</span><span class="p">:</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                <span class="k">if</span> <span class="n">i</span><span class="o">&gt;=</span><span class="n">c</span> <span class="ow">and</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">c</span><span class="p">]</span><span class="o">!=</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">):</span>  <span class="c1"># if coin can be used for current amount</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">c</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">c</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">):</span>       <span class="c1"># if coin can be used for current amount</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">]</span> <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">]</span><span class="o">!=</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">]</span> <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># Return result, -1 if not possible</span>
 </span></code></pre></div>
 </div>
 </div>
 </div>
 <details class="example">
 <summary>equivalency</summary>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4a2 2 0 0 1-2 2 2 2 0 0 1-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-4-8a5 5 0 0 0-5-5 5 5 0 0 0-5 5v7h10zm2.75-7.81-1.42 1.42A8.98 8.98 0 0 1 21 11h2c0-2.93-1.16-5.75-3.25-7.81M1 11h2c0-2.4.96-4.7 2.67-6.39L4.25 3.19A10.96 10.96 0 0 0 1 11"></path></svg></span> instead of [float('inf')] we can also use [amount+1]</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)]</span><span class="o">*</span> <span class="p">(</span><span class="n">amount</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>            <span class="o">||</span>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4a2 2 0 0 1-2 2 2 2 0 0 1-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-4-8a5 5 0 0 0-5-5 5 5 0 0 0-5 5v7h10zm2.75-7.81-1.42 1.42A8.98 8.98 0 0 1 21 11h2c0-2.93-1.16-5.75-3.25-7.81M1 11h2c0-2.4.96-4.7 2.67-6.39L4.25 3.19A10.96 10.96 0 0 0 1 11"></path></svg></span> instead of <code>[float('inf')]</code> we can also use <code>[amount + 1]</code></p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">inf</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            <span class="o">||</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            <span class="o">||</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">amount</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span> <span class="p">(</span><span class="n">amount</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            <span class="o">||</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)]</span> <span class="o">*</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            <span class="o">||</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="o">||</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="o">||</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 <h4 id="way-2-top-down-dp-implemented-via-recursion-with-memoization-aka-cache">Way 2: Top Down DP (implemented via Recursion with Memoization aka @cache)</h4>
@@ -2060,18 +2091,18 @@ min( f(n), f(n - coin) + 1 ), &amp; \text{for coin in [...coins...]}, &amp; \tex
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">coinChange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="nd">@cache</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                <span class="k">return</span> <span class="mi">0</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>     <span class="c1">#some large number greater than amount</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            <span class="n">ans</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coins</span><span class="p">)):</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>                <span class="n">ans</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">coins</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>                <span class="n">ans</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">coins</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="k">return</span> <span class="n">ans</span>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="o">==</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span> <span class="k">else</span> <span class="n">f</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="o">==</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span> <span class="k">else</span> <span class="n">f</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -2079,21 +2110,21 @@ min( f(n), f(n - coin) + 1 ), &amp; \text{for coin in [...coins...]}, &amp; \tex
 <blockquote>
 <p>In Top Down DP, we may have to enlarge the recursion limit via sys.setrecursionlimit (to verify using sys.getrecursionlimit).</p>
 </blockquote>
-<div class="admonition warning">
-<p class="admonition-title">Write this in interviews</p>
-</div>
+<h4 id="way-1-bottom-up-tabulation_1">Way 1: Bottom Up (Tabulation)</h4>
 <p><img alt="👉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f449.svg" title=":point_right:"> Traversing using coins first (Combinations)</p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(m \cdot n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
-<p>where m and n are the number of types of coins and the total amount, respectively.</p>
-<h4 id="way-1-bottom-up-tabulation_1">Way 1: Bottom Up (Tabulation)</h4>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
+<p>where <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the number of types of coins and the total amount, respectively.</p>
+<div class="admonition warning">
+<p class="admonition-title">Write this in interviews</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python (Optimized)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">coinChange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coins</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="c1"># dp[i] := the minimum number Of coins to make up i</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">amount</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>                             <span class="c1">#[amount+1] or [inf]</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>                             <span class="c1">#[amount + 1] or [inf]</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">coins</span><span class="p">:</span>
@@ -2127,7 +2158,7 @@ min( f(n), f(n - coin) + 1 ), &amp; \text{for coin in [...coins...]}, &amp; \tex
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            <span class="o">||</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            <span class="o">||</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="o">||</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">amount</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </div>
