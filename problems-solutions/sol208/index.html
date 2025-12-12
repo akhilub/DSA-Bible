@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1693,6 +1693,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2096,7 +2106,7 @@
 <h3 id="approach-inbuilt-methods">Approach: Inbuilt Methods</h3>
 <div class="admonition example">
 <p class="admonition-title">Algorithm</p>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:"> Using a basic Trie (pronounced as “try”), which is a type of search tree used to efficiently store a dynamic set or associative array where the keys are usually strings. Tries are well-suited for solving problems related to word searches, auto-completions, and prefix matching.</p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4a1.svg" title=":bulb:"> Using a basic Trie (pronounced as “try”), which is a type of search tree used to efficiently store a dynamic set or associative array where the keys are usually strings. Tries are well-suited for solving problems related to word searches, auto-completions, and prefix matching.</p>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4l-4 4-4-4H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m1 3v2h14V5zm0 4v2h10V9zm0 4v2h12v-2z"></path></svg></span> <code>TrieNode</code> <strong>Class:</strong></p>
 <ul>
 <li><strong>Purpose:</strong> Represents a single node in the Trie.</li>
@@ -2131,8 +2141,8 @@
 </ul>
 </li>
 </ul>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:"> <strong>Usage and Functionality:</strong></p>
-<p><img alt="👉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f449.svg" title=":point_right:"> This Trie implementation allows for efficient insertion and search operations for words and prefixes. The <code>defaultdict</code> significantly simplifies the code by automatically handling missing children. This Trie can be used in various applications such as implementing an autocomplete feature, spell checker, or for efficiently solving word search puzzles.</p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f4a1.svg" title=":bulb:"> <strong>Usage and Functionality:</strong></p>
+<p><img alt="👉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f449.svg" title=":point_right:"> This Trie implementation allows for efficient insertion and search operations for words and prefixes. The <code>defaultdict</code> significantly simplifies the code by automatically handling missing children. This Trie can be used in various applications such as implementing an autocomplete feature, spell checker, or for efficiently solving word search puzzles.</p>
 <p><strong>Note:</strong> The comment in the <code>search</code> and <code>startsWith</code> methods about <code>cur = cur.child[letter]</code> potentially creating a default node is crucial. Using <code>cur.child.get(letter)</code> instead avoids unintended Trie modifications during search operations, ensuring that the Trie structure only changes during explicit insertions.</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python (Inbuilt Methods)</label><label for="__tabbed_2_2">Python (Optimized)</label></div>

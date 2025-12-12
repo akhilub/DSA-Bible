@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -1693,6 +1693,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2000,7 +2010,7 @@ In particular, the DP can be classified into Top-Down or Bottom-up.</p>
 we will end up with (25, 25, and 10 times of 1) i.e. 12 coins while the optimal solution will be 3 times 20 i.e. 3 coins.</p>
 </details>
 <h3 id="approach-dynamic-programming-algorithms-to-make-change">Approach : DYNAMIC PROGRAMMING ALGORITHMS TO MAKE CHANGE</h3>
-<p><img alt="👉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f449.svg" title=":point_right:"> Traversing using amount first (Permutations)</p>
+<p><img alt="👉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f449.svg" title=":point_right:"> Traversing using amount first (Permutations)</p>
 <blockquote>
 <p>Both DP algorithms(Top Down &amp; Bottom Up)</p>
 </blockquote>
@@ -2113,7 +2123,7 @@ min( f(n), f(n - coin) + 1 ), &amp; \text{for coin in [...coins...]}, &amp; \tex
 <p>In Top Down DP, we may have to enlarge the recursion limit via sys.setrecursionlimit (to verify using sys.getrecursionlimit).</p>
 </blockquote>
 <h4 id="way-1-bottom-up-tabulation_1">Way 1: Bottom Up (Tabulation)</h4>
-<p><img alt="👉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f449.svg" title=":point_right:"> Traversing using coins first (Combinations)</p>
+<p><img alt="👉" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f449.svg" title=":point_right:"> Traversing using coins first (Combinations)</p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(m \cdot n)\)</span></p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
 <p>where <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(n\)</span> are the number of types of coins and the total amount, respectively.</p>
