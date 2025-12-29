@@ -113,7 +113,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -2130,10 +2130,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-structures-use-case" class="md-nav__link">
+  <a href="#data-structures-identification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Structures Use Case
+        Data Structures Identification
       
     </span>
   </a>
@@ -2453,16 +2453,124 @@
 <p>If we need to try all combinations (or permutations) of the input, we can either use recursive Backtracking or iterative Breadth-First Search</p>
 </li>
 </ol>
-<h2 id="data-structures-use-case"><a class="md-title" href="#data-structures-use-case"><strong>Data Structures Use Case</strong></a></h2>
+<h2 id="data-structures-identification"><a class="md-title" href="#data-structures-identification"><strong>Data Structures Identification</strong></a></h2>
 <ul>
 <li>
-<p>The best data structure that comes to mind to find the smallest number among a set of ‘K’ numbers is a Heap.</p>
+<p>If the best choice now is never questioned later -&gt; <em>its</em> <strong>Greedy</strong></p>
 </li>
 <li>
-<p>If we need to find some common substring among a set of strings, we will be using a HashMap or a Trie.</p>
+<p>If you try to a choice, explore deeper, and undo it when it fails -&gt; its <strong>Backtracking</strong></p>
 </li>
 <li>
-<p>If we need to search/manipulate a bunch of strings, Trie will be the best data structure.</p>
+<p>If a problem becomes samller versions of itself until a terminal/base case stops it -&gt; its <strong>Recursion</strong></p>
+</li>
+<li>
+<p>If you split the problem, solve parts independently. then combine the results -&gt; its <strong>Divide and Conquer</strong></p>
+</li>
+<li>
+<p>If you're solving the same subproblem again and storing their results to avoid recomputation -&gt; its <strong>Dynamic Programming</strong></p>
+</li>
+<li>
+<p>If the search space is sorted and you can eliminate half of it at each step -&gt; its <strong>Binary Search</strong></p>
+</li>
+<li>
+<p>If the search space is too large to explore exhaustively -&gt; its <strong>Heuristics</strong></p>
+</li>
+<li>
+<p>If two pointers move based on a condition -&gt; its <strong>Two Pointers</strong></p>
+</li>
+<li>
+<p>If a fixed or variable window moves and you resuse the results from previous computations -&gt; its <strong>Sliding Window</strong></p>
+</li>
+<li>
+<p>If the last thing you saw must be handled first -&gt; its <strong>Stack</strong></p>
+</li>
+<li>
+<p>If you need next greater or next smaller element efficiently -&gt; its <strong>Monotonic Stack</strong></p>
+</li>
+<li>
+<p>If range sum is asked repeatedly -&gt; its <strong>Prefix Sum</strong></p>
+</li>
+<li>
+<p>If you repeatedly need the smallest/min or largest/max element efficiently while data keeps changing-&gt; its <strong>Heap</strong></p>
+</li>
+<li>
+<p>The best data structure that comes to mind to find the smallest number among a set of ‘K’ numbers is a <strong>Heap</strong>.</p>
+</li>
+<li>
+<p>If the first thing in must be handled first -&gt; its <strong>Queue</strong></p>
+</li>
+<li>
+<p>If constant-time lookup, counting, frequency tracking, insertion, deletion and updating matters more than order -&gt; its <strong>Hash Table</strong>/ <strong>Hash Set</strong>/ <strong>Hash Map</strong></p>
+</li>
+<li>
+<p>If insertion, deletion and lookup matters more than random access -&gt; its <strong>Linked List</strong></p>
+</li>
+<li>
+<p>If constraints are tight and mathematical bit-level operations replace loops(i.e you need to minimize memory usage) -&gt; its <strong>Bit Manipulation</strong></p>
+</li>
+<li>
+<p>If each node has one parent and no cycles exists -&gt; its <strong>Tree</strong></p>
+</li>
+<li>
+<p>If the order of visiting nodes changes based on the problem -&gt; its <strong>Tree Traversal</strong></p>
+</li>
+<li>
+<p>If you need to store data in a sorted order and perform range queries efficiently -&gt; its <strong>Binary Search Tree</strong></p>
+</li>
+<li>
+<p>If you need to store data in a sorted order and perform range queries efficiently and handle duplicates -&gt; its <strong>AVL Tree</strong></p>
+</li>
+<li>
+<p>If you need to store data in a sorted order and perform range queries efficiently and handle duplicates and frequent insertions/deletions -&gt; its <strong>Red-Black Tree</strong></p>
+</li>
+<li>
+<p>If range queries need fast access and updates are less frequent -&gt; its <strong>Segment Tree</strong></p>
+</li>
+<li>
+<p>If nodes are connected in arbitrary ways (many-to-many) and traversal order matters -&gt; its <strong>Graphs</strong></p>
+</li>
+<li>
+<p>If you explore depth to detect cycles, paths or components (topological order) -&gt; its <strong>DFS</strong></p>
+</li>
+<li>
+<p>If you need the shortest path in unweighted steps -&gt; its <strong>BFS</strong></p>
+</li>
+<li>
+<p>If you need the shortest path in weighted steps -&gt; its <strong>Dijkstra's Algorithm</strong></p>
+</li>
+<li>
+<p>If you need the shortest path in weighted steps with negative weights -&gt; its <strong>Bellman-Ford Algorithm</strong></p>
+</li>
+<li>
+<p>If you need the shortest path between all pairs of nodes -&gt; its <strong>Floyd Warshall Algorithm</strong></p>
+</li>
+<li>
+<p>If you need to find the maximum flow in a network -&gt; its <strong>Ford-Fulkerson Algorithm</strong></p>
+</li>
+<li>
+<p>If you're checking whether two things are connected or belongs to the same group -&gt; its <strong>Disjoint Set Union</strong></p>
+</li>
+<li>
+<p>If you need to detect cycles in an undirected graph -&gt; its <strong>Union Find (Disjoint Set)</strong></p>
+</li>
+<li>
+<p>If you need to detect cycles in a directed graph -&gt; its <strong>Topological Sort</strong></p>
+</li>
+<li>
+<p>If you need to find the minimum spanning tree -&gt; its <strong>Kruskal's Algorithm</strong> or <strong>Prim's Algorithm</strong></p>
+</li>
+<li>
+<p>If you need to find the shortest path in a grid -&gt; its <strong>A* Algorithm</strong></p>
+</li>
+<li>
+<p>If you're matching prefixes character by character -&gt; its <strong>Trie</strong></p>
+</li>
+<li>
+<p>If we need to find some common substring among a set of strings, we will be using a HashMap or a <strong>Trie</strong>.</p>
+</li>
+<li>
+<p>If we need to search/manipulate a bunch of strings, <strong>Trie</strong> will be the best data structure.</p>
 </li>
 </ul>
 <h2 id="problem-solving-techniques"><a class="md-title" href="#problem-solving-techniques"><strong>Problem Solving Techniques</strong></a></h2>
@@ -2551,7 +2659,7 @@
 </blockquote>
 <p><strong>21. Monotonic Stack:</strong></p>
 <blockquote>
-<p>Monotonic stack is a stack that maintains its elements in increasing or decreasing order. </p>
+<p>Monotonic stack is a stack that maintains its elements in increasing or decreasing order.</p>
 </blockquote>
 <p><strong>22. Memoization</strong></p>
 <blockquote>
