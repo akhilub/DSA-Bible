@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -469,8 +469,28 @@
     <!-- Auth buttons - with responsive design -->
     <div class="md-header__source">
       <div class="md-header__auth-buttons">
+        <!-- User avatar with dropdown (hidden by default) -->
+        <div class="md-header__user-avatar" id="user-avatar" style="display: none">
+          <div class="md-header__avatar-container">
+            <img id="avatar-img" src="" alt="User Avatar">
+            <div class="md-header__user-dropdown" id="user-dropdown">
+              <div class="md-header__dropdown-content">
+                <div class="md-header__user-info">
+                  <span class="md-header__user-name" id="user-name"></span>
+                </div>
+                <button class="md-header__dropdown-logout" id="dropdown-logout-btn">
+                  <span class="md-header__logout-icon">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
+                  </span>
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Login button with responsive text/icon -->
-        <button class="md-header__button md-icon" id="login-btn" title="Log In">
+        <button class="md-header__button md-icon" id="login-btn" title="Login">
           <span class="md-header__auth-content">
             <span class="md-header__auth-icon">
               
@@ -487,7 +507,7 @@
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
             </span>
-            <span class="md-header__auth-text">Logout</span>
+            <span class="md-header__auth-text">Log Out</span>
           </span>
         </button>
 
@@ -521,6 +541,102 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
+  }
+  
+  /* User avatar styling */
+  .md-header__user-avatar {
+    position: relative;
+    margin-right: 0.5rem;
+  }
+  
+  .md-header__avatar-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .md-header__user-avatar img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid var(--md-accent-fg-color);
+    object-fit: cover;
+    transition: border-color 0.2s;
+  }
+  
+  .md-header__avatar-container:hover img {
+    border-color: var(--md-primary-fg-color);
+  }
+  
+  /* Dropdown styling */
+  .md-header__user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 160px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  }
+  
+  .md-header__user-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .md-header__dropdown-content {
+    padding: 0.75rem;
+  }
+  
+  .md-header__user-info {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    margin-bottom: 0.5rem;
+  }
+  
+  .md-header__user-name {
+    color: var(--md-default-fg-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: block;
+  }
+  
+  .md-header__dropdown-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background: var(--md-primary-fg-color);
+    border: none;
+    color: var(--md-primary-bg-color);
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    transition: background-color 0.25s, color 0.25s;
+  }
+  
+  .md-header__dropdown-logout:hover {
+    background: var(--md-accent-fg-color);
+  }
+  
+  .md-header__logout-icon {
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .md-header__logout-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
   }
   
   /* Ensure auth buttons container is always visible */

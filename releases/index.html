@@ -48,7 +48,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox">
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
@@ -310,8 +310,27 @@
 <!-- Auth buttons - with responsive design -->
 <div class="md-header__source">
 <div class="md-header__auth-buttons">
+<!-- User avatar with dropdown (hidden by default) -->
+<div class="md-header__user-avatar" id="user-avatar" style="display: none">
+<div class="md-header__avatar-container">
+<img alt="User Avatar" id="avatar-img" src="">
+<div class="md-header__user-dropdown" id="user-dropdown">
+<div class="md-header__dropdown-content">
+<div class="md-header__user-info">
+<span class="md-header__user-name" id="user-name"></span>
+</div>
+<button class="md-header__dropdown-logout" id="dropdown-logout-btn">
+<span class="md-header__logout-icon">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
+</span>
+                  Logout
+                </button>
+</div>
+</div>
+</div>
+</div>
 <!-- Login button with responsive text/icon -->
-<button class="md-header__button md-icon" id="login-btn" title="Log In">
+<button class="md-header__button md-icon" id="login-btn" title="Login">
 <span class="md-header__auth-content">
 <span class="md-header__auth-icon">
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8z"></path></svg>
@@ -325,7 +344,7 @@
 <span class="md-header__auth-icon">
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
 </span>
-<span class="md-header__auth-text">Logout</span>
+<span class="md-header__auth-text">Log Out</span>
 </span>
 </button>
 <!-- Sign up button with responsive text/icon -->
@@ -354,6 +373,102 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
+  }
+  
+  /* User avatar styling */
+  .md-header__user-avatar {
+    position: relative;
+    margin-right: 0.5rem;
+  }
+  
+  .md-header__avatar-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .md-header__user-avatar img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid var(--md-accent-fg-color);
+    object-fit: cover;
+    transition: border-color 0.2s;
+  }
+  
+  .md-header__avatar-container:hover img {
+    border-color: var(--md-primary-fg-color);
+  }
+  
+  /* Dropdown styling */
+  .md-header__user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 160px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  }
+  
+  .md-header__user-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .md-header__dropdown-content {
+    padding: 0.75rem;
+  }
+  
+  .md-header__user-info {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    margin-bottom: 0.5rem;
+  }
+  
+  .md-header__user-name {
+    color: var(--md-default-fg-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: block;
+  }
+  
+  .md-header__dropdown-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background: var(--md-primary-fg-color);
+    border: none;
+    color: var(--md-primary-bg-color);
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    transition: background-color 0.25s, color 0.25s;
+  }
+  
+  .md-header__dropdown-logout:hover {
+    background: var(--md-accent-fg-color);
+  }
+  
+  .md-header__logout-icon {
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .md-header__logout-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
   }
   
   /* Ensure auth buttons container is always visible */
@@ -696,6 +811,15 @@
 <span class="md-ellipsis">
       
         To Do
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dec-29-2025">
+<span class="md-ellipsis">
+      
+        Dec 29, 2025
       
     </span>
 </a>
@@ -1494,6 +1618,11 @@
 <li><del>Checkout Page, Success Page ,Figure our Payments</del></li>
 <li><del>Integration of Auth0 and Stripe</del></li>
 <li>'<del>Access-Control-Allow-Origin': <code>*</code></del> <span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> 'Access-Control-Allow-Origin' : <code>https://dsabible.com</code>,</li>
+</ul>
+<h2 id="dec-29-2025">Dec 29, 2025</h2>
+<ul>
+<li>User Avatar Dropdown</li>
+<li>Logout Button in Dropdown</li>
 </ul>
 <h2 id="oct-5-2025">Oct 5, 2025</h2>
 <ul>

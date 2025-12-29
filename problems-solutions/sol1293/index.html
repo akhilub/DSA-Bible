@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -464,8 +464,28 @@
     <!-- Auth buttons - with responsive design -->
     <div class="md-header__source">
       <div class="md-header__auth-buttons">
+        <!-- User avatar with dropdown (hidden by default) -->
+        <div class="md-header__user-avatar" id="user-avatar" style="display: none">
+          <div class="md-header__avatar-container">
+            <img id="avatar-img" src="" alt="User Avatar">
+            <div class="md-header__user-dropdown" id="user-dropdown">
+              <div class="md-header__dropdown-content">
+                <div class="md-header__user-info">
+                  <span class="md-header__user-name" id="user-name"></span>
+                </div>
+                <button class="md-header__dropdown-logout" id="dropdown-logout-btn">
+                  <span class="md-header__logout-icon">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
+                  </span>
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Login button with responsive text/icon -->
-        <button class="md-header__button md-icon" id="login-btn" title="Log In">
+        <button class="md-header__button md-icon" id="login-btn" title="Login">
           <span class="md-header__auth-content">
             <span class="md-header__auth-icon">
               
@@ -482,7 +502,7 @@
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
             </span>
-            <span class="md-header__auth-text">Logout</span>
+            <span class="md-header__auth-text">Log Out</span>
           </span>
         </button>
 
@@ -516,6 +536,102 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
+  }
+  
+  /* User avatar styling */
+  .md-header__user-avatar {
+    position: relative;
+    margin-right: 0.5rem;
+  }
+  
+  .md-header__avatar-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .md-header__user-avatar img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid var(--md-accent-fg-color);
+    object-fit: cover;
+    transition: border-color 0.2s;
+  }
+  
+  .md-header__avatar-container:hover img {
+    border-color: var(--md-primary-fg-color);
+  }
+  
+  /* Dropdown styling */
+  .md-header__user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 160px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  }
+  
+  .md-header__user-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .md-header__dropdown-content {
+    padding: 0.75rem;
+  }
+  
+  .md-header__user-info {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    margin-bottom: 0.5rem;
+  }
+  
+  .md-header__user-name {
+    color: var(--md-default-fg-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: block;
+  }
+  
+  .md-header__dropdown-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background: var(--md-primary-fg-color);
+    border: none;
+    color: var(--md-primary-bg-color);
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    transition: background-color 0.25s, color 0.25s;
+  }
+  
+  .md-header__dropdown-logout:hover {
+    background: var(--md-accent-fg-color);
+  }
+  
+  .md-header__logout-icon {
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .md-header__logout-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
   }
   
   /* Ensure auth buttons container is always visible */
@@ -2104,10 +2220,10 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>            <span class="k">return</span> <span class="mi">0</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="c1"># Starting position is upper left corner</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">)])</span> <span class="c1"># row, col, obstacle_remaining</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># ans - steps</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">)])</span>      <span class="c1"># row, col, obstacle_remaining</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>                     <span class="c1"># ans - steps</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="n">vis</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">)])</span>    <span class="c1"># or, {(0, 0, k)}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="n">vis</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">)])</span>      <span class="c1"># or, {(0, 0, k)}</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="n">directions</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
@@ -2174,16 +2290,16 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">))])</span> <span class="c1"># steps, (row, col, obstacle_remaining)</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>        <span class="n">vis</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">)])</span>        <span class="c1"># or, {(0, 0, k)}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>        <span class="n">vis</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">)])</span>        <span class="c1"># or, {(0, 0, k)}</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="n">directions</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="n">directions</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>            <span class="c1">#Get Nodes</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>            <span class="n">steps</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>            <span class="c1">#Stopping Condition</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>                <span class="k">return</span> <span class="n">steps</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>            <span class="c1"># Process Nodes</span>
@@ -2195,7 +2311,7 @@
 </span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>                    <span class="n">new_state</span> <span class="o">=</span> <span class="p">(</span><span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">nk</span><span class="p">)</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a>                    <span class="k">if</span> <span class="n">nk</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">new_state</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vis</span><span class="p">:</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a>                        <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">steps</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">new_state</span><span class="p">))</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a>                        <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">steps</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">new_state</span><span class="p">))</span>
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a>                        <span class="n">vis</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_state</span><span class="p">)</span>
 </span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a>
 </span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>

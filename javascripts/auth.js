@@ -46,6 +46,36 @@ const logout = () => {
   })
 }
 
+// Setup avatar dropdown functionality
+const setupAvatarDropdown = () => {
+  const avatarContainer = document.querySelector('.md-header__avatar-container')
+  const dropdown = document.getElementById('user-dropdown')
+  const dropdownLogoutBtn = document.getElementById('dropdown-logout-btn')
+  
+  if (!avatarContainer || !dropdown) return
+  
+  // Toggle dropdown on avatar click
+  avatarContainer.addEventListener('click', (e) => {
+    e.stopPropagation()
+    dropdown.classList.toggle('show')
+  })
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', () => {
+    dropdown.classList.remove('show')
+  })
+  
+  // Prevent dropdown from closing when clicking inside it
+  dropdown.addEventListener('click', (e) => {
+    e.stopPropagation()
+  })
+  
+  // Handle logout from dropdown
+  if (dropdownLogoutBtn) {
+    dropdownLogoutBtn.addEventListener('click', logout)
+  }
+}
+
 // show/hide the lock icon
 const updateLock = async () => {
   const lockIcon = document.getElementById("lock-icon")
@@ -415,10 +445,23 @@ const checkAuth = async () => {
       const user = await auth0.getUser()
       // console.log("user", user)
 
+      // Update avatar
+      const userAvatar = document.getElementById("user-avatar")
+      const avatarImg = document.getElementById("avatar-img")
+      const userName = document.getElementById("user-name")
+      if (userAvatar && avatarImg && user.picture) {
+        avatarImg.src = user.picture
+        userName.textContent = user.name || user.email
+        userAvatar.style.display = "block"
+        
+        // Set up dropdown functionality
+        setupAvatarDropdown()
+      }
+
       // Update navigation UI for logged-in state
       if (loginBtn) loginBtn.style.display = "none"
       if (signupBtn) signupBtn.style.display = "none"
-      if (logoutBtn) logoutBtn.style.display = "inline-block"
+      if (logoutBtn) logoutBtn.style.display = "none" // Hide original logout button
 
       // Check for admin role
       const tokenClaims = await auth0.getIdTokenClaims()
@@ -429,6 +472,9 @@ const checkAuth = async () => {
       }
     } else {
       // User is not logged in
+      const userAvatar = document.getElementById("user-avatar")
+      if (userAvatar) userAvatar.style.display = "none"
+
       if (loginBtn) loginBtn.style.display = "inline-block"
       if (signupBtn) signupBtn.style.display = "inline-block"
       if (logoutBtn) logoutBtn.style.display = "none"
