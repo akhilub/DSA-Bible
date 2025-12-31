@@ -311,7 +311,7 @@
 <div class="md-header__source">
 <div class="md-header__auth-buttons">
 <!-- User avatar with dropdown (hidden by default) -->
-<div class="md-header__user-avatar" id="user-avatar" style="display: none">
+<div aria-label="User Profile" class="md-header__user-avatar" id="user-avatar" style="display: none" title="User Profile">
 <div class="md-header__avatar-container">
 <img alt="User Avatar" id="avatar-img" src="">
 <div class="md-header__user-dropdown" id="user-dropdown">
@@ -319,18 +319,19 @@
 <div class="md-header__user-info">
 <span class="md-header__user-name" id="user-name"></span>
 </div>
-<button class="md-header__dropdown-logout" id="dropdown-logout-btn">
+<!-- Logout button with responsive text/icon -->
+<button aria-label="Logout" class="md-header__dropdown-logout" id="dropdown-logout-btn" title="Logout">
 <span class="md-header__logout-icon">
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
 </span>
-                  Logout
+                  Log Out
                 </button>
 </div>
 </div>
 </div>
 </div>
 <!-- Login button with responsive text/icon -->
-<button class="md-header__button md-icon" id="login-btn" title="Login">
+<button aria-label="Login" class="md-header__button md-icon" id="login-btn" title="Login">
 <span class="md-header__auth-content">
 <span class="md-header__auth-icon">
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8z"></path></svg>
@@ -338,17 +339,8 @@
 <span class="md-header__auth-text">Log In</span>
 </span>
 </button>
-<!-- Logout button with responsive text/icon -->
-<button class="md-header__button md-icon" id="logout-btn" style="display: none" title="Logout">
-<span class="md-header__auth-content">
-<span class="md-header__auth-icon">
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17 7-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"></path></svg>
-</span>
-<span class="md-header__auth-text">Log Out</span>
-</span>
-</button>
 <!-- Sign up button with responsive text/icon -->
-<button class="md-header__button md-icon" id="signup-btn" title="Sign Up">
+<button aria-label="Sign Up" class="md-header__button md-icon" id="signup-btn" title="Sign Up">
 <span class="md-header__auth-content">
 <span class="md-header__auth-icon">
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4"></path></svg>
@@ -409,7 +401,9 @@
     border: 1px solid var(--md-default-fg-color--lightest);
     border-radius: 0.3rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    min-width: 160px;
+    min-width: max-content;
+    max-width: 250px;
+    width: auto;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -435,9 +429,13 @@
   
   .md-header__user-name {
     color: var(--md-default-fg-color);
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 500;
     display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 120px;
   }
   
   .md-header__dropdown-logout {
