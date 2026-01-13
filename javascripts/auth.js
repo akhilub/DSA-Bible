@@ -1,9 +1,12 @@
 // === Inline Scripts ===
 // All functions are globally available
 
+import { DeviceSessionManager } from './device-utils.js';
+
 let auth0 = null
 let isCheckingAuth = false // Flag to prevent concurrent auth checks
 let isLoggedIn = false // to declare global user state
+let deviceManager = null // Device session manager
 
 const config = {
   domain: "dev-wzadtpoj5nnk5uj1.us.auth0.com",
@@ -18,6 +21,7 @@ const config = {
 // === Auth0 Actions ===
 // Login function - direct Auth0 login
 const login = async () => {
+  const deviceId = deviceManager?.deviceId || 'unknown';
   await auth0.loginWithRedirect({
     appState: {
       returnTo:
@@ -25,6 +29,7 @@ const login = async () => {
         window.location.search +
         window.location.hash,
     },
+    deviceId: deviceId
   })
 }
 
@@ -40,7 +45,13 @@ const signup = async () => {
 }
 
 // Logout function
-const logout = () => {
+const logout = async () => {
+  if (deviceManager && isLoggedIn) {
+    const user = await auth0.getUser();
+    await deviceManager.unregisterDevice(user.sub);
+    deviceManager.stopStatusCheck();
+  }
+  
   auth0.logout({
     returnTo: window.location.origin,
   })
@@ -443,6 +454,15 @@ const checkAuth = async () => {
     if (isAuthenticated) {
       // User is logged in
       const user = await auth0.getUser()
+      
+      // Register device and start monitoring
+      if (deviceManager) {
+        await deviceManager.registerDevice(user.sub);
+        deviceManager.startStatusCheck(() => {
+          alert('You have been logged out because you signed in from another device. Only 2 devices are allowed per account.');
+          logout();
+        });
+      }
       // console.log("user", user)
 
       // Update avatar
@@ -544,6 +564,12 @@ const initAuth = async () => {
 }
 
 // === Initialize on first Load on Page ===
+// Initialize device manager first
+const baseUrl = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+  ? 'http://localhost:8787'
+  : 'https://service-workers.akhilsin.workers.dev';
+
+deviceManager = new DeviceSessionManager(baseUrl);
 initAuth()
 
 // Auth state helpers
