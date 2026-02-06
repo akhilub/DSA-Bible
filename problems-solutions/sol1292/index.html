@@ -1887,6 +1887,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2176,7 +2182,42 @@
 
   <h1>Sol1292</h1>
 
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python_1</label><label for="__tabbed_1_2">Python_2</label></div>
+<!-- This is the protected content that will be stored in JavaScript and only added to DOM for authenticated users --><!-- gated-content start --><!-- vide solution:start --><div class="video-message">
+  <p>Video Solution Coming Soon</p>
+</div>
+
+<!-- vide solution: end -->
+
+<!-- solution:start -->
+
+<h3 id="approach-binary-search-prefix-sum">Approach : Binary Search + Prefix Sum</h3>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<ol>
+<li>
+<p><strong>Prefix Sum Calculation</strong>:</p>
+<ul>
+<li>Compute a 2D prefix sum array <code>ps</code> where <code>ps[i][j]</code> represents the sum of all elements in the rectangle from <code>(0,0)</code> to <code>(i-1,j-1)</code> in the original matrix. This allows us to quickly calculate the sum of any submatrix.</li>
+</ul>
+</li>
+<li>
+<p><strong>Binary Search for Maximum Side Length</strong>:</p>
+<ul>
+<li>Use binary search to determine the largest possible side length <code>k</code> such that the sum of any <code>k x k</code> submatrix is less than or equal to the given threshold.</li>
+<li>For each candidate side length <code>mid</code>, compute the minimum sum of all possible <code>mid x mid</code> submatrices using the prefix sum array.</li>
+<li>Adjust the binary search range based on whether the minimum sum of the <code>mid x mid</code> submatrices is within the threshold.</li>
+</ul>
+</li>
+<li>
+<p><strong>Binary Search Implementation</strong>:</p>
+<ul>
+<li>Initialize the binary search range with <code>l = 0</code> and <code>r = min(m, n)</code>. </li>
+<li>For each midpoint <code>mid</code>, check if the smallest possible sum of a <code>mid x mid</code> submatrix is within the threshold. If yes, search for a larger <code>mid</code>; otherwise, search for a smaller `mid</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python_1</label><label for="__tabbed_1_2">Python_2 (Optimized)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
@@ -2241,6 +2282,9 @@
 </div>
 </div>
 </div>
+<!-- solution:end -->
+
+<!-- gated-content end -->
 
 
 
