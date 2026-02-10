@@ -2277,22 +2277,44 @@
 <blockquote>
 <p>Best Optimal Solution</p>
 </blockquote>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n \log k)\)</span></p>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(k)\)</span></p>
-<div class="admonition tip">
-<p class="admonition-title">Algorithm</p>
-<p>We first add the first <code>k</code> arrays of the array to the set. Since <code>multiset</code> has its own sorting function, we can quickly find the iterator <code>mid</code> pointing to the middle number through <code>k/2</code>.</p>
-<p>If <code>k</code> is an odd number, then the number pointed to by <code>mid</code> which is the median;
-if <code>k</code> is an even number, then the average of the number pointed to by <code>mid</code> and the <code>previous number</code> is the median.</p>
-<p>When we add a new number to the collection, the multiset will be added to the correct position according to the size of the new number, and then we see that</p>
-<p>• if the newly added number is smaller than the number pointed to by the previous mid, then the median must be pulled down , so mid moves forward by one,
-• and if the number to be deleted is less than or equal to the number pointed to by mid (note that the equal sign is added here because the number to be deleted may be the number pointed to by mid), then mid moves backward by one.</p>
-<p>Then we delete the leftmost number of the sliding window.</p>
-<p>Time Complexity:</p>
-<p>Inserting into or removing from a SortedList takes  <span class="arithmatex">\(O(\log k)\)</span>.</p>
-<p>Computing the median takes  <span class="arithmatex">\(O(1)\)</span>.</p>
-<p>For <span class="arithmatex">\(n-k+1\)</span> windows, the overall complexity is <span class="arithmatex">\(O((n-k+1) \log k)\)</span> ≈ <span class="arithmatex">\(O(n \log k)\)</span>.</p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O((n-k+1) \log k)\)</span> ≈ <span class="arithmatex">\(O(n \log k)\)</span>, where n is the length of the input array nums. This is because we perform a binary search for each element in the array.</p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(k)\)</span>, as we need to store the elements in the current window.</p>
+<div class="admonition info">
+<p class="admonition-title">Algorithm Discussion</p>
+<p>The problem requires calculating the median of all subarrays of size k in a given array nums. The median is the middle value in an ordered list. If the list is even, there is no middle value, so the median is the mean of the two middle values.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Algorithm Procedure</p>
+<p>To solve this problem, we will:</p>
+<ul>
+<li>Maintain a sorted list of elements in the current window.</li>
+<li>Use binary search to insert and remove elements from the sorted list.</li>
+<li>Calculate the median of the current window.</li>
+<li>Repeat the process for all windows.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm Steps</p>
+<ol>
+<li>Initialize a SortedList with the first k-1 elements of the array.</li>
+<li>Iterate over the array starting from the k-th element.</li>
+<li>Add the current element to the SortedList.</li>
+<li>Calculate the median of the current window.</li>
+<li>Remove the element that is going out of the window.</li>
+<li>Repeat steps 3-5 until the end of the array is reached.</li>
+</ol>
+</div>
+<details class="abstract">
+<summary>Python Corner</summary>
+<ul>
+<li>
+<p>The <code>sortedcontainers</code> library is not a built-in Python library. You can install it using pip: <code>pip install sortedcontainers</code>.</p>
+</li>
+<li>
+<p>Inserting into or removing from a SortedList takes <span class="arithmatex">\(O(\log k)\)</span> time.</p>
+</li>
+</ul>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2322,7 +2344,7 @@ if <code>k</code> is an even number, then the average of the number pointed to b
 </div>
 </div>
 <details class="example">
-<summary>Usage</summary>
+<summary>Other Usage</summary>
 <div class="language-diff highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gi">+ ans.append((window[k//2] + window[~(k//2)]) / 2)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w"> </span>                   ||
@@ -2448,6 +2470,72 @@ if <code>k</code> is an even number, then the average of the number pointed to b
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">k</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>       <span class="c1">#when coming from n to 0 (right to left)</span>
 </span></code></pre></div>
 </div>
+</div>
+</div>
+</div>
+<h3 id="approach-3-two-heaps">Approach 3 : Two Heaps</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n \log k)\)</span>, where n is the length of nums, because for each of the n elements, we perform a heap operation that takes log k time.</p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(k)\)</span>, for storing the elements in the heaps.</p>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>To solve this problem, we can use a data structure that allows us to efficiently maintain a sorted list of elements within the sliding window. We will use two heaps (or priority queues) to achieve this.</p>
+<ul>
+<li>
+<p>Use two heaps: a max-heap to store the smaller half of the elements in the window and a min-heap to store the larger half.</p>
+</li>
+<li>
+<p>Balance the heaps to ensure the size difference is at most 1.</p>
+</li>
+<li>
+<p>When the window slides, remove the element going out of the window from the appropriate heap and add the new element entering the window.</p>
+</li>
+<li>
+<p>Calculate the median based on the top elements of the heaps.</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">heapq</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">medianSlidingWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="c1"># Initialize the heaps</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="n">max_pq</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># max heap to store the smaller half</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="n">min_pq</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># min heap to store the larger half</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="n">medians</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>            <span class="c1"># Add the number to the appropriate heap</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">max_pq</span> <span class="ow">or</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">max_pq</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>                <span class="n">heappush</span><span class="p">(</span><span class="n">max_pq</span><span class="p">,</span> <span class="o">-</span><span class="n">num</span><span class="p">)</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>                <span class="n">heappush</span><span class="p">(</span><span class="n">min_pq</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>            <span class="c1"># Balance the heaps</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_pq</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">min_pq</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>                <span class="n">heappush</span><span class="p">(</span><span class="n">min_pq</span><span class="p">,</span> <span class="o">-</span><span class="n">heappop</span><span class="p">(</span><span class="n">max_pq</span><span class="p">))</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">min_pq</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">max_pq</span><span class="p">):</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>                <span class="n">heappush</span><span class="p">(</span><span class="n">max_pq</span><span class="p">,</span> <span class="o">-</span><span class="n">heappop</span><span class="p">(</span><span class="n">min_pq</span><span class="p">))</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>            <span class="c1"># Calculate the median for the current window</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>                <span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>                    <span class="n">medians</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="n">max_pq</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>                <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>                    <span class="n">medians</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="o">-</span><span class="n">max_pq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">min_pq</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>                <span class="c1"># Remove the element going out of the window</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>                <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="n">max_pq</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>                    <span class="n">max_pq</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>                    <span class="n">heapify</span><span class="p">(</span><span class="n">max_pq</span><span class="p">)</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>                <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>                    <span class="n">min_pq</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>                    <span class="n">heapify</span><span class="p">(</span><span class="n">min_pq</span><span class="p">)</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>        <span class="k">return</span> <span class="n">medians</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>

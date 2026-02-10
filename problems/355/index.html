@@ -14716,8 +14716,147 @@
 
 <hr>
 <h2 id="solutions"><strong>Solutions</strong> 🔓</h2>
+<!-- vide solution:start -->
 
-<div class="video-message"></div>
+<div class="video-message">
+  <p>Video Solution Coming Soon</p>
+</div>
+
+<!-- vide solution: end -->
+
+<!-- solution:start -->
+
+<h3 id="approach-heap-priority-queue">Approach : Heap (Priority Queue)</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n \log k)\)</span>, where <span class="arithmatex">\(n =|\text tweets∣\)</span> and <span class="arithmatex">\(k = (min(10,∣\text tweets∣))\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n + m)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Algorithm</p>
+<ul>
+<li>The Twitter class needs to handle posting tweets, following/unfollowing users, and retrieving the 10 most recent tweets in a user's news feed.</li>
+<li>We use a counter to assign a unique, decrementing timestamp to each tweet, which helps in sorting tweets by recency.</li>
+<li>Tweets are stored in a deque for each user, allowing efficient addition to the front and removal from the back when more than 10 tweets are present.</li>
+<li>Follow relationships are managed using sets to ensure that each user follows another user uniquely and efficiently check follow status.</li>
+<li>To retrieve the news feed, we gather all tweets from the user and their followees, merge these sorted lists using a heap, and then extract the top 10 tweets.</li>
+</ul>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">collections</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">Twitter</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>                       <span class="c1"># Initialize a counter that starts at 0 and increments by -1 each time (to simulate time)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tweets</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="n">deque</span><span class="p">)</span>                <span class="c1"># Store tweets in a deque to maintain order and limit to 10 tweets per user</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">followees</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>               <span class="c1"># Store follow relationships in a set for each user</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">postTweet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tweetId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span><span class="o">.</span><span class="n">appendleft</span><span class="p">((</span><span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">),</span> <span class="n">tweetId</span><span class="p">))</span> <span class="c1"># Record the tweet with a timestamp and tweetId</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">userId</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>                           <span class="c1"># Ensure only the last 10 tweets are kept</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getNewsFeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">tweets</span> <span class="o">=</span> <span class="p">[]</span>                                                 <span class="c1"># Collect all tweets from the user and their followees</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="k">for</span> <span class="n">followee</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span> <span class="o">|</span> <span class="p">{</span><span class="n">userId</span><span class="p">}:</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>            <span class="n">tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">followee</span><span class="p">])</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>        <span class="n">merged</span><span class="o">*</span><span class="n">tweets</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="o">*</span><span class="n">tweets</span><span class="p">)</span>                        <span class="c1"># Merge the sorted deques into a single sorted iterator</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">tweetId</span> <span class="k">for</span> <span class="o">*</span><span class="p">,</span> <span class="n">tweetId</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">merged_tweets</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]]</span> <span class="c1"># Return the last 10 tweetIds from the merged sorted iterator</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">follow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">followerId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">followeeId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">followerId</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">followeeId</span><span class="p">)</span>                  <span class="c1"># Add followeeId to the set of users that followerId is following</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">unfollow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">followerId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">followeeId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">followerId</span><span class="p">]</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">followeeId</span><span class="p">)</span>              <span class="c1"># Remove followeeId from the set of users that followerId is following</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="c1"># Your Twitter object will be instantiated and called as such:</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="c1"># obj = Twitter()</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="c1"># obj.postTweet(userId,tweetId)</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="c1"># param_2 = obj.getNewsFeed(userId)</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="c1"># obj.follow(followerId,followeeId)</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="c1"># obj.unfollow(followerId,followeeId)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<details class="example">
+<summary>equivalency</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">getNewsFeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">tweets</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">for</span> <span class="n">followee</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span> <span class="o">|</span> <span class="p">{</span><span class="n">userId</span><span class="p">}:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">followee</span><span class="p">])</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">merged_tweets</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="o">*</span><span class="n">tweets</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">tweetId</span> <span class="k">for</span> <span class="n">_</span> <span class="p">,</span> <span class="n">tweetId</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">merged_tweets</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]]</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                <span class="o">||</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>                <span class="o">||</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>                <span class="o">||</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">getNewsFeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">tweets</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">followee</span><span class="p">]</span> <span class="k">for</span> <span class="n">followee</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span> <span class="o">|</span> <span class="p">{</span><span class="n">userId</span><span class="p">}]</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="n">merged_tweets</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="o">*</span><span class="n">tweets</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">tweetId</span> <span class="k">for</span> <span class="n">_</span> <span class="p">,</span> <span class="n">tweetId</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">merged_tweets</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]]</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                <span class="o">||</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                <span class="o">||</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                <span class="o">||</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">getNewsFeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userId</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="n">tweets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tweets</span><span class="p">[</span><span class="n">followee</span><span class="p">]</span> <span class="k">for</span> <span class="n">followee</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">followees</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span> <span class="o">|</span> <span class="p">{</span><span class="n">userId</span><span class="p">})))</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">tweetId</span> <span class="k">for</span> <span class="n">_</span> <span class="p">,</span> <span class="n">tweetId</span> <span class="ow">in</span> <span class="n">tweets</span><span class="p">[:</span><span class="mi">10</span><span class="p">]]</span>
+</span></code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Complexity Discussion</p>
+<ul>
+<li>
+<p><strong>Time:</strong> The time complexity for each operation is as follows:</p>
+<ul>
+<li>postTweet: O(1) because appending to the front of a deque and potentially removing an element from the back are both O(1) operations.</li>
+<li>getNewsFeed: O(n log k) where n is the total number of tweets from the user and their followees, and k is the number of users being followed plus one (the user themselves).This is because merging k sorted lists takes O(n log k) time using a min-heap.</li>
+<li>follow: O(1) because adding an element to a set is an average O(1) operation.</li>
+<li>unfollow: O(1) because removing an element from a set is an average O(1) operation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Space:</strong> The space complexity is O(n + m) where n is the total number of tweets stored across all users (each user stores up to 10 tweets) and m is the total number of follow relationships stored (each relationship is stored once in the appropriate set).</p>
+<ul>
+<li>O(n) for storing tweets, with each user having a deque that holds up to 10 tweets.</li>
+<li>O(m) for storing follow relationships, with each user having a set of followees.</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- solution:end -->
+
+<!-- problem:end -->
+
+<!--Author html-->
+
+<!-- Post authors from meta-->
+<section>
+
+        <div class="md-post__authors md-typeset">
+
+                <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                        <img class="skip-lightbox" src="https://avatars.githubusercontent.com/u/60491139" alt="Akhil Singh Chauhan">
+                    </span>
+                    <span class="md-profile__description">
+                        <strong>
+
+                                <a href="https://github.com/akhilub">Akhil Singh Chauhan</a>
+
+                        </strong>
+                        <br>
+                        Creator
+                    </span>
+                </div>
+
+        </div>
+
+</section>
 
 
 
