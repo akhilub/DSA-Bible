@@ -113,7 +113,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -14814,8 +14814,26 @@
 <p><code>OrderedDict</code> vs <code>dict</code></p>
 <p>OrderedDict is not exactly the same as the dict class. dict is fully implemented on the interpreter level. It does preserve the order of inserted keys, but doesn’t expose the move_to_end() method. OrderedDict is partially implemented on the Python level (as dict and a linked list), so it incurs some memory overhead.</p>
 </div>
-<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: get(key: int), put(key: int, value: int): <span class="arithmatex">\(O(1)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> get(key: int) : <span class="arithmatex">\(O(1)\)</span></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> put(key: int, value: int): <span class="arithmatex">\(O(1)\)</span></li>
+</ul>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(capacity)\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm Discussion</p>
+<ul>
+<li>
+<p>Use a dictionary to store the keys and their corresponding nodes</p>
+</li>
+<li>
+<p>When a key is accessed or updated, move its corresponding node to the front of the linked list.</p>
+</li>
+<li>
+<p>When the cache is full, remove the least recently used element</p>
+</li>
+</ul>
+</div>
 <details class="example">
 <summary>Example</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">od</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">()</span>
