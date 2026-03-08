@@ -1047,6 +1047,8 @@
       
         
       
+        
+      
     
     
     
@@ -1101,6 +1103,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -2316,10 +2322,10 @@
 <p class="admonition-title">Algorithm</p>
 <p>We notice that the longer the repair time, the more cars are repaired. Therefore, we can use the repair time as the target of binary search, and binary search for the minimum repair time.</p>
 <p>We define the left and right boundaries of the binary search as</p>
-<p>L = min(ranks)*1**2, R = max(ranks)*cars**2</p>
-<p>Next, we binary search for the repair time <code>mid</code>, and the number of cars each mechanic can repair is ⌊√(mid/r)⌋, where ⌊x⌋ represents rounding down.</p>
-<p>If the number of cars repaired is less than to cars, it means that the repair time mid is feasible ,</p>
-<p>we reduce the left boundary to <code>mid +1</code>, otherwise we reduce the right boundary to <code>mid</code>.</p>
+<p><span class="arithmatex">\(L = min(ranks)*1^{2}\)</span>, <span class="arithmatex">\(R = max(ranks)*cars^{2}\)</span></p>
+<p>Next, we binary search for the repair time <code>mid</code>, and the number of cars each mechanic can repair is <span class="arithmatex">\(\lfloor \sqrt{\frac{mid}{r}} \rfloor\)</span>, where <span class="arithmatex">\(\lfloor x \rfloor\)</span> represents rounding down.</p>
+<p>If the number of cars repaired is less than to <span class="arithmatex">\(cars\)</span>, it means that the repair time <span class="arithmatex">\(mid\)</span> is feasible ,</p>
+<p>we reduce the left boundary to <span class="arithmatex">\(mid +  1\)</span>, otherwise we reduce the right boundary to <span class="arithmatex">\(mid\)</span>.</p>
 <p>Finally, we return the left boundary.</p>
 <p>The time complexity is <span class="arithmatex">\(O(n \cdot \log M)\)</span>, and the space complexity is <span class="arithmatex">\(O(1)\)</span>. Here, <span class="arithmatex">\(n\)</span> is the number of mechanics, and <span class="arithmatex">\(M\)</span> is the upper bound of the binary search.</p>
 </div>
@@ -2341,7 +2347,7 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="n">L</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span><span class="o">*</span><span class="n">cars</span><span class="o">**</span><span class="mi">2</span>         <span class="c1"># L - min time &amp; R - max time</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">:</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">R</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="n">R</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">mid</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">cars</span><span class="p">:</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                <span class="n">R</span> <span class="o">=</span> <span class="n">mid</span>
@@ -2363,7 +2369,7 @@
 </div>
 <details class="example">
 <summary>equivalency</summary>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">N</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isqrt</span><span class="p">(</span><span class="n">mid</span><span class="o">//</span><span class="n">r</span><span class="p">)</span>  <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ranks</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">N</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">isqrt</span><span class="p">(</span><span class="n">mid</span> <span class="o">//</span> <span class="n">r</span><span class="p">)</span>  <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ranks</span><span class="p">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            <span class="o">||</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            <span class="n">OR</span>
@@ -2375,7 +2381,7 @@
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="n">OR</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="o">||</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">N</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mid</span><span class="o">/</span><span class="n">r</span><span class="p">))</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ranks</span><span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">N</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mid</span> <span class="o">/</span> <span class="n">r</span><span class="p">))</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ranks</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 <!-- solution:end -->
