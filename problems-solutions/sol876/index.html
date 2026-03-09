@@ -2010,6 +2010,8 @@
       
         
       
+        
+      
     
     
     
@@ -2307,9 +2309,12 @@
 
 <!-- solution:start -->
 
-<h3 id="approach-fast-and-slow-pointers">Approach :Fast and Slow Pointers</h3>
+<h3 id="approach-1-fast-and-slow-pointers-or-floyds-tortoise-and-hare">Approach 1 : Fast and Slow Pointers or Floyd's Tortoise and Hare</h3>
+<blockquote>
+<p>Best, Write this in interviews</p>
+</blockquote>
 <details class="abstract">
-<summary>Algorithm Procedure</summary>
+<summary>Algorithm Implementation</summary>
 <ul>
 <li>Apply the Two pointers (Fast &amp; Slow) method such that the fast pointer is always twice the nodes ahead of the slow pointer.</li>
 <li>This way, when the fast pointer reaches the end of the LinkedList, the slow pointer will be pointing at the middle node</li>
@@ -2335,7 +2340,18 @@
 <p>To solve this problem, we can use the fast and slow pointer technique. We'll use two pointers: a slow pointer and a fast pointer. The slow pointer moves one step at a time, while the fast pointer moves two steps at a time.</p>
 <p>When the fast pointer reaches the end of the list, the slow pointer will be at the middle node.This is because the fast pointer travels twice as fast as the slow pointer. So, when the fast pointer reaches the end, the slow pointer will be halfway through the list.</p>
 <p>The time complexity of this solution is O(n), where n is the number of nodes in the linked list.</p>
+<p>The space complexity of this solution is O(1), as we're only using a constant amount of extra space.</p>
 </div>
+<details class="note">
+<summary>Procedure</summary>
+<ul>
+<li>Initialize both slow and fast pointers at the head.</li>
+<li>While fast is not null and fast.next is not null:</li>
+<li>Move slow one step forward.</li>
+<li>Move fast two steps forward.</li>
+<li>Return slow, which now points to the middle node.</li>
+</ul>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2357,9 +2373,6 @@
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="k">return</span> <span class="n">slow</span>                                         <span class="c1">#Return the middle node</span>
 </span></code></pre></div>
-</div>
-</div>
-</div>
 <details class="example">
 <summary>equivalency</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">while</span> <span class="n">fast</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -2369,6 +2382,122 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
 </span></code></pre></div>
 </details>
+</div>
+</div>
+</div>
+<h3 id="approach-2-find-length-of-the-list">Approach 2 : Find Length of the List</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(1)\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>To solve this problem, we can find the length of the linked list and then traverse to the middle node. Here's how we can do it:</p>
+<ul>
+<li>First, we'll traverse the linked list to find its length.</li>
+<li>Then, we'll calculate the middle index by dividing the length by 2.</li>
+<li>Finally, we'll traverse the list again to reach the middle node and return it.</li>
+</ul>
+<p>The time complexity of this solution is O(n), where n is the number of nodes in the linked list.</p>
+<p>The space complexity of this solution is O(1), as we're only using a constant amount of extra space.</p>
+</div>
+<details class="note">
+<summary>Procedure</summary>
+<ul>
+<li>Initialize a variable <code>length</code> to <code>0</code> and a pointer <code>node</code> to the head of the list.</li>
+<li>While <code>node</code> is not null:</li>
+<li>Increment <code>length</code> by 1.</li>
+<li>Move node to the next node.</li>
+<li>Calculate the middle index by dividing length by 2.</li>
+<li>Initialize a pointer <code>cur</code> to the head of the list.</li>
+<li>Traverse the list until <code>cur</code> reaches the middle index.</li>
+<li>Return <code>cur</code>, which now points to the middle node.</li>
+</ul>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Definition for singly-linked list.</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># class ListNode:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">#     def __init__(self, val=0, next=None):</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#         self.val = val</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#         self.next = next</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">middleNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">node</span> <span class="o">=</span> <span class="n">head</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="k">while</span> <span class="n">node</span><span class="p">:</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            <span class="n">length</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="n">length</span> <span class="o">//</span> <span class="mi">2</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mid</span><span class="p">):</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">next</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        <span class="k">return</span> <span class="n">cur</span>
+</span></code></pre></div>
+<details class="answer">
+<summary>Other Usage</summary>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gd">- for _ in range(mid):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gd">-     cur = cur.next</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="gi">+ while mid:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="gi">+     cur = cur.next</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="gi">+     mid -= 1</span>
+</span></code></pre></div>
+</details>
+</div>
+</div>
+</div>
+<h3 id="approach-3-convert-to-array">Approach 3 : Convert to Array</h3>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Time complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Algorithm</p>
+<p>To solve this problem, we can convert the linked list to an array and then find the middle element of the array. Here's how we can do it:</p>
+<ul>
+<li>First, we'll traverse the linked list and store each node in an array.</li>
+<li>Then, we'll calculate the middle index by dividing the length of the array by 2.</li>
+<li>Finally, we'll return the element at the middle index of the array.</li>
+</ul>
+<p>The time complexity of this solution is O(n), where n is the number of nodes in the linked list.</p>
+<p>The space complexity of this solution is O(n), as we're storing all the nodes in an array.</p>
+</div>
+<details class="note">
+<summary>Procedure</summary>
+<ul>
+<li>Initialize an empty array <code>arr</code> and a pointer <code>cur</code> to the head of the list.</li>
+<li>While <code>cur</code> is not null:</li>
+<li>Append <code>cur</code> to <code>arr</code>.</li>
+<li>Move <code>cur</code> to the next node.</li>
+<li>Calculate the middle index by dividing the length of <code>arr</code> by 2.</li>
+<li>Return the element at the middle index of <code>arr</code>.</li>
+</ul>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Definition for singly-linked list.</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># class ListNode:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#     def __init__(self, val=0, next=None):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">#         self.val = val</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#         self.next = next</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">middleNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="k">while</span> <span class="n">cur</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">next</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
 <!-- solution:end -->
 
 <!-- gated-content end -->
