@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -2346,8 +2346,8 @@
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Algorithm 1</p>
-<p>We keep updating the previous node and the current node along the linked list and reverse the link directions
-e.g pointing the current node to previous node</p>
+<p>We keep updating the previous node and the current node along the linked list and reverse the link directions e.g pointing the current node to previous node</p>
+<p>Basically, to reverse a LinkedList, we keep track of 3 variables, prevNode <code>prev</code>, currentNode <code>curr</code>, and nextNode <code>nxt</code>, and we point the next value back between the 3 variables</p>
 </div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Python(Instance Method)</label><label for="__tabbed_1_2">Python(Static Method)</label></div>
 <div class="tabbed-content">
@@ -2364,11 +2364,11 @@ e.g pointing the current node to previous node</p>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>                         <span class="c1">#Initialize Pointers</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>                         <span class="c1">#Traverse the Linked List</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            <span class="n">nextNode</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>            <span class="c1">#Store the next node</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            <span class="n">nxt</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>                 <span class="c1">#Store the next node</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>                <span class="c1">#Reverse the pointer</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span>                     <span class="c1">#Move both pointers one step forward</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            <span class="n">curr</span> <span class="o">=</span> <span class="n">nextNode</span>                 
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            <span class="n">curr</span> <span class="o">=</span> <span class="n">nxt</span>                
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="k">return</span> <span class="n">prev</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="c1">#As an instance method</span>
@@ -2408,11 +2408,11 @@ e.g pointing the current node to previous node</p>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="n">nextTemp</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>            <span class="c1">#assigning curr.next to a temproary variable nextTemp</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="n">nxt</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>                 <span class="c1">#assigning curr.next to a temproary variable nxt</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>                <span class="c1">#changing the direction / pointing it back</span>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span>                     <span class="c1">#}Traversing/Moving Forward in the linked list</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">curr</span> <span class="o">=</span> <span class="n">nextTemp</span>                 <span class="c1">#}</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">curr</span> <span class="o">=</span> <span class="n">nxt</span>                      <span class="c1">#}</span>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="k">return</span> <span class="n">prev</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="c1">#As a static method</span>
@@ -2447,7 +2447,7 @@ e.g pointing the current node to previous node</p>
 <p><span class="twemoji md-checkmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-5-5 1.41-1.42L10 14.17l7.59-7.59L19 8m-7-6A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg></span> Space complexity: <span class="arithmatex">\(O(n)\)</span> , where <span class="arithmatex">\(n\)</span> is the no of nodes in the Linked List</p>
 <div class="admonition tip">
 <p class="admonition-title">Algorithm 2</p>
-<p>We can reverse LList in Recursion Manner.</p>
+<p>We can reverse Linked List in Recursion Manner.</p>
 <p>We can reverse every other nodes except the current node, then reverse the link direction
 The Recursion is tail optimised to <span class="arithmatex">\(O(n)\)</span></p>
 </div>
@@ -2470,6 +2470,12 @@ The Recursion is tail optimised to <span class="arithmatex">\(O(n)\)</span></p>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="k">return</span> <span class="n">newHead</span>
 </span></code></pre></div>
+<div class="admonition answer">
+<p class="admonition-title">Other Usage</p>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gd">- if head is None or head.next is None:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gi">+ if not head or not head.next:</span>
+</span></code></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -2484,23 +2490,24 @@ The Recursion is tail optimised to <span class="arithmatex">\(O(n)\)</span></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Definition for singly-linked list.</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># class ListNode:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#     def __init__(self, val=0, next=None):</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">#         self.val = val</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#         self.next = next</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">reverseList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="n">p</span> <span class="o">=</span> <span class="n">head</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="k">while</span> <span class="n">p</span><span class="p">:</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">next</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="n">p</span> <span class="o">=</span> <span class="n">head</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="k">while</span> <span class="n">p</span><span class="p">:</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            <span class="n">p</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">next</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">return</span> <span class="n">head</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Definition for singly-linked list.</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># class ListNode:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#     def __init__(self, val=0, next=None):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">#         self.val = val</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#         self.next = next</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">reverseList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ListNode</span><span class="p">]:</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># to collect data</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="n">node</span> <span class="o">=</span> <span class="n">head</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="k">while</span> <span class="n">p</span><span class="p">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="k">while</span> <span class="n">cur</span><span class="p">:</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>            <span class="n">cur</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">next</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="k">return</span> <span class="n">head</span>
 </span></code></pre></div>
 </div>
 </div>
