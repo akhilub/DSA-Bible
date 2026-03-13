@@ -109,7 +109,7 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style><meta name="panzoom-theme" content="material">
-<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
   
   
     
@@ -871,6 +871,28 @@
     
   
   Optimizations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ml/1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Machine Learning
 
         </a>
       </li>
@@ -2018,6 +2040,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2115,6 +2141,65 @@
     
   
     Optimizations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../ml/1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
   
 
     
@@ -2550,11 +2635,15 @@
 <summary>Key Design Rule for Generators</summary>
 <p>A generator should manage its own state, not rely on external arrays being updated.</p>
 <p><strong>Bad pattern:</strong></p>
-<p>generator → depends on external dp
-outer loop → fills dp</p>
+<ul>
+<li>generator → depends on external array</li>
+<li>outer loop → fills array</li>
+</ul>
 <p><strong>Good pattern:</strong></p>
-<p>generator → maintains dp internally
-caller → only pulls values</p>
+<ul>
+<li>generator → maintains array internally</li>
+<li>caller → only pulls values</li>
+</ul>
 </details>
 <!-- solution:end -->
 
