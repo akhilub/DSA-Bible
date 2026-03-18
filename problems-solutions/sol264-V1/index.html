@@ -2599,6 +2599,19 @@
 </div>
 </div>
 <h3 id="approach-3-lazy-generator-advanced">Approach 3: Lazy Generator (Advanced)</h3>
+<details class="question">
+<summary>Why use a generator?</summary>
+<ul>
+<li>Infinite Sequence : Generator functions in Python allow us to create an infinite sequence of ugly numbers on demand, which is memory efficient.</li>
+<li>Lazy Evaluation : Generators are particularly useful for problems where we need to generate a sequence of values on-the-fly without storing the entire sequence in memory.</li>
+<li>Lazy Evaluation : Generators can be paused and resumed, making them ideal for problems that require lazy evaluation.</li>
+<li>Co-routine : Generators can be used to implement coroutines, which are functions that can be paused and resumed, allowing for cooperative multitasking.</li>
+<li>Asynchronous Programming : Generators can be used to implement asynchronous programming, where functions can yield control to other functions until a certain condition is met.</li>
+<li>Event-driven Programming : Generators can be used to implement event-driven programming, where functions can yield control to other functions in response to events.</li>
+<li>State Machine : Generators can be used to implement state machines, where functions can yield control to other functions based on the current state.</li>
+<li>Streaming : Generators can be used to implement streaming, where data is processed in chunks rather than all at once.</li>
+</ul>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Python (Heap Generator)</label><label for="__tabbed_3_2">Python (DP Generator)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2674,19 +2687,18 @@
 </span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
 </span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
 </span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="n">gen</span> <span class="o">=</span> <span class="n">sequenceGenerator</span><span class="p">()</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>        <span class="n">val</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    <span class="k">return</span> <span class="n">val</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="n">val</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="k">return</span> <span class="n">val</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
 </span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="n">k1</span> <span class="o">=</span> <span class="mi">12</span>
-</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">kthPowerInteger</span><span class="p">(</span><span class="n">k1</span><span class="p">))</span>  <span class="c1"># 16</span>
-</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
-</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="n">k2</span> <span class="o">=</span> <span class="mi">6</span>
-</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">kthPowerInteger</span><span class="p">(</span><span class="n">k2</span><span class="p">))</span>  <span class="c1"># 6</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>    <span class="n">k1</span> <span class="o">=</span> <span class="mi">12</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">kthPowerInteger</span><span class="p">(</span><span class="n">k1</span><span class="p">))</span>  <span class="c1"># 16</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>    <span class="n">k2</span> <span class="o">=</span> <span class="mi">6</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">kthPowerInteger</span><span class="p">(</span><span class="n">k2</span><span class="p">))</span>  <span class="c1"># 6</span>
 </span></code></pre></div>
 <details class="answer">
 <summary>Key Design Rule for Generators</summary>
