@@ -2416,6 +2416,16 @@
 
 <!-- solution:start -->
 
+<div class="admonition abstract">
+<p class="admonition-title">Functional Relationship</p>
+<p>Factorial of a number is the product of all positive integers less than or equal to the number. We can write the following functional relationship:</p>
+<div class="arithmatex">\[
+f(i) = \begin{cases}
+1 &amp; \text{if } i = 0 \text{ or } i = 1 \\
+i \cdot f(i-1) &amp; \text{if } i &gt; 1    
+\end{cases}
+\]</div>
+</div>
 <h3 id="approach-iterative">Approach : Iterative</h3>
 <blockquote>
 <p>No Memory DP</p>
@@ -2457,6 +2467,7 @@
 </div>
 </div>
 </div>
+<p><mark>For large values of <code>n</code>, pure recursive approach will lead to stack overflow error. We can use memoization to avoid this.</mark></p>
 <h3 id="approach-recursion-memoization">Approach : Recursion + Memoization</h3>
 <blockquote>
 <p>Top Down DP</p>
